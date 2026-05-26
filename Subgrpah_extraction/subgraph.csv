@@ -1,0 +1,760 @@
+sujet_id,sujet_label,prop_id,prop_label,objet_id,objet_label
+Q31540,Assassination Games,P57,réalisateur,Q2326442,Ernie Barbarash
+Q24196,Inside,P57,réalisateur,Q3616495,Andrés Baiz
+Q24515,Shaolin,P57,réalisateur,Q702326,Benny Chan
+Q24871,Avatar,P57,réalisateur,Q42574,James Cameron
+Q25157,Aliens vs Avatars,P57,réalisateur,Q23771513,Lewis Schoenbrun
+Q25188,Inception,P57,réalisateur,Q25191,Christopher Nolan
+Q25482,Ammavin Kaipesi,P57,réalisateur,Q7710300,Thangar Bachan
+Q25491,Aarohanam,P57,réalisateur,Q6479962,Lakshmy Ramakrishnan
+Q59026,Trois Mondes,P57,réalisateur,Q2941871,Catherine Corsini
+Q59249,Hatchi,P57,réalisateur,Q316051,Lasse Hallström
+Q59346,The Mortal Instruments : La Cité des ténèbres,P57,réalisateur,Q962552,Harald Zwart
+Q59495,Varudu,P57,réalisateur,Q5618508,Gunasekhar
+Q59498,Piégés,P57,réalisateur,Q17086778,Eduardo Rodríguez
+Q59610,Sept Psychopathes,P57,réalisateur,Q372394,Martin McDonagh
+Q59653,Argo,P57,réalisateur,Q483118,Ben Affleck
+Q46916,Plumíferos,P57,réalisateur,Q5798262,Daniel De Felippo
+Q48734,Marmaduke,P57,réalisateur,Q1852104,Tom Dey
+Q593,Les Lyonnais,P57,réalisateur,Q694259,Olivier Marchal
+Q595,Intouchables,P57,réalisateur,Q74428,Olivier Nakache
+Q595,Intouchables,P57,réalisateur,Q2778106,Éric Toledano
+Q2201,Kick-Ass,P57,réalisateur,Q2593,Matthew Vaughn
+Q3242,A Fantastic Fear of Everything,P57,réalisateur,Q711920,Crispian Mills
+Q3242,A Fantastic Fear of Everything,P57,réalisateur,Q5106916,Chris Hopewell
+Q4739,Love Next Door,P57,réalisateur,Q15500352,Julian Farino
+Q4941,Skyfall,P57,réalisateur,Q223233,Sam Mendes
+Q5590,We Are Four Lions,P57,réalisateur,Q552780,Chris Morris
+Q6074,"Star Wars, épisode VII : Le Réveil de la Force",P57,réalisateur,Q188137,J. J. Abrams
+Q7216,Pirates 2 : La Vengeance de Stagnetti,P57,réalisateur,Q4503044,Joone
+Q11593,Le Dernier Maître de l'air,P57,réalisateur,Q51489,M. Night Shyamalan
+Q29733,Apollo 18,P57,réalisateur,Q1059776,Gonzalo López-Gallego
+Q49903,Love and Secrets,P57,réalisateur,Q3616273,Andrew Jarecki
+Q51732,L'amour n'est pas aveugle,P57,réalisateur,Q9048569,Teng Huatao
+Q52021,The Kick,P57,réalisateur,Q948543,Prachya Pinkaew
+Q53096,We Want Sex Equality,P57,réalisateur,Q365726,Nigel Cole
+Q53719,Looper,P57,réalisateur,Q621818,Rian Johnson
+Q16782,Buried,P57,réalisateur,Q1887437,Rodrigo Cortés
+Q31791,The Company Men,P57,réalisateur,Q2465518,John Wells
+Q32303,La Chasse,P57,réalisateur,Q314287,Thomas Vinterberg
+Q32433,Lincoln,P57,réalisateur,Q8877,Steven Spielberg
+Q32535,Crazy Dad,P57,réalisateur,Q60341,Sean Anders
+Q32780,My Boss,P57,réalisateur,Q14566057,Jeethu Joseph
+Q32786,916,P57,réalisateur,Q6712903,M. Mohanan
+Q33191,Des gens comme nous,P57,réalisateur,Q432598,Alex Kurtzman
+Q38235,La Fille de nulle part,P57,réalisateur,Q953105,Jean-Claude Brisseau
+Q38297,Trois Sœurs,P57,réalisateur,Q3313842,Milagros Mumenthaler
+Q60487,"Twilight, chapitre V : Révélation, partie 2",P57,réalisateur,Q361336,Bill Condon
+Q60506,"Twilight, chapitre IV : Révélation, partie 1",P57,réalisateur,Q361336,Bill Condon
+Q60818,Paradesi,P57,réalisateur,Q3429883,Bala
+Q63278,La Femme du Vème,P57,réalisateur,Q1377022,Paweł Pawlikowski
+Q63980,Les Trois Corniauds,P57,réalisateur,Q888535,Bobby Farrelly
+Q63980,Les Trois Corniauds,P57,réalisateur,Q1368300,Peter Farrelly
+Q64017,Silent Hill: Revelation 3D,P57,réalisateur,Q975070,M. J. Bassett
+Q26162,Podaa Podi,P57,réalisateur,Q18210252,Vignesh Shivan
+Q26751,Moon,P57,réalisateur,Q552731,Duncan Jones
+Q27343,Warm Bodies,P57,réalisateur,Q1320930,Jonathan Levine
+Q27513,Jack le chasseur de géants,P57,réalisateur,Q220751,Bryan Singer
+Q27751,Gangster Squad,P57,réalisateur,Q521691,Ruben Fleischer
+Q28196,World War Z,P57,réalisateur,Q28497,Marc Forster
+Q28234,Les Misérables,P57,réalisateur,Q295912,Tom Hooper
+Q28267,51,P57,réalisateur,Q538123,Jason Connery
+Q28289,Confession of Murder,P57,réalisateur,Q15985300,Jeong Byeong-gil
+Q28936,Cloud Atlas,P57,réalisateur,Q57231,Tom Tykwer
+Q28936,Cloud Atlas,P57,réalisateur,Q9544977,Lilly Wachowski
+Q28936,Cloud Atlas,P57,réalisateur,Q9545711,Lana Wachowski
+Q29313,Voisins du troisième type,P57,réalisateur,Q419466,Akiva Schaffer
+Q29446,Mama,P57,réalisateur,Q6385039,Andy Muschietti
+Q29658,To Rome with Love,P57,réalisateur,Q25089,Woody Allen
+Q41854,Ghost Rider 2 : L'Esprit de vengeance,P57,réalisateur,Q913128,Brian Taylor
+Q41854,Ghost Rider 2 : L'Esprit de vengeance,P57,réalisateur,Q1340718,Mark Neveldine
+Q42051,"Star Wars, épisode III : La Revanche des Sith",P57,réalisateur,Q38222,George Lucas
+Q43408,Le Joyeux Noël d'Harold et Kumar,P57,réalisateur,Q19868225,Todd Strauss-Schulson
+Q72162,Enfance clandestine,P57,réalisateur,Q13612488,Benjamín Ávila
+Q72276,Die Hard : Belle journée pour mourir,P57,réalisateur,Q860608,John Moore
+Q58118,Samar,P57,réalisateur,Q7785242,Thiru
+Q58354,White Blood,P57,réalisateur,Q16366811,Elmaddin Aliyev
+Q58354,White Blood,P57,réalisateur,Q16376210,Khayyam Abdullayev
+Q18954,Tron : L'Héritage,P57,réalisateur,Q2444076,Joseph Kosinski
+Q205532,Wolfman,P57,réalisateur,Q352948,Joe Johnston
+Q181823,Bullhead,P57,réalisateur,Q2517993,Michaël R. Roskam
+Q182184,La Vallée des loups - Palestine,P57,réalisateur,Q12812724,Zübeyr Şaşmaz
+Q182218,Avengers,P57,réalisateur,Q298025,Joss Whedon
+Q182692,Apocalypse Now,P57,réalisateur,Q56094,Francis Ford Coppola
+Q183066,Démineurs,P57,réalisateur,Q34816,Kathryn Bigelow
+Q45273,Race 2,P57,réalisateur,Q17146246,Abbas Alibhai Burmawalla
+Q45273,Race 2,P57,réalisateur,Q17146248,Mastan Alibhai Burmawalla
+Q45318,La Part des anges,P57,réalisateur,Q55238,Ken Loach
+Q45384,Carrie : La Vengeance,P57,réalisateur,Q73761,Kimberly Peirce
+Q45394,La Cabane dans les bois,P57,réalisateur,Q922368,Drew Goddard
+Q45672,Le Dernier Rempart,P57,réalisateur,Q484522,Kim Jee-woon
+Q188159,A Dangerous Method,P57,réalisateur,Q55422,David Cronenberg
+Q188384,Orlando,P57,réalisateur,Q268840,Sally Potter
+Q189330,The Dark Knight Rises,P57,réalisateur,Q25191,Christopher Nolan
+Q190956,Amadeus,P57,réalisateur,Q51525,Miloš Forman
+Q183555,Pirates des Caraïbes : La Fontaine de Jouvence,P57,réalisateur,Q353501,Rob Marshall
+Q194696,Dos au mur,P57,réalisateur,Q724516,Asger Leth
+Q195525,Quartet,P57,réalisateur,Q42930,Dustin Hoffman
+Q82327,Déménagement,P57,réalisateur,Q45253,Shinji Sōmai
+Q82426,Prohibition : Une expérience américaine,P57,réalisateur,Q616886,Ken Burns
+Q82847,Thale,P57,réalisateur,Q16221947,Aleksander L. Nordaas
+Q83542,Resident Evil: Retribution,P57,réalisateur,Q380608,Paul W. S. Anderson
+Q44280,Jusqu'à mon dernier souffle,P57,réalisateur,Q30876,Yash Chopra
+Q44935,"New York, I Love You",P57,réalisateur,Q37876,Natalie Portman
+Q44935,"New York, I Love You",P57,réalisateur,Q77061,Fatih Akin
+Q44935,"New York, I Love You",P57,réalisateur,Q319204,Brett Ratner
+Q44935,"New York, I Love You",P57,réalisateur,Q466320,Mira Nair
+Q44935,"New York, I Love You",P57,réalisateur,Q522232,Shekhar Kapur
+Q44935,"New York, I Love You",P57,réalisateur,Q716069,Jiang Wen
+Q44935,"New York, I Love You",P57,réalisateur,Q724208,Yvan Attal
+Q44935,"New York, I Love You",P57,réalisateur,Q1323347,Shunji Iwai
+Q44935,"New York, I Love You",P57,réalisateur,Q1708588,Joshua Marston
+Q44935,"New York, I Love You",P57,réalisateur,Q2638168,Albert Hughes
+Q44935,"New York, I Love You",P57,réalisateur,Q13639108,Allen Hughes
+Q192476,Sex and Zen: Extreme Ecstasy,P57,réalisateur,Q65062079,Christopher Sun
+Q192686,Prometheus,P57,réalisateur,Q56005,Ridley Scott
+Q192979,Le Choc des Titans,P57,réalisateur,Q525332,Louis Leterrier
+Q193963,La Drôle de vie de Timothy Green,P57,réalisateur,Q2001087,Peter Hedges
+Q185490,Au-delà,P57,réalisateur,Q43203,Clint Eastwood
+Q185764,Effraction,P57,réalisateur,Q295207,Joel Schumacher
+Q185805,The Hunter,P57,réalisateur,Q1549464,Rafi Pitts
+Q268824,Fright Night,P57,réalisateur,Q3696452,Craig Gillespie
+Q269331,Precious,P57,réalisateur,Q555460,Lee Daniels
+Q269810,La Dame de fer,P57,réalisateur,Q237696,Phyllida Lloyd
+Q270012,Les Sept Jours du talion,P57,réalisateur,Q3393152,Podz
+Q270918,8th Wonderland,P57,réalisateur,Q3340019,Nicolas Alberny
+Q93689,"Amour, Mariage et Petits Tracas",P57,réalisateur,Q363386,Dermot Mulroney
+Q93790,Tsui no shintaku,P57,réalisateur,Q1073993,Masayuki Suo
+Q94286,"The Butcher, the Chef and the Swordsman",P57,réalisateur,Q9055115,Wu Ershan
+Q102225,Harry Potter et la Coupe de feu,P57,réalisateur,Q312088,Mike Newell
+Q102448,Harry Potter et le Prisonnier d'Azkaban,P57,réalisateur,Q28028,Alfonso Cuarón
+Q185888,The Social Network,P57,réalisateur,Q184903,David Fincher
+Q185977,Zeitgeist: Moving Forward,P57,réalisateur,Q513726,Peter Joseph
+Q186799,13,P57,réalisateur,Q200748,Gela Babluani
+Q186810,13 Assassins,P57,réalisateur,Q185421,Takashi Miike
+Q186873,13 Semester,P57,réalisateur,Q1328470,Frieder Wittich
+Q196029,Gimme Shelter,P57,réalisateur,Q25212076,Ronald Krauss
+Q196103,Love Is All You Need,P57,réalisateur,Q236148,Susanne Bier
+Q196685,Évasion,P57,réalisateur,Q450630,Mikael Håfström
+Q196901,Zettl,P57,réalisateur,Q76446,Helmut Dietl
+Q197491,Wolverine : Le Combat de l'immortel,P57,réalisateur,Q433893,James Mangold
+Q198028,L'Étrange Pouvoir de Norman,P57,réalisateur,Q2964669,Chris Butler
+Q198028,L'Étrange Pouvoir de Norman,P57,réalisateur,Q3470486,Sam Fell
+Q198560,My Best Men,P57,réalisateur,Q2094420,Stephan Elliott
+Q199253,Akaboshi,P57,réalisateur,Q73112075,Ryōhei Yoshino
+Q200091,Dix-sept Filles,P57,réalisateur,Q3021818,Delphine Coulin
+Q200091,Dix-sept Filles,P57,réalisateur,Q27513138,Muriel Coulin
+Q200396,Sherlock Holmes,P57,réalisateur,Q192990,Guy Ritchie
+Q200477,180°,P57,réalisateur,Q1091886,Cihan Inan
+Q200607,Les Frères Cœur de Lion,P57,réalisateur,Q599315,Olle Hellbom
+Q273686,The Descendants,P57,réalisateur,Q313566,Alexander Payne
+Q274529,Le Livre d'Eli,P57,réalisateur,Q2638168,Albert Hughes
+Q274529,Le Livre d'Eli,P57,réalisateur,Q13639108,Allen Hughes
+Q593,Les Lyonnais,P161,acteur,Q289524,Étienne Chicot
+Q593,Les Lyonnais,P161,acteur,Q317704,Tchéky Karyo
+Q593,Les Lyonnais,P161,acteur,Q658664,François Levantal
+Q593,Les Lyonnais,P161,acteur,Q778573,Daniel Duval
+Q593,Les Lyonnais,P161,acteur,Q932338,Estelle Skornik
+Q593,Les Lyonnais,P161,acteur,Q939089,Francis Renaud
+Q593,Les Lyonnais,P161,acteur,Q1558999,Gérard Lanvin
+Q593,Les Lyonnais,P161,acteur,Q3028147,Dimitri Storoge
+Q593,Les Lyonnais,P161,acteur,Q3158492,Jacques Chambon
+Q593,Les Lyonnais,P161,acteur,Q3219419,Laurent Olmedo
+Q593,Les Lyonnais,P161,acteur,Q3241976,Lionnel Astier
+Q593,Les Lyonnais,P161,acteur,Q3350901,Olivier Chantreau
+Q593,Les Lyonnais,P161,acteur,Q3351313,Olivier Rabourdin
+Q593,Les Lyonnais,P161,acteur,Q3369315,Patrick Catalifo
+Q593,Les Lyonnais,P161,acteur,Q3484193,Simon Astier
+Q593,Les Lyonnais,P161,acteur,Q3553690,Valeria Cavalli
+Q593,Les Lyonnais,P161,acteur,Q17521763,Christophe Kourotchkine
+Q593,Les Lyonnais,P161,acteur,Q37798753,Stéphane Caillard
+Q593,Les Lyonnais,P161,acteur,Q126342865,Gilles Bénichou
+Q595,Intouchables,P161,acteur,Q357387,Omar Sy
+Q595,Intouchables,P161,acteur,Q457089,Audrey Fleurot
+Q595,Intouchables,P161,acteur,Q511485,Joséphine de Meaux
+Q595,Intouchables,P161,acteur,Q600051,François Cluzet
+Q595,Intouchables,P161,acteur,Q1044462,Caroline Bourg
+Q595,Intouchables,P161,acteur,Q2830742,Alba Gaïa Bellugi
+Q595,Intouchables,P161,acteur,Q2851174,Anne Le Ny
+Q595,Intouchables,P161,acteur,Q2979699,Clotilde Mollet
+Q595,Intouchables,P161,acteur,Q3009038,Cyril Mendy
+Q595,Intouchables,P161,acteur,Q3084132,François Bureloup
+Q595,Intouchables,P161,acteur,Q3084174,François Caron
+Q595,Intouchables,P161,acteur,Q3118485,Grégoire Oestermann
+Q595,Intouchables,P161,acteur,Q3165518,Jean-François Cayrey
+Q595,Intouchables,P161,acteur,Q3191017,Jérôme Pauwels
+Q595,Intouchables,P161,acteur,Q3380569,Philippe Pozzo di Borgo
+Q595,Intouchables,P161,acteur,Q3525573,Thomas Solivérès
+Q595,Intouchables,P161,acteur,Q15069878,Marie-Laure Descoureaux
+Q595,Intouchables,P161,acteur,Q15146875,Benjamin Baroche
+Q595,Intouchables,P161,acteur,Q16685232,Émilie Caen
+Q595,Intouchables,P161,acteur,Q17352673,Christian Ameri
+Q595,Intouchables,P161,acteur,Q18326681,Michel Winogradoff
+Q595,Intouchables,P161,acteur,Q20723802,Nicky Marbot
+Q2201,Kick-Ass,P161,acteur,Q233868,Elizabeth McGovern
+Q2201,Kick-Ass,P161,acteur,Q312712,Mark Strong
+Q2201,Kick-Ass,P161,acteur,Q361610,Xander Berkeley
+Q2201,Kick-Ass,P161,acteur,Q388557,Dexter Fletcher
+Q2201,Kick-Ass,P161,acteur,Q440956,Christopher Mintz-Plasse
+Q2201,Kick-Ass,P161,acteur,Q472504,Jason Flemyng
+Q2201,Kick-Ass,P161,acteur,Q512818,Clark Duke
+Q2201,Kick-Ass,P161,acteur,Q541428,Yancy Butler
+Q2201,Kick-Ass,P161,acteur,Q785270,Evan Peters
+Q2201,Kick-Ass,P161,acteur,Q1058562,Tamer Hassan
+Q2201,Kick-Ass,P161,acteur,Q1132632,Corey Johnson
+Q2201,Kick-Ass,P161,acteur,Q1189681,Michael Rispoli
+Q2201,Kick-Ass,P161,acteur,Q2302888,Sophie Wu
+Q2201,Kick-Ass,P161,acteur,Q3418797,Randall Batinkoff
+Q2201,Kick-Ass,P161,acteur,Q5248400,Deborah Twiss
+Q2201,Kick-Ass,P161,acteur,Q7089885,Omari Hardwick
+Q2201,Kick-Ass,P161,acteur,Q9266100,Garrett M. Brown
+Q2201,Kick-Ass,P161,acteur,Q15695313,Adrian Martinez
+Q2201,Kick-Ass,P161,acteur,Q22916122,Stu 'Large' Riley
+Q2201,Kick-Ass,P161,acteur,Q4509,Chloë Grace Moretz
+Q2201,Kick-Ass,P161,acteur,Q42869,Nicolas Cage
+Q2201,Kick-Ass,P161,acteur,Q45923,Aaron Taylor-Johnson
+Q2201,Kick-Ass,P161,acteur,Q72867,Craig Ferguson
+Q2201,Kick-Ass,P161,acteur,Q229914,Lyndsy Fonseca
+Q33191,Des gens comme nous,P161,acteur,Q3273787,Mark Duplass
+Q33191,Des gens comme nous,P161,acteur,Q20007974,Michael Hall D'Addario
+Q33191,Des gens comme nous,P161,acteur,Q105593042,Paul Sanchez
+Q33191,Des gens comme nous,P161,acteur,Q23466,Chris Pine
+Q33191,Des gens comme nous,P161,acteur,Q159778,Michelle Pfeiffer
+Q33191,Des gens comme nous,P161,acteur,Q200355,Olivia Wilde
+Q33191,Des gens comme nous,P161,acteur,Q219373,Elizabeth Banks
+Q33191,Des gens comme nous,P161,acteur,Q295964,Jon Favreau
+Q33191,Des gens comme nous,P161,acteur,Q447669,Philip Baker Hall
+Q33191,Des gens comme nous,P161,acteur,Q2883939,Barbara Eve Harris
+Q59026,Trois Mondes,P161,acteur,Q3169540,Jean-Pierre Malo
+Q59026,Trois Mondes,P161,acteur,Q3419812,Rasha Bukvic
+Q59026,Trois Mondes,P161,acteur,Q3422822,Reda Kateb
+Q59610,Sept Psychopathes,P161,acteur,Q28498,Brendan Sexton III
+Q59610,Sept Psychopathes,P161,acteur,Q164730,Olga Kurylenko
+Q59610,Sept Psychopathes,P161,acteur,Q172035,Colin Farrell
+Q59610,Sept Psychopathes,P161,acteur,Q184805,Tom Waits
+Q59610,Sept Psychopathes,P161,acteur,Q185051,Christopher Walken
+Q59610,Sept Psychopathes,P161,acteur,Q201279,Woody Harrelson
+Q59610,Sept Psychopathes,P161,acteur,Q230113,Gabourey Sidibe
+Q59610,Sept Psychopathes,P161,acteur,Q236097,Abbie Cornish
+Q59610,Sept Psychopathes,P161,acteur,Q241854,Helena Mattsson
+Q59610,Sept Psychopathes,P161,acteur,Q314290,Harry Dean Stanton
+Q59610,Sept Psychopathes,P161,acteur,Q316446,Sam Rockwell
+Q59610,Sept Psychopathes,P161,acteur,Q352540,Michael Pitt
+Q59610,Sept Psychopathes,P161,acteur,Q382197,Željko Ivanek
+Q59610,Sept Psychopathes,P161,acteur,Q438445,Michael Stuhlbarg
+Q59610,Sept Psychopathes,P161,acteur,Q1334725,Kevin Corrigan
+Q59610,Sept Psychopathes,P161,acteur,Q2745996,Sandy Martin
+Q59610,Sept Psychopathes,P161,acteur,Q4088048,Ronnie Gene Blevins
+Q59610,Sept Psychopathes,P161,acteur,Q6555605,Lionel D. Carson
+Q59610,Sept Psychopathes,P161,acteur,Q7329928,Richard Wharton
+Q59610,Sept Psychopathes,P161,acteur,Q12026921,Joseph Lyle Taylor
+Q59610,Sept Psychopathes,P161,acteur,Q28151585,Christine Marzano
+Q59653,Argo,P161,acteur,Q23547,Bryan Cranston
+Q59653,Argo,P161,acteur,Q23685,Jimmy Carter
+Q59653,Argo,P161,acteur,Q108283,Alan Arkin
+Q59653,Argo,P161,acteur,Q215072,John Goodman
+Q59653,Argo,P161,acteur,Q233347,Clea DuVall
+Q59653,Argo,P161,acteur,Q253561,Adrienne Barbeau
+Q59653,Argo,P161,acteur,Q266231,Omid Abtahi
+Q59653,Argo,P161,acteur,Q269843,Taylor Schilling
+Q59653,Argo,P161,acteur,Q270664,Victor Garber
+Q59653,Argo,P161,acteur,Q302650,Tate Donovan
+Q59653,Argo,P161,acteur,Q352203,Bob Gunton
+Q59653,Argo,P161,acteur,Q359604,Kyle Chandler
+Q59653,Argo,P161,acteur,Q382197,Željko Ivanek
+Q59653,Argo,P161,acteur,Q437693,Titus Welliver
+Q59653,Argo,P161,acteur,Q446227,Rory Cochrane
+Q59653,Argo,P161,acteur,Q447669,Philip Baker Hall
+Q59653,Argo,P161,acteur,Q449959,Richard Kind
+Q59653,Argo,P161,acteur,Q465200,Kerry Bishé
+Q59653,Argo,P161,acteur,Q483118,Ben Affleck
+Q59653,Argo,P161,acteur,Q525318,Michael Parks
+Q59653,Argo,P161,acteur,Q549017,Christopher Denham
+Q59653,Argo,P161,acteur,Q566037,Scoot McNairy
+Q59653,Argo,P161,acteur,Q671927,Michael Cassidy
+Q59653,Argo,P161,acteur,Q1077549,Chris Messina
+Q59653,Argo,P161,acteur,Q1086977,Christopher Stanley
+Q59653,Argo,P161,acteur,Q1320939,Tom Lenk
+Q59653,Argo,P161,acteur,Q1388258,Keith Szarabajka
+Q59653,Argo,P161,acteur,Q1591382,Richard Dillane
+Q59653,Argo,P161,acteur,Q1643584,Tehmina Sunny
+Q59653,Argo,P161,acteur,Q2722303,Matt Nolan
+Q59653,Argo,P161,acteur,Q2885767,Barry Livingston
+Q59653,Argo,P161,acteur,Q3299439,Matt Doherty
+Q59653,Argo,P161,acteur,Q5474062,Fouad Hajji
+Q59653,Argo,P161,acteur,Q6067631,Muhammed Cangören
+Q24196,Inside,P161,acteur,Q451524,Alexandra Stewart
+Q24196,Inside,P161,acteur,Q943980,Quim Gutiérrez
+Q24196,Inside,P161,acteur,Q5126010,Clara Lago
+Q24196,Inside,P161,acteur,Q6002348,Martina García
+Q24196,Inside,P161,acteur,Q9028553,Marcela Mar
+Q24196,Inside,P161,acteur,Q16298855,Humberto Dorado
+Q31791,The Company Men,P161,acteur,Q11930,Kevin Costner
+Q31791,The Company Men,P161,acteur,Q170587,Tommy Lee Jones
+Q31791,The Company Men,P161,acteur,Q229220,Maria Bello
+Q31791,The Company Men,P161,acteur,Q236956,Rosemarie DeWitt
+Q31791,The Company Men,P161,acteur,Q273208,Chris Cooper
+Q31791,The Company Men,P161,acteur,Q329807,Craig T. Nelson
+Q31791,The Company Men,P161,acteur,Q454379,Patricia Kalember
+Q31791,The Company Men,P161,acteur,Q483118,Ben Affleck
+Q31791,The Company Men,P161,acteur,Q984443,John Doman
+Q31791,The Company Men,P161,acteur,Q1159213,Dana Eskelson
+Q31791,The Company Men,P161,acteur,Q1276942,Eamonn Walker
+Q31791,The Company Men,P161,acteur,Q3993334,Tonye Patano
+Q3242,A Fantastic Fear of Everything,P161,acteur,Q238464,Simon Pegg
+Q3242,A Fantastic Fear of Everything,P161,acteur,Q274616,Clare Higgins
+Q3242,A Fantastic Fear of Everything,P161,acteur,Q454790,Amara Karan
+Q3242,A Fantastic Fear of Everything,P161,acteur,Q822377,Bernard Cribbins
+Q3242,A Fantastic Fear of Everything,P161,acteur,Q1378684,Paul Freeman
+Q24515,Shaolin,P161,acteur,Q16766,Andy Lau
+Q24515,Shaolin,P161,acteur,Q36970,Jackie Chan
+Q24515,Shaolin,P161,acteur,Q380579,Nicholas Tse
+Q24515,Shaolin,P161,acteur,Q381074,Fan Bingbing
+Q24515,Shaolin,P161,acteur,Q710715,Wu Jing
+Q24515,Shaolin,P161,acteur,Q3608975,Xing Yu
+Q59026,Trois Mondes,P161,acteur,Q31353,Adèle Haenel
+Q59026,Trois Mondes,P161,acteur,Q169394,Laurent Capelluto
+Q59026,Trois Mondes,P161,acteur,Q275664,Clotilde Hesme
+Q59026,Trois Mondes,P161,acteur,Q462415,Arta Dobroshi
+Q59026,Trois Mondes,P161,acteur,Q562852,Raphaël Personnaz
+Q59026,Trois Mondes,P161,acteur,Q2830751,Alban Aumard
+Q59249,Hatchi,P161,acteur,Q48410,Richard Gere
+Q59249,Hatchi,P161,acteur,Q202853,Sarah Roemer
+Q59249,Hatchi,P161,acteur,Q229305,Joan Allen
+Q59249,Hatchi,P161,acteur,Q311754,Jason Alexander
+Q59249,Hatchi,P161,acteur,Q381799,Cary-Hiroyuki Tagawa
+Q59249,Hatchi,P161,acteur,Q711035,Erick Avari
+Q59249,Hatchi,P161,acteur,Q1321271,Robert Capron
+Q59249,Hatchi,P161,acteur,Q3703066,Davenia McFadden
+Q59249,Hatchi,P161,acteur,Q3814805,Kevin DeCoste
+Q25482,Ammavin Kaipesi,P161,acteur,Q6034248,Iniya
+Q25482,Ammavin Kaipesi,P161,acteur,Q7489055,Shanthanu Bhagyaraj
+Q25491,Aarohanam,P161,acteur,Q6167633,Jayaprakash
+Q25491,Aarohanam,P161,acteur,Q7881023,Uma Padmanabhan
+Q49903,Love and Secrets,P161,acteur,Q349312,Lily Rabe
+Q49903,Love and Secrets,P161,acteur,Q353155,David Margulies
+Q49903,Love and Secrets,P161,acteur,Q447669,Philip Baker Hall
+Q49903,Love and Secrets,P161,acteur,Q508384,Trini Alvarado
+Q49903,Love and Secrets,P161,acteur,Q556538,Jason Kravits
+Q49903,Love and Secrets,P161,acteur,Q984443,John Doman
+Q49903,Love and Secrets,P161,acteur,Q991754,Bruce Norris
+Q49903,Love and Secrets,P161,acteur,Q1905269,John Cullum
+Q49903,Love and Secrets,P161,acteur,Q1947385,Mia Dillon
+Q49903,Love and Secrets,P161,acteur,Q1985488,Nick Offerman
+Q49903,Love and Secrets,P161,acteur,Q2167480,Francie Swift
+Q49903,Love and Secrets,P161,acteur,Q4025864,Ashlie Atkinson
+Q49903,Love and Secrets,P161,acteur,Q5481173,Francis Guinan
+Q49903,Love and Secrets,P161,acteur,Q6765301,Marion McCorry
+Q49903,Love and Secrets,P161,acteur,Q7553079,Socorro Santiago
+Q49903,Love and Secrets,P161,acteur,Q15965642,Glenn Fleshler
+Q49903,Love and Secrets,P161,acteur,Q16210636,Michael Esper
+Q49903,Love and Secrets,P161,acteur,Q16729989,Michelle Hurst
+Q49903,Love and Secrets,P161,acteur,Q18390633,Zabryna Guevara
+Q49903,Love and Secrets,P161,acteur,Q28133940,William Jackson Harper
+Q49903,Love and Secrets,P161,acteur,Q76478,Kirsten Dunst
+Q49903,Love and Secrets,P161,acteur,Q162554,Diane Venora
+Q49903,Love and Secrets,P161,acteur,Q193815,Ryan Gosling
+Q49903,Love and Secrets,P161,acteur,Q218211,Zoe Lister-Jones
+Q49903,Love and Secrets,P161,acteur,Q231382,Kristen Wiig
+Q49903,Love and Secrets,P161,acteur,Q310944,Frank Langella
+Q49903,Love and Secrets,P161,acteur,Q342665,Jeffrey Dean Morgan
+Q32303,La Chasse,P161,acteur,Q61887646,Annika Wedderkopp
+Q32303,La Chasse,P161,acteur,Q72214509,Thomas Rafslund Ravn
+Q32303,La Chasse,P161,acteur,Q76454251,Thomas Winkel Ravn
+Q32303,La Chasse,P161,acteur,Q105316352,Karina Fogh Holmkjær
+Q32303,La Chasse,P161,acteur,Q117450567,Thomas Ravn
+Q32303,La Chasse,P161,acteur,Q273862,Alexandra Rapaport
+Q32303,La Chasse,P161,acteur,Q314287,Thomas Vinterberg
+Q32303,La Chasse,P161,acteur,Q740244,Thomas Bo Larsen
+Q32303,La Chasse,P161,acteur,Q1785313,Susse Wold
+Q32303,La Chasse,P161,acteur,Q2882748,Duilio Marzio
+Q32303,La Chasse,P161,acteur,Q12320667,Jytte Kvinesdal
+Q32303,La Chasse,P161,acteur,Q12332926,Rasmus Lind Rubin
+Q32303,La Chasse,P161,acteur,Q12339797,Troels Thorsen
+Q32303,La Chasse,P161,acteur,Q16064420,Lasse Fogelstrøm
+Q32303,La Chasse,P161,acteur,Q28504113,Nicolai Dahl Hamilton
+Q32303,La Chasse,P161,acteur,Q35984275,Ole Dupont
+Q32303,La Chasse,P161,acteur,Q37491506,Jakob Højlev Jørgensen
+Q32303,La Chasse,P161,acteur,Q38052496,Sebastian Bull Sarning
+Q32303,La Chasse,P161,acteur,Q38054221,Martin Boserup
+Q32303,La Chasse,P161,acteur,Q40523426,Nina Christrup
+Q32303,La Chasse,P161,acteur,Q40523605,Mona C. Soliman
+Q32303,La Chasse,P161,acteur,Q40523800,Frank Rubæk
+Q32303,La Chasse,P161,acteur,Q41236348,Daniel Engstrup
+Q32303,La Chasse,P161,acteur,Q41236357,Josefine Gråbøl
+Q32303,La Chasse,P161,acteur,Q41236586,Øyvind Hagen-Traberg
+Q32303,La Chasse,P161,acteur,Q42302643,Kim Westi Rasmussen
+Q32433,Lincoln,P161,acteur,Q18992,Gregory Itzin
+Q32433,Lincoln,P161,acteur,Q76877,Elizabeth Marvel
+Q32433,Lincoln,P161,acteur,Q166389,Daniel Day-Lewis
+Q32433,Lincoln,P161,acteur,Q170587,Tommy Lee Jones
+Q32433,Lincoln,P161,acteur,Q177311,Joseph Gordon-Levitt
+Q32433,Lincoln,P161,acteur,Q187033,Sally Field
+Q32433,Lincoln,P161,acteur,Q198684,Wayne Duvall
+Q32433,Lincoln,P161,acteur,Q218800,David Oyelowo
+Q32433,Lincoln,P161,acteur,Q261535,Gloria Reuben
+Q32433,Lincoln,P161,acteur,Q269802,Julie White
+Q32433,Lincoln,P161,acteur,Q296928,James Spader
+Q46916,Plumíferos,P136,genre,Q157443,comédie
+Q46916,Plumíferos,P136,genre,Q319221,film ou téléfilm d'aventure
+Q46916,Plumíferos,P136,genre,Q842256,film ou téléfilm musical
+Q46916,Plumíferos,P136,genre,Q2143665,film ou téléfilm pour enfants
+Q24196,Inside,P136,genre,Q130232,drame
+Q24196,Inside,P136,genre,Q1200678,film ou téléfilm à énigme
+Q24196,Inside,P136,genre,Q2484376,thriller
+Q24515,Shaolin,P136,genre,Q130232,drame
+Q24515,Shaolin,P136,genre,Q188473,film et téléfilm d'action
+Q24515,Shaolin,P136,genre,Q3072042,film de kung-fu
+Q24871,Avatar,P136,genre,Q188473,film et téléfilm d'action
+Q24871,Avatar,P136,genre,Q319221,film ou téléfilm d'aventure
+Q24871,Avatar,P136,genre,Q471839,film ou téléfilm de science-fiction
+Q24871,Avatar,P136,genre,Q652256,film ou téléfilm épique
+Q24871,Avatar,P136,genre,Q904447,science-fiction militaire
+Q24871,Avatar,P136,genre,Q25110269,film live / animé
+Q24871,Avatar,P136,genre,Q132803402,white savior film
+Q48734,Marmaduke,P136,genre,Q157443,comédie
+Q48734,Marmaduke,P136,genre,Q188473,film et téléfilm d'action
+Q48734,Marmaduke,P136,genre,Q2143665,film ou téléfilm pour enfants
+Q26162,Podaa Podi,P136,genre,Q118612349,film comédie romantique
+Q26659,Prabhuvinte Makkal,P136,genre,Q130232,drame
+Q26751,Moon,P136,genre,Q130232,drame
+Q26751,Moon,P136,genre,Q319221,film ou téléfilm d'aventure
+Q26751,Moon,P136,genre,Q471839,film ou téléfilm de science-fiction
+Q26751,Moon,P136,genre,Q725757,hard science-fiction
+Q26751,Moon,P136,genre,Q15898171,film de survie
+Q26751,Moon,P136,genre,Q108084492,arthouse science fiction film
+Q49903,Love and Secrets,P136,genre,Q130232,drame
+Q49903,Love and Secrets,P136,genre,Q959790,film ou téléfilm criminel
+Q49903,Love and Secrets,P136,genre,Q1054574,film ou téléfilm d'amour
+Q31791,The Company Men,P136,genre,Q130232,drame
+Q32303,La Chasse,P136,genre,Q130232,drame
+Q32433,Lincoln,P136,genre,Q130232,drame
+Q32433,Lincoln,P136,genre,Q369747,film et téléfilm de guerre
+Q32433,Lincoln,P136,genre,Q645928,film ou téléfilm biographique
+Q32433,Lincoln,P136,genre,Q3072039,film de procès
+Q32433,Lincoln,P136,genre,Q17013749,film ou téléfilm historique
+Q32535,Crazy Dad,P136,genre,Q157443,comédie
+Q32535,Crazy Dad,P136,genre,Q859369,comédie dramatique
+Q32780,My Boss,P136,genre,Q118612349,film comédie romantique
+Q32786,916,P136,genre,Q130232,drame
+Q51732,L'amour n'est pas aveugle,P136,genre,Q118612349,film comédie romantique
+Q52021,The Kick,P136,genre,Q188473,film et téléfilm d'action
+Q52021,The Kick,P136,genre,Q1033891,film d'arts martiaux
+Q53096,We Want Sex Equality,P136,genre,Q130232,drame
+Q53096,We Want Sex Equality,P136,genre,Q157443,comédie
+Q59026,Trois Mondes,P136,genre,Q130232,drame
+Q59249,Hatchi,P136,genre,Q130232,drame
+Q59249,Hatchi,P136,genre,Q1361932,film ou téléfilm familial
+Q59346,The Mortal Instruments : La Cité des ténèbres,P136,genre,Q130232,drame
+Q59346,The Mortal Instruments : La Cité des ténèbres,P136,genre,Q157394,film et téléfilm de fantasy
+Q59346,The Mortal Instruments : La Cité des ténèbres,P136,genre,Q188473,film et téléfilm d'action
+Q59346,The Mortal Instruments : La Cité des ténèbres,P136,genre,Q319221,film ou téléfilm d'aventure
+Q59346,The Mortal Instruments : La Cité des ténèbres,P136,genre,Q471839,film ou téléfilm de science-fiction
+Q59346,The Mortal Instruments : La Cité des ténèbres,P136,genre,Q1054574,film ou téléfilm d'amour
+Q59346,The Mortal Instruments : La Cité des ténèbres,P136,genre,Q1188977,fantasy urbaine
+Q59346,The Mortal Instruments : La Cité des ténèbres,P136,genre,Q1200678,film ou téléfilm à énigme
+Q59346,The Mortal Instruments : La Cité des ténèbres,P136,genre,Q2137852,film de vampires
+Q59346,The Mortal Instruments : La Cité des ténèbres,P136,genre,Q20442589,film LGBT
+Q59495,Varudu,P136,genre,Q130232,drame
+Q59495,Varudu,P136,genre,Q188473,film et téléfilm d'action
+Q59495,Varudu,P136,genre,Q1054574,film ou téléfilm d'amour
+Q59495,Varudu,P136,genre,Q2484376,thriller
+Q59498,Piégés,P136,genre,Q2484376,thriller
+Q59610,Sept Psychopathes,P136,genre,Q130232,drame
+Q59610,Sept Psychopathes,P136,genre,Q157443,comédie
+Q59610,Sept Psychopathes,P136,genre,Q959790,film ou téléfilm criminel
+Q59610,Sept Psychopathes,P136,genre,Q1200678,film ou téléfilm à énigme
+Q59653,Argo,P136,genre,Q130232,drame
+Q59653,Argo,P136,genre,Q645928,film ou téléfilm biographique
+Q59653,Argo,P136,genre,Q2484376,thriller
+Q59653,Argo,P136,genre,Q17013749,film ou téléfilm historique
+Q59653,Argo,P136,genre,Q109733333,political thriller film
+Q28196,World War Z,P136,genre,Q130232,drame
+Q28196,World War Z,P136,genre,Q188473,film et téléfilm d'action
+Q28196,World War Z,P136,genre,Q200092,film ou téléfilm d'horreur
+Q28196,World War Z,P136,genre,Q319221,film ou téléfilm d'aventure
+Q28196,World War Z,P136,genre,Q471839,film ou téléfilm de science-fiction
+Q28196,World War Z,P136,genre,Q1341051,film ou téléfilm post-apocalyptique
+Q28196,World War Z,P136,genre,Q2484376,thriller
+Q28196,World War Z,P136,genre,Q3072049,film de zombies
+Q28196,World War Z,P136,genre,Q47009776,film apocalyptique
+Q28234,Les Misérables,P136,genre,Q130232,drame
+Q28234,Les Misérables,P136,genre,Q842256,film ou téléfilm musical
+Q28234,Les Misérables,P136,genre,Q1054574,film ou téléfilm d'amour
+Q28267,51,P136,genre,Q200092,film ou téléfilm d'horreur
+Q28267,51,P136,genre,Q471839,film ou téléfilm de science-fiction
+Q28267,51,P136,genre,Q10663882,film d'horreur de science-fiction
+Q28289,Confession of Murder,P136,genre,Q188473,film et téléfilm d'action
+Q28289,Confession of Murder,P136,genre,Q2484376,thriller
+Q28289,Confession of Murder,P136,genre,Q3990883,thriller d'action
+Q28289,Confession of Murder,P136,genre,Q19367312,thriller policier
+Q53719,Looper,P136,genre,Q130232,drame
+Q53719,Looper,P136,genre,Q188473,film et téléfilm d'action
+Q53719,Looper,P136,genre,Q471839,film ou téléfilm de science-fiction
+Q53719,Looper,P136,genre,Q19367312,thriller policier
+Q53719,Looper,P136,genre,Q20443008,film dystopique
+Q25188,Inception,P136,genre,Q130232,drame
+Q25188,Inception,P136,genre,Q188473,film et téléfilm d'action
+Q25188,Inception,P136,genre,Q319221,film ou téléfilm d'aventure
+Q25188,Inception,P136,genre,Q471839,film ou téléfilm de science-fiction
+Q25188,Inception,P136,genre,Q496523,film ou téléfilm de casse
+Q25188,Inception,P136,genre,Q1200678,film ou téléfilm à énigme
+Q25188,Inception,P136,genre,Q2484376,thriller
+Q25188,Inception,P136,genre,Q20656232,film d'action de science-fiction
+Q25482,Ammavin Kaipesi,P136,genre,Q130232,drame
+Q25491,Aarohanam,P136,genre,Q130232,drame
+Q72162,Enfance clandestine,P136,genre,Q130232,drame
+Q72162,Enfance clandestine,P136,genre,Q1054574,film ou téléfilm d'amour
+Q72276,Die Hard : Belle journée pour mourir,P136,genre,Q188473,film et téléfilm d'action
+Q72276,Die Hard : Belle journée pour mourir,P136,genre,Q3990883,thriller d'action
+Q72276,Die Hard : Belle journée pour mourir,P136,genre,Q4984974,film de copains policiers
+Q18954,Tron : L'Héritage,P136,genre,Q174526,cyberpunk
+Q18954,Tron : L'Héritage,P136,genre,Q188473,film et téléfilm d'action
+Q18954,Tron : L'Héritage,P136,genre,Q471839,film ou téléfilm de science-fiction
+Q27343,Warm Bodies,P136,genre,Q224700,comédie horrifique
+Q27343,Warm Bodies,P136,genre,Q1146335,film pour adolescents
+Q27343,Warm Bodies,P136,genre,Q1341051,film ou téléfilm post-apocalyptique
+Q27343,Warm Bodies,P136,genre,Q1747837,comédie de zombies
+Q27343,Warm Bodies,P136,genre,Q118612349,film comédie romantique
+Q27513,Jack le chasseur de géants,P136,genre,Q157394,film et téléfilm de fantasy
+Q27513,Jack le chasseur de géants,P136,genre,Q188473,film et téléfilm d'action
+Q27513,Jack le chasseur de géants,P136,genre,Q319221,film ou téléfilm d'aventure
+Q27513,Jack le chasseur de géants,P136,genre,Q1342372,film ou téléfilm de monstre
+Q27513,Jack le chasseur de géants,P136,genre,Q1957385,cinéma de conte de fées
+Q27751,Gangster Squad,P136,genre,Q130232,drame
+Q27751,Gangster Squad,P136,genre,Q188473,film et téléfilm d'action
+Q27751,Gangster Squad,P136,genre,Q959790,film ou téléfilm criminel
+Q27751,Gangster Squad,P136,genre,Q2484376,thriller
+Q181823,Bullhead,P136,genre,Q130232,drame
+Q182692,Apocalypse Now,P136,genre,Q130232,drame
+Q182692,Apocalypse Now,P136,genre,Q188473,film et téléfilm d'action
+Q182692,Apocalypse Now,P136,genre,Q200092,film ou téléfilm d'horreur
+Q182692,Apocalypse Now,P136,genre,Q319221,film ou téléfilm d'aventure
+Q182692,Apocalypse Now,P136,genre,Q369747,film et téléfilm de guerre
+Q182692,Apocalypse Now,P136,genre,Q652256,film ou téléfilm épique
+Q182692,Apocalypse Now,P136,genre,Q2484376,thriller
+Q182692,Apocalypse Now,P136,genre,Q63214877,drame psychologique
+Q182692,Apocalypse Now,P136,genre,Q109629396,film d'horreur psychologique
+Q182692,Apocalypse Now,P136,genre,Q109733304,thriller psychologique
+Q182692,Apocalypse Now,P136,genre,Q116456802,war drama
+Q182692,Apocalypse Now,P136,genre,Q138603203,film satirique
+Q183066,Démineurs,P136,genre,Q130232,drame
+Q183066,Démineurs,P136,genre,Q188473,film et téléfilm d'action
+Q183066,Démineurs,P136,genre,Q369747,film et téléfilm de guerre
+Q183066,Démineurs,P136,genre,Q459290,cinéma indépendant
+Q183066,Démineurs,P136,genre,Q3990883,thriller d'action
+Q196901,Zettl,P136,genre,Q157443,comédie
+Q197491,Wolverine : Le Combat de l'immortel,P136,genre,Q157394,film et téléfilm de fantasy
+Q197491,Wolverine : Le Combat de l'immortel,P136,genre,Q188473,film et téléfilm d'action
+Q197491,Wolverine : Le Combat de l'immortel,P136,genre,Q471839,film ou téléfilm de science-fiction
+Q197491,Wolverine : Le Combat de l'immortel,P136,genre,Q1535153,film de super-héros
+Q197491,Wolverine : Le Combat de l'immortel,P136,genre,Q3745429,film de ninja
+Q198028,L'Étrange Pouvoir de Norman,P136,genre,Q157394,film et téléfilm de fantasy
+Q198028,L'Étrange Pouvoir de Norman,P136,genre,Q157443,comédie
+Q198028,L'Étrange Pouvoir de Norman,P136,genre,Q224700,comédie horrifique
+Q198028,L'Étrange Pouvoir de Norman,P136,genre,Q319221,film ou téléfilm d'aventure
+Q198028,L'Étrange Pouvoir de Norman,P136,genre,Q1361932,film ou téléfilm familial
+Q198028,L'Étrange Pouvoir de Norman,P136,genre,Q1747837,comédie de zombies
+Q198028,L'Étrange Pouvoir de Norman,P136,genre,Q31888058,film de fantômes
+Q198560,My Best Men,P136,genre,Q157443,comédie
+Q199253,Akaboshi,P136,genre,Q130232,drame
+Q200091,Dix-sept Filles,P136,genre,Q130232,drame
+Q200396,Sherlock Holmes,P136,genre,Q188473,film et téléfilm d'action
+Q200396,Sherlock Holmes,P136,genre,Q319221,film ou téléfilm d'aventure
+Q200396,Sherlock Holmes,P136,genre,Q1200678,film ou téléfilm à énigme
+Q24196,Inside,P495,pays d'origine,Q29,Espagne
+Q24196,Inside,P495,pays d'origine,Q739,Colombie
+Q24515,Shaolin,P495,pays d'origine,Q148,République populaire de Chine
+Q24515,Shaolin,P495,pays d'origine,Q8646,Hong Kong
+Q24871,Avatar,P495,pays d'origine,Q30,États-Unis
+Q25157,Aliens vs Avatars,P495,pays d'origine,Q30,États-Unis
+Q25188,Inception,P495,pays d'origine,Q30,États-Unis
+Q25188,Inception,P495,pays d'origine,Q145,Royaume-Uni
+Q25482,Ammavin Kaipesi,P495,pays d'origine,Q668,Inde
+Q25491,Aarohanam,P495,pays d'origine,Q668,Inde
+Q31791,The Company Men,P495,pays d'origine,Q30,États-Unis
+Q32303,La Chasse,P495,pays d'origine,Q34,Suède
+Q32303,La Chasse,P495,pays d'origine,Q35,Danemark
+Q32433,Lincoln,P495,pays d'origine,Q30,États-Unis
+Q32535,Crazy Dad,P495,pays d'origine,Q30,États-Unis
+Q32780,My Boss,P495,pays d'origine,Q668,Inde
+Q32786,916,P495,pays d'origine,Q668,Inde
+Q33191,Des gens comme nous,P495,pays d'origine,Q30,États-Unis
+Q593,Les Lyonnais,P495,pays d'origine,Q31,Belgique
+Q593,Les Lyonnais,P495,pays d'origine,Q142,France
+Q595,Intouchables,P495,pays d'origine,Q142,France
+Q2201,Kick-Ass,P495,pays d'origine,Q30,États-Unis
+Q2201,Kick-Ass,P495,pays d'origine,Q145,Royaume-Uni
+Q3242,A Fantastic Fear of Everything,P495,pays d'origine,Q145,Royaume-Uni
+Q4739,Love Next Door,P495,pays d'origine,Q30,États-Unis
+Q4941,Skyfall,P495,pays d'origine,Q30,États-Unis
+Q4941,Skyfall,P495,pays d'origine,Q145,Royaume-Uni
+Q5590,We Are Four Lions,P495,pays d'origine,Q145,Royaume-Uni
+Q6074,"Star Wars, épisode VII : Le Réveil de la Force",P495,pays d'origine,Q30,États-Unis
+Q7216,Pirates 2 : La Vengeance de Stagnetti,P495,pays d'origine,Q30,États-Unis
+Q11593,Le Dernier Maître de l'air,P495,pays d'origine,Q30,États-Unis
+Q46916,Plumíferos,P495,pays d'origine,Q414,Argentine
+Q48734,Marmaduke,P495,pays d'origine,Q30,États-Unis
+Q49903,Love and Secrets,P495,pays d'origine,Q30,États-Unis
+Q51732,L'amour n'est pas aveugle,P495,pays d'origine,Q148,République populaire de Chine
+Q52021,The Kick,P495,pays d'origine,Q869,Thaïlande
+Q52021,The Kick,P495,pays d'origine,Q884,Corée du Sud
+Q53096,We Want Sex Equality,P495,pays d'origine,Q145,Royaume-Uni
+Q73279,Evil Dead,P495,pays d'origine,Q30,États-Unis
+Q73627,Cirque du Soleil : Le Voyage imaginaire,P495,pays d'origine,Q30,États-Unis
+Q73803,De rouille et d'os,P495,pays d'origine,Q31,Belgique
+Q73803,De rouille et d'os,P495,pays d'origine,Q142,France
+Q73803,De rouille et d'os,P495,pays d'origine,Q334,Singapour
+Q74319,Dark Tide,P495,pays d'origine,Q30,États-Unis
+Q74319,Dark Tide,P495,pays d'origine,Q145,Royaume-Uni
+Q74319,Dark Tide,P495,pays d'origine,Q258,Afrique du Sud
+Q74319,Dark Tide,P495,pays d'origine,Q408,Australie
+Q74437,Typhoon Club,P495,pays d'origine,Q17,Japon
+Q74504,Pokłosie,P495,pays d'origine,Q36,Pologne
+Q74504,Pokłosie,P495,pays d'origine,Q55,Pays-Bas
+Q74504,Pokłosie,P495,pays d'origine,Q159,Russie
+Q74535,The ABCs of Death,P495,pays d'origine,Q17,Japon
+Q74535,The ABCs of Death,P495,pays d'origine,Q30,États-Unis
+Q74579,Le Septième Fils,P495,pays d'origine,Q30,États-Unis
+Q74579,Le Septième Fils,P495,pays d'origine,Q145,Royaume-Uni
+Q74643,Killer Joe,P495,pays d'origine,Q30,États-Unis
+Q74671,Journal d'un dégonflé,P495,pays d'origine,Q30,États-Unis
+Q75000,Lobos de Arga,P495,pays d'origine,Q29,Espagne
+Q80204,Anna Karénine,P495,pays d'origine,Q142,France
+Q80204,Anna Karénine,P495,pays d'origine,Q145,Royaume-Uni
+Q80379,Le Hobbit : Un voyage inattendu,P495,pays d'origine,Q30,États-Unis
+Q80379,Le Hobbit : Un voyage inattendu,P495,pays d'origine,Q664,Nouvelle-Zélande
+Q59026,Trois Mondes,P495,pays d'origine,Q142,France
+Q59249,Hatchi,P495,pays d'origine,Q30,États-Unis
+Q59249,Hatchi,P495,pays d'origine,Q145,Royaume-Uni
+Q59346,The Mortal Instruments : La Cité des ténèbres,P495,pays d'origine,Q30,États-Unis
+Q59346,The Mortal Instruments : La Cité des ténèbres,P495,pays d'origine,Q183,Allemagne
+Q59495,Varudu,P495,pays d'origine,Q668,Inde
+Q59498,Piégés,P495,pays d'origine,Q30,États-Unis
+Q59610,Sept Psychopathes,P495,pays d'origine,Q30,États-Unis
+Q59610,Sept Psychopathes,P495,pays d'origine,Q145,Royaume-Uni
+Q59653,Argo,P495,pays d'origine,Q30,États-Unis
+Q53719,Looper,P495,pays d'origine,Q30,États-Unis
+Q53719,Looper,P495,pays d'origine,Q148,République populaire de Chine
+Q43408,Le Joyeux Noël d'Harold et Kumar,P495,pays d'origine,Q30,États-Unis
+Q38235,La Fille de nulle part,P495,pays d'origine,Q142,France
+Q38297,Trois Sœurs,P495,pays d'origine,Q39,Suisse
+Q38297,Trois Sœurs,P495,pays d'origine,Q414,Argentine
+Q41854,Ghost Rider 2 : L'Esprit de vengeance,P495,pays d'origine,Q30,États-Unis
+Q41854,Ghost Rider 2 : L'Esprit de vengeance,P495,pays d'origine,Q878,Émirats arabes unis
+Q42051,"Star Wars, épisode III : La Revanche des Sith",P495,pays d'origine,Q30,États-Unis
+Q26162,Podaa Podi,P495,pays d'origine,Q668,Inde
+Q26659,Prabhuvinte Makkal,P495,pays d'origine,Q668,Inde
+Q26751,Moon,P495,pays d'origine,Q30,États-Unis
+Q26751,Moon,P495,pays d'origine,Q145,Royaume-Uni
+Q27343,Warm Bodies,P495,pays d'origine,Q30,États-Unis
+Q27513,Jack le chasseur de géants,P495,pays d'origine,Q30,États-Unis
+Q27751,Gangster Squad,P495,pays d'origine,Q30,États-Unis
+Q27751,Gangster Squad,P495,pays d'origine,Q408,Australie
+Q181823,Bullhead,P495,pays d'origine,Q31,Belgique
+Q182184,La Vallée des loups - Palestine,P495,pays d'origine,Q43,Turquie
+Q182218,Avengers,P495,pays d'origine,Q30,États-Unis
+Q182692,Apocalypse Now,P495,pays d'origine,Q30,États-Unis
+Q80959,Elysium,P495,pays d'origine,Q30,États-Unis
+Q81037,Sexy Dance 3D,P495,pays d'origine,Q30,États-Unis
+Q81044,Sexy Dance 4: Miami Heat,P495,pays d'origine,Q30,États-Unis
+Q81145,L'Aigle de la Neuvième Légion,P495,pays d'origine,Q30,États-Unis
+Q81145,L'Aigle de la Neuvième Légion,P495,pays d'origine,Q145,Royaume-Uni
+Q81845,L'Ange du mal,P495,pays d'origine,Q38,Italie
+Q81845,L'Ange du mal,P495,pays d'origine,Q142,France
+Q81845,L'Ange du mal,P495,pays d'origine,Q218,Roumanie
+Q82327,Déménagement,P495,pays d'origine,Q17,Japon
+Q196901,Zettl,P495,pays d'origine,Q183,Allemagne
+Q197491,Wolverine : Le Combat de l'immortel,P495,pays d'origine,Q30,États-Unis
+Q197491,Wolverine : Le Combat de l'immortel,P495,pays d'origine,Q145,Royaume-Uni
+Q198028,L'Étrange Pouvoir de Norman,P495,pays d'origine,Q30,États-Unis
+Q198560,My Best Men,P495,pays d'origine,Q145,Royaume-Uni
+Q198560,My Best Men,P495,pays d'origine,Q408,Australie
+Q199253,Akaboshi,P495,pays d'origine,Q17,Japon
+Q200091,Dix-sept Filles,P495,pays d'origine,Q142,France
+Q200396,Sherlock Holmes,P495,pays d'origine,Q30,États-Unis
+Q200396,Sherlock Holmes,P495,pays d'origine,Q145,Royaume-Uni
+Q200396,Sherlock Holmes,P495,pays d'origine,Q183,Allemagne
+Q200396,Sherlock Holmes,P495,pays d'origine,Q408,Australie
+Q200477,180°,P495,pays d'origine,Q39,Suisse
+Q212965,Hunger Games,P495,pays d'origine,Q30,États-Unis
+Q213138,Wu Xia,P495,pays d'origine,Q148,République populaire de Chine
+Q213215,Back to 1942,P495,pays d'origine,Q148,République populaire de Chine
+Q214014,21 Jump Street,P495,pays d'origine,Q30,États-Unis
+Q183066,Démineurs,P495,pays d'origine,Q30,États-Unis
+Q183555,Pirates des Caraïbes : La Fontaine de Jouvence,P495,pays d'origine,Q30,États-Unis
+Q185490,Au-delà,P495,pays d'origine,Q30,États-Unis
+Q185764,Effraction,P495,pays d'origine,Q30,États-Unis
+Q185805,The Hunter,P495,pays d'origine,Q183,Allemagne
+Q185805,The Hunter,P495,pays d'origine,Q794,Iran
+Q185888,The Social Network,P495,pays d'origine,Q30,États-Unis
+Q185977,Zeitgeist: Moving Forward,P495,pays d'origine,Q30,États-Unis
+Q200607,Les Frères Cœur de Lion,P495,pays d'origine,Q34,Suède
+Q218589,Cheval de guerre,P495,pays d'origine,Q30,États-Unis
+Q44280,Jusqu'à mon dernier souffle,P495,pays d'origine,Q668,Inde
+Q44935,"New York, I Love You",P495,pays d'origine,Q30,États-Unis
+Q45273,Race 2,P495,pays d'origine,Q668,Inde
+Q45318,La Part des anges,P495,pays d'origine,Q31,Belgique
+Q45318,La Part des anges,P495,pays d'origine,Q38,Italie
+Q45318,La Part des anges,P495,pays d'origine,Q142,France
+Q45318,La Part des anges,P495,pays d'origine,Q145,Royaume-Uni
+Q45384,Carrie : La Vengeance,P495,pays d'origine,Q30,États-Unis
+Q45394,La Cabane dans les bois,P495,pays d'origine,Q30,États-Unis
+Q93689,"Amour, Mariage et Petits Tracas",P495,pays d'origine,Q30,États-Unis
+Q93790,Tsui no shintaku,P495,pays d'origine,Q17,Japon
+Q94286,"The Butcher, the Chef and the Swordsman",P495,pays d'origine,Q30,États-Unis
+Q94286,"The Butcher, the Chef and the Swordsman",P495,pays d'origine,Q148,République populaire de Chine
+Q102225,Harry Potter et la Coupe de feu,P495,pays d'origine,Q30,États-Unis
+Q102225,Harry Potter et la Coupe de feu,P495,pays d'origine,Q145,Royaume-Uni
+Q215289,22:43 – Das Schicksal hat einen Plan,P495,pays d'origine,Q40,Autriche
+Q215319,L'Immortel,P495,pays d'origine,Q142,France
+Q217010,"Twilight, chapitre III : Hésitation",P495,pays d'origine,Q30,États-Unis
+Q217020,Thor,P495,pays d'origine,Q30,États-Unis
+Q217112,Moonrise Kingdom,P495,pays d'origine,Q30,États-Unis
+Q217221,Scene Onnu Nammude Veedu,P495,pays d'origine,Q668,Inde
+Q217225,Face2Face,P495,pays d'origine,Q668,Inde
+Q217328,Chettayees,P495,pays d'origine,Q668,Inde
+Q217330,Ardhanaari,P495,pays d'origine,Q668,Inde
+Q219392,Housefull 2,P495,pays d'origine,Q668,Inde
+Q219396,Kahaani,P495,pays d'origine,Q668,Inde
+Q209395,L'Attaque du requin à deux têtes,P495,pays d'origine,Q30,États-Unis
+Q209505,The Ward - L'Hôpital de la terreur,P495,pays d'origine,Q30,États-Unis
+Q209538,Iron Man 3,P495,pays d'origine,Q30,États-Unis
+Q102448,Harry Potter et le Prisonnier d'Azkaban,P495,pays d'origine,Q30,États-Unis
+Q102448,Harry Potter et le Prisonnier d'Azkaban,P495,pays d'origine,Q145,Royaume-Uni
+Q245430,État de guerre,P495,pays d'origine,Q30,États-Unis
+Q245671,Les Aventures extraordinaires d'un apprenti détective,P495,pays d'origine,Q145,Royaume-Uni
+Q246086,6 Bullets,P495,pays d'origine,Q30,États-Unis
+Q246391,REC 3 Génesis,P495,pays d'origine,Q29,Espagne
+Q246720,600 kilos d'or pur,P495,pays d'origine,Q142,France
+Q247470,We Need to Talk About Kevin,P495,pays d'origine,Q30,États-Unis
+Q247470,We Need to Talk About Kevin,P495,pays d'origine,Q145,Royaume-Uni
+Q247733,Hitchcock,P495,pays d'origine,Q30,États-Unis
+Q248354,Infernal Affairs 3,P495,pays d'origine,Q8646,Hong Kong
+Q248505,Celeste and Jesse Forever,P495,pays d'origine,Q30,États-Unis
+Q58118,Samar,P495,pays d'origine,Q668,Inde
+Q58354,White Blood,P495,pays d'origine,Q227,Azerbaïdjan
+Q206497,The Blind Side,P495,pays d'origine,Q30,États-Unis
+Q206576,Hugo Cabret,P495,pays d'origine,Q30,États-Unis
+Q206576,Hugo Cabret,P495,pays d'origine,Q145,Royaume-Uni
+Q249215,Projet X,P495,pays d'origine,Q30,États-Unis
+Q72162,Enfance clandestine,P495,pays d'origine,Q29,Espagne
+Q72162,Enfance clandestine,P495,pays d'origine,Q155,Brésil
+Q72162,Enfance clandestine,P495,pays d'origine,Q414,Argentine
+Q72276,Die Hard : Belle journée pour mourir,P495,pays d'origine,Q30,États-Unis
+Q244333,Percy Jackson : Le Voleur de foudre,P495,pays d'origine,Q16,Canada
+Q244333,Percy Jackson : Le Voleur de foudre,P495,pays d'origine,Q30,États-Unis
+Q244900,Le Choix de Luna,P495,pays d'origine,Q40,Autriche
+Q244900,Le Choix de Luna,P495,pays d'origine,Q183,Allemagne
+Q244900,Le Choix de Luna,P495,pays d'origine,Q224,Croatie
+Q244900,Le Choix de Luna,P495,pays d'origine,Q225,Bosnie-Herzégovine
+Q244975,Valentine's Day,P495,pays d'origine,Q30,États-Unis
+Q245172,Prince of Persia : Les Sables du Temps,P495,pays d'origine,Q30,États-Unis
+Q112420,Tokumei Sentai Go-Busters vs. Kaizoku Sentai Gokaiger: The Movie,P495,pays d'origine,Q17,Japon
+Q112461,Dolu,P495,pays d'origine,Q227,Azerbaïdjan
+Q304030,"Mange, prie, aime",P495,pays d'origine,Q30,États-Unis
+Q23871,La Bataille de Brest-Litovsk,P495,pays d'origine,Q159,Russie
+Q23871,La Bataille de Brest-Litovsk,P495,pays d'origine,Q184,Biélorussie
+Q45672,Le Dernier Rempart,P495,pays d'origine,Q30,États-Unis
+Q82426,Prohibition : Une expérience américaine,P495,pays d'origine,Q30,États-Unis
+Q82847,Thale,P495,pays d'origine,Q20,Norvège
