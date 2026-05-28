@@ -1,0 +1,27 @@
+REU 28/05
+
+extraire le premier sous graph 
+embedding des mots
+
+zero shot
+
+génération de texte : en cours mais problème sur les sous graph
+
+fine tune: extrait de elgod en associant un ID à chaque entité, extraction dans zelda
+deux filtres : un où l'IA donne un identifiant, et l'autre où elle choisi parmi 10 entité la meilleure
+dans zelda, on prend que les données présentes aussi dans elgold
+les données synthétiques devraient ressembler aux données prises sur zelda
+données synthétiques doivent être en anglais
+
+----------------
+
+- faire les des sous graph pour chaque thème de elgod (soline)
+- adapter la génération de texte à ces sous graphs et tester la qualité d utexte trouvé (Nour et Luciano)
+- avoir les résultats du fine tuning (faire tourner sur les GPU de télécom) (Anas)
+- tester le Zero shot sur tout le benchmark (Lobna)
+
+---
+
+Ensuite on aura des data synthétique et on pourra fine tuner un modèle dessus
+ensuite on compare les 3 modèles, on espère qu'on se rapporche du modèle entrainé sur les données annoté par les humains.
+
