@@ -51,6 +51,19 @@ Usage:
 
     retriever = BM25Retriever.load("candidates/index/bm25.pkl")
     candidates = retriever.retrieve("Toronto Film School", k=10)
+    
+**dense_retriever.py**
+Dense retriever for entity linking candidate generation.
+Uses Qwen3-Embedding-4B + FAISS.
+
+Usage (as a module):
+    retriever = DenseRetriever.load("candidates/index/")
+    candidates = retriever.retrieve("Toronto Film School", k=10)
+ 
+Usage (build index from CLI):
+    python dense_retriever.py --titles data/wikidata_qid_titles.csv --out candidates/index/
+    python dense_retriever.py --titles data/wikidata_qid_titles.csv --out candidates/index/ --max-entities 50000
+
 
 **evaluation/**
 **eval_accuracy.py**
