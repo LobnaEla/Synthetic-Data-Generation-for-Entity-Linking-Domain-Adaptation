@@ -17,6 +17,9 @@ SLEEP_OK = 0.5
 SLEEP_RETRY = 20
 MAX_RETRIES = 5
 
+# Stop after this many consecutive empty batches (means we passed the last QID)
+MAX_EMPTY_BATCHES = 20
+
 
 QUERY_TEMPLATE = """
 SELECT ?item ?title WHERE {{
@@ -91,7 +94,7 @@ def save_progress(progress_file: Path, qid: int) -> None:
     progress_file.write_text(str(qid))
 
 
-def fetch_all(out_path: Path, max_qid: int) -> None:
+def fetch_all(out_path: Path, max_qid: int | None) -> None:
     out_path.parent.mkdir(parents=True, exist_ok=True)
     progress_file = out_path.with_suffix(".progress")
 
@@ -99,54 +102,69 @@ def fetch_all(out_path: Path, max_qid: int) -> None:
 
     mode = "a" if out_path.exists() and start_qid > 1 else "w"
 
+    if start_qid > 1:
+        print(f"Resuming from Q{start_qid:,} (progress file found).")
+    else:
+        print("Starting from Q1.")
+
     total = 0
+    empty_streak = 0
+    qid_min = start_qid
 
     with open(out_path, mode, encoding="utf-8") as f:
         if mode == "w":
             f.write("qid,title\n")
 
-        qid_min = start_qid
-
-        while qid_min <= max_qid:
-            qid_max = min(qid_min + BATCH_SIZE, max_qid + 1)
+        while max_qid is None or qid_min <= max_qid:
+            qid_max = qid_min + BATCH_SIZE
 
             print(f"Fetching Q{qid_min:,} → Q{qid_max - 1:,} ...", end=" ", flush=True)
 
             rows = fetch_batch(qid_min, qid_max)
 
             if rows is not None:
-                for qid, title in rows:
-                    safe_title = title.replace('"', '""')
-                    f.write(f'{qid},"{safe_title}"\n')
+                if rows:
+                    for qid, title in rows:
+                        safe_title = title.replace('"', '""')
+                        f.write(f'{qid},"{safe_title}"\n')
 
-                f.flush()
-                total += len(rows)
+                    f.flush()
+                    total += len(rows)
+                    empty_streak = 0
+                    print(f"{len(rows):,} rows")
+                else:
+                    empty_streak += 1
+                    print(f"0 rows  (empty streak: {empty_streak}/{MAX_EMPTY_BATCHES})")
+                    if empty_streak >= MAX_EMPTY_BATCHES:
+                        print(f"No results for {MAX_EMPTY_BATCHES} consecutive batches — stopping.")
+                        save_progress(progress_file, qid_max)
+                        break
 
-                print(f"{len(rows):,} rows")
                 save_progress(progress_file, qid_max)
                 time.sleep(SLEEP_OK)
 
             else:
                 print("SKIPPED")
+                empty_streak = 0  # don't count failed requests as empty
                 save_progress(progress_file, qid_max)
 
             qid_min = qid_max
 
-    print(f"Done. Saved results to {out_path}")
+    print(f"Done. {total:,} total rows saved to {out_path}")
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument(
         "--out",
-        default="../data/wikidata_qid_titles.csv",
+        default="./data/wikidata_qid_titles.csv",
         help="Output CSV path",
     )
     parser.add_argument(
         "--max-qid",
         type=int,
-        default=2_000_000,
-        help="Upper QID bound",
+        default=None,
+        help="Upper QID bound (default: None = run until no results)",
     )
 
     args = parser.parse_args()
