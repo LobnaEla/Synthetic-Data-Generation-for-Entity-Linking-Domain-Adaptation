@@ -3,3 +3,6 @@ data/
 .env
 __pycache__/
 **/__pycache__/
+run_dense_retriever.sh
+logs/
+**/.ipynb_checkpoints/

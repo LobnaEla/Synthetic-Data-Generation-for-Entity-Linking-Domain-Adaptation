@@ -55,41 +55,47 @@ def build_prompt_mcq(
     mention: str,
     entity_type: str,
     candidates: list[str],
+    descriptions: list[str] | None = None,
 ) -> str:
     if not candidates:
-        # Fallback to zero-shot if retrieval returned nothing
         return build_prompt_zero_shot(context, mention, entity_type)
 
+    # Build candidate lines, optionally with descriptions (strongly recommended by paper)
+    def candidate_line(i: int, title: str) -> str:
+        letter = MCQ_LETTERS[i]
+        if descriptions and i < len(descriptions) and descriptions[i]:
+            return f"{letter}. {title} — {descriptions[i]}"
+        return f"{letter}. {title}"
+
     options_str = "\n".join(
-        f"{MCQ_LETTERS[i]}. {title}" for i, title in enumerate(candidates[:len(MCQ_LETTERS)])
+        candidate_line(i, title)
+        for i, title in enumerate(candidates[:len(MCQ_LETTERS)])
     )
 
-    return f"""/no_think
-You are a precise English Wikipedia Entity Linking system.
+    letters = MCQ_LETTERS[:len(candidates[:len(MCQ_LETTERS)])]
+    valid_letters = ", ".join(letters)
 
-Your task is to identify which candidate Wikipedia article best corresponds to the entity mention in the given text.
+    return f"""You are an expert designed to disambiguate entities in text, taking into account the overall context and a list of entity candidates.
 
-Input:
-TEXT: {context}
+TEXT (the mention to disambiguate is enclosed in square brackets):
+{context.replace(mention, f"[{mention}]", 1)}
+
 MENTION: {mention}
-ENTITY_TYPE: {entity_type}
+ENTITY TYPE: {entity_type}
 
-Candidates:
+CANDIDATES:
 {options_str}
 
-Instructions:
-- Read TEXT carefully to understand what real-world entity MENTION refers to.
-- Use ENTITY_TYPE to avoid selecting the wrong kind of entity.
-- Resolve abbreviations, acronyms, aliases, nicknames, and ambiguous mentions.
-- Select the single best matching candidate.
+Your task:
+1. Identify what real-world entity [{mention}] refers to in the TEXT above.
+2. Use the ENTITY TYPE to rule out candidates of the wrong type.
+3. Consider each candidate carefully — resolve abbreviations, acronyms, aliases, nicknames, and ambiguous surface forms using the surrounding context.
+4. Eliminate candidates that contradict information in the TEXT.
+5. Select the single best matching candidate.
 
-Output constraints:
-- Output ONLY the letter of your choice (A, B, C, ...).
-- Do not explain.
-- Do not output the full title.
-- Do not add punctuation.
-
-Answer:"""
+Output your answer as a single letter ({valid_letters}).
+Format: "Answer: <letter>"
+"""
 
 
 def extract_candidates_from_prompt(prompt: str) -> list[str]:

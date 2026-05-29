@@ -4,7 +4,7 @@ import sys
 import time
 from pathlib import Path
 import pandas as pd
-
+import torch 
 import faiss
 import numpy as np
 from sentence_transformers import SentenceTransformer
@@ -20,7 +20,10 @@ class DenseRetriever:
     def _load_encoder(self) -> SentenceTransformer:
         if self._model is None:
             print(f"[Dense] Loading encoder: {self.model_name}")
-            self._model = SentenceTransformer(self.model_name)
+            self._model = SentenceTransformer(
+                self.model_name,
+                model_kwargs={"torch_dtype": torch.bfloat16},
+            )
         return self._model
 
     def _encode(self, texts: list[str], batch_size: int = 64) -> np.ndarray:
