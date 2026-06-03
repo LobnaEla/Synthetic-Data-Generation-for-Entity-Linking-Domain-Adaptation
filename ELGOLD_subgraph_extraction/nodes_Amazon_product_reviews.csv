@@ -1,0 +1,246 @@
+qid,label,type,categories
+Q654101,Newspeak,Q2623733,Amazon_product_reviews
+Q794,Iran,Q3624078,Amazon_product_reviews
+Q132455662,Michael Cain,Q4167410,Amazon_product_reviews
+Q609312,The Sentinel,Q11424,Amazon_product_reviews
+Q945926,The Miseducation of Lauryn Hill,Q482994,Amazon_product_reviews
+Q1318423,Australians,Q33829,Amazon_product_reviews
+Q6691,Homer,Q21070568,Amazon_product_reviews
+Q27995878,Greatest Generation,Q15925549,Amazon_product_reviews
+Q269872,Virginia McKenna,human,Amazon_product_reviews
+Q672805,Kimberley,Q60297,Amazon_product_reviews
+Q2322509,Anne of Green Gables: The Sequel,Q1259759,Amazon_product_reviews
+Q182688,Victorian era,Q11514315,Amazon_product_reviews
+Q6684464,Lost in the Fifties Tonight,Q482994,Amazon_product_reviews
+Q431564,Marian Seldes,human,Amazon_product_reviews
+Q43963,Jack the Ripper,human,Amazon_product_reviews
+Q722447,Bud Shank,human,Amazon_product_reviews
+Q1355327,Executive Office of the President of the United States,Q20857065,Amazon_product_reviews
+Q7782601,There's No Way,Q134556,Amazon_product_reviews
+Q7718697,The Bloody Red Baron,Q7725634,Amazon_product_reviews
+Q235622,Claire Bloom,human,Amazon_product_reviews
+Q3894117,Frank Sheed,human,Amazon_product_reviews
+Q1544403,Virgin Steele,Q215380,Amazon_product_reviews
+Q5315688,Dunsley,Q5084,Amazon_product_reviews
+Q16245209,Can't Wait All Night,Q482994,Amazon_product_reviews
+Q1747689,Ancient Rome,Q3024240,Amazon_product_reviews
+Q2831,Michael Jackson,human,Amazon_product_reviews
+Q59774,Wicca,Q9174,Amazon_product_reviews
+Q2283,Microsoft,Q1058914,Amazon_product_reviews
+Q251657,UFO,Q215380,Amazon_product_reviews
+Q84,London,Q200250,Amazon_product_reviews
+Q5362549,Elizabeth Castro,human,Amazon_product_reviews
+Q325487,Mike Wallace,human,Amazon_product_reviews
+Q105941,Myrna Loy,human,Amazon_product_reviews
+Q714,Stevie Wonder,human,Amazon_product_reviews
+Q2046136,Pagans,Q4167410,Amazon_product_reviews
+Q426663,Mad Max Beyond Thunderdome,Q11424,Amazon_product_reviews
+Q42937,Trojan War,Q24336068,Amazon_product_reviews
+Q6888596,Modern Classics: The Greatest Hits,Q482994,Amazon_product_reviews
+Q117012,Yoko Ono,human,Amazon_product_reviews
+Q2917970,Anno Dracula,Q7725634,Amazon_product_reviews
+Q82931,Coral Sea,Q204894,Amazon_product_reviews
+Q264901,Anne of Green Gables,Q98701476,Amazon_product_reviews
+Q340,Montreal,Q27676416,Amazon_product_reviews
+Q105986587,Lost Ones,Q105543609,Amazon_product_reviews
+Q1057634,The Wild Party,Q11424,Amazon_product_reviews
+Q25172022,Medusa,Q215380,Amazon_product_reviews
+Q247869,60 Minutes,Q5398426,Amazon_product_reviews
+Q337538,Trinitron,Q431289,Amazon_product_reviews
+Q7542,Prince,human,Amazon_product_reviews
+Q7637517,Summer of My German Soldier,Q7725634,Amazon_product_reviews
+Q9592,Catholic Church,Q879146,Amazon_product_reviews
+Q2498540,Helena,Q15698310,Amazon_product_reviews
+Q155712,André Previn,human,Amazon_product_reviews
+Q1356617,Paul Smith,human,Amazon_product_reviews
+Q124147,Scorpions,Q5741069,Amazon_product_reviews
+Q1768,Ella Fitzgerald,human,Amazon_product_reviews
+Q30873,Dell,Q4830453,Amazon_product_reviews
+Q435679,Juice Newton,human,Amazon_product_reviews
+Q6060,50 Cent,human,Amazon_product_reviews
+Q124539,Whitechapel,Q3957,Amazon_product_reviews
+Q1502731,Narcotics Anonymous,Q163740,Amazon_product_reviews
+Q2604,Pius XII,human,Amazon_product_reviews
+Q717204,Kim Newman,human,Amazon_product_reviews
+Q30,United States,Q3624078,Amazon_product_reviews
+Q1299,The Beatles,Q215380,Amazon_product_reviews
+Q6511,Ulysses,Q7725634,Amazon_product_reviews
+Q443953,Stephen E. Ambrose,human,Amazon_product_reviews
+Q202886,Mordor,Q1145276,Amazon_product_reviews
+Q87,Alexandria,Q2264924,Amazon_product_reviews
+Q177984,Peter Sellers,human,Amazon_product_reviews
+Q380675,cinema of the United States,Q67515288,Amazon_product_reviews
+Q842438,British,Q33829,Amazon_product_reviews
+Q3546966,Hyacinth Bucket,Q15632617,Amazon_product_reviews
+Q1248616,Puck,Q15698310,Amazon_product_reviews
+Q370515,new wave of British heavy metal,Q188451,Amazon_product_reviews
+Q47863,Midway Atoll,Q1550680,Amazon_product_reviews
+Q56551019,Midway,Q11424,Amazon_product_reviews
+Q565911,Anne of Green Gables,Q7725634,Amazon_product_reviews
+Q27818309,Swinging Kicks,Q482994,Amazon_product_reviews
+Q79762,The Silmarillion,Q7725634,Amazon_product_reviews
+Q2332221,Titania,Q15698310,Amazon_product_reviews
+Q35155,Thomas Pynchon,human,Amazon_product_reviews
+Q22,Scotland,Q3336843,Amazon_product_reviews
+Q3330940,House of Cards,Q5398426,Amazon_product_reviews
+Q37463,Pierre Curie,human,Amazon_product_reviews
+Q13486202,A Falcon Flies,Q7725634,Amazon_product_reviews
+Q892,J. R. R. Tolkien,human,Amazon_product_reviews
+Q156139,Uli Jon Roth,human,Amazon_product_reviews
+Q5921,Chuck Berry,human,Amazon_product_reviews
+Q1333406,Elsa,Q17611534,Amazon_product_reviews
+Q1001130,Buddy Bregman,human,Amazon_product_reviews
+Q37033,World Wide Web Consortium,Q1328899,Amazon_product_reviews
+Q3275141,Mad Max,Q24856,Amazon_product_reviews
+Q122739,Bitch,Q215380,Amazon_product_reviews
+Q1240869,Douay–Rheims Bible,Q655192,Amazon_product_reviews
+Q8333,Federal Bureau of Investigation,Q47913,Amazon_product_reviews
+Q3560313,Vintage Books,Q2608849,Amazon_product_reviews
+Q230068,Ève Curie,human,Amazon_product_reviews
+Q349391,Helen Mirren,human,Amazon_product_reviews
+Q1128,radium,Q11344,Amazon_product_reviews
+Q159907,David Hockney,human,Amazon_product_reviews
+Q4261598,Ignatius Press,Q2085381,Amazon_product_reviews
+Q131231,Slayer,Q56816954,Amazon_product_reviews
+Q463180,American,Q4167410,Amazon_product_reviews
+Q2306,Pink Floyd,Q5741069,Amazon_product_reviews
+Q5560816,Gilbert Blythe,Q15632617,Amazon_product_reviews
+Q57642,Michael Schenker,human,Amazon_product_reviews
+Q881,Vietnam,Q3624078,Amazon_product_reviews
+Q1203,John Lennon,human,Amazon_product_reviews
+Q7727861,The Courtney Novels series,Q1667921,Amazon_product_reviews
+Q6041980,Nick and Nora Charles,Q21190845,Amazon_product_reviews
+Q181917,David Niven,human,Amazon_product_reviews
+Q434669,Phyllis Schlafly,human,Amazon_product_reviews
+Q2344707,The Crying of Lot 49,Q7725634,Amazon_product_reviews
+Q438460,Ben Webster,human,Amazon_product_reviews
+Q6063,Government of the United Kingdom,Q7188,Amazon_product_reviews
+Q389624,Charlie Chan,Q15632617,Amazon_product_reviews
+Q34296,Woodrow Wilson,human,Amazon_product_reviews
+Q361,World War I,Q103495,Amazon_product_reviews
+Q502673,Celtic Neopaganism,,Amazon_product_reviews
+Q353822,Maynard Ferguson,human,Amazon_product_reviews
+Q128121,Mick Jagger,human,Amazon_product_reviews
+Q42884,Germans,Q6266,Amazon_product_reviews
+Q62071802,London '66 - '67,Q169930,Amazon_product_reviews
+Q258092,Tora! Tora! Tora!,Q11424,Amazon_product_reviews
+Q28054,Judi Dench,human,Amazon_product_reviews
+Q708721,Kenny Wayne Shepherd,human,Amazon_product_reviews
+Q7191,Nobel Prize,Q107655869,Amazon_product_reviews
+Q3709831,Stony Point,Q15127012,Amazon_product_reviews
+Q41,Greece,Q3624078,Amazon_product_reviews
+Q3884,Amazon,Q6881511,Amazon_product_reviews
+Q403492,Warlord,Q4167410,Amazon_product_reviews
+Q136805461,List of contemporary ethnic groups of Africa,Q13406463,Amazon_product_reviews
+Q6912811,Morning Desire,Q134556,Amazon_product_reviews
+Q8465,civil war,Q124867660,Amazon_product_reviews
+Q170534,Hercule Poirot,Q15632617,Amazon_product_reviews
+Q41254,Grammy Awards,Q1364556,Amazon_product_reviews
+Q101849,Reformed Christianity,Q123129246,Amazon_product_reviews
+Q233009,Elsa Lanchester,human,Amazon_product_reviews
+Q93645,Joy Adamson,human,Amazon_product_reviews
+Q103894,Alec Guinness,human,Amazon_product_reviews
+Q190214,The Lord of the Rings,Q13593818,Amazon_product_reviews
+Q4002537,Birds of Prey,Q7725634,Amazon_product_reviews
+Q248775,Mad Max,Q11424,Amazon_product_reviews
+Q5373099,Ur Kaśdim,Q515,Amazon_product_reviews
+Q1744,Madonna,human,Amazon_product_reviews
+Q2140008,United States Army Air Corps,Q1593564,Amazon_product_reviews
+Q181413,Julie Christie,human,Amazon_product_reviews
+Q1277983,Martin Caidin,human,Amazon_product_reviews
+Q16385100,The Ballantyne Novels hexalogy,Q277759,Amazon_product_reviews
+Q465890,Kate Morton,human,Amazon_product_reviews
+Q2739605,Anne of Green Gables: The Continuing Story,Q1259759,Amazon_product_reviews
+Q47690,Babylonia,Q7275,Amazon_product_reviews
+Q166351,Robert Jordan,human,Amazon_product_reviews
+Q219150,Constantine,Q11424,Amazon_product_reviews
+Q29536,paganism,Q49447,Amazon_product_reviews
+Q5418044,Everything Is Everything,Q134556,Amazon_product_reviews
+Q1382555,Norman Granz,human,Amazon_product_reviews
+Q1648971,Peter Whitehead,human,Amazon_product_reviews
+Q105960,William Powell,human,Amazon_product_reviews
+Q7186,Marie Sklodowska-Curie,human,Amazon_product_reviews
+Q4470,The Wheel of Time,Q1667921,Amazon_product_reviews
+Q846570,Americans,Q33829,Amazon_product_reviews
+Q2248019,Emma Peel,Q15632617,Amazon_product_reviews
+Q172653,Maggie Smith,human,Amazon_product_reviews
+Q225294,RCA,Q4167410,Amazon_product_reviews
+Q4742723,America,Q134556,Amazon_product_reviews
+Q5296955,Doo Wop (That Thing),Q134556,Amazon_product_reviews
+Q1453797,Born Free,Q11424,Amazon_product_reviews
+Q214226,Lauryn Hill,human,Amazon_product_reviews
+Q161652,Japanese people,Q41710,Amazon_product_reviews
+Q3229575,Hermia,Q15698310,Amazon_product_reviews
+Q232876,Diana Rigg,human,Amazon_product_reviews
+Q142,France,Q3624078,Amazon_product_reviews
+Q1125262,Mad Max 2,Q11424,Amazon_product_reviews
+Q15228,The Lord of the Rings,Q1667921,Amazon_product_reviews
+Q8740,Vietnam War,Q864113,Amazon_product_reviews
+Q4251151,Carolyn Craig,human,Amazon_product_reviews
+Q484881,Peter Falk,human,Amazon_product_reviews
+Q18231,Alcoholics Anonymous,Q163740,Amazon_product_reviews
+Q11772,Ancient Greece,Q1792644,Amazon_product_reviews
+Q66731094,Titan Publishing Group,Q2085381,Amazon_product_reviews
+Q865987,The Haunting,Q11424,Amazon_product_reviews
+Q1139234,Oberon,Q4271324,Amazon_product_reviews
+Q1384,New York,Q35657,Amazon_product_reviews
+Q161916,Owen Wilson,human,Amazon_product_reviews
+Q771213,Anne Shirley,Q15632617,Amazon_product_reviews
+Q3521239,The Hellbound Heart,Q7725634,Amazon_product_reviews
+Q425084,Al-Anon/Alateen,Q163740,Amazon_product_reviews
+Q58444,Liam Neeson,human,Amazon_product_reviews
+Q769205,James Coco,human,Amazon_product_reviews
+Q16,Canada,Q223832,Amazon_product_reviews
+Q5950,James Brown,human,Amazon_product_reviews
+Q41127,Poseidon,Q1916821,Amazon_product_reviews
+Q45188,Coldplay,Q215380,Amazon_product_reviews
+Q47664,Catherine Zeta-Jones,human,Amazon_product_reviews
+Q2140332,Alabama,Q215380,Amazon_product_reviews
+Q315808,Neil Simon,human,Amazon_product_reviews
+Q164515,Lonesome Crow,Q482994,Amazon_product_reviews
+Q206939,Elvis Costello,human,Amazon_product_reviews
+Q5383,David Bowie,human,Amazon_product_reviews
+Q399999,prohibition in the United States,Q49371,Amazon_product_reviews
+Q7318434,Revised Standard Version Catholic Edition,Q655192,Amazon_product_reviews
+Q74287,The Hobbit,Q7725634,Amazon_product_reviews
+Q251,Java,Q56062429,Amazon_product_reviews
+Q862624,Q862624,human,Amazon_product_reviews
+Q79,Egypt,Q3624078,Amazon_product_reviews
+Q836438,Martin B-26 Marauder,Q15056993,Amazon_product_reviews
+Q79734,Middle-earth,Q17199338,Amazon_product_reviews
+Q83495,The Matrix,Q11424,Amazon_product_reviews
+Q43416,Keanu Reeves,human,Amazon_product_reviews
+Q215026,Debbie Harry,human,Amazon_product_reviews
+Q2289762,Snug,Q15698310,Amazon_product_reviews
+Q217160,Kenny Rogers,human,Amazon_product_reviews
+Q239910,Shirley Jackson,human,Amazon_product_reviews
+Q1306534,Avonlea,Q1964689,Amazon_product_reviews
+Q173061,Syd Barrett,human,Amazon_product_reviews
+Q2115,XML,Q37045,Amazon_product_reviews
+Q5122588,Citizen Soldiers,Q7725634,Amazon_product_reviews
+Q751417,Big Brother,Q3658341,Amazon_product_reviews
+Q121617,Old Norse religion,Q24444087,Amazon_product_reviews
+Q363691,Ian Richardson,human,Amazon_product_reviews
+Q251287,Waylon Jennings,human,Amazon_product_reviews
+Q362,World War II,Q103495,Amazon_product_reviews
+Q408,Australia,Q202686,Amazon_product_reviews
+Q6690673,Love Is Alive,Q134556,Amazon_product_reviews
+Q1256778,Metal Massacre,Q20671381,Amazon_product_reviews
+Q1506842,George Adamson,human,Amazon_product_reviews
+Q558582,Ronnie Milsap,human,Amazon_product_reviews
+Q4351879,Cocaine Anonymous,Q245169,Amazon_product_reviews
+Q17,Japan,Q3624078,Amazon_product_reviews
+Q186539,Founding Fathers of the United States,Q16334295,Amazon_product_reviews
+Q357970,Q357970,human,Amazon_product_reviews
+Q217984,Znowhite,Q215380,Amazon_product_reviews
+Q1755990,The Judds,Q215380,Amazon_product_reviews
+Q5326118,Earl Thomas Conley,human,Amazon_product_reviews
+Q15920,Metallica,Q215380,Amazon_product_reviews
+Q3335,George Orwell,human,Amazon_product_reviews
+Q12060492,Homer's Ithaca,Q3238337,Amazon_product_reviews
+Q21,England,Q3336843,Amazon_product_reviews
+Q233502,Lili Taylor,human,Amazon_product_reviews
+Q904154,Interstellar Overdrive,Q105543609,Amazon_product_reviews
+Q16992858,Ex-Factor,Q134556,Amazon_product_reviews
+Q47231,Odysseus,Q22988604,Amazon_product_reviews
+Q652035,Dumfries,Q3957,Amazon_product_reviews

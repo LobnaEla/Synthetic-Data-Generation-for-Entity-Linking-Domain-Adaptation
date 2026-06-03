@@ -1,0 +1,222 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+            <script src="lib/bindings/utils.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+        
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+          crossorigin="anonymous"
+        ></script>
+
+
+        <center>
+          <h1></h1>
+        </center>
+        <style type="text/css">
+
+             #mynetwork {
+                 width: 100%;
+                 height: 800px;
+                 background-color: #1a1a2e;
+                 border: 1px solid lightgray;
+                 position: relative;
+                 float: left;
+             }
+
+             
+             #loadingBar {
+                 position:absolute;
+                 top:0px;
+                 left:0px;
+                 width: 100%;
+                 height: 800px;
+                 background-color:rgba(200,200,200,0.8);
+                 -webkit-transition: all 0.5s ease;
+                 -moz-transition: all 0.5s ease;
+                 -ms-transition: all 0.5s ease;
+                 -o-transition: all 0.5s ease;
+                 transition: all 0.5s ease;
+                 opacity:1;
+             }
+
+             #bar {
+                 position:absolute;
+                 top:0px;
+                 left:0px;
+                 width:20px;
+                 height:20px;
+                 margin:auto auto auto auto;
+                 border-radius:11px;
+                 border:2px solid rgba(30,30,30,0.05);
+                 background: rgb(0, 173, 246); /* Old browsers */
+                 box-shadow: 2px 0px 4px rgba(0,0,0,0.4);
+             }
+
+             #border {
+                 position:absolute;
+                 top:10px;
+                 left:10px;
+                 width:500px;
+                 height:23px;
+                 margin:auto auto auto auto;
+                 box-shadow: 0px 0px 4px rgba(0,0,0,0.2);
+                 border-radius:10px;
+             }
+
+             #text {
+                 position:absolute;
+                 top:8px;
+                 left:530px;
+                 width:30px;
+                 height:50px;
+                 margin:auto auto auto auto;
+                 font-size:22px;
+                 color: #000000;
+             }
+
+             div.outerBorder {
+                 position:relative;
+                 top:400px;
+                 width:600px;
+                 height:44px;
+                 margin:auto auto auto auto;
+                 border:8px solid rgba(0,0,0,0.1);
+                 background: rgb(252,252,252); /* Old browsers */
+                 background: -moz-linear-gradient(top,  rgba(252,252,252,1) 0%, rgba(237,237,237,1) 100%); /* FF3.6+ */
+                 background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(252,252,252,1)), color-stop(100%,rgba(237,237,237,1))); /* Chrome,Safari4+ */
+                 background: -webkit-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* Chrome10+,Safari5.1+ */
+                 background: -o-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* Opera 11.10+ */
+                 background: -ms-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* IE10+ */
+                 background: linear-gradient(to bottom,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* W3C */
+                 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfcfc', endColorstr='#ededed',GradientType=0 ); /* IE6-9 */
+                 border-radius:72px;
+                 box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+             }
+             
+
+             
+
+             
+        </style>
+    </head>
+
+
+    <body>
+        <div class="card" style="width: 100%">
+            
+            
+            <div id="mynetwork" class="card-body"></div>
+        </div>
+
+        
+            <div id="loadingBar">
+              <div class="outerBorder">
+                <div id="text">0%</div>
+                <div id="border">
+                  <div id="bar"></div>
+                </div>
+              </div>
+            </div>
+        
+        
+
+        <script type="text/javascript">
+
+              // initialize global variables.
+              var edges;
+              var nodes;
+              var allNodes;
+              var allEdges;
+              var nodeColors;
+              var originalNodes;
+              var network;
+              var container;
+              var options, data;
+              var filter = {
+                  item : '',
+                  property : '',
+                  value : []
+              };
+
+              
+
+              
+
+              // This method is responsible for drawing the graph, returns the drawn network
+              function drawGraph() {
+                  var container = document.getElementById('mynetwork');
+
+                  
+
+                  // parsing and collecting nodes and edges from the python
+                  nodes = new vis.DataSet([{"font": {"color": "white"}, "group": "Historic_blogs", "id": "Q4948", "label": "Republic of Venice", "shape": "dot", "size": 10, "title": "\u003cb\u003eRepublic of Venice\u003c/b\u003e\u003cbr\u003eHistoric_blogs\u003cbr\u003e\u003ci\u003eQ3624078\u003c/i\u003e"}, {"font": {"color": "white"}, "group": "Historic_blogs", "id": "Q233", "label": "Malta", "shape": "dot", "size": 10, "title": "\u003cb\u003eMalta\u003c/b\u003e\u003cbr\u003eHistoric_blogs\u003cbr\u003e\u003ci\u003eQ3624078\u003c/i\u003e"}, {"font": {"color": "white"}, "group": "Historic_blogs", "id": "Q25", "label": "Wales", "shape": "dot", "size": 10, "title": "\u003cb\u003eWales\u003c/b\u003e\u003cbr\u003eHistoric_blogs\u003cbr\u003e\u003ci\u003eQ3336843\u003c/i\u003e"}, {"font": {"color": "white"}, "group": "News", "id": "Q145", "label": "United Kingdom", "shape": "dot", "size": 22, "title": "\u003cb\u003eUnited Kingdom\u003c/b\u003e\u003cbr\u003eNews\u003cbr\u003eMovie_reviews\u003cbr\u003eAutomotive_blogs\u003cbr\u003eHistoric_blogs\u003cbr\u003e\u003ci\u003eQ3624078\u003c/i\u003e"}, {"font": {"color": "white"}, "group": "Historic_blogs", "id": "Q1277768", "label": "East Cambridgeshire", "shape": "dot", "size": 10, "title": "\u003cb\u003eEast Cambridgeshire\u003c/b\u003e\u003cbr\u003eHistoric_blogs\u003cbr\u003e\u003ci\u003eQ1187580\u003c/i\u003e"}, {"font": {"color": "white"}, "group": "News", "id": "Q641", "label": "Venice", "shape": "dot", "size": 14, "title": "\u003cb\u003eVenice\u003c/b\u003e\u003cbr\u003eNews\u003cbr\u003eHistoric_blogs\u003cbr\u003e\u003ci\u003eQ747074\u003c/i\u003e"}, {"font": {"color": "white"}, "group": "News", "id": "Q38", "label": "Italy", "shape": "dot", "size": 26, "title": "\u003cb\u003eItaly\u003c/b\u003e\u003cbr\u003eNews\u003cbr\u003eMovie_reviews\u003cbr\u003eAutomotive_blogs\u003cbr\u003eScientific_abstracts\u003cbr\u003eHistoric_blogs\u003cbr\u003e\u003ci\u003eQ6256\u003c/i\u003e"}, {"font": {"color": "white"}, "group": "News", "id": "Q142", "label": "France", "shape": "dot", "size": 30, "title": "\u003cb\u003eFrance\u003c/b\u003e\u003cbr\u003eNews\u003cbr\u003eMovie_reviews\u003cbr\u003eAutomotive_blogs\u003cbr\u003eAmazon_product_reviews\u003cbr\u003eScientific_abstracts\u003cbr\u003eHistoric_blogs\u003cbr\u003e\u003ci\u003eQ3624078\u003c/i\u003e"}, {"font": {"color": "white"}, "group": "Historic_blogs", "id": "Q6271", "label": "Second Punic War", "shape": "dot", "size": 10, "title": "\u003cb\u003eSecond Punic War\u003c/b\u003e\u003cbr\u003eHistoric_blogs\u003cbr\u003e\u003ci\u003eQ198\u003c/i\u003e"}, {"font": {"color": "white"}, "group": "News", "id": "Q29", "label": "Spain", "shape": "dot", "size": 14, "title": "\u003cb\u003eSpain\u003c/b\u003e\u003cbr\u003eNews\u003cbr\u003eHistoric_blogs\u003cbr\u003e\u003ci\u003eQ3624078\u003c/i\u003e"}, {"font": {"color": "white"}, "group": "Historic_blogs", "id": "Q160894", "label": "Spaniards", "shape": "dot", "size": 10, "title": "\u003cb\u003eSpaniards\u003c/b\u003e\u003cbr\u003eHistoric_blogs\u003cbr\u003e\u003ci\u003eQ33829\u003c/i\u003e"}, {"font": {"color": "white"}, "group": "Historic_blogs", "id": "Q23079", "label": "Northumberland", "shape": "dot", "size": 10, "title": "\u003cb\u003eNorthumberland\u003c/b\u003e\u003cbr\u003eHistoric_blogs\u003cbr\u003e\u003ci\u003eQ180673\u003c/i\u003e"}, {"font": {"color": "white"}, "group": "Automotive_blogs", "id": "Q22890", "label": "Ireland", "shape": "dot", "size": 14, "title": "\u003cb\u003eIreland\u003c/b\u003e\u003cbr\u003eAutomotive_blogs\u003cbr\u003eHistoric_blogs\u003cbr\u003e\u003ci\u003eQ23442\u003c/i\u003e"}, {"font": {"color": "white"}, "group": "Historic_blogs", "id": "Q462239", "label": "Pillnitz Castle", "shape": "dot", "size": 10, "title": "\u003cb\u003ePillnitz Castle\u003c/b\u003e\u003cbr\u003eHistoric_blogs\u003cbr\u003e\u003ci\u003eQ751876\u003c/i\u003e"}, {"font": {"color": "white"}, "group": "Historic_blogs", "id": "Q1731", "label": "Dresden", "shape": "dot", "size": 10, "title": "\u003cb\u003eDresden\u003c/b\u003e\u003cbr\u003eHistoric_blogs\u003cbr\u003e\u003ci\u003eQ1549591\u003c/i\u003e"}, {"font": {"color": "white"}, "group": "Historic_blogs", "id": "Q38060", "label": "Gaul", "shape": "dot", "size": 10, "title": "\u003cb\u003eGaul\u003c/b\u003e\u003cbr\u003eHistoric_blogs\u003cbr\u003e\u003ci\u003eQ1620908\u003c/i\u003e"}, {"font": {"color": "white"}, "group": "Historic_blogs", "id": "Q539051", "label": "Greeks", "shape": "dot", "size": 10, "title": "\u003cb\u003eGreeks\u003c/b\u003e\u003cbr\u003eHistoric_blogs\u003cbr\u003e\u003ci\u003eQ41710\u003c/i\u003e"}, {"font": {"color": "white"}, "group": "News", "id": "Q43", "label": "Turkey", "shape": "dot", "size": 14, "title": "\u003cb\u003eTurkey\u003c/b\u003e\u003cbr\u003eNews\u003cbr\u003eHistoric_blogs\u003cbr\u003e\u003ci\u003eQ3624078\u003c/i\u003e"}, {"font": {"color": "white"}, "group": "Historic_blogs", "id": "Q23666", "label": "Great Britain", "shape": "dot", "size": 10, "title": "\u003cb\u003eGreat Britain\u003c/b\u003e\u003cbr\u003eHistoric_blogs\u003cbr\u003e\u003ci\u003eQ23442\u003c/i\u003e"}, {"font": {"color": "white"}, "group": "Historic_blogs", "id": "Q35392414", "label": "La Leche River", "shape": "dot", "size": 10, "title": "\u003cb\u003eLa Leche River\u003c/b\u003e\u003cbr\u003eHistoric_blogs\u003cbr\u003e\u003ci\u003eQ355304\u003c/i\u003e"}, {"font": {"color": "white"}, "group": "Historic_blogs", "id": "Q419", "label": "Peru", "shape": "dot", "size": 10, "title": "\u003cb\u003ePeru\u003c/b\u003e\u003cbr\u003eHistoric_blogs\u003cbr\u003e\u003ci\u003eQ3624078\u003c/i\u003e"}, {"font": {"color": "white"}, "group": "Historic_blogs", "id": "Q80637", "label": "York Castle", "shape": "dot", "size": 10, "title": "\u003cb\u003eYork Castle\u003c/b\u003e\u003cbr\u003eHistoric_blogs\u003cbr\u003e\u003ci\u003eQ23413\u003c/i\u003e"}, {"font": {"color": "white"}, "group": "Historic_blogs", "id": "Q42462", "label": "York", "shape": "dot", "size": 10, "title": "\u003cb\u003eYork\u003c/b\u003e\u003cbr\u003eHistoric_blogs\u003cbr\u003e\u003ci\u003eQ1357964\u003c/i\u003e"}, {"font": {"color": "white"}, "group": "Historic_blogs", "id": "Q270532", "label": "University of Aberdeen", "shape": "dot", "size": 10, "title": "\u003cb\u003eUniversity of Aberdeen\u003c/b\u003e\u003cbr\u003eHistoric_blogs\u003cbr\u003e\u003ci\u003eQ62078547\u003c/i\u003e"}, {"font": {"color": "white"}, "group": "Historic_blogs", "id": "Q172771", "label": "Royal Navy", "shape": "dot", "size": 10, "title": "\u003cb\u003eRoyal Navy\u003c/b\u003e\u003cbr\u003eHistoric_blogs\u003cbr\u003e\u003ci\u003eQ4508\u003c/i\u003e"}, {"font": {"color": "white"}, "group": "Historic_blogs", "id": "Q13372", "label": "Carrara", "shape": "dot", "size": 10, "title": "\u003cb\u003eCarrara\u003c/b\u003e\u003cbr\u003eHistoric_blogs\u003cbr\u003e\u003ci\u003eQ747074\u003c/i\u003e"}, {"font": {"color": "white"}, "group": "Historic_blogs", "id": "Q37", "label": "Lithuania", "shape": "dot", "size": 10, "title": "\u003cb\u003eLithuania\u003c/b\u003e\u003cbr\u003eHistoric_blogs\u003cbr\u003e\u003ci\u003eQ3624078\u003c/i\u003e"}, {"font": {"color": "white"}, "group": "Historic_blogs", "id": "Q3398729", "label": "Portable Antiquities Scheme", "shape": "dot", "size": 10, "title": "\u003cb\u003ePortable Antiquities Scheme\u003c/b\u003e\u003cbr\u003eHistoric_blogs\u003cbr\u003e\u003ci\u003eQ170584\u003c/i\u003e"}, {"font": {"color": "white"}, "group": "Historic_blogs", "id": "Q153015", "label": "Kingdom of Saxony", "shape": "dot", "size": 10, "title": "\u003cb\u003eKingdom of Saxony\u003c/b\u003e\u003cbr\u003eHistoric_blogs\u003cbr\u003e\u003ci\u003eQ3024240\u003c/i\u003e"}, {"font": {"color": "white"}, "group": "Historic_blogs", "id": "Q53437", "label": "Augustus II the Strong", "shape": "dot", "size": 10, "title": "\u003cb\u003eAugustus II the Strong\u003c/b\u003e\u003cbr\u003eHistoric_blogs\u003cbr\u003e\u003ci\u003ehuman\u003c/i\u003e"}, {"font": {"color": "white"}, "group": "Historic_blogs", "id": "Q39518", "label": "\u017babbar", "shape": "dot", "size": 10, "title": "\u003cb\u003e\u017babbar\u003c/b\u003e\u003cbr\u003eHistoric_blogs\u003cbr\u003e\u003ci\u003eQ515\u003c/i\u003e"}, {"font": {"color": "white"}, "group": "Historic_blogs", "id": "Q6534", "label": "French Revolution", "shape": "dot", "size": 10, "title": "\u003cb\u003eFrench Revolution\u003c/b\u003e\u003cbr\u003eHistoric_blogs\u003cbr\u003e\u003ci\u003eQ13418847\u003c/i\u003e"}, {"font": {"color": "white"}, "group": "Historic_blogs", "id": "Q6473283", "label": "\u00c7itlik\u00f6y", "shape": "dot", "size": 10, "title": "\u003cb\u003e\u00c7itlik\u00f6y\u003c/b\u003e\u003cbr\u003eHistoric_blogs\u003cbr\u003e\u003ci\u003eQ1529096\u003c/i\u003e"}, {"font": {"color": "white"}, "group": "News", "id": "Q148", "label": "People\u0027s Republic of China", "shape": "dot", "size": 26, "title": "\u003cb\u003ePeople\u0027s Republic of China\u003c/b\u003e\u003cbr\u003eNews\u003cbr\u003eMovie_reviews\u003cbr\u003eAutomotive_blogs\u003cbr\u003eScientific_abstracts\u003cbr\u003eHistoric_blogs\u003cbr\u003e\u003ci\u003eQ3624078\u003c/i\u003e"}, {"font": {"color": "white"}, "group": "Historic_blogs", "id": "Q43684", "label": "Henan", "shape": "dot", "size": 10, "title": "\u003cb\u003eHenan\u003c/b\u003e\u003cbr\u003eHistoric_blogs\u003cbr\u003e\u003ci\u003eQ1615742\u003c/i\u003e"}, {"font": {"color": "white"}, "group": "Historic_blogs", "id": "Q31347", "label": "Grand Canal", "shape": "dot", "size": 10, "title": "\u003cb\u003eGrand Canal\u003c/b\u003e\u003cbr\u003eHistoric_blogs\u003cbr\u003e\u003ci\u003eQ1497375\u003c/i\u003e"}, {"font": {"color": "white"}, "group": "Historic_blogs", "id": "Q580631", "label": "East Anglia", "shape": "dot", "size": 10, "title": "\u003cb\u003eEast Anglia\u003c/b\u003e\u003cbr\u003eHistoric_blogs\u003cbr\u003e\u003ci\u003eQ82794\u003c/i\u003e"}, {"font": {"color": "white"}, "group": "Historic_blogs", "id": "Q182664", "label": "Canaletto", "shape": "dot", "size": 10, "title": "\u003cb\u003eCanaletto\u003c/b\u003e\u003cbr\u003eHistoric_blogs\u003cbr\u003e\u003ci\u003ehuman\u003c/i\u003e"}, {"font": {"color": "white"}, "group": "Historic_blogs", "id": "Q990103", "label": "Haverfordwest", "shape": "dot", "size": 10, "title": "\u003cb\u003eHaverfordwest\u003c/b\u003e\u003cbr\u003eHistoric_blogs\u003cbr\u003e\u003ci\u003eQ18511725\u003c/i\u003e"}, {"font": {"color": "white"}, "group": "Historic_blogs", "id": "Q213361", "label": "Pembrokeshire", "shape": "dot", "size": 10, "title": "\u003cb\u003ePembrokeshire\u003c/b\u003e\u003cbr\u003eHistoric_blogs\u003cbr\u003e\u003ci\u003eQ15979307\u003c/i\u003e"}, {"font": {"color": "white"}, "group": "Historic_blogs", "id": "Q53438", "label": "Augustus III of Poland", "shape": "dot", "size": 10, "title": "\u003cb\u003eAugustus III of Poland\u003c/b\u003e\u003cbr\u003eHistoric_blogs\u003cbr\u003e\u003ci\u003ehuman\u003c/i\u003e"}, {"font": {"color": "white"}, "group": "Historic_blogs", "id": "Q193582", "label": "National Assembly", "shape": "dot", "size": 10, "title": "\u003cb\u003eNational Assembly\u003c/b\u003e\u003cbr\u003eHistoric_blogs\u003cbr\u003e\u003ci\u003eQ375928\u003c/i\u003e"}, {"font": {"color": "white"}, "group": "Historic_blogs", "id": "Q206900", "label": "\u00c7orum", "shape": "dot", "size": 10, "title": "\u003cb\u003e\u00c7orum\u003c/b\u003e\u003cbr\u003eHistoric_blogs\u003cbr\u003e\u003ci\u003eQ515\u003c/i\u003e"}, {"font": {"color": "white"}, "group": "Historic_blogs", "id": "Q272947", "label": "\u00c7orum Province", "shape": "dot", "size": 10, "title": "\u003cb\u003e\u00c7orum Province\u003c/b\u003e\u003cbr\u003eHistoric_blogs\u003cbr\u003e\u003ci\u003eQ48336\u003c/i\u003e"}, {"font": {"color": "white"}, "group": "Historic_blogs", "id": "Q208471", "label": "Kaifeng", "shape": "dot", "size": 10, "title": "\u003cb\u003eKaifeng\u003c/b\u003e\u003cbr\u003eHistoric_blogs\u003cbr\u003e\u003ci\u003eQ748149\u003c/i\u003e"}, {"font": {"color": "white"}, "group": "Historic_blogs", "id": "Q131479", "label": "Dominican Order", "shape": "dot", "size": 10, "title": "\u003cb\u003eDominican Order\u003c/b\u003e\u003cbr\u003eHistoric_blogs\u003cbr\u003e\u003ci\u003eQ28653\u003c/i\u003e"}, {"font": {"color": "white"}, "group": "Historic_blogs", "id": "Q172438", "label": "Peterborough", "shape": "dot", "size": 10, "title": "\u003cb\u003ePeterborough\u003c/b\u003e\u003cbr\u003eHistoric_blogs\u003cbr\u003e\u003ci\u003eQ515\u003c/i\u003e"}, {"font": {"color": "white"}, "group": "News", "id": "Q46", "label": "Europe", "shape": "dot", "size": 26, "title": "\u003cb\u003eEurope\u003c/b\u003e\u003cbr\u003eNews\u003cbr\u003eMovie_reviews\u003cbr\u003eAutomotive_blogs\u003cbr\u003eScientific_abstracts\u003cbr\u003eHistoric_blogs\u003cbr\u003e\u003ci\u003eQ2418896\u003c/i\u003e"}, {"font": {"color": "white"}, "group": "Historic_blogs", "id": "Q653002", "label": "Staatliche Kunstsammlungen Dresden", "shape": "dot", "size": 10, "title": "\u003cb\u003eStaatliche Kunstsammlungen Dresden\u003c/b\u003e\u003cbr\u003eHistoric_blogs\u003cbr\u003e\u003ci\u003eQ207694\u003c/i\u003e"}, {"font": {"color": "white"}, "group": "Historic_blogs", "id": "Q2408803", "label": "Exchequer", "shape": "dot", "size": 10, "title": "\u003cb\u003eExchequer\u003c/b\u003e\u003cbr\u003eHistoric_blogs\u003cbr\u003e\u003ci\u003eQ10756188\u003c/i\u003e"}, {"font": {"color": "white"}, "group": "Historic_blogs", "id": "Q36", "label": "Poland", "shape": "dot", "size": 10, "title": "\u003cb\u003ePoland\u003c/b\u003e\u003cbr\u003eHistoric_blogs\u003cbr\u003e\u003ci\u003eQ3624078\u003c/i\u003e"}, {"font": {"color": "white"}, "group": "Historic_blogs", "id": "Q6343", "label": "Carthage", "shape": "dot", "size": 10, "title": "\u003cb\u003eCarthage\u003c/b\u003e\u003cbr\u003eHistoric_blogs\u003cbr\u003e\u003ci\u003eQ133442\u003c/i\u003e"}, {"font": {"color": "white"}, "group": "Historic_blogs", "id": "Q2277", "label": "Roman Empire", "shape": "dot", "size": 10, "title": "\u003cb\u003eRoman Empire\u003c/b\u003e\u003cbr\u003eHistoric_blogs\u003cbr\u003e\u003ci\u003eQ48349\u003c/i\u003e"}, {"font": {"color": "white"}, "group": "Historic_blogs", "id": "Q6373", "label": "British Museum", "shape": "dot", "size": 10, "title": "\u003cb\u003eBritish Museum\u003c/b\u003e\u003cbr\u003eHistoric_blogs\u003cbr\u003e\u003ci\u003eQ17431399\u003c/i\u003e"}, {"font": {"color": "white"}, "group": "Historic_blogs", "id": "Q4918", "label": "Mediterranean Sea", "shape": "dot", "size": 10, "title": "\u003cb\u003eMediterranean Sea\u003c/b\u003e\u003cbr\u003eHistoric_blogs\u003cbr\u003e\u003ci\u003eQ1973404\u003c/i\u003e"}, {"font": {"color": "white"}, "group": "Movie_reviews", "id": "Q7325", "label": "Jewish people", "shape": "dot", "size": 14, "title": "\u003cb\u003eJewish people\u003c/b\u003e\u003cbr\u003eMovie_reviews\u003cbr\u003eHistoric_blogs\u003cbr\u003e\u003ci\u003eQ11197007\u003c/i\u003e"}, {"font": {"color": "white"}, "group": "Historic_blogs", "id": "Q220", "label": "Rome", "shape": "dot", "size": 10, "title": "\u003cb\u003eRome\u003c/b\u003e\u003cbr\u003eHistoric_blogs\u003cbr\u003e\u003ci\u003eQ902814\u003c/i\u003e"}, {"font": {"color": "white"}, "group": "Historic_blogs", "id": "Q17167", "label": "Roman Republic", "shape": "dot", "size": 10, "title": "\u003cb\u003eRoman Republic\u003c/b\u003e\u003cbr\u003eHistoric_blogs\u003cbr\u003e\u003ci\u003eQ11514315\u003c/i\u003e"}, {"font": {"color": "white"}, "group": "Historic_blogs", "id": "Q60022", "label": "Tennis Court Oath", "shape": "dot", "size": 10, "title": "\u003cb\u003eTennis Court Oath\u003c/b\u003e\u003cbr\u003eHistoric_blogs\u003cbr\u003e\u003ci\u003eQ1190554\u003c/i\u003e"}, {"font": {"color": "white"}, "group": "Historic_blogs", "id": "Q1340801", "label": "Jean Joseph Mounier", "shape": "dot", "size": 10, "title": "\u003cb\u003eJean Joseph Mounier\u003c/b\u003e\u003cbr\u003eHistoric_blogs\u003cbr\u003e\u003ci\u003ehuman\u003c/i\u003e"}, {"font": {"color": "white"}, "group": "Historic_blogs", "id": "Q7507716", "label": "Sic\u00e1n National Museum", "shape": "dot", "size": 10, "title": "\u003cb\u003eSic\u00e1n National Museum\u003c/b\u003e\u003cbr\u003eHistoric_blogs\u003cbr\u003e\u003ci\u003eQ33506\u003c/i\u003e"}, {"font": {"color": "white"}, "group": "Historic_blogs", "id": "Q1463941", "label": "Estates-General of 1789", "shape": "dot", "size": 10, "title": "\u003cb\u003eEstates-General of 1789\u003c/b\u003e\u003cbr\u003eHistoric_blogs\u003cbr\u003e\u003ci\u003eQ207304\u003c/i\u003e"}, {"font": {"color": "white"}, "group": "Historic_blogs", "id": "Q768086", "label": "Lambayeque", "shape": "dot", "size": 10, "title": "\u003cb\u003eLambayeque\u003c/b\u003e\u003cbr\u003eHistoric_blogs\u003cbr\u003e\u003ci\u003eQ515\u003c/i\u003e"}, {"font": {"color": "white"}, "group": "Historic_blogs", "id": "Q7732", "label": "Louis XVI of France", "shape": "dot", "size": 10, "title": "\u003cb\u003eLouis XVI of France\u003c/b\u003e\u003cbr\u003eHistoric_blogs\u003cbr\u003e\u003ci\u003ehuman\u003c/i\u003e"}, {"font": {"color": "white"}, "group": "Historic_blogs", "id": "Q41642", "label": "Phoenicia", "shape": "dot", "size": 10, "title": "\u003cb\u003ePhoenicia\u003c/b\u003e\u003cbr\u003eHistoric_blogs\u003cbr\u003e\u003ci\u003eQ3024240\u003c/i\u003e"}, {"font": {"color": "white"}, "group": "Historic_blogs", "id": "Q725404", "label": "Pyramid of Cestius", "shape": "dot", "size": 10, "title": "\u003cb\u003ePyramid of Cestius\u003c/b\u003e\u003cbr\u003eHistoric_blogs\u003cbr\u003e\u003ci\u003eQ839954\u003c/i\u003e"}, {"font": {"color": "white"}, "group": "Historic_blogs", "id": "Q1233131", "label": "Vindolanda", "shape": "dot", "size": 10, "title": "\u003cb\u003eVindolanda\u003c/b\u003e\u003cbr\u003eHistoric_blogs\u003cbr\u003e\u003ci\u003eQ88205\u003c/i\u003e"}, {"font": {"color": "white"}, "group": "Historic_blogs", "id": "Q160538", "label": "Gian Lorenzo Bernini", "shape": "dot", "size": 10, "title": "\u003cb\u003eGian Lorenzo Bernini\u003c/b\u003e\u003cbr\u003eHistoric_blogs\u003cbr\u003e\u003ci\u003ehuman\u003c/i\u003e"}, {"font": {"color": "white"}, "group": "Historic_blogs", "id": "Q637119", "label": "\u00c7orum Archaeological Museum", "shape": "dot", "size": 10, "title": "\u003cb\u003e\u00c7orum Archaeological Museum\u003c/b\u003e\u003cbr\u003eHistoric_blogs\u003cbr\u003e\u003ci\u003eQ3329412\u003c/i\u003e"}, {"font": {"color": "white"}, "group": "Historic_blogs", "id": "Q22047654", "label": "Must Farm Bronze Age settlement", "shape": "dot", "size": 10, "title": "\u003cb\u003eMust Farm Bronze Age settlement\u003c/b\u003e\u003cbr\u003eHistoric_blogs\u003cbr\u003e\u003ci\u003eQ839954\u003c/i\u003e"}, {"font": {"color": "white"}, "group": "Historic_blogs", "id": "Q273854", "label": "Gauls", "shape": "dot", "size": 10, "title": "\u003cb\u003eGauls\u003c/b\u003e\u003cbr\u003eHistoric_blogs\u003cbr\u003e\u003ci\u003eQ4204501\u003c/i\u003e"}, {"font": {"color": "white"}, "group": "Historic_blogs", "id": "Q40949", "label": "American Revolutionary War", "shape": "dot", "size": 10, "title": "\u003cb\u003eAmerican Revolutionary War\u003c/b\u003e\u003cbr\u003eHistoric_blogs\u003cbr\u003e\u003ci\u003eQ1006311\u003c/i\u003e"}, {"font": {"color": "white"}, "group": "Historic_blogs", "id": "Q42207", "label": "Caravaggio", "shape": "dot", "size": 10, "title": "\u003cb\u003eCaravaggio\u003c/b\u003e\u003cbr\u003eHistoric_blogs\u003cbr\u003e\u003ci\u003ehuman\u003c/i\u003e"}, {"font": {"color": "white"}, "group": "Historic_blogs", "id": "Q878607", "label": "Syrians", "shape": "dot", "size": 10, "title": "\u003cb\u003eSyrians\u003c/b\u003e\u003cbr\u003eHistoric_blogs\u003cbr\u003e\u003ci\u003eQ33829\u003c/i\u003e"}, {"font": {"color": "white"}, "group": "Historic_blogs", "id": "Q25365", "label": "Gruidae", "shape": "dot", "size": 10, "title": "\u003cb\u003eGruidae\u003c/b\u003e\u003cbr\u003eHistoric_blogs\u003cbr\u003e\u003ci\u003eQ16521\u003c/i\u003e"}, {"font": {"color": "white"}, "group": "Movie_reviews", "id": "Q47716", "label": "Charleston", "shape": "dot", "size": 14, "title": "\u003cb\u003eCharleston\u003c/b\u003e\u003cbr\u003eMovie_reviews\u003cbr\u003eHistoric_blogs\u003cbr\u003e\u003ci\u003eQ1093829\u003c/i\u003e"}, {"font": {"color": "white"}, "group": "Historic_blogs", "id": "Q127254", "label": "Alexander VII", "shape": "dot", "size": 10, "title": "\u003cb\u003eAlexander VII\u003c/b\u003e\u003cbr\u003eHistoric_blogs\u003cbr\u003e\u003ci\u003ehuman\u003c/i\u003e"}, {"font": {"color": "white"}, "group": "Historic_blogs", "id": "Q22649", "label": "antisemitism", "shape": "dot", "size": 10, "title": "\u003cb\u003eantisemitism\u003c/b\u003e\u003cbr\u003eHistoric_blogs\u003cbr\u003e\u003ci\u003eQ2729863\u003c/i\u003e"}, {"font": {"color": "white"}, "group": "Historic_blogs", "id": "Q1409", "label": "Caligula", "shape": "dot", "size": 10, "title": "\u003cb\u003eCaligula\u003c/b\u003e\u003cbr\u003eHistoric_blogs\u003cbr\u003e\u003ci\u003ehuman\u003c/i\u003e"}, {"font": {"color": "white"}, "group": "Historic_blogs", "id": "Q160311", "label": "Henry III of England", "shape": "dot", "size": 10, "title": "\u003cb\u003eHenry III of England\u003c/b\u003e\u003cbr\u003eHistoric_blogs\u003cbr\u003e\u003ci\u003ehuman\u003c/i\u003e"}, {"font": {"color": "white"}, "group": "Historic_blogs", "id": "Q5406", "label": "Hittites", "shape": "dot", "size": 10, "title": "\u003cb\u003eHittites\u003c/b\u003e\u003cbr\u003eHistoric_blogs\u003cbr\u003e\u003ci\u003eQ4204501\u003c/i\u003e"}, {"font": {"color": "white"}, "group": "Historic_blogs", "id": "Q7462", "label": "Song dynasty", "shape": "dot", "size": 10, "title": "\u003cb\u003eSong dynasty\u003c/b\u003e\u003cbr\u003eHistoric_blogs\u003cbr\u003e\u003ci\u003eQ12857432\u003c/i\u003e"}, {"font": {"color": "white"}, "group": "Automotive_blogs", "id": "Q1456", "label": "South Carolina", "shape": "dot", "size": 14, "title": "\u003cb\u003eSouth Carolina\u003c/b\u003e\u003cbr\u003eAutomotive_blogs\u003cbr\u003eHistoric_blogs\u003cbr\u003e\u003ci\u003eQ35657\u003c/i\u003e"}, {"font": {"color": "white"}, "group": "Historic_blogs", "id": "Q83418", "label": "Normans", "shape": "dot", "size": 10, "title": "\u003cb\u003eNormans\u003c/b\u003e\u003cbr\u003eHistoric_blogs\u003cbr\u003e\u003ci\u003eQ41710\u003c/i\u003e"}, {"font": {"color": "white"}, "group": "News", "id": "Q812", "label": "Florida", "shape": "dot", "size": 18, "title": "\u003cb\u003eFlorida\u003c/b\u003e\u003cbr\u003eNews\u003cbr\u003eJob_offers\u003cbr\u003eHistoric_blogs\u003cbr\u003e\u003ci\u003eQ35657\u003c/i\u003e"}, {"font": {"color": "white"}, "group": "Historic_blogs", "id": "Q74363", "label": "Hippocampus", "shape": "dot", "size": 10, "title": "\u003cb\u003eHippocampus\u003c/b\u003e\u003cbr\u003eHistoric_blogs\u003cbr\u003e\u003ci\u003eQ16521\u003c/i\u003e"}, {"font": {"color": "white"}, "group": "Historic_blogs", "id": "Q1770351", "label": "East Florida", "shape": "dot", "size": 10, "title": "\u003cb\u003eEast Florida\u003c/b\u003e\u003cbr\u003eHistoric_blogs\u003cbr\u003e\u003ci\u003eQ1620908\u003c/i\u003e"}, {"font": {"color": "white"}, "group": "Historic_blogs", "id": "Q487988", "label": "St. Augustine", "shape": "dot", "size": 10, "title": "\u003cb\u003eSt. Augustine\u003c/b\u003e\u003cbr\u003eHistoric_blogs\u003cbr\u003e\u003ci\u003eQ1093829\u003c/i\u003e"}, {"font": {"color": "white"}, "group": "Historic_blogs", "id": "Q676555", "label": "Francis of Assisi", "shape": "dot", "size": 10, "title": "\u003cb\u003eFrancis of Assisi\u003c/b\u003e\u003cbr\u003eHistoric_blogs\u003cbr\u003e\u003ci\u003ehuman\u003c/i\u003e"}, {"font": {"color": "white"}, "group": "Historic_blogs", "id": "Q1651392", "label": "Romans", "shape": "dot", "size": 10, "title": "\u003cb\u003eRomans\u003c/b\u003e\u003cbr\u003eHistoric_blogs\u003cbr\u003e\u003ci\u003eQ4204501\u003c/i\u003e"}, {"font": {"color": "white"}, "group": "Historic_blogs", "id": "Q1413", "label": "Nero", "shape": "dot", "size": 10, "title": "\u003cb\u003eNero\u003c/b\u003e\u003cbr\u003eHistoric_blogs\u003cbr\u003e\u003ci\u003ehuman\u003c/i\u003e"}, {"font": {"color": "white"}, "group": "Historic_blogs", "id": "Q44248", "label": "Jerome", "shape": "dot", "size": 10, "title": "\u003cb\u003eJerome\u003c/b\u003e\u003cbr\u003eHistoric_blogs\u003cbr\u003e\u003ci\u003ehuman\u003c/i\u003e"}, {"font": {"color": "white"}, "group": "Historic_blogs", "id": "Q7742", "label": "Louis XIV of France", "shape": "dot", "size": 10, "title": "\u003cb\u003eLouis XIV of France\u003c/b\u003e\u003cbr\u003eHistoric_blogs\u003cbr\u003e\u003ci\u003ehuman\u003c/i\u003e"}, {"font": {"color": "white"}, "group": "Historic_blogs", "id": "Q849967", "label": "Celtic Britons", "shape": "dot", "size": 10, "title": "\u003cb\u003eCeltic Britons\u003c/b\u003e\u003cbr\u003eHistoric_blogs\u003cbr\u003e\u003ci\u003eQ4204501\u003c/i\u003e"}, {"font": {"color": "white"}, "group": "Historic_blogs", "id": "Q11761", "label": "Bronze Age", "shape": "dot", "size": 10, "title": "\u003cb\u003eBronze Age\u003c/b\u003e\u003cbr\u003eHistoric_blogs\u003cbr\u003e\u003ci\u003eQ15401699\u003c/i\u003e"}, {"font": {"color": "white"}, "group": "Historic_blogs", "id": "Q1072540", "label": "House of Chigi", "shape": "dot", "size": 10, "title": "\u003cb\u003eHouse of Chigi\u003c/b\u003e\u003cbr\u003eHistoric_blogs\u003cbr\u003e\u003ci\u003eQ13417114\u003c/i\u003e"}, {"font": {"color": "white"}, "group": "Historic_blogs", "id": "Q1434", "label": "Commodus", "shape": "dot", "size": 10, "title": "\u003cb\u003eCommodus\u003c/b\u003e\u003cbr\u003eHistoric_blogs\u003cbr\u003e\u003ci\u003ehuman\u003c/i\u003e"}, {"font": {"color": "white"}, "group": "Historic_blogs", "id": "Q4383747", "label": "Punic people", "shape": "dot", "size": 10, "title": "\u003cb\u003ePunic people\u003c/b\u003e\u003cbr\u003eHistoric_blogs\u003cbr\u003e\u003ci\u003eQ4204501\u003c/i\u003e"}, {"font": {"color": "white"}, "group": "Historic_blogs", "id": "Q37594", "label": "William the Conqueror", "shape": "dot", "size": 10, "title": "\u003cb\u003eWilliam the Conqueror\u003c/b\u003e\u003cbr\u003eHistoric_blogs\u003cbr\u003e\u003ci\u003ehuman\u003c/i\u003e"}, {"font": {"color": "white"}, "group": "Historic_blogs", "id": "Q2555173", "label": "British loyalism", "shape": "dot", "size": 10, "title": "\u003cb\u003eBritish loyalism\u003c/b\u003e\u003cbr\u003eHistoric_blogs\u003cbr\u003e\u003ci\u003e\u003c/i\u003e"}, {"font": {"color": "white"}, "group": "Historic_blogs", "id": "Q54122", "label": "Continental Army", "shape": "dot", "size": 10, "title": "\u003cb\u003eContinental Army\u003c/b\u003e\u003cbr\u003eHistoric_blogs\u003cbr\u003e\u003ci\u003eQ37726\u003c/i\u003e"}, {"font": {"color": "white"}, "group": "Historic_blogs", "id": "Q9683", "label": "Tang dynasty", "shape": "dot", "size": 10, "title": "\u003cb\u003eTang dynasty\u003c/b\u003e\u003cbr\u003eHistoric_blogs\u003cbr\u003e\u003ci\u003eQ50068795\u003c/i\u003e"}]);
+                  edges = new vis.DataSet([{"arrows": "to", "from": "Q4948", "label": "pays", "title": "pays", "to": "Q4948", "width": 1}, {"arrows": "to", "from": "Q233", "label": "pays", "title": "pays", "to": "Q233", "width": 1}, {"arrows": "to", "from": "Q25", "label": "pays", "title": "pays", "to": "Q145", "width": 1}, {"arrows": "to", "from": "Q25", "label": "pays", "title": "pays", "to": "Q25", "width": 1}, {"arrows": "to", "from": "Q1277768", "label": "pays", "title": "pays", "to": "Q145", "width": 1}, {"arrows": "to", "from": "Q641", "label": "pays", "title": "pays", "to": "Q38", "width": 1}, {"arrows": "to", "from": "Q641", "label": "pays", "title": "pays", "to": "Q142", "width": 1}, {"arrows": "to", "from": "Q641", "label": "pays", "title": "pays", "to": "Q4948", "width": 1}, {"arrows": "to", "from": "Q6271", "label": "pays", "title": "pays", "to": "Q29", "width": 1}, {"arrows": "to", "from": "Q160894", "label": "pays", "title": "pays", "to": "Q29", "width": 1}, {"arrows": "to", "from": "Q23079", "label": "pays", "title": "pays", "to": "Q145", "width": 1}, {"arrows": "to", "from": "Q22890", "label": "pays", "title": "pays", "to": "Q145", "width": 1}, {"arrows": "to", "from": "Q462239", "label": "situ\u00e9 dans", "title": "situ\u00e9 dans", "to": "Q1731", "width": 1}, {"arrows": "to", "from": "Q38060", "label": "pays", "title": "pays", "to": "Q142", "width": 1}, {"arrows": "to", "from": "Q38060", "label": "pays", "title": "pays", "to": "Q38", "width": 1}, {"arrows": "to", "from": "Q539051", "label": "pays", "title": "pays", "to": "Q43", "width": 1}, {"arrows": "to", "from": "Q539051", "label": "pays", "title": "pays", "to": "Q145", "width": 1}, {"arrows": "to", "from": "Q23666", "label": "pays", "title": "pays", "to": "Q145", "width": 1}, {"arrows": "to", "from": "Q35392414", "label": "pays", "title": "pays", "to": "Q419", "width": 1}, {"arrows": "to", "from": "Q80637", "label": "situ\u00e9 dans", "title": "situ\u00e9 dans", "to": "Q42462", "width": 1}, {"arrows": "to", "from": "Q80637", "label": "pays", "title": "pays", "to": "Q145", "width": 1}, {"arrows": "to", "from": "Q419", "label": "pays", "title": "pays", "to": "Q419", "width": 1}, {"arrows": "to", "from": "Q270532", "label": "pays", "title": "pays", "to": "Q145", "width": 1}, {"arrows": "to", "from": "Q29", "label": "pays", "title": "pays", "to": "Q29", "width": 1}, {"arrows": "to", "from": "Q172771", "label": "pays", "title": "pays", "to": "Q145", "width": 1}, {"arrows": "to", "from": "Q13372", "label": "pays", "title": "pays", "to": "Q38", "width": 1}, {"arrows": "to", "from": "Q37", "label": "pays", "title": "pays", "to": "Q37", "width": 1}, {"arrows": "to", "from": "Q3398729", "label": "pays", "title": "pays", "to": "Q145", "width": 1}, {"arrows": "to", "from": "Q1731", "label": "pays", "title": "pays", "to": "Q153015", "width": 1}, {"arrows": "to", "from": "Q53437", "label": "lieu naissance", "title": "lieu naissance", "to": "Q1731", "width": 1}, {"arrows": "to", "from": "Q39518", "label": "pays", "title": "pays", "to": "Q233", "width": 1}, {"arrows": "to", "from": "Q6534", "label": "pays", "title": "pays", "to": "Q142", "width": 1}, {"arrows": "to", "from": "Q6473283", "label": "pays", "title": "pays", "to": "Q43", "width": 1}, {"arrows": "to", "from": "Q148", "label": "pays", "title": "pays", "to": "Q148", "width": 1}, {"arrows": "to", "from": "Q43684", "label": "pays", "title": "pays", "to": "Q148", "width": 1}, {"arrows": "to", "from": "Q31347", "label": "pays", "title": "pays", "to": "Q148", "width": 1}, {"arrows": "to", "from": "Q580631", "label": "pays", "title": "pays", "to": "Q145", "width": 1}, {"arrows": "to", "from": "Q182664", "label": "nationalit\u00e9", "title": "nationalit\u00e9", "to": "Q4948", "width": 1}, {"arrows": "to", "from": "Q182664", "label": "lieu naissance", "title": "lieu naissance", "to": "Q641", "width": 1}, {"arrows": "to", "from": "Q990103", "label": "situ\u00e9 dans", "title": "situ\u00e9 dans", "to": "Q213361", "width": 1}, {"arrows": "to", "from": "Q990103", "label": "pays", "title": "pays", "to": "Q145", "width": 1}, {"arrows": "to", "from": "Q53438", "label": "lieu naissance", "title": "lieu naissance", "to": "Q1731", "width": 1}, {"arrows": "to", "from": "Q193582", "label": "pays", "title": "pays", "to": "Q142", "width": 1}, {"arrows": "to", "from": "Q206900", "label": "situ\u00e9 dans", "title": "situ\u00e9 dans", "to": "Q272947", "width": 1}, {"arrows": "to", "from": "Q206900", "label": "pays", "title": "pays", "to": "Q43", "width": 1}, {"arrows": "to", "from": "Q42462", "label": "pays", "title": "pays", "to": "Q145", "width": 1}, {"arrows": "to", "from": "Q208471", "label": "situ\u00e9 dans", "title": "situ\u00e9 dans", "to": "Q43684", "width": 1}, {"arrows": "to", "from": "Q208471", "label": "pays", "title": "pays", "to": "Q148", "width": 1}, {"arrows": "to", "from": "Q131479", "label": "pays", "title": "pays", "to": "Q38", "width": 1}, {"arrows": "to", "from": "Q172438", "label": "pays", "title": "pays", "to": "Q145", "width": 1}, {"arrows": "to", "from": "Q145", "label": "partie de", "title": "partie de", "to": "Q46", "width": 1}, {"arrows": "to", "from": "Q145", "label": "pays", "title": "pays", "to": "Q145", "width": 1}, {"arrows": "to", "from": "Q653002", "label": "situ\u00e9 dans", "title": "situ\u00e9 dans", "to": "Q1731", "width": 1}, {"arrows": "to", "from": "Q2408803", "label": "pays", "title": "pays", "to": "Q145", "width": 1}, {"arrows": "to", "from": "Q36", "label": "pays", "title": "pays", "to": "Q36", "width": 1}, {"arrows": "to", "from": "Q6343", "label": "pays", "title": "pays", "to": "Q2277", "width": 1}, {"arrows": "to", "from": "Q6373", "label": "pays", "title": "pays", "to": "Q145", "width": 1}, {"arrows": "to", "from": "Q4918", "label": "pays", "title": "pays", "to": "Q29", "width": 1}, {"arrows": "to", "from": "Q4918", "label": "pays", "title": "pays", "to": "Q142", "width": 1}, {"arrows": "to", "from": "Q4918", "label": "pays", "title": "pays", "to": "Q38", "width": 1}, {"arrows": "to", "from": "Q4918", "label": "pays", "title": "pays", "to": "Q233", "width": 1}, {"arrows": "to", "from": "Q4918", "label": "pays", "title": "pays", "to": "Q43", "width": 1}, {"arrows": "to", "from": "Q7325", "label": "pays", "title": "pays", "to": "Q142", "width": 1}, {"arrows": "to", "from": "Q7325", "label": "pays", "title": "pays", "to": "Q145", "width": 1}, {"arrows": "to", "from": "Q220", "label": "pays", "title": "pays", "to": "Q17167", "width": 1}, {"arrows": "to", "from": "Q220", "label": "pays", "title": "pays", "to": "Q2277", "width": 1}, {"arrows": "to", "from": "Q220", "label": "pays", "title": "pays", "to": "Q38", "width": 1}, {"arrows": "to", "from": "Q60022", "label": "partie de", "title": "partie de", "to": "Q6534", "width": 1}, {"arrows": "to", "from": "Q142", "label": "pays", "title": "pays", "to": "Q142", "width": 1}, {"arrows": "to", "from": "Q1340801", "label": "nationalit\u00e9", "title": "nationalit\u00e9", "to": "Q142", "width": 1}, {"arrows": "to", "from": "Q7507716", "label": "pays", "title": "pays", "to": "Q419", "width": 1}, {"arrows": "to", "from": "Q213361", "label": "situ\u00e9 dans", "title": "situ\u00e9 dans", "to": "Q25", "width": 1}, {"arrows": "to", "from": "Q213361", "label": "pays", "title": "pays", "to": "Q145", "width": 1}, {"arrows": "to", "from": "Q1463941", "label": "partie de", "title": "partie de", "to": "Q6534", "width": 1}, {"arrows": "to", "from": "Q43", "label": "pays", "title": "pays", "to": "Q43", "width": 1}, {"arrows": "to", "from": "Q768086", "label": "pays", "title": "pays", "to": "Q419", "width": 1}, {"arrows": "to", "from": "Q7732", "label": "nationalit\u00e9", "title": "nationalit\u00e9", "to": "Q142", "width": 1}, {"arrows": "to", "from": "Q38", "label": "pays", "title": "pays", "to": "Q38", "width": 1}, {"arrows": "to", "from": "Q41642", "label": "pays", "title": "pays", "to": "Q43", "width": 1}, {"arrows": "to", "from": "Q725404", "label": "pays", "title": "pays", "to": "Q38", "width": 1}, {"arrows": "to", "from": "Q1233131", "label": "pays", "title": "pays", "to": "Q145", "width": 1}, {"arrows": "to", "from": "Q272947", "label": "pays", "title": "pays", "to": "Q43", "width": 1}, {"arrows": "to", "from": "Q160538", "label": "nationalit\u00e9", "title": "nationalit\u00e9", "to": "Q38", "width": 1}, {"arrows": "to", "from": "Q637119", "label": "situ\u00e9 dans", "title": "situ\u00e9 dans", "to": "Q272947", "width": 1}, {"arrows": "to", "from": "Q637119", "label": "situ\u00e9 dans", "title": "situ\u00e9 dans", "to": "Q206900", "width": 1}, {"arrows": "to", "from": "Q637119", "label": "pays", "title": "pays", "to": "Q43", "width": 1}, {"arrows": "to", "from": "Q22047654", "label": "pays", "title": "pays", "to": "Q145", "width": 1}]);
+
+                  nodeColors = {};
+                  allNodes = nodes.get({ returnType: "Object" });
+                  for (nodeId in allNodes) {
+                    nodeColors[nodeId] = allNodes[nodeId].color;
+                  }
+                  allEdges = edges.get({ returnType: "Object" });
+                  // adding nodes and edges to the graph
+                  data = {nodes: nodes, edges: edges};
+
+                  var options = {"physics": {"forceAtlas2Based": {"gravitationalConstant": -80, "centralGravity": 0.003, "springLength": 120, "springConstant": 0.06, "damping": 0.4}, "solver": "forceAtlas2Based", "stabilization": {"iterations": 200}}, "edges": {"smooth": {"type": "continuous"}, "arrows": {"to": {"enabled": true, "scaleFactor": 0.4}}}, "interaction": {"hover": true, "navigationButtons": true}};
+
+                  
+
+
+                  
+
+                  network = new vis.Network(container, data, options);
+
+                  
+
+                  
+
+                  
+
+
+                  
+                      network.on("stabilizationProgress", function(params) {
+                          document.getElementById('loadingBar').removeAttribute("style");
+                          var maxWidth = 496;
+                          var minWidth = 20;
+                          var widthFactor = params.iterations/params.total;
+                          var width = Math.max(minWidth,maxWidth * widthFactor);
+                          document.getElementById('bar').style.width = width + 'px';
+                          document.getElementById('text').innerHTML = Math.round(widthFactor*100) + '%';
+                      });
+                      network.once("stabilizationIterationsDone", function() {
+                          document.getElementById('text').innerHTML = '100%';
+                          document.getElementById('bar').style.width = '496px';
+                          document.getElementById('loadingBar').style.opacity = 0;
+                          // really clean the dom element
+                          setTimeout(function () {document.getElementById('loadingBar').style.display = 'none';}, 500);
+                      });
+                  
+
+                  return network;
+
+              }
+              drawGraph();
+        </script>
+    </body>
+</html>
