@@ -32,3 +32,7 @@ with urllib.request.urlopen(req, timeout=3600) as response:
 with open("wikidata_elgold.json", "w", encoding="utf-8") as out:
     json.dump(results, out, ensure_ascii=False)
 print("✓ Sauvegardé dans wikidata_elgold.json")
+
+
+
+
