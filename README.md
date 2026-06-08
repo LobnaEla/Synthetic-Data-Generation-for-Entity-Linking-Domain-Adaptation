@@ -8,5 +8,15 @@ chagement selon les recommandations du professeur : on charge les données une f
 ajout du code qui permet d'extraire les sous graphs sur els thèmes de elgold, pour chaque thème: deux CSV : un pour les sommets et un pour les arrêtes.
 
 
+5/06 pas de réunion avec l'encadrant
+
+
+
+
+
+
+
+
+
 
 
