@@ -20,3 +20,32 @@ ajout du code qui permet d'extraire les sous graphs sur els thèmes de elgold, p
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
