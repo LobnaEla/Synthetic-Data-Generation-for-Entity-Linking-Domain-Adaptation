@@ -6,3 +6,5 @@ Début du projet, premeir RDV avec l'encadrant
 
 - document "project plan" qui défini le projet, les tâche, la répartion des tâches et le planning
 - Articles à lire
+
+
