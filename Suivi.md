@@ -8,3 +8,7 @@ Début du projet, premeir RDV avec l'encadrant
 - Articles à lire
 
 
+
+# semaine du 08/06
+
+nous n'avons pas vu notre superviseur la semaine précédente, le zero shot tourne encore, le fine tune est en cours et le génération de candidat est en cours aussi
