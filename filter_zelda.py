@@ -131,7 +131,7 @@ def main():
                 fout.write(json.dumps({
                     "prompt": build_prompt(text, start, end, args.context_chars),
                     "ground_truth_id": qid,
-                    "domain": domains[0] if len(domains) == 1 else domains,
+                    "domain": domains,  # always a list: pyarrow needs a stable column type
                     "mention": text[start:end],
                 }, ensure_ascii=False) + "\n")
                 n_kept += 1

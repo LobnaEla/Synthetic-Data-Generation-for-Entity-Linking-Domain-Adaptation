@@ -209,9 +209,7 @@ def main():
                 fout.write(json.dumps({
                     "prompt": build_prompt(text, start, end, args.context_chars, cands),
                     "ground_truth_id": completion,
-                    "domain": qid_to_domains[gold_qid][0]
-                              if len(qid_to_domains[gold_qid]) == 1
-                              else qid_to_domains[gold_qid],
+                    "domain": qid_to_domains[gold_qid],  # always a list: stable pyarrow type
                     "mention": mention_surface,
                 }, ensure_ascii=False) + "\n")
                 stats["kept"] += 1
