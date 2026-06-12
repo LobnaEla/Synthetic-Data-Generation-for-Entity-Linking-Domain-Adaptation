@@ -5,3 +5,6 @@ Lobna : il reste encore 35% pour le embedding mais sinon c'est déjà fait avecl
 il faut changer le prompt pour avoir le même que anas
 
 Anas : faire tourner le code prend très longtemps
+
+
+faire attention à ne pas utiliser des données utilisées pour l'entrainement dans les tests
