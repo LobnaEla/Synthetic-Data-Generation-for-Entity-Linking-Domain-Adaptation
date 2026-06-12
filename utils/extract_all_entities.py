@@ -1,12 +1,79 @@
 import argparse
 import csv
-import re
+import glob
 import sqlite3
 import subprocess
 import sys
 import time
 from pathlib import Path
 
+
+# ---------------------------------------------------------------------------
+# Auto-patch wikimapper's processor.py to disable redirect propagation.
+# Without this patch, redirect pages get a wikidata_id copied from the
+# canonical page, making it impossible to distinguish them at extraction.
+# With the patch, only canonical pages retain a wikidata_id.
+# ---------------------------------------------------------------------------
+
+_REDIRECT_BLOCK_START = '_logger.info("Parsing redirects dump")'
+_REDIRECT_BLOCK_END = "conn.commit()"
+_PATCH_MARKER = "# PATCHED: redirect section disabled"
+
+# If the DB has more than this many entities with a wikidata_id,
+# it likely includes redirects (canonical pages are ~6-7M).
+_MAX_EXPECTED_CANONICAL = 10_000_000
+
+
+def _find_processor() -> Path | None:
+    """Locate wikimapper's processor.py inside the current venv."""
+    matches = glob.glob(".venv/**/wikimapper/processor.py", recursive=True)
+    return Path(matches[0]) if matches else None
+
+
+def _patch_processor(proc_path: Path) -> bool:
+    """Comment out the redirect-parsing section. Returns True if patched."""
+    text = proc_path.read_text(encoding="utf-8")
+
+    if _PATCH_MARKER in text:
+        print("[PATCH] processor.py already patched.")
+        return False
+
+    if _REDIRECT_BLOCK_START not in text:
+        print("[PATCH] WARNING: could not find redirect section — skipping patch.")
+        return False
+
+    lines = text.splitlines(keepends=True)
+    new_lines = []
+    in_block = False
+    patched = False
+
+    for line in lines:
+        if not in_block and _REDIRECT_BLOCK_START in line:
+            new_lines.append(
+                f"    {_PATCH_MARKER} by extract_all_entities.py\n"
+            )
+            in_block = True
+
+        if in_block:
+            new_lines.append("    # " + line.lstrip() if line.strip() else line)
+            if _REDIRECT_BLOCK_END in line:
+                in_block = False
+                patched = True
+        else:
+            new_lines.append(line)
+
+    if patched:
+        proc_path.write_text("".join(new_lines), encoding="utf-8")
+        print(f"[PATCH] Redirect section commented out in {proc_path}")
+    else:
+        print("[PATCH] WARNING: could not locate end of redirect section.")
+
+    return patched
+
+
+# ---------------------------------------------------------------------------
+# Setup: download dump + build DB
+# ---------------------------------------------------------------------------
 
 def run_setup(wikimapper_dir: Path):
     wikimapper_dir.mkdir(parents=True, exist_ok=True)
@@ -17,13 +84,21 @@ def run_setup(wikimapper_dir: Path):
         print("[SETUP] Delete it manually to rebuild.")
         return db_path
 
+    # Auto-patch before building the DB
+    proc_path = _find_processor()
+    if proc_path is None:
+        print("[SETUP] ERROR: wikimapper not installed (processor.py not found).")
+        print("        Run: pip install wikimapper")
+        sys.exit(1)
+    _patch_processor(proc_path)
+
     print(f"[SETUP] Downloading Wikipedia dump into {wikimapper_dir} ...")
     subprocess.run(
         ["wikimapper", "download", "enwiki-latest", "--dir", str(wikimapper_dir)],
         check=True,
     )
 
-    print(f"[SETUP] Building SQLite DB ...")
+    print("[SETUP] Building SQLite DB ...")
     subprocess.run(
         ["wikimapper", "create", "enwiki-latest",
          "--dumpdir", str(wikimapper_dir),
@@ -35,25 +110,9 @@ def run_setup(wikimapper_dir: Path):
     return db_path
 
 
-# Regex detecting "glued" words: a lowercase letter immediately followed by an
-# uppercase letter with no space, e.g. "AlbaniaPeople", "AfghanistanCommunications".
-# Canonical Wikipedia titles never look like this.
-_GLUED_RE = re.compile(r"[a-z][A-Z]")
-
-
-def _canonicality_score(title: str) -> tuple:
-    """
-    Return a sort key: lower is better (more canonical).
-
-    Priority (lexicographic tuple):
-      0. Has glued CamelCase words?          0 = no (good), 1 = yes (bad redirect)
-      1. Contains a disambiguation suffix?   0 = no, 1 = yes  (neutral, keep if needed)
-      2. Title length                         shorter is slightly preferred as tie-break
-    """
-    has_glued   = int(bool(_GLUED_RE.search(title)))
-    has_disam   = int(bool(re.search(r"\(.*\)$", title)))
-    return (has_glued, has_disam, len(title))
-
+# ---------------------------------------------------------------------------
+# Extraction
+# ---------------------------------------------------------------------------
 
 def main():
     parser = argparse.ArgumentParser(
@@ -69,7 +128,7 @@ def main():
     )
     parser.add_argument(
         "--db", type=Path, default=None,
-        help="Path to wikimapper SQLite DB. If --setup, auto-detected.",
+        help="Path to wikimapper SQLite DB.",
     )
     parser.add_argument(
         "--out", type=Path, default=Path("data/wikidata_qid_titles.csv"),
@@ -77,7 +136,6 @@ def main():
     )
     args = parser.parse_args()
 
-    # ── Setup mode ──────────────────────────────────────────────────────────
     if args.setup:
         db_path = run_setup(args.wikimapper_dir)
         if args.db is None:
@@ -92,53 +150,39 @@ def main():
         print(f"  python {sys.argv[0]} --setup --wikimapper-dir data/wikimapper")
         return
 
-    # ── Read ─────────────────────────────────────────────────────────────────
     print(f"Reading from {args.db} ...")
     t0 = time.time()
 
     conn = sqlite3.connect(str(args.db))
+
     rows = conn.execute(
-        "SELECT wikidata_id, wikipedia_title FROM mapping "
-        "WHERE wikidata_id IS NOT NULL AND wikipedia_title IS NOT NULL"
+        """
+        SELECT wikidata_id, wikipedia_title
+        FROM mapping
+        WHERE wikidata_id IS NOT NULL
+          AND wikipedia_title IS NOT NULL
+        """
     ).fetchall()
     conn.close()
 
-    print(f"  {len(rows):,} rows read (with redirects) in {time.time() - t0:.1f}s")
+    # Sanity check: if too many rows, the DB likely includes redirects
+    if len(rows) > _MAX_EXPECTED_CANONICAL:
+        print(f"  [WARN] {len(rows):,} entities found — expected ~6-7M for canonical only.")
+        print("         The DB may have been built without the wikimapper patch.")
+        print("         Delete the .db file and re-run with --setup to rebuild.")
 
-    # ── Deduplicate: keep the most canonical title per QID ───────────────────
-    #
-    # The wikimapper DB contains both real article titles and redirect titles
-    # for the same Wikidata QID. Redirect titles are often concatenated strings
-    # without spaces (e.g. "AlbaniaHistory", "AfghanistanCommunications").
-    #
-    # Strategy: for each QID collect all candidate titles, then pick the one
-    # with the best canonicality score (see _canonicality_score).
-    #
-    qid_to_candidates: dict[str, list[str]] = {}
-    for qid, title in rows:
-        title_clean = title.replace("_", " ")
-        qid_to_candidates.setdefault(qid, []).append(title_clean)
+    rows = [(qid, title.replace("_", " ")) for qid, title in rows]
+    print(f"  {len(rows):,} entities extracted in {time.time() - t0:.1f}s")
 
-    qid_to_title = {
-        qid: min(titles, key=_canonicality_score)
-        for qid, titles in qid_to_candidates.items()
-    }
-    rows = [(qid, title) for qid, title in qid_to_title.items()]
-
-    print(f"  {len(rows):,} unique entities after deduplication")
-
-    # ── Write CSV ─────────────────────────────────────────────────────────────
     args.out.parent.mkdir(parents=True, exist_ok=True)
     with open(args.out, "w", encoding="utf-8", newline="") as f:
         writer = csv.writer(f)
         writer.writerow(["qid", "title"])
-        for qid, title in rows:
-            writer.writerow([qid, title])
+        writer.writerows(rows)
 
     print(f"  Written: {args.out} ({len(rows):,} entities)")
     print(f"  Total time: {time.time() - t0:.1f}s")
 
-    # ── Sanity check ──────────────────────────────────────────────────────────
     print("\nSanity check (first 5 rows):")
     with open(args.out, encoding="utf-8") as f:
         reader = csv.reader(f)

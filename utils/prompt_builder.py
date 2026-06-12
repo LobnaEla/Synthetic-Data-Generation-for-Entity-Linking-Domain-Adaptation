@@ -1,74 +1,16 @@
 import string
 
-# Letters used to label MCQ candidates: A, B, C, ..., T (up to 20 candidates)
-MCQ_LETTERS = list(string.ascii_uppercase)
 
-
-def build_prompt_zero_shot(context: str, mention: str, entity_type: str) -> str:
-    return f"""/no_think
-You are a high-precision English Wikipedia Entity Linking specialist.
-
-Your task is to disambiguate one entity mention in context.
-
-You will receive:
-TEXT: a passage containing the mention
-MENTION: the exact surface form to link
-ENTITY TYPE: the semantic type of the mention
-
-Return the single English Wikipedia article title that best corresponds to the MENTION in the given TEXT.
-
-Use the TEXT context to resolve aliases, abbreviations, acronyms, nicknames, surnames, demonyms, adjectival forms, shortened forms, informal references, and ambiguous mentions.
-
-Rules:
-- Output exactly one English Wikipedia article title.
-- Output only the title.
-- Do not explain.
-- Do not output JSON.
-- Do not output Markdown.
-- Do not output a sentence.
-- Do not output a URL.
-- Do not use underscores.
-- Use spaces between words.
-- Preserve the official Wikipedia capitalization.
-- If the mention is already the correct article title, return it unchanged.
-- If the mention is shortened or ambiguous, resolve it to the most specific entity supported by the TEXT.
-- If parenthetical disambiguation is required, include it.
-- Do not invent a non-existing title.
-- Do not output placeholders.
-- Never output braces or template variables.
-- If uncertain, output the single most plausible existing English Wikipedia article title supported by the TEXT.
-
-TEXT:
-{context}
-
-MENTION:
-{mention}
-
-ENTITY TYPE:
-{entity_type}
-
-TITLE:"""
-
-
-def build_prompt_mcq(
+def build_mcq_prompt(
     context: str,
     mention: str,
     entity_type: str,
     candidates: list[str],
-    descriptions: list[str] | None = None,
 ) -> str:
     if not candidates:
-        return build_prompt_zero_shot(context, mention, entity_type)
+        raise ValueError("candidates list is empty")
 
-    # Build candidate lines: "0. Title - Description" or "0. Title"
-    lines = []
-    for i, title in enumerate(candidates):
-        desc = descriptions[i] if descriptions and i < len(descriptions) and descriptions[i] else ""
-        if desc:
-            lines.append(f"{i}. {title} - {desc}")
-        else:
-            lines.append(f"{i}. {title}")
-    options_str = "\n".join(lines)
+    options_str = "\n".join(f"{i}. {title}" for i, title in enumerate(candidates))
 
     return f"""You are an expert designed to disambiguate entities in text, taking into account the overall context and a list of entity candidates.
 TEXT (the mention to disambiguate is enclosed in square brackets):
@@ -91,6 +33,11 @@ def extract_candidates_from_prompt(prompt: str) -> list[str]:
     candidates = []
     for line in prompt.splitlines():
         line = line.strip()
-        if len(line) >= 3 and line[0].isupper() and line[1] == "." and line[2] == " ":
-            candidates.append(line[3:])
+        # Match "0. Title" or "0. Title - Description"
+        if len(line) >= 3 and line[0].isdigit() and ". " in line:
+            # Extract everything after "N. ", strip description if present
+            after_index = line.split(". ", 1)[1]
+            # Remove description part (" - ...") to get just the title
+            title = after_index.split(" - ", 1)[0]
+            candidates.append(title)
     return candidates

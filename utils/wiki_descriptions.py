@@ -45,20 +45,27 @@ def fetch_description(title: str, cache: dict | None = None) -> str:
         cache[title] = ""
         return ""
 
+_CACHE = None
+
+def _get_cache() -> dict:
+    global _CACHE
+    if _CACHE is None:
+        _CACHE = _load_cache()
+    return _CACHE
 
 def fetch_descriptions_batch(titles: list[str]) -> list[str]:
-    cache = _load_cache()
+    cache = _get_cache()
     results = []
     fetched = 0
-
     for title in titles:
+        was_cached = title in cache  
         desc = fetch_description(title, cache)
         results.append(desc)
-        if title not in cache:
+        if not was_cached:
             fetched += 1
             if fetched % 100 == 0:
                 _save_cache(cache)
-                time.sleep(0.1)  # rate limiting
-
-    _save_cache(cache)
+                time.sleep(0.1)
+    if fetched > 0:
+        _save_cache(cache)
     return results
