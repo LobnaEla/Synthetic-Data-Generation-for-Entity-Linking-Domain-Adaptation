@@ -60,41 +60,30 @@ def build_prompt_mcq(
     if not candidates:
         return build_prompt_zero_shot(context, mention, entity_type)
 
-    # Build candidate lines, optionally with descriptions (strongly recommended by paper)
-    def candidate_line(i: int, title: str) -> str:
-        letter = MCQ_LETTERS[i]
-        if descriptions and i < len(descriptions) and descriptions[i]:
-            return f"{letter}. {title} — {descriptions[i]}"
-        return f"{letter}. {title}"
-
-    options_str = "\n".join(
-        candidate_line(i, title)
-        for i, title in enumerate(candidates[:len(MCQ_LETTERS)])
-    )
-
-    letters = MCQ_LETTERS[:len(candidates[:len(MCQ_LETTERS)])]
-    valid_letters = ", ".join(letters)
+    # Build candidate lines: "0. Title - Description" or "0. Title"
+    lines = []
+    for i, title in enumerate(candidates):
+        desc = descriptions[i] if descriptions and i < len(descriptions) and descriptions[i] else ""
+        if desc:
+            lines.append(f"{i}. {title} - {desc}")
+        else:
+            lines.append(f"{i}. {title}")
+    options_str = "\n".join(lines)
 
     return f"""You are an expert designed to disambiguate entities in text, taking into account the overall context and a list of entity candidates.
-
 TEXT (the mention to disambiguate is enclosed in square brackets):
 {context.replace(mention, f"[{mention}]", 1)}
-
 MENTION: {mention}
 ENTITY TYPE: {entity_type}
-
 CANDIDATES:
 {options_str}
-
 Your task:
 1. Identify what real-world entity [{mention}] refers to in the TEXT above.
 2. Use the ENTITY TYPE to rule out candidates of the wrong type.
-3. Consider each candidate carefully — resolve abbreviations, acronyms, aliases, nicknames, and ambiguous surface forms using the surrounding context.
+3. Consider each candidate carefully : resolve abbreviations, acronyms, aliases, nicknames, and ambiguous surface forms using the surrounding context.
 4. Eliminate candidates that contradict information in the TEXT.
 5. Select the single best matching candidate.
-
-Output your answer as a single letter ({valid_letters}).
-Format: "Answer: <letter>"
+Please show your choice with only the index, e.g., "answer: 3".
 """
 
 

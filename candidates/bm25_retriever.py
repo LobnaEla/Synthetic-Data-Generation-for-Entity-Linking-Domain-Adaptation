@@ -3,7 +3,7 @@ import time
 from pathlib import Path
 import pickle
 import re, sys
-
+import csv
 from rank_bm25 import BM25Okapi
 
 
@@ -59,19 +59,32 @@ def load_titles(titles_path: Path, max_entities: int | None = None) -> list[str]
     print(f"Loading titles from {titles_path} ...")
     titles = []
     with open(titles_path, encoding="utf-8") as f:
-        for i, line in enumerate(f):
-            if max_entities and i >= max_entities:
-                break
-            t = line.strip()
-            if t:
-                titles.append(t)
+        first_line = f.readline().strip()
+        f.seek(0)
+
+        if "," in first_line and ("qid" in first_line.lower() or "title" in first_line.lower()):
+            reader = csv.DictReader(f)
+            for i, row in enumerate(reader):
+                if max_entities and i >= max_entities:
+                    break
+                t = row.get("title", "").strip()
+                if t:
+                    titles.append(t)
+        else:
+            for i, line in enumerate(f):
+                if max_entities and i >= max_entities:
+                    break
+                t = line.strip()
+                if t:
+                    titles.append(t)
+
     print(f"  {len(titles):,} titles loaded")
     return titles
 
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--titles", default="data/kg/wikipedia_titles.txt")
+    parser.add_argument("--titles", default="data/wikidata_qid_titles.csv")
     parser.add_argument("--out", default="candidates/index/bm25.pkl")
     parser.add_argument("--max-entities", type=int, default=None,
                         help="Limit number of entities (for testing)")
@@ -82,7 +95,7 @@ def main():
 
     if not titles_path.exists():
         print(f"[ERROR] Titles file not found: {titles_path}")
-        print("Run fetch_wikidata_titles.py first.")
+        print("Run extract_all_entities.py first.")
         sys.exit(1)
 
     titles = load_titles(titles_path, args.max_entities)
