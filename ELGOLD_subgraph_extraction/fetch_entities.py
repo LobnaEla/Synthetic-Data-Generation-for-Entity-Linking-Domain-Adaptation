@@ -33,23 +33,23 @@ for i in range(0, len(target_qids), BATCH):
             data = r.json()
             for qid, entity in data.get("entities", {}).items():
                 results[qid] = entity
-            print(f"  ✓ {min(i+BATCH, len(target_qids))}/{len(target_qids)}")
+            print(f"  {min(i+BATCH, len(target_qids))}/{len(target_qids)}")
             success = True
             break
         except Exception as e:
-            print(f"  ⚠ tentative {attempt+1} échouée : {e}")
+            print(f"  tentative {attempt+1} échouée : {e}")
             time.sleep(10)
     
     if not success:
-        print(f"  ✗ batch {i//BATCH} abandonné")
+        print(f"  batch {i//BATCH} abandonné")
     
     time.sleep(1)
 
     if i % 200 < BATCH:
         with open("wikidata_elgold.json", "w", encoding="utf-8") as out:
             json.dump(results, out, ensure_ascii=False)
-        print(f"  💾 Sauvegarde ({len(results)} entités)")
+        print(f"  Sauvegarde ({len(results)} entités)")
 
 with open("wikidata_elgold.json", "w", encoding="utf-8") as out:
     json.dump(results, out, ensure_ascii=False)
-print("✓ wikidata_elgold.json prêt !")
+print("wikidata_elgold.json prêt !")

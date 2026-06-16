@@ -1,6 +1,5 @@
 import sys, gzip, json
 
-# Charge tes QIDs cibles
 import json as j
 with open("elgold_entities_per_domain.json") as f:
     elgold = j.load(f)
@@ -11,10 +10,10 @@ for cat in elgold.values():
 print(f"Recherche de {len(target_qids)} QIDs...", file=sys.stderr)
 
 results = {}
-buf = sys.stdin.buffer  # lit le flux curl
+buf = sys.stdin.buffer  
 
 with gzip.open(buf, "rt", encoding="utf-8") as f:
-    f.read(2)  # skip "[\n"
+    f.read(2)  
     for line in f:
         line = line.strip().rstrip(",")
         if not line or line == "]":
@@ -33,4 +32,4 @@ with gzip.open(buf, "rt", encoding="utf-8") as f:
 with open("wikidata_elgold.json", "w") as out:
     json.dump(results, out)
 
-print("✓ Sauvegardé dans wikidata_elgold.json", file=sys.stderr)
+print(" Sauvegardé dans wikidata_elgold.json", file=sys.stderr)
