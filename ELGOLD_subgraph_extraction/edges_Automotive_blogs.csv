@@ -17,17 +17,17 @@ Q215293,Volvo Cars,P495,pays d'origine,Q34,Sweden
 Q215293,Volvo Cars,P17,pays,Q34,Sweden
 Q3784767,British Rally Championship,P17,pays,Q145,United Kingdom
 Q2213391,Croydon,P17,pays,Q145,United Kingdom
-Q151048,London Borough of Barnet,P131,situé dans,Q23306,Greater London
 Q151048,London Borough of Barnet,P17,pays,Q145,United Kingdom
+Q151048,London Borough of Barnet,P131,situé dans,Q23306,Greater London
 Q7993544,Which?,P495,pays d'origine,Q145,United Kingdom
 Q7993544,Which?,P17,pays,Q145,United Kingdom
-Q985,Baden-Württemberg,P131,situé dans,Q183,Germany
 Q985,Baden-Württemberg,P17,pays,Q183,Germany
+Q985,Baden-Württemberg,P131,situé dans,Q183,Germany
 Q7275076,RAC Limited,P17,pays,Q145,United Kingdom
-Q22,Scotland,P131,situé dans,Q145,United Kingdom
 Q22,Scotland,P17,pays,Q145,United Kingdom
-Q213560,London Borough of Haringey,P131,situé dans,Q23306,Greater London
+Q22,Scotland,P131,situé dans,Q145,United Kingdom
 Q213560,London Borough of Haringey,P17,pays,Q145,United Kingdom
+Q213560,London Borough of Haringey,P131,situé dans,Q23306,Greater London
 Q731711,Eurotunnel Shuttle,P17,pays,Q142,France
 Q731711,Eurotunnel Shuttle,P17,pays,Q145,United Kingdom
 Q699709,Volkswagen Commercial Vehicles,P17,pays,Q183,Germany
@@ -50,9 +50,9 @@ Q275623,Groupe PSA,P17,pays,Q142,France
 Q272201,Liz Truss,P27,nationalité,Q145,United Kingdom
 Q125163,Islington,P17,pays,Q145,United Kingdom
 Q18011762,Bridgestone,P17,pays,Q17,Japan
+Q145,United Kingdom,P17,pays,Q145,United Kingdom
 Q145,United Kingdom,P361,partie de,Q458,European Union
 Q145,United Kingdom,P361,partie de,Q46,Europe
-Q145,United Kingdom,P17,pays,Q145,United Kingdom
 Q83065,Leicester,P17,pays,Q145,United Kingdom
 Q89575318,GRIDSERVE,P17,pays,Q145,United Kingdom
 Q59187,Vauxhall,P17,pays,Q145,United Kingdom
@@ -65,23 +65,23 @@ Q23346,Sussex,P17,pays,Q145,United Kingdom
 Q727520,Dalkeith,P17,pays,Q145,United Kingdom
 Q908027,Q908027,P495,pays d'origine,Q145,United Kingdom
 Q1018540,Leith,P17,pays,Q145,United Kingdom
-Q40608,London Borough of Waltham Forest,P131,situé dans,Q23306,Greater London
 Q40608,London Borough of Waltham Forest,P17,pays,Q145,United Kingdom
+Q40608,London Borough of Waltham Forest,P131,situé dans,Q23306,Greater London
 Q39,Switzerland,P17,pays,Q39,Switzerland
 Q1012054,North Berwick,P17,pays,Q145,United Kingdom
 Q42717773,Ionity,P17,pays,Q183,Germany
 Q5760006,National Highways,P127,propriétaire,Q6063,Government of the United Kingdom
 Q5760006,National Highways,P17,pays,Q145,United Kingdom
 Q30002,Chengdu,P17,pays,Q148,People's Republic of China
-Q23436,Edinburgh,P131,situé dans,Q22,Scotland
 Q23436,Edinburgh,P17,pays,Q145,United Kingdom
+Q23436,Edinburgh,P131,situé dans,Q22,Scotland
 Q28,Hungary,P17,pays,Q28,Hungary
 Q33881,Tour de France,P17,pays,Q142,France
 Q4970966,British Red Cross,P17,pays,Q145,United Kingdom
 Q5602560,Green Flag,P17,pays,Q145,United Kingdom
 Q6063,Government of the United Kingdom,P17,pays,Q145,United Kingdom
-Q3349672,Ofgem,P131,situé dans,Q84,London
 Q3349672,Ofgem,P17,pays,Q145,United Kingdom
+Q3349672,Ofgem,P131,situé dans,Q84,London
 Q6746,Citroën,P17,pays,Q142,France
 Q6742,Peugeot,P17,pays,Q142,France
 Q347,Liechtenstein,P17,pays,Q347,Liechtenstein
@@ -101,8 +101,8 @@ Q397343,Solihull,P17,pays,Q145,United Kingdom
 Q183,Germany,P17,pays,Q183,Germany
 Q1410475,Fiat 2300,P17,pays,Q38,Italy
 Q38,Italy,P17,pays,Q38,Italy
-Q207201,London Borough of Brent,P131,situé dans,Q23306,Greater London
 Q207201,London Borough of Brent,P17,pays,Q145,United Kingdom
+Q207201,London Borough of Brent,P131,situé dans,Q23306,Greater London
 Q26678,BMW,P17,pays,Q183,Germany
 Q4047174,Polestar,P127,propriétaire,Q215293,Volvo Cars
 Q4047174,Polestar,P17,pays,Q34,Sweden
@@ -110,8 +110,8 @@ Q201291,Q201291,P27,nationalité,Q145,United Kingdom
 Q225,Bosnia and Herzegovina,P17,pays,Q225,Bosnia and Herzegovina
 Q7991010,What Car?,P495,pays d'origine,Q145,United Kingdom
 Q45,Portugal,P17,pays,Q45,Portugal
-Q84,London,P131,situé dans,Q23306,Greater London
 Q84,London,P17,pays,Q145,United Kingdom
+Q84,London,P131,situé dans,Q23306,Greater London
 Q27597,Fiat,P17,pays,Q38,Italy
 Q20165,Nissan,P17,pays,Q17,Japan
 Q7275074,RAC Foundation,P17,pays,Q145,United Kingdom

@@ -1,7 +1,7 @@
 s,s_label,p,p_label,o,o_label
 Q696376,Versace,P17,pays,Q38,Italy
-Q531599,Harvey Weinstein,P27,nationalité,Q30,United States
 Q531599,Harvey Weinstein,P19,lieu naissance,Q60,New York City
+Q531599,Harvey Weinstein,P27,nationalité,Q30,United States
 Q2791,Gerónimo,P27,nationalité,Q30,United States
 Q2791,Gerónimo,P27,nationalité,Q96,Mexico
 Q40523,Julia Roberts,P27,nationalité,Q30,United States
@@ -11,20 +11,20 @@ Q218503,Will Ferrell,P27,nationalité,Q30,United States
 Q19668417,Mike Flanagan,P27,nationalité,Q30,United States
 Q337097,Cats,P495,pays d'origine,Q145,United Kingdom
 Q55400,Hayao Miyazaki,P27,nationalité,Q17,Japan
-Q28234,Les Misérables,P57,réalisateur,Q295912,Tom Hooper
 Q28234,Les Misérables,P495,pays d'origine,Q145,United Kingdom
 Q28234,Les Misérables,P495,pays d'origine,Q30,United States
+Q28234,Les Misérables,P57,réalisateur,Q295912,Tom Hooper
 Q148,People's Republic of China,P17,pays,Q148,People's Republic of China
 Q842438,British,P27,nationalité,Q145,United Kingdom
+Q2695156,Batman,P19,lieu naissance,Q732858,Gotham City
 Q2695156,Batman,P495,pays d'origine,Q30,United States
 Q2695156,Batman,P27,nationalité,Q30,United States
-Q2695156,Batman,P19,lieu naissance,Q732858,Gotham City
 Q62766,Jay-Z,P27,nationalité,Q30,United States
-Q192410,Jennifer Hudson,P27,nationalité,Q30,United States
 Q192410,Jennifer Hudson,P19,lieu naissance,Q1297,Chicago
-Q186341,The Shining,P57,réalisateur,Q2001,Stanley Kubrick
+Q192410,Jennifer Hudson,P27,nationalité,Q30,United States
 Q186341,The Shining,P495,pays d'origine,Q145,United Kingdom
 Q186341,The Shining,P495,pays d'origine,Q30,United States
+Q186341,The Shining,P57,réalisateur,Q2001,Stanley Kubrick
 Q186341,The Shining,P161,acteur,Q39792,Jack Nicholson
 Q983981,Roger Ailes,P27,nationalité,Q30,United States
 Q42759035,Joker,P495,pays d'origine,Q30,United States
@@ -39,13 +39,13 @@ Q9696,John F. Kennedy,P27,nationalité,Q30,United States
 Q49542,Russians,P17,pays,Q30,United States
 Q49542,Russians,P17,pays,Q16,Canada
 Q372514,RoboCop,P495,pays d'origine,Q30,United States
-Q21,England,P131,situé dans,Q145,United Kingdom
 Q21,England,P17,pays,Q145,United Kingdom
+Q21,England,P131,situé dans,Q145,United Kingdom
 Q44440,Golden Gate Bridge,P17,pays,Q30,United States
 Q99292759,Brian Ivie,P27,nationalité,Q30,United States
 Q27593,AC/DC,P495,pays d'origine,Q408,Australia
-Q160060,The King's Speech,P57,réalisateur,Q295912,Tom Hooper
 Q160060,The King's Speech,P495,pays d'origine,Q145,United Kingdom
+Q160060,The King's Speech,P57,réalisateur,Q295912,Tom Hooper
 Q652,Italian,P17,pays,Q38,Italy
 Q652,Italian,P17,pays,Q237,Vatican City
 Q323283,The Royal Ballet,P17,pays,Q145,United Kingdom
@@ -77,38 +77,38 @@ Q128518,Gladiator,P495,pays d'origine,Q30,United States
 Q128518,Gladiator,P161,acteur,Q185140,Joaquin Phoenix
 Q8877,Steven Spielberg,P27,nationalité,Q30,United States
 Q17,Japan,P17,pays,Q17,Japan
-Q60169300,By the Grace of God,P57,réalisateur,Q266535,François Ozon
 Q60169300,By the Grace of God,P495,pays d'origine,Q142,France
+Q60169300,By the Grace of God,P57,réalisateur,Q266535,François Ozon
 Q60169300,By the Grace of God,P161,acteur,Q2898716,Bernard Verley
-Q18432,Staten Island,P131,situé dans,Q60,New York City
 Q18432,Staten Island,P17,pays,Q30,United States
+Q18432,Staten Island,P131,situé dans,Q60,New York City
 Q36153,Beyoncé,P27,nationalité,Q30,United States
 Q242605,Natalie Maines,P27,nationalité,Q30,United States
 Q17252,Tibet,P17,pays,Q148,People's Republic of China
 Q84152,Amon Göth,P27,nationalité,Q7318,Nazi Germany
 Q48774068,Tom Edge,P27,nationalité,Q145,United Kingdom
 Q79015,Superman,P27,nationalité,Q30,United States
-Q9188,Empire State Building,P131,situé dans,Q11299,Manhattan
 Q9188,Empire State Building,P17,pays,Q30,United States
+Q9188,Empire State Building,P131,situé dans,Q11299,Manhattan
 Q185140,Joaquin Phoenix,P27,nationalité,Q30,United States
 Q64027141,Nirmal Purja,P27,nationalité,Q837,Nepal
 Q64027141,Nirmal Purja,P27,nationalité,Q145,United Kingdom
 Q192156,Q192156,P495,pays d'origine,Q30,United States
+Q2001,Stanley Kubrick,P19,lieu naissance,Q60,New York City
 Q2001,Stanley Kubrick,P27,nationalité,Q30,United States
 Q2001,Stanley Kubrick,P27,nationalité,Q145,United Kingdom
-Q2001,Stanley Kubrick,P19,lieu naissance,Q60,New York City
 Q9592,Catholic Church,P17,pays,Q237,Vatican City
 Q18154496,Spotlight,P495,pays d'origine,Q30,United States
 Q172271,Maleficent,P495,pays d'origine,Q30,United States
 Q172271,Maleficent,P161,acteur,Q13909,Angelina Jolie
 Q47716,Charleston,P17,pays,Q30,United States
-Q145,United Kingdom,P361,partie de,Q46,Europe
 Q145,United Kingdom,P17,pays,Q145,United Kingdom
+Q145,United Kingdom,P361,partie de,Q46,Europe
 Q41225,Big Ben,P17,pays,Q145,United Kingdom
 Q128736,John Forbes Nash,P27,nationalité,Q30,United States
 Q626756,Ebenezer Scrooge,P27,nationalité,Q145,United Kingdom
-Q58814589,Bombshell,P57,réalisateur,Q524278,Jay Roach
 Q58814589,Bombshell,P495,pays d'origine,Q30,United States
+Q58814589,Bombshell,P57,réalisateur,Q524278,Jay Roach
 Q219714,Philadelphia Eagles,P17,pays,Q30,United States
 Q207,George W. Bush,P27,nationalité,Q30,United States
 Q39792,Jack Nicholson,P27,nationalité,Q30,United States
@@ -124,25 +124,25 @@ Q1767499,A Beautiful Mind,P495,pays d'origine,Q30,United States
 Q465811,National Mall,P17,pays,Q30,United States
 Q841233,RoboCop 3,P495,pays d'origine,Q30,United States
 Q502067,Galaxy Quest,P495,pays d'origine,Q30,United States
-Q1649,Oklahoma,P131,situé dans,Q30,United States
 Q1649,Oklahoma,P17,pays,Q30,United States
+Q1649,Oklahoma,P131,situé dans,Q30,United States
 Q470937,The Shining,P495,pays d'origine,Q30,United States
 Q42574,James Cameron,P27,nationalité,Q16,Canada
 Q189526,Brian De Palma,P27,nationalité,Q30,United States
 Q43932,Angus Young,P27,nationalité,Q408,Australia
 Q43932,Angus Young,P27,nationalité,Q145,United Kingdom
-Q11299,Manhattan,P131,situé dans,Q60,New York City
 Q11299,Manhattan,P17,pays,Q30,United States
-Q235065,Broadway theatre,P131,situé dans,Q11299,Manhattan
+Q11299,Manhattan,P131,situé dans,Q60,New York City
 Q235065,Broadway theatre,P17,pays,Q30,United States
+Q235065,Broadway theatre,P131,situé dans,Q11299,Manhattan
 Q796,Iraq,P17,pays,Q796,Iraq
 Q16,Canada,P17,pays,Q16,Canada
-Q732858,Gotham City,P131,situé dans,Q30,United States
 Q732858,Gotham City,P17,pays,Q30,United States
+Q732858,Gotham City,P131,situé dans,Q30,United States
 Q40475,Joan Crawford,P27,nationalité,Q30,United States
 Q108647,Jason Raize,P27,nationalité,Q30,United States
-Q56881169,Doctor Sleep,P57,réalisateur,Q19668417,Mike Flanagan
 Q56881169,Doctor Sleep,P495,pays d'origine,Q30,United States
+Q56881169,Doctor Sleep,P57,réalisateur,Q19668417,Mike Flanagan
 Q178516,Gucci,P17,pays,Q38,Italy
 Q180975,Andrew Lloyd Webber,P27,nationalité,Q145,United Kingdom
 Q12439,Detroit,P17,pays,Q30,United States
@@ -150,35 +150,35 @@ Q178114,Washington Monument,P17,pays,Q30,United States
 Q232757,Gabrielle Anwar,P27,nationalité,Q145,United Kingdom
 Q232757,Gabrielle Anwar,P27,nationalité,Q30,United States
 Q408,Australia,P17,pays,Q408,Australia
-Q918380,My Best Friend's Wedding,P57,réalisateur,Q2011694,P. J. Hogan
 Q918380,My Best Friend's Wedding,P495,pays d'origine,Q30,United States
+Q918380,My Best Friend's Wedding,P57,réalisateur,Q2011694,P. J. Hogan
 Q918380,My Best Friend's Wedding,P161,acteur,Q40523,Julia Roberts
-Q86791,A Christmas Carol,P57,réalisateur,Q187364,Robert Zemeckis
 Q86791,A Christmas Carol,P495,pays d'origine,Q30,United States
-Q1753795,Redacted,P57,réalisateur,Q189526,Brian De Palma
+Q86791,A Christmas Carol,P57,réalisateur,Q187364,Robert Zemeckis
 Q1753795,Redacted,P495,pays d'origine,Q16,Canada
 Q1753795,Redacted,P495,pays d'origine,Q30,United States
+Q1753795,Redacted,P57,réalisateur,Q189526,Brian De Palma
 Q2634,Naples,P17,pays,Q38,Italy
 Q154421,Ed Asner,P27,nationalité,Q30,United States
 Q1092,Star Trek,P495,pays d'origine,Q30,United States
-Q1439,Texas,P131,situé dans,Q30,United States
 Q1439,Texas,P17,pays,Q30,United States
-Q25136757,Call Me by Your Name,P57,réalisateur,Q1335528,Luca Guadagnino
+Q1439,Texas,P131,situé dans,Q30,United States
 Q25136757,Call Me by Your Name,P495,pays d'origine,Q38,Italy
 Q25136757,Call Me by Your Name,P495,pays d'origine,Q30,United States
 Q25136757,Call Me by Your Name,P495,pays d'origine,Q142,France
 Q25136757,Call Me by Your Name,P495,pays d'origine,Q145,United Kingdom
+Q25136757,Call Me by Your Name,P57,réalisateur,Q1335528,Luca Guadagnino
 Q170241,Tarzan,P27,nationalité,Q145,United Kingdom
 Q843,Pakistan,P17,pays,Q843,Pakistan
-Q187364,Robert Zemeckis,P27,nationalité,Q30,United States
 Q187364,Robert Zemeckis,P19,lieu naissance,Q1297,Chicago
+Q187364,Robert Zemeckis,P27,nationalité,Q30,United States
 Q23760,Rowan Atkinson,P27,nationalité,Q145,United Kingdom
 Q161652,Japanese people,P17,pays,Q17,Japan
 Q36479,The Lion King,P495,pays d'origine,Q30,United States
 Q352,Adolf Hitler,P27,nationalité,Q7318,Nazi Germany
 Q11211,United States Armed Forces,P17,pays,Q30,United States
-Q295912,Tom Hooper,P27,nationalité,Q145,United Kingdom
 Q295912,Tom Hooper,P19,lieu naissance,Q84,London
+Q295912,Tom Hooper,P27,nationalité,Q145,United Kingdom
 Q1469426,The Santa Clause 2,P495,pays d'origine,Q30,United States
 Q20154675,"2015 Charleston, South Carolina shooting",P17,pays,Q30,United States
 Q38856,Xoloitzcuintle,P495,pays d'origine,Q96,Mexico
@@ -188,22 +188,22 @@ Q380675,cinema of the United States,P17,pays,Q30,United States
 Q243,Eiffel Tower,P17,pays,Q142,France
 Q7176487,Peter Quilter,P27,nationalité,Q145,United Kingdom
 Q5686,Charles Dickens,P27,nationalité,Q145,United Kingdom
-Q58701890,Cats,P57,réalisateur,Q295912,Tom Hooper
 Q58701890,Cats,P495,pays d'origine,Q30,United States
 Q58701890,Cats,P495,pays d'origine,Q145,United Kingdom
+Q58701890,Cats,P57,réalisateur,Q295912,Tom Hooper
 Q58701890,Cats,P161,acteur,Q192410,Jennifer Hudson
 Q58701890,Cats,P161,acteur,Q26876,Taylor Swift
 Q58701890,Cats,P161,acteur,Q26704283,Francesca Hayward
 Q190618,New York Giants,P17,pays,Q30,United States
-Q1079391,Arkham Asylum,P131,situé dans,Q732858,Gotham City
 Q1079391,Arkham Asylum,P17,pays,Q30,United States
+Q1079391,Arkham Asylum,P131,situé dans,Q732858,Gotham City
 Q81796,J. M. Barrie,P27,nationalité,Q145,United Kingdom
 Q46,Europe,P361,partie de,Q2,Earth
 Q299217,Rufus Sewell,P27,nationalité,Q145,United Kingdom
 Q60100,Roland Emmerich,P27,nationalité,Q30,United States
 Q132863,Finding Nemo,P495,pays d'origine,Q30,United States
-Q483941,Schindler's List,P57,réalisateur,Q8877,Steven Spielberg
 Q483941,Schindler's List,P495,pays d'origine,Q30,United States
+Q483941,Schindler's List,P57,réalisateur,Q8877,Steven Spielberg
 Q5476534,Fox & Friends,P495,pays d'origine,Q30,United States
 Q23633,HBO,P17,pays,Q30,United States
 Q7414,The Walt Disney Company,P17,pays,Q30,United States
@@ -213,8 +213,8 @@ Q190214,The Lord of the Rings,P495,pays d'origine,Q30,United States
 Q19848,Lady Gaga,P27,nationalité,Q30,United States
 Q65,Los Angeles,P17,pays,Q30,United States
 Q573343,Anthony Higgins,P27,nationalité,Q145,United Kingdom
-Q500242,The Creation of Adam,P131,situé dans,Q237,Vatican City
 Q500242,The Creation of Adam,P17,pays,Q237,Vatican City
+Q500242,The Creation of Adam,P131,situé dans,Q237,Vatican City
 Q8016,Winston Churchill,P27,nationalité,Q145,United Kingdom
 Q142,France,P17,pays,Q142,France
 Q1860,English,P17,pays,Q408,Australia
@@ -224,11 +224,11 @@ Q1860,English,P17,pays,Q843,Pakistan
 Q1860,English,P17,pays,Q145,United Kingdom
 Q183178,Clive Owen,P27,nationalité,Q145,United Kingdom
 Q2011694,P. J. Hogan,P27,nationalité,Q408,Australia
-Q41254,Grammy Awards,P131,situé dans,Q65,Los Angeles
-Q41254,Grammy Awards,P131,situé dans,Q65,Los Angeles
-Q41254,Grammy Awards,P131,situé dans,Q60,New York City
-Q41254,Grammy Awards,P131,situé dans,Q60,New York City
 Q41254,Grammy Awards,P17,pays,Q30,United States
+Q41254,Grammy Awards,P131,situé dans,Q65,Los Angeles
+Q41254,Grammy Awards,P131,situé dans,Q65,Los Angeles
+Q41254,Grammy Awards,P131,situé dans,Q60,New York City
+Q41254,Grammy Awards,P131,situé dans,Q60,New York City
 Q429557,Gia,P495,pays d'origine,Q30,United States
 Q429557,Gia,P161,acteur,Q13909,Angelina Jolie
 Q463101,"Girl, Interrupted",P495,pays d'origine,Q30,United States
@@ -237,52 +237,52 @@ Q463101,"Girl, Interrupted",P161,acteur,Q484523,Jared Leto
 Q215616,PBS,P17,pays,Q30,United States
 Q3819311,The Haunting of Hill House,P495,pays d'origine,Q30,United States
 Q1567862,Iraqis,P495,pays d'origine,Q796,Iraq
-Q1567862,Iraqis,P131,situé dans,Q796,Iraq
-Q1567862,Iraqis,P17,pays,Q796,Iraq
 Q1567862,Iraqis,P27,nationalité,Q796,Iraq
+Q1567862,Iraqis,P17,pays,Q796,Iraq
+Q1567862,Iraqis,P131,situé dans,Q796,Iraq
 Q6691659,Love and Money,P495,pays d'origine,Q30,United States
-Q2943,Sistine Chapel,P131,situé dans,Q237,Vatican City
 Q2943,Sistine Chapel,P17,pays,Q237,Vatican City
-Q9212,United States Army,P361,partie de,Q11211,United States Armed Forces
-Q9212,United States Army,P17,pays,Q30,United States
+Q2943,Sistine Chapel,P131,situé dans,Q237,Vatican City
 Q9212,United States Army,P27,nationalité,Q30,United States
+Q9212,United States Army,P17,pays,Q30,United States
+Q9212,United States Army,P361,partie de,Q11211,United States Armed Forces
 Q1364921,Roman Catholic Archdiocese of Lyon,P17,pays,Q142,France
 Q38,Italy,P17,pays,Q38,Italy
 Q103372692,Encanto,P495,pays d'origine,Q30,United States
 Q3435337,Peter Pan,P495,pays d'origine,Q145,United Kingdom
 Q9684,The New York Times,P495,pays d'origine,Q30,United States
-Q9684,The New York Times,P131,situé dans,Q11299,Manhattan
 Q9684,The New York Times,P17,pays,Q30,United States
+Q9684,The New York Times,P131,situé dans,Q11299,Manhattan
 Q1297,Chicago,P17,pays,Q30,United States
 Q159583,Holy See,P17,pays,Q237,Vatican City
 Q127367,The Lord of the Rings: The Fellowship of the Ring,P495,pays d'origine,Q30,United States
-Q160409,Central Park,P131,situé dans,Q11299,Manhattan
 Q160409,Central Park,P17,pays,Q30,United States
+Q160409,Central Park,P131,situé dans,Q11299,Manhattan
 Q215617,Sleeping Beauty,P495,pays d'origine,Q30,United States
 Q1033152,RoboCop,P27,nationalité,Q30,United States
 Q60029,Oskar Schindler,P27,nationalité,Q7318,Nazi Germany
 Q259129,Hayley McFarland,P27,nationalité,Q30,United States
 Q21578,Princeton University,P17,pays,Q30,United States
 Q30,United States,P17,pays,Q30,United States
-Q84,London,P131,situé dans,Q21,England
 Q84,London,P17,pays,Q145,United Kingdom
+Q84,London,P131,situé dans,Q21,England
 Q60,New York City,P17,pays,Q30,United States
 Q127552,Pixar,P127,propriétaire,Q7414,The Walt Disney Company
 Q127552,Pixar,P17,pays,Q30,United States
 Q1335528,Luca Guadagnino,P27,nationalité,Q38,Italy
 Q293260,Megyn Kelly,P27,nationalité,Q30,United States
 Q96,Mexico,P17,pays,Q96,Mexico
-Q55615419,Judy,P57,réalisateur,Q7380291,Rupert Goold
 Q55615419,Judy,P495,pays d'origine,Q145,United Kingdom
 Q55615419,Judy,P495,pays d'origine,Q30,United States
 Q55615419,Judy,P495,pays d'origine,Q142,France
+Q55615419,Judy,P57,réalisateur,Q7380291,Rupert Goold
 Q55615419,Judy,P161,acteur,Q299217,Rufus Sewell
 Q131864,Dr. Seuss' How the Grinch Stole Christmas,P495,pays d'origine,Q30,United States
 Q201633,Iwo Jima,P17,pays,Q17,Japan
 Q201633,Iwo Jima,P17,pays,Q30,United States
 Q473845,Columbine High School massacre,P17,pays,Q30,United States
-Q12512,St. Peter's Basilica,P131,situé dans,Q237,Vatican City
 Q12512,St. Peter's Basilica,P17,pays,Q237,Vatican City
+Q12512,St. Peter's Basilica,P131,situé dans,Q237,Vatican City
 Q892,J. R. R. Tolkien,P27,nationalité,Q145,United Kingdom
 Q465597,Gretchen Carlson,P27,nationalité,Q30,United States
 Q83495,The Matrix,P495,pays d'origine,Q30,United States
@@ -292,13 +292,13 @@ Q484020,Mr Bean,P161,acteur,Q23760,Rowan Atkinson
 Q752103,Bean,P495,pays d'origine,Q30,United States
 Q752103,Bean,P495,pays d'origine,Q145,United Kingdom
 Q752103,Bean,P161,acteur,Q23760,Rowan Atkinson
-Q13909,Angelina Jolie,P27,nationalité,Q30,United States
 Q13909,Angelina Jolie,P19,lieu naissance,Q65,Los Angeles
+Q13909,Angelina Jolie,P27,nationalité,Q30,United States
 Q2924461,DC Comics,P17,pays,Q30,United States
 Q98,Pacific Ocean,P361,partie de,Q2,Earth
 Q35525,White House,P17,pays,Q30,United States
-Q64,Berlin,P131,situé dans,Q7318,Nazi Germany
 Q64,Berlin,P17,pays,Q7318,Nazi Germany
+Q64,Berlin,P131,situé dans,Q7318,Nazi Germany
 Q105549749,House of Gucci,P495,pays d'origine,Q30,United States
 Q105549749,House of Gucci,P161,acteur,Q19848,Lady Gaga
 Q105549749,House of Gucci,P161,acteur,Q484523,Jared Leto

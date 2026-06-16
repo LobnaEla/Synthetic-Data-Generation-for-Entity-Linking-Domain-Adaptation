@@ -1,6 +1,6 @@
 s,s_label,p,p_label,o,o_label
-Q5560816,Gilbert Blythe,P27,nationalité,Q16,Canada
 Q5560816,Gilbert Blythe,P19,lieu naissance,Q1306534,Avonlea
+Q5560816,Gilbert Blythe,P27,nationalité,Q16,Canada
 Q181917,David Niven,P19,lieu naissance,Q84,London
 Q3894117,Frank Sheed,P27,nationalité,Q408,Australia
 Q258092,Tora! Tora! Tora!,P495,pays d'origine,Q30,United States
@@ -8,9 +8,9 @@ Q258092,Tora! Tora! Tora!,P495,pays d'origine,Q17,Japan
 Q248775,Mad Max,P495,pays d'origine,Q408,Australia
 Q47690,Babylonia,P17,pays,Q794,Iran
 Q5950,James Brown,P27,nationalité,Q30,United States
-Q1318423,Australians,P131,situé dans,Q408,Australia
-Q1318423,Australians,P17,pays,Q408,Australia
 Q1318423,Australians,P27,nationalité,Q408,Australia
+Q1318423,Australians,P17,pays,Q408,Australia
+Q1318423,Australians,P131,situé dans,Q408,Australia
 Q7718697,The Bloody Red Baron,P495,pays d'origine,Q30,United States
 Q5418044,Everything Is Everything,P495,pays d'origine,Q30,United States
 Q609312,The Sentinel,P495,pays d'origine,Q30,United States
@@ -44,8 +44,8 @@ Q3884,Amazon,P17,pays,Q30,United States
 Q2344707,The Crying of Lot 49,P495,pays d'origine,Q30,United States
 Q771213,Anne Shirley,P27,nationalité,Q16,Canada
 Q434669,Phyllis Schlafly,P27,nationalité,Q30,United States
-Q47863,Midway Atoll,P361,partie de,Q30,United States
 Q47863,Midway Atoll,P17,pays,Q30,United States
+Q47863,Midway Atoll,P361,partie de,Q30,United States
 Q1382555,Norman Granz,P27,nationalité,Q30,United States
 Q5326118,Earl Thomas Conley,P27,nationalité,Q30,United States
 Q8740,Vietnam War,P17,pays,Q881,Vietnam
@@ -64,11 +64,11 @@ Q264901,Anne of Green Gables,P495,pays d'origine,Q30,United States
 Q37463,Pierre Curie,P27,nationalité,Q142,France
 Q12060492,Homer's Ithaca,P17,pays,Q41,Greece
 Q846570,Americans,P495,pays d'origine,Q30,United States
-Q846570,Americans,P17,pays,Q30,United States
 Q846570,Americans,P27,nationalité,Q30,United States
+Q846570,Americans,P17,pays,Q30,United States
 Q1277983,Martin Caidin,P27,nationalité,Q30,United States
-Q4261598,Ignatius Press,P17,pays,Q30,United States
 Q4261598,Ignatius Press,P27,nationalité,Q30,United States
+Q4261598,Ignatius Press,P17,pays,Q30,United States
 Q4251151,Carolyn Craig,P27,nationalité,Q30,United States
 Q722447,Bud Shank,P27,nationalité,Q30,United States
 Q105960,William Powell,P27,nationalité,Q30,United States
@@ -91,8 +91,8 @@ Q7186,Marie Sklodowska-Curie,P27,nationalité,Q142,France
 Q8333,Federal Bureau of Investigation,P17,pays,Q30,United States
 Q161652,Japanese people,P17,pays,Q17,Japan
 Q5296955,Doo Wop (That Thing),P495,pays d'origine,Q30,United States
-Q349391,Helen Mirren,P27,nationalité,Q30,United States
 Q349391,Helen Mirren,P19,lieu naissance,Q84,London
+Q349391,Helen Mirren,P27,nationalité,Q30,United States
 Q217984,Znowhite,P495,pays d'origine,Q30,United States
 Q2140332,Alabama,P495,pays d'origine,Q30,United States
 Q325487,Mike Wallace,P27,nationalité,Q30,United States
@@ -110,8 +110,8 @@ Q233502,Lili Taylor,P27,nationalité,Q30,United States
 Q190214,The Lord of the Rings,P495,pays d'origine,Q30,United States
 Q438460,Ben Webster,P27,nationalité,Q30,United States
 Q3560313,Vintage Books,P495,pays d'origine,Q30,United States
-Q3560313,Vintage Books,P17,pays,Q30,United States
 Q3560313,Vintage Books,P27,nationalité,Q30,United States
+Q3560313,Vintage Books,P17,pays,Q30,United States
 Q41,Greece,P17,pays,Q41,Greece
 Q142,France,P17,pays,Q142,France
 Q217160,Kenny Rogers,P27,nationalité,Q30,United States
@@ -128,13 +128,13 @@ Q484881,Peter Falk,P27,nationalité,Q30,United States
 Q219150,Constantine,P495,pays d'origine,Q30,United States
 Q219150,Constantine,P495,pays d'origine,Q408,Australia
 Q219150,Constantine,P161,acteur,Q43416,Keanu Reeves
-Q353822,Maynard Ferguson,P27,nationalité,Q16,Canada
 Q353822,Maynard Ferguson,P19,lieu naissance,Q340,Montreal
+Q353822,Maynard Ferguson,P27,nationalité,Q16,Canada
 Q2140008,United States Army Air Corps,P17,pays,Q30,United States
 Q315808,Neil Simon,P27,nationalité,Q30,United States
 Q1544403,Virgin Steele,P495,pays d'origine,Q30,United States
-Q1384,New York,P131,situé dans,Q30,United States
 Q1384,New York,P17,pays,Q30,United States
+Q1384,New York,P131,situé dans,Q30,United States
 Q881,Vietnam,P17,pays,Q881,Vietnam
 Q82931,Coral Sea,P17,pays,Q408,Australia
 Q82931,Coral Sea,P17,pays,Q142,France
