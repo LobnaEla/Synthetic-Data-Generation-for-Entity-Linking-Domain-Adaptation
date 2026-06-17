@@ -30,7 +30,7 @@ filtrées pour correspondre aux entités du benchmark
 | Décision | Choix |
 |---|---|
 | Identifiant d'entité pivot | **Wikidata Q-ID** (ex : `Q312`) — stable, commun aux branches (2) et (3) |
-| Mapping Wikipedia ↔ Wikidata | [`wikimapper`](https://github.com/jcklie/wikimapper) (DB SQLite offline) |
+| Mapping Wikipedia  Wikidata | [`wikimapper`](https://github.com/jcklie/wikimapper) (DB SQLite offline) |
 | Granularité d'entraînement | **mention-level** : 1 exemple = 1 mention dans son contexte |
 | Stratégie | **1 modèle multi-domaines** (pas un modèle par domaine) |
 | Deux approches EL comparées | **générative** (produire le Q-ID) et **reranking** (choisir parmi K candidats) |
@@ -217,16 +217,6 @@ wikimapper create enwiki-latest --dumpdir wikimapper_data `
     --target wikimapper_data\index_enwiki-latest.db
 ```
 
-### Pièges connus (Windows)
-
-| Problème | Symptôme | Solution |
-|---|---|---|
-| pip écrase torch CUDA | `cuda available: False` | force-reinstall `+cu128` (cf. ci-dessus) |
-| Ordre d'imports Unsloth | crash silencieux exit 4 à l'import | `import unsloth` **avant** trl/transformers |
-| Réseau HuggingFace gelé | run bloqué sans erreur | `HF_HUB_OFFLINE=1` après mise en cache du modèle |
-| Triton ne trouve pas de compilateur C | `Failed to find C compiler` | `CC` → `...\triton\runtime\tcc\tcc.exe` (bug user-site) |
-| GPU laptop bridé (45 W / 430 MHz) | steps 5× plus lents | plan Windows « Performances élevées » + secteur + mode constructeur Performance |
-| Colonne pyarrow hétérogène | `Column changed from string to array` | `domain` est toujours une liste dans les JSONL |
 
 ## État d'avancement
 
