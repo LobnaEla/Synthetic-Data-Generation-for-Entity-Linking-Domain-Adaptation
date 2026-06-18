@@ -74,6 +74,9 @@ def parse_args():
     p.add_argument("--batch_size", type=int, default=16)
     p.add_argument("--train_jsonl", type=Path, default=None,
                    help="Optional: tag each mention seen/unseen vs training Q-IDs.")
+    p.add_argument("--domain", default=None,
+                   help="Evaluate only this ELGOLD domain (e.g. Historic_blogs). "
+                        "Use to score a domain specialist on its own domain.")
     p.add_argument("--limit", type=int, default=None, help="Evaluate only N mentions (debug).")
     p.add_argument("--output_prefix", default="eval_elgold")
     return p.parse_args()
@@ -181,6 +184,8 @@ def main():
     n_unmapped = 0
     for path in sorted(args.elgold_dir.glob("*.txt")):
         domain = category_from_filename(path.name)
+        if args.domain and domain != args.domain:
+            continue
         clean, mentions = parse_elgold_doc(path.read_text(encoding="utf-8"))
         for start, end, surface, ne_class, target in mentions:
             if not target:
