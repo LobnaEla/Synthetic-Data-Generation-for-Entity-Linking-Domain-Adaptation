@@ -2,7 +2,7 @@ import argparse
 import json
 import sys
 from pathlib import Path
-
+from tqdm import tqdm
 import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
@@ -20,12 +20,23 @@ def main():
     parser.add_argument("--bm25-index", default="candidates/index/bm25.pkl")
     parser.add_argument("--dense-index", default="candidates/index/")
     parser.add_argument("--benchmarks", default="data/benchmarks")
-    parser.add_argument("--out", default=None, help="Output JSON path (auto-named if omitted)")
+    parser.add_argument("--out", default=None)
+    parser.add_argument("--resume", action="store_true")
     args = parser.parse_args()
+
+    out_path = args.out or f"candidates/precomputed/{args.retriever}_k{args.k}.json"
+    Path(out_path).parent.mkdir(parents=True, exist_ok=True)
 
     # Load benchmark
     df = load_benchmark(args.benchmarks)
     print(f"{len(df)} mentions loaded")
+
+    # Resume from existing file
+    results = {}
+    if args.resume and Path(out_path).exists():
+        with open(out_path, encoding="utf-8") as f:
+            results = json.load(f)
+        print(f"[RESUME] {len(results)} mentions already computed")
 
     # Load retriever
     if args.retriever == "bm25":
@@ -33,12 +44,25 @@ def main():
     else:
         retriever = DenseRetriever.load(args.dense_index)
 
-    # Retrieve candidates
-    print(f"Retrieving top-{args.k} candidates with {args.retriever}...")
-    results = {}
-    for _, row in df.iterrows():
+    # Retrieve candidates (skip already done)
+    remaining = [
+        (_, row) for _, row in df.iterrows()
+        if f"{row['file']}::{row['mention']}::{row['gold']}" not in results
+    ]
+    print(f"Retrieving top-{args.k} candidates for {len(remaining)} mentions ...")
+
+    for i, (_, row) in enumerate(tqdm(remaining, desc=args.retriever)):
         key = f"{row['file']}::{row['mention']}::{row['gold']}"
         results[key] = retriever.retrieve(row["mention"], k=args.k)
+
+        # Checkpoint every 500 mentions
+        if (i + 1) % 500 == 0:
+            with open(out_path, "w", encoding="utf-8") as f:
+                json.dump(results, f, ensure_ascii=False)
+
+    # Final save
+    with open(out_path, "w", encoding="utf-8") as f:
+        json.dump(results, f, ensure_ascii=False)
 
     # Recall
     recall_count = sum(
@@ -47,12 +71,6 @@ def main():
     )
     recall = recall_count / len(df)
     print(f"Recall@{args.k} : {recall:.2%}")
-
-    # Save
-    out_path = args.out or f"candidates/precomputed/{args.retriever}_k{args.k}.json"
-    Path(out_path).parent.mkdir(parents=True, exist_ok=True)
-    with open(out_path, "w", encoding="utf-8") as f:
-        json.dump(results, f, ensure_ascii=False)
     print(f"Saved: {out_path} ({len(results)} mentions)")
 
 

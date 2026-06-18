@@ -4,5 +4,31 @@ data/
 __pycache__/
 **/__pycache__/
 run_dense_retriever.sh
+slurm/
 logs/
 **/.ipynb_checkpoints/
+data/wikimapper/
+data/benchmarks/
+logs/
+candidates/index/
+evaluation/results/
+# Generated files
+candidates/index/
+evaluation/results/
+logs/
+
+# Large generated/model/index files
+*.faiss
+*.pkl
+*.pickle
+*.pt
+*.bin
+*.safetensors
+*.npy
+*.npz
+
+# Python/cache
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+EOF
