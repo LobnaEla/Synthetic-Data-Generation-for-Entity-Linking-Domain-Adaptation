@@ -197,10 +197,99 @@ Protocole figé (à rejouer à l'identique pour la branche (3)) :
 - option `--train_jsonl` : décompose l'accuracy en entités **vues / jamais
   vues** à l'entraînement (à croiser avec le rapport de couverture).
 
+#### Arguments clés
+
+| Argument | Rôle |
+|---|---|
+| `<adapter>` (positionnel) | chemin de l'adaptateur LoRA **ou** id d'un modèle de base (ex. `unsloth/Qwen3-4B-Instruct-2507-bnb-4bit` pour la baseline branche 1) |
+| `--mode` | `generative` ou `rerank` — **doit correspondre à la façon dont le modèle a été entraîné** (sinon le format de prompt ne matche pas → résultats faux) |
+| `--domain <Nom>` | n'évalue que ce domaine ELGOLD (ex. `Historic_blogs`). À utiliser pour scorer un **spécialiste** sur son propre domaine. Omis → évalue **tous** les domaines (cas du modèle multi-domaines) |
+| `--train_jsonl` | (optionnel) décompose en accuracy vues/non-vues |
+| `--output_prefix` | préfixe des fichiers de sortie `<prefix>_report.json` + `<prefix>_predictions.csv` |
+| `--limit N` | (debug) n'évalue que N mentions |
+
+En mode `rerank`, trois arguments **supplémentaires obligatoires** (mêmes ressources qu'à l'entraînement, pour que les candidats soient identiques) :
+`--alias_pickle`, `--descriptions_jsonl`, `--wikimapper_db`.
+
+#### Exemple — spécialiste génératif sur tous les domaines
+
 ```powershell
 python -u ProjectDSAI2026_13\evaluate_elgold.py data output_generative\final_adapter `
     ProjectDSAI2026_13\elgold_entities_per_domain.json --mode generative `
     --train_jsonl splits\generative\train.jsonl --output_prefix eval_generative
+```
+
+#### Exemple — spécialiste d'un domaine sur SON domaine (génératif)
+
+```powershell
+python -u ProjectDSAI2026_13\evaluate_elgold.py data output_Historic_blogs\final_adapter `
+    ProjectDSAI2026_13\elgold_entities_per_domain.json --mode generative `
+    --domain Historic_blogs `
+    --train_jsonl splits\generative\Historic_blogs\train.jsonl `
+    --output_prefix eval_Historic_blogs
+```
+
+#### Exemple — spécialiste d'un domaine sur SON domaine (reranking)
+
+```powershell
+python -u ProjectDSAI2026_13\evaluate_elgold.py data output_Historic_blogs_rerank\final_adapter `
+    ProjectDSAI2026_13\elgold_entities_per_domain.json --mode rerank `
+    --domain Historic_blogs `
+    --alias_pickle zelda\other\zelda_mention_entities_counter.pickle `
+    --descriptions_jsonl zelda\other\entity_descriptions.jsonl `
+    --wikimapper_db wikimapper_data\index_enwiki-latest.db `
+    --train_jsonl splits\rerank\Historic_blogs\train.jsonl `
+    --output_prefix eval_Historic_blogs_rerank
+```
+
+Pour évaluer un autre domaine, remplacer **partout** `Historic_blogs` par le nom
+voulu (`News`, `Job_offers`, `Movie_reviews`, `Automotive_blogs`,
+`Amazon_product_reviews`, `Scientific_abstracts`) — adaptateur, `--domain` et
+`--train_jsonl` doivent désigner le même domaine.
+
+#### Exemple — baseline branche (1) : modèle de base sans fine-tuning
+
+Pointer le positionnel sur l'id du modèle de base au lieu d'un adaptateur. Donne
+le **plancher** de performance pour mesurer l'apport du fine-tuning.
+
+```powershell
+python -u ProjectDSAI2026_13\evaluate_elgold.py data `
+    unsloth/Qwen3-4B-Instruct-2507-bnb-4bit `
+    ProjectDSAI2026_13\elgold_entities_per_domain.json --mode rerank `
+    --domain Historic_blogs `
+    --alias_pickle zelda\other\zelda_mention_entities_counter.pickle `
+    --descriptions_jsonl zelda\other\entity_descriptions.jsonl `
+    --wikimapper_db wikimapper_data\index_enwiki-latest.db `
+    --output_prefix eval_baseline_Historic_blogs
+```
+
+#### Sortie
+
+En mode `rerank`, le tableau ajoute `recall@k` (part des golds présents dans la
+liste de candidats — plafond du reranker) et `NONE%`. Avec `--train_jsonl`,
+deux colonnes `acc seen` / `acc unseen` apparaissent.
+
+### 8. `split_by_domain.py` — datasets par domaine (modèles spécialisés)
+
+Éclate un JSONL filtré en un fichier par domaine ELGOLD (non destructif : les
+fichiers multi-domaines restent intacts). Un exemple est copié dans **chaque**
+domaine auquel son entité appartient (recouvrement → somme par domaine > total).
+La séparation est par **entité**, pas par style de texte (tous les contextes
+restent de la prose Wikipédia).
+
+```powershell
+python ProjectDSAI2026_13\split_by_domain.py zelda_rerank_train.jsonl by_domain\rerank
+# puis un split train/val par domaine :
+Get-ChildItem by_domain\rerank\*.jsonl | ForEach-Object {
+    python ProjectDSAI2026_13\make_splits.py $_.FullName "splits\rerank\$($_.BaseName)"
+}
+```
+
+Entraînement de tous les spécialistes reranking (du plus petit au plus grand,
+idempotent et reprenable après une extinction) :
+
+```powershell
+powershell -ExecutionPolicy Bypass -File ProjectDSAI2026_13\train_all_rerank.ps1
 ```
 
 ## Installation
@@ -218,14 +307,30 @@ wikimapper create enwiki-latest --dumpdir wikimapper_data `
 ```
 
 
+## Résultats (en cours)
+
+Spécialistes par domaine, 1 epoch, évalués sur leur propre domaine ELGOLD
+(accuracy@1, mentions NIL exclues) :
+
+| Domaine | Approche | acc@1 | acc vues | acc non-vues | recall@k |
+|---|---|---|---|---|---|
+| Historic_blogs | génératif | 76,2 % | 85,0 % | 0,0 % | — |
+| Historic_blogs | reranking | **80,5 %** | 89,1 % | 5,9 % | 86,0 % |
+
+Lecture : le reranking dépasse le génératif (+4,3 pts) et récupère une partie
+des entités jamais vues (0 % → 5,9 %), que le génératif ne peut pas produire.
+Le `recall@k` de 86 % (vs 98,7 % sur ZELDA) est le **plafond du reranker** sur
+ELGOLD : améliorer la génération de candidats (retrieval dense) le relèverait.
+
 ## État d'avancement
 
 - [x] Extraction entités ELGOLD (100 % mappées)
 - [x] Filtrage ZELDA génératif + reranking (94 097 exemples chacun)
-- [x] Splits versionnés + manifests SHA-256
+- [x] Splits versionnés + manifests SHA-256 (multi-domaines **et** par domaine)
 - [x] Rapport de couverture (79,9 % global)
-- [x] Smoke test entraînement validé sur RTX 5090 Laptop (loss 8,9 → 0,5 sur 665 steps)
-- [ ] Run complet 1 epoch génératif (interrompu au step 665/5823 — crash machine, à relancer avec `--save_steps` réduit)
-- [ ] Run complet reranking
-- [ ] Évaluation ELGOLD des deux adaptateurs
+- [x] Spécialiste Historic_blogs génératif — entraîné + évalué (76,2 %)
+- [x] Spécialiste Historic_blogs reranking — entraîné + évalué (80,5 %)
+- [~] Spécialistes reranking des 6 autres domaines (`train_all_rerank.ps1` en cours)
+- [ ] Évaluation ELGOLD des spécialistes reranking restants
+- [ ] Baseline branche (1) few-shot pour situer le plancher
 - [ ] `requirements.txt` figé + rapport final
