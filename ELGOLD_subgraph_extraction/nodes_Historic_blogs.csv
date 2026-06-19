@@ -1,103 +1,103 @@
 qid,label,type,categories
-Q40949,American Revolutionary War,Q1006311,Historic_blogs
-Q42207,Caravaggio,human,Historic_blogs
-Q11761,Bronze Age,Q15401699,Historic_blogs
-Q182664,Canaletto,human,Historic_blogs
-Q172438,Peterborough,Q515,Historic_blogs
-Q31347,Grand Canal,Q1497375,Historic_blogs
-Q849967,Celtic Britons,Q4204501,Historic_blogs
-Q208471,Kaifeng,Q748149,Historic_blogs
-Q148,People's Republic of China,Q3624078,Historic_blogs
-Q878607,Syrians,Q33829,Historic_blogs
-Q272947,Çorum Province,Q48336,Historic_blogs
-Q25,Wales,Q3336843,Historic_blogs
-Q37594,William the Conqueror,human,Historic_blogs
-Q39518,Żabbar,Q515,Historic_blogs
-Q153015,Kingdom of Saxony,Q3024240,Historic_blogs
-Q42462,York,Q1357964,Historic_blogs
-Q47716,Charleston,Q1093829,Historic_blogs
-Q6373,British Museum,Q17431399,Historic_blogs
-Q23666,Great Britain,Q23442,Historic_blogs
-Q487988,St. Augustine,Q1093829,Historic_blogs
-Q22649,antisemitism,Q2729863,Historic_blogs
-Q53438,Augustus III of Poland,human,Historic_blogs
-Q6534,French Revolution,Q13418847,Historic_blogs
 Q641,Venice,Q747074,Historic_blogs
-Q172771,Royal Navy,Q4508,Historic_blogs
-Q637119,Çorum Archaeological Museum,Q3329412,Historic_blogs
-Q1233131,Vindolanda,Q88205,Historic_blogs
-Q60022,Tennis Court Oath,Q1190554,Historic_blogs
-Q213361,Pembrokeshire,Q15979307,Historic_blogs
-Q142,France,Q3624078,Historic_blogs
-Q41642,Phoenicia,Q3024240,Historic_blogs
-Q44248,Jerome,human,Historic_blogs
-Q1277768,East Cambridgeshire,Q1187580,Historic_blogs
-Q2277,Roman Empire,Q48349,Historic_blogs
-Q43684,Henan,Q1615742,Historic_blogs
-Q233,Malta,Q3624078,Historic_blogs
-Q3398729,Portable Antiquities Scheme,Q170584,Historic_blogs
-Q74363,Hippocampus,Q16521,Historic_blogs
-Q273854,Gauls,Q4204501,Historic_blogs
-Q1409,Caligula,human,Historic_blogs
-Q127254,Alexander VII,human,Historic_blogs
-Q768086,Lambayeque,Q515,Historic_blogs
-Q36,Poland,Q3624078,Historic_blogs
-Q206900,Çorum,Q515,Historic_blogs
-Q1651392,Romans,Q4204501,Historic_blogs
-Q29,Spain,Q3624078,Historic_blogs
-Q5406,Hittites,Q4204501,Historic_blogs
-Q23079,Northumberland,Q180673,Historic_blogs
-Q725404,Pyramid of Cestius,Q839954,Historic_blogs
-Q22047654,Must Farm Bronze Age settlement,Q839954,Historic_blogs
-Q7732,Louis XVI of France,human,Historic_blogs
-Q43,Turkey,Q3624078,Historic_blogs
-Q2408803,Exchequer,Q10756188,Historic_blogs
-Q80637,York Castle,Q23413,Historic_blogs
-Q7325,Jewish people,Q11197007,Historic_blogs
-Q4918,Mediterranean Sea,Q1973404,Historic_blogs
-Q462239,Pillnitz Castle,Q751876,Historic_blogs
-Q9683,Tang dynasty,Q50068795,Historic_blogs
-Q17167,Roman Republic,Q11514315,Historic_blogs
-Q37,Lithuania,Q3624078,Historic_blogs
-Q1731,Dresden,Q1549591,Historic_blogs
+Q38,Italy,Q6256,Historic_blogs
+Q7507716,Sicán National Museum,Q33506,Historic_blogs
+Q487988,St. Augustine,Q1093829,Historic_blogs
+Q38060,Gaul,Q1620908,Historic_blogs
 Q4948,Republic of Venice,Q3624078,Historic_blogs
+Q29,Spain,Q3624078,Historic_blogs
+Q53437,Augustus II the Strong,human,Historic_blogs
+Q6343,Carthage,Q133442,Historic_blogs
+Q160538,Gian Lorenzo Bernini,human,Historic_blogs
+Q206900,Çorum,Q515,Historic_blogs
+Q1770351,East Florida,Q1620908,Historic_blogs
+Q6534,French Revolution,Q13418847,Historic_blogs
+Q60022,Tennis Court Oath,Q1190554,Historic_blogs
+Q270532,University of Aberdeen,Q62078547,Historic_blogs
+Q272947,Çorum Province,Q48336,Historic_blogs
+Q1456,South Carolina,Q35657,Historic_blogs
+Q25,Wales,Q3336843,Historic_blogs
+Q37,Lithuania,Q3624078,Historic_blogs
+Q220,Rome,Q902814,Historic_blogs
 Q54122,Continental Army,Q37726,Historic_blogs
 Q1072540,House of Chigi,Q13417114,Historic_blogs
-Q46,Europe,Q2418896,Historic_blogs
-Q160538,Gian Lorenzo Bernini,human,Historic_blogs
-Q193582,National Assembly,Q375928,Historic_blogs
 Q653002,Staatliche Kunstsammlungen Dresden,Q207694,Historic_blogs
-Q83418,Normans,Q41710,Historic_blogs
-Q6343,Carthage,Q133442,Historic_blogs
-Q13372,Carrara,Q747074,Historic_blogs
-Q812,Florida,Q35657,Historic_blogs
-Q131479,Dominican Order,Q28653,Historic_blogs
-Q6473283,Çitliköy,Q1529096,Historic_blogs
-Q7462,Song dynasty,Q12857432,Historic_blogs
-Q25365,Gruidae,Q16521,Historic_blogs
-Q38060,Gaul,Q1620908,Historic_blogs
-Q580631,East Anglia,Q82794,Historic_blogs
-Q1463941,Estates-General of 1789,Q207304,Historic_blogs
-Q22890,Ireland,Q23442,Historic_blogs
-Q4383747,Punic people,Q4204501,Historic_blogs
-Q35392414,La Leche River,Q355304,Historic_blogs
-Q1340801,Jean Joseph Mounier,human,Historic_blogs
-Q7742,Louis XIV of France,human,Historic_blogs
-Q53437,Augustus II the Strong,human,Historic_blogs
-Q1770351,East Florida,Q1620908,Historic_blogs
-Q270532,University of Aberdeen,Q62078547,Historic_blogs
-Q990103,Haverfordwest,Q18511725,Historic_blogs
-Q160894,Spaniards,Q33829,Historic_blogs
-Q2555173,British loyalism,,Historic_blogs
 Q160311,Henry III of England,human,Historic_blogs
-Q419,Peru,Q3624078,Historic_blogs
-Q1456,South Carolina,Q35657,Historic_blogs
+Q2408803,Exchequer,Q10756188,Historic_blogs
+Q160894,Spaniards,Q33829,Historic_blogs
+Q1340801,Jean Joseph Mounier,human,Historic_blogs
+Q4918,Mediterranean Sea,Q1973404,Historic_blogs
+Q1731,Dresden,Q1549591,Historic_blogs
+Q25365,Gruidae,Q16521,Historic_blogs
+Q193582,National Assembly,Q375928,Historic_blogs
+Q23079,Northumberland,Q180673,Historic_blogs
 Q6271,Second Punic War,Q198,Historic_blogs
-Q7507716,Sicán National Museum,Q33506,Historic_blogs
-Q539051,Greeks,Q41710,Historic_blogs
-Q220,Rome,Q902814,Historic_blogs
+Q74363,Hippocampus,Q16521,Historic_blogs
+Q17167,Roman Republic,Q11514315,Historic_blogs
+Q142,France,Q3624078,Historic_blogs
+Q80637,York Castle,Q23413,Historic_blogs
+Q208471,Kaifeng,Q748149,Historic_blogs
+Q768086,Lambayeque,Q515,Historic_blogs
+Q22047654,Must Farm Bronze Age settlement,Q839954,Historic_blogs
+Q1409,Caligula,human,Historic_blogs
+Q23666,Great Britain,Q23442,Historic_blogs
+Q22649,antisemitism,Q2729863,Historic_blogs
+Q182664,Canaletto,human,Historic_blogs
+Q44248,Jerome,human,Historic_blogs
+Q7742,Louis XIV of France,human,Historic_blogs
+Q878607,Syrians,Q33829,Historic_blogs
+Q580631,East Anglia,Q82794,Historic_blogs
 Q1413,Nero,human,Historic_blogs
-Q145,United Kingdom,Q3624078,Historic_blogs
-Q38,Italy,Q6256,Historic_blogs
+Q22890,Ireland,Q23442,Historic_blogs
+Q37594,William the Conqueror,human,Historic_blogs
+Q41642,Phoenicia,Q3024240,Historic_blogs
+Q6473283,Çitliköy,Q1529096,Historic_blogs
+Q46,Europe,Q2418896,Historic_blogs
+Q7462,Song dynasty,Q12857432,Historic_blogs
+Q2277,Roman Empire,Q48349,Historic_blogs
+Q849967,Celtic Britons,Q4204501,Historic_blogs
+Q812,Florida,Q35657,Historic_blogs
+Q5406,Hittites,Q4204501,Historic_blogs
 Q1434,Commodus,human,Historic_blogs
+Q153015,Kingdom of Saxony,Q3024240,Historic_blogs
+Q725404,Pyramid of Cestius,Q839954,Historic_blogs
+Q42462,York,Q1357964,Historic_blogs
+Q148,People's Republic of China,Q3624078,Historic_blogs
+Q2555173,British loyalism,,Historic_blogs
+Q990103,Haverfordwest,Q18511725,Historic_blogs
+Q83418,Normans,Q41710,Historic_blogs
+Q172438,Peterborough,Q515,Historic_blogs
+Q11761,Bronze Age,Q15401699,Historic_blogs
+Q1277768,East Cambridgeshire,Q1187580,Historic_blogs
+Q40949,American Revolutionary War,Q1006311,Historic_blogs
+Q7732,Louis XVI of France,human,Historic_blogs
+Q39518,Żabbar,Q515,Historic_blogs
+Q7325,Jewish people,Q11197007,Historic_blogs
+Q36,Poland,Q3624078,Historic_blogs
+Q273854,Gauls,Q4204501,Historic_blogs
+Q6373,British Museum,Q17431399,Historic_blogs
+Q213361,Pembrokeshire,Q15979307,Historic_blogs
+Q1233131,Vindolanda,Q88205,Historic_blogs
+Q9683,Tang dynasty,Q50068795,Historic_blogs
+Q42207,Caravaggio,human,Historic_blogs
+Q419,Peru,Q3624078,Historic_blogs
+Q53438,Augustus III of Poland,human,Historic_blogs
+Q13372,Carrara,Q747074,Historic_blogs
+Q462239,Pillnitz Castle,Q751876,Historic_blogs
+Q43,Turkey,Q3624078,Historic_blogs
 Q676555,Francis of Assisi,human,Historic_blogs
+Q539051,Greeks,Q41710,Historic_blogs
+Q1463941,Estates-General of 1789,Q207304,Historic_blogs
+Q43684,Henan,Q1615742,Historic_blogs
+Q1651392,Romans,Q4204501,Historic_blogs
+Q3398729,Portable Antiquities Scheme,Q170584,Historic_blogs
+Q145,United Kingdom,Q3624078,Historic_blogs
+Q4383747,Punic people,Q4204501,Historic_blogs
+Q172771,Royal Navy,Q4508,Historic_blogs
+Q131479,Dominican Order,Q28653,Historic_blogs
+Q637119,Çorum Archaeological Museum,Q3329412,Historic_blogs
+Q47716,Charleston,Q1093829,Historic_blogs
+Q35392414,La Leche River,Q355304,Historic_blogs
+Q127254,Alexander VII,human,Historic_blogs
+Q233,Malta,Q3624078,Historic_blogs
+Q31347,Grand Canal,Q1497375,Historic_blogs

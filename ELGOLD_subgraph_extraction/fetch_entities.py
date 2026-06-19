@@ -16,7 +16,7 @@ BATCH = 50
 for i in range(0, len(target_qids), BATCH):
     batch = target_qids[i:i+BATCH]
     success = False
-    for attempt in range(3):  # 3 tentatives par batch
+    for attempt in range(3):  
         try:
             r = SESSION.get(
                 "https://www.wikidata.org/w/api.php",
@@ -52,4 +52,4 @@ for i in range(0, len(target_qids), BATCH):
 
 with open("wikidata_elgold.json", "w", encoding="utf-8") as out:
     json.dump(results, out, ensure_ascii=False)
-print("wikidata_elgold.json prêt !")
+print("wikidata_elgold.json prêt")

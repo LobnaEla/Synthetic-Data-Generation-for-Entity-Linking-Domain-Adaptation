@@ -1,288 +1,288 @@
 qid,label,type,categories
-Q57751738,Coronavirus,Q16521,Scientific_abstracts
-Q26018,rat,Q55983715,Scientific_abstracts
-Q605709,fibrosis,Q1441305,Scientific_abstracts
-Q397,Latin,Q45762,Scientific_abstracts
-Q1519624,Trichogaster fasciata,Q16521,Scientific_abstracts
-Q2943789,nitazoxanide,Q113145171,Scientific_abstracts
-Q83163,Srinivasa Ramanujan,human,Scientific_abstracts
-Q153243,Josiah Willard Gibbs,human,Scientific_abstracts
-Q425402,metalloproteinase,Q67015883,Scientific_abstracts
-Q40878,diarrhea,Q112193867,Scientific_abstracts
-Q4735279,Alphatorquevirus,Q16521,Scientific_abstracts
-Q311109,Wuchereria bancrofti,Q16521,Scientific_abstracts
-Q280027,uveitis,Q112193867,Scientific_abstracts
-Q4340209,depression,Q112193867,Scientific_abstracts
-Q948,Tunisia,Q6256,Scientific_abstracts
-Q47912,lung cancer,Q112193867,Scientific_abstracts
-Q871,arsenic,Q11344,Scientific_abstracts
-Q128581,breast cancer,Q112193867,Scientific_abstracts
-Q50265665,insulin,Q420927,Scientific_abstracts
-Q57754679,Merbecovirus,Q16521,Scientific_abstracts
-Q620639,dysautonomia,Q929833,Scientific_abstracts
-Q70288,Anaplasma,Q16521,Scientific_abstracts
-Q148,People's Republic of China,Q3624078,Scientific_abstracts
-Q1138287,Coxsackievirus,Q55983715,Scientific_abstracts
-Q3523113,European Alliance of Associations for Rheumatology,Q79913,Scientific_abstracts
-Q79817,Cannabis,Q16521,Scientific_abstracts
-Q85438966,SARS-CoV-1,Q855769,Scientific_abstracts
-Q21175,Ixodes ricinus,Q16521,Scientific_abstracts
-Q218,Romania,Q3624078,Scientific_abstracts
-Q155,Brazil,Q3624078,Scientific_abstracts
-Q374232,Lentivirus,Q16521,Scientific_abstracts
-Q17,Japan,Q3624078,Scientific_abstracts
-Q550195,white grouper,Q16521,Scientific_abstracts
-Q60542,Eduard Rüppell,human,Scientific_abstracts
-Q2587862,C-C motif chemokine ligand 2,Q8054,Scientific_abstracts
-Q24785520,Rotavirus non-structural protein NSP3,Q417841,Scientific_abstracts
-Q131854,Klebsiella,Q16521,Scientific_abstracts
-Q81068910,COVID-19 pandemic,Q12184,Scientific_abstracts
-Q1533239,Ceratopogonidae,Q16521,Scientific_abstracts
-Q18028290,KIR3DL1,Q7187,Scientific_abstracts
-Q6034931,Enterobacterales,Q16521,Scientific_abstracts
-Q1485,systemic lupus erythematosus,Q42303753,Scientific_abstracts
-Q2046113,visceral leishmaniasis,Q18123741,Scientific_abstracts
-Q18031085,REL,Q7187,Scientific_abstracts
-Q268667,atopic dermatitis,Q112193867,Scientific_abstracts
-Q27275,Central Asia,Q82794,Scientific_abstracts
-Q3235,Northern Territory,Q14192234,Scientific_abstracts
-Q843,Pakistan,Q3624078,Scientific_abstracts
-Q912,Mali,Q3624078,Scientific_abstracts
-Q19484,metformin,Q113145171,Scientific_abstracts
-Q627992,Rickettsia,Q16521,Scientific_abstracts
-Q12174,obesity,Q87075524,Scientific_abstracts
-Q917069,rhabdomyolysis,Q12136,Scientific_abstracts
-Q970208,liver failure,Q12136,Scientific_abstracts
-Q7634971,Sugarcane mosaic virus,Q16521,Scientific_abstracts
-Q180686,Q180686,Q35127,Scientific_abstracts
-Q36074,Queensland,Q5852411,Scientific_abstracts
-Q911125,human leukocyte antigen,Q78855299,Scientific_abstracts
-Q1043,Carl Linnaeus,human,Scientific_abstracts
-Q16983356,Human coronavirus 229E,Q16521,Scientific_abstracts
-Q16992872,Sutterella,Q16521,Scientific_abstracts
-Q623289,dysphagia,Q112965645,Scientific_abstracts
-Q15325735,RAC1,Q7187,Scientific_abstracts
-Q1192530,acute liver failure,Q1931388,Scientific_abstracts
-Q663,aluminium,Q11344,Scientific_abstracts
-Q1555938,Antarctic,Q82794,Scientific_abstracts
-Q18033068,GCM1,Q7187,Scientific_abstracts
-Q47675660,Clinostomidae,Q16521,Scientific_abstracts
-Q986112,C-X-C motif chemokine ligand 10,Q8054,Scientific_abstracts
-Q181754,heart failure,Q1346149,Scientific_abstracts
-Q1443453,Channa punctata,Q16521,Scientific_abstracts
-Q144,dog,Q55983715,Scientific_abstracts
-Q124686,cellulose acetate,Q214609,Scientific_abstracts
-Q150,French,Q1288568,Scientific_abstracts
-Q424,Cambodia,Q3624078,Scientific_abstracts
-Q4902157,Middle East respiratory syndrome coronavirus,Q16521,Scientific_abstracts
-Q552168,International Agency for Research on Cancer,Q43229,Scientific_abstracts
+Q146174,polypropylene,Q81163,Scientific_abstracts
+Q629,oxygen,Q11344,Scientific_abstracts
+Q524818,Leishmania,Q16521,Scientific_abstracts
+Q214846,Common noctule,Q16521,Scientific_abstracts
+Q38,Italy,Q6256,Scientific_abstracts
 Q82069695,SARS-CoV-2,Q75913269,Scientific_abstracts
-Q124292,cholangiocarcinoma,Q112193867,Scientific_abstracts
-Q415178,ivermectin,Q119892838,Scientific_abstracts
+Q16204670,quilombola,Q41710,Scientific_abstracts
+Q794982,Rhipicephalus sanguineus,Q16521,Scientific_abstracts
+Q2723634,Borrelia burgdorferi,Q16521,Scientific_abstracts
+Q156606,rhesus macaque,Q16521,Scientific_abstracts
+Q1519624,Trichogaster fasciata,Q16521,Scientific_abstracts
+Q16908525,Alphacoronavirus,Q16521,Scientific_abstracts
+Q38933,fever,Q130753312,Scientific_abstracts
+Q5339301,Cucurbita,Q16521,Scientific_abstracts
+Q650912,bacteremia,,Scientific_abstracts
+Q80294,cellulose,Q119896085,Scientific_abstracts
+Q21114866,SRY-box transcription factor 2,Q8054,Scientific_abstracts
+Q1636618,Enterovirus 71,Q16521,Scientific_abstracts
+Q18031469,SGK1,Q7187,Scientific_abstracts
+Q28425,Chiroptera,Q16521,Scientific_abstracts
+Q18031085,REL,Q7187,Scientific_abstracts
+Q1152218,Acanthamoeba,Q16521,Scientific_abstracts
+Q12962137,Pseudomonadota,Q16521,Scientific_abstracts
+Q408,Australia,Q202686,Scientific_abstracts
+Q15787,HIV,Q55983715,Scientific_abstracts
+Q1091,cadmium,Q11344,Scientific_abstracts
+Q164466,Ross Sea,Q165,Scientific_abstracts
+Q199678,vitamin C,Q113145171,Scientific_abstracts
+Q3400142,Potyvirus,Q16521,Scientific_abstracts
+Q12585,Latin America,Q137186904,Scientific_abstracts
+Q76410,Leopold Kronecker,human,Scientific_abstracts
+Q16983360,Human coronavirus HKU1,Q16521,Scientific_abstracts
+Q332062,Sorghum bicolor,Q16521,Scientific_abstracts
+Q21208,Hebei,Q1615742,Scientific_abstracts
+Q1555938,Antarctic,Q82794,Scientific_abstracts
+Q188,German,Q1288568,Scientific_abstracts
+Q207941,Serranidae,Q16521,Scientific_abstracts
+Q6034931,Enterobacterales,Q16521,Scientific_abstracts
+Q1757427,pancytopenia,Q112193867,Scientific_abstracts
+Q600521,Pisidium,Q16521,Scientific_abstracts
+Q627992,Rickettsia,Q16521,Scientific_abstracts
+Q3391243,Saccharum officinarum,Q16521,Scientific_abstracts
+Q278567,SARSr-CoV,Q16521,Scientific_abstracts
+Q1148337,hepatocellular carcinoma,Q112193867,Scientific_abstracts
+Q871,arsenic,Q11344,Scientific_abstracts
+Q911125,human leukocyte antigen,Q78855299,Scientific_abstracts
+Q16992872,Sutterella,Q16521,Scientific_abstracts
+Q16983356,Human coronavirus 229E,Q16521,Scientific_abstracts
+Q5,human,Q55983715,Scientific_abstracts
+Q183134,sepsis,Q65807521,Scientific_abstracts
+Q241696,Somalis,Q41710,Scientific_abstracts
+Q3523113,European Alliance of Associations for Rheumatology,Q79913,Scientific_abstracts
+Q17915405,ECM1,Q7187,Scientific_abstracts
+Q190161,Streptococcus,Q16521,Scientific_abstracts
+Q14905618,NLRP3,Q7187,Scientific_abstracts
+Q39,Switzerland,Q7275,Scientific_abstracts
+Q85438966,SARS-CoV-1,Q855769,Scientific_abstracts
+Q188245,polyester,Q47154513,Scientific_abstracts
+Q7596828,Stage specific embryonic antigen 3,,Scientific_abstracts
+Q3738294,Faecalibacterium,Q16521,Scientific_abstracts
+Q753,copper,Q11344,Scientific_abstracts
+Q18031954,TFAP2C,Q7187,Scientific_abstracts
+Q36074,Queensland,Q5852411,Scientific_abstracts
+Q1138287,Coxsackievirus,Q55983715,Scientific_abstracts
+Q444161,Ogallala Aquifer,Q208791,Scientific_abstracts
+Q692166,Arne Beurling,human,Scientific_abstracts
+Q133087,gout,Q112193867,Scientific_abstracts
+Q3435504,AIDS dementia complex,Q12136,Scientific_abstracts
+Q7086819,oligodendrocyte progenitor,Q189118,Scientific_abstracts
+Q623289,dysphagia,Q112965645,Scientific_abstracts
+Q79817,Cannabis,Q16521,Scientific_abstracts
 Q844935,coronary artery disease,Q112193867,Scientific_abstracts
+Q331283,leishmaniasis,Q506680,Scientific_abstracts
+Q937,Albert Einstein,human,Scientific_abstracts
+Q124900,Platyhelminthes,Q16521,Scientific_abstracts
+Q1533239,Ceratopogonidae,Q16521,Scientific_abstracts
+Q24238949,mast cell activation syndrome,,Scientific_abstracts
+Q708,lead,Q11344,Scientific_abstracts
+Q2119178,Nectriaceae,Q16521,Scientific_abstracts
+Q7879029,ulinastatin,Q113145171,Scientific_abstracts
+Q16991954,Human coronavirus OC43,Q16521,Scientific_abstracts
+Q81068910,COVID-19 pandemic,Q12184,Scientific_abstracts
+Q3129936,helminth,Q2612572,Scientific_abstracts
+Q1090,silver,Q11344,Scientific_abstracts
+Q18027689,IGFBP7,Q7187,Scientific_abstracts
+Q69866048,Alphachrysovirus,Q16521,Scientific_abstracts
+Q605709,fibrosis,Q1441305,Scientific_abstracts
+Q668,India,Q6256,Scientific_abstracts
+Q355989,Adeno-associated virus,Q16521,Scientific_abstracts
+Q758,zinc,Q11344,Scientific_abstracts
+Q142,France,Q3624078,Scientific_abstracts
+Q3334151,N-linked glycosylation,,Scientific_abstracts
+Q50265665,insulin,Q420927,Scientific_abstracts
+Q211642,Lars Ahlfors,human,Scientific_abstracts
+Q5340515,systemic scleroderma,Q42303753,Scientific_abstracts
+Q212272,hydroxycarbamide,Q113145171,Scientific_abstracts
+Q7204,Middle East,Q137186904,Scientific_abstracts
+Q935,Isaac Newton,human,Scientific_abstracts
+Q60775452,Ada Health,Q4830453,Scientific_abstracts
+Q18033068,GCM1,Q7187,Scientific_abstracts
+Q3025883,type 2 diabetes,Q12136,Scientific_abstracts
+Q57751738,Coronavirus,Q16521,Scientific_abstracts
+Q14882371,HAMP,Q7187,Scientific_abstracts
+Q18028290,KIR3DL1,Q7187,Scientific_abstracts
+Q2046113,visceral leishmaniasis,Q18123741,Scientific_abstracts
+Q5590520,gp41,Q8054,Scientific_abstracts
+Q58584,Baoding,Q748149,Scientific_abstracts
+Q70288,Anaplasma,Q16521,Scientific_abstracts
+Q180686,Q180686,Q35127,Scientific_abstracts
+Q1263,Emilia-Romagna,Q16110,Scientific_abstracts
+Q663,aluminium,Q11344,Scientific_abstracts
+Q48,Asia,Q5107,Scientific_abstracts
+Q7160794,pegloticase,Q113145171,Scientific_abstracts
+Q1661388,Texas High Plains AVA,Q166247,Scientific_abstracts
+Q1443453,Channa punctata,Q16521,Scientific_abstracts
+Q24785520,Rotavirus non-structural protein NSP3,Q417841,Scientific_abstracts
+Q46,Europe,Q2418896,Scientific_abstracts
+Q27381,North Africa,Q82794,Scientific_abstracts
+Q310911,Aedes,Q16521,Scientific_abstracts
+Q422687,macrolides,Q47154513,Scientific_abstracts
+Q86495,cyclooctane,Q113145171,Scientific_abstracts
+Q415178,ivermectin,Q119892838,Scientific_abstracts
+Q4299724,Sphyriidae,Q16521,Scientific_abstracts
+Q21173843,tumor necrosis factor,Q8054,Scientific_abstracts
+Q411629,albendazol,Q113145171,Scientific_abstracts
+Q408476,"BCL2 associated X, apoptosis regulator",Q8054,Scientific_abstracts
+Q421804,lipopolysaccharide,Q47154513,Scientific_abstracts
+Q41861,arterial hypertension,Q112193867,Scientific_abstracts
+Q934959,Rhizoprionodon,Q16521,Scientific_abstracts
+Q178235,Acanthocephala,Q16521,Scientific_abstracts
+Q16965166,inflammatory arthritis,Q12136,Scientific_abstracts
+Q2751034,mouse,Q55983715,Scientific_abstracts
+Q135237,Anopheles gambiae,Q765940,Scientific_abstracts
+Q550195,white grouper,Q16521,Scientific_abstracts
+Q18027504,ID2,Q7187,Scientific_abstracts
+Q131854,Klebsiella,Q16521,Scientific_abstracts
+Q3347441,O-linked glycosylation,,Scientific_abstracts
 Q901755,GenBank,Q175902,Scientific_abstracts
-Q11575,maize,Q16521,Scientific_abstracts
+Q60429,Chandrasekhara Venkata Raman,human,Scientific_abstracts
+Q599416,Sinop,Q515,Scientific_abstracts
+Q550061,endothelial dysfunction,Q12136,Scientific_abstracts
+Q155,Brazil,Q3624078,Scientific_abstracts
+Q2698455,short-chain fatty acid,Q47154513,Scientific_abstracts
+Q374232,Lentivirus,Q16521,Scientific_abstracts
+Q370226,Nathan Rosen,human,Scientific_abstracts
+Q51,Antarctica,Q5107,Scientific_abstracts
+Q326224,(S)-(−)-colchicine,Q113145171,Scientific_abstracts
+Q148,People's Republic of China,Q3624078,Scientific_abstracts
+Q519796,Enterovirus,Q16521,Scientific_abstracts
+Q218,Romania,Q3624078,Scientific_abstracts
+Q89,apple,,Scientific_abstracts
+Q6964131,Nanos 3' UTR translation control element,,Scientific_abstracts
+Q187255,rheumatoid arthritis,Q42303753,Scientific_abstracts
+Q410776,superoxide dismutase,Q67015883,Scientific_abstracts
+Q42299,Bernhard Riemann,human,Scientific_abstracts
+Q2249526,cerebral hypoxia,Q12136,Scientific_abstracts
+Q268667,atopic dermatitis,Q112193867,Scientific_abstracts
+Q4902157,Middle East respiratory syndrome coronavirus,Q16521,Scientific_abstracts
+Q12174,obesity,Q87075524,Scientific_abstracts
+Q170990,arthritis,Q708176,Scientific_abstracts
+Q284129,Charles Fefferman,human,Scientific_abstracts
+Q311109,Wuchereria bancrofti,Q16521,Scientific_abstracts
 Q12078,cancer,Q112193867,Scientific_abstracts
 Q213511,erythromycin,Q113145171,Scientific_abstracts
-Q118551,clarithromycin,Q113145171,Scientific_abstracts
-Q3738294,Faecalibacterium,Q16521,Scientific_abstracts
-Q51,Antarctica,Q5107,Scientific_abstracts
-Q934959,Rhizoprionodon,Q16521,Scientific_abstracts
-Q1035604,Carcharhinus coatesi,Q16521,Scientific_abstracts
-Q154878,toxoplasmosis,Q18123741,Scientific_abstracts
-Q599416,Sinop,Q515,Scientific_abstracts
-Q36940,sugarcane,Q55983715,Scientific_abstracts
-Q84263196,COVID-19,Q609748,Scientific_abstracts
-Q1090,silver,Q11344,Scientific_abstracts
-Q187255,rheumatoid arthritis,Q42303753,Scientific_abstracts
-Q1425304,viremia,,Scientific_abstracts
-Q331283,leishmaniasis,Q506680,Scientific_abstracts
-Q135237,Anopheles gambiae,Q765940,Scientific_abstracts
-Q41873,β-lactam,Q47154513,Scientific_abstracts
-Q4299724,Sphyriidae,Q16521,Scientific_abstracts
-Q412889,Interleukin 6,Q8054,Scientific_abstracts
-Q15787,HIV,Q55983715,Scientific_abstracts
-Q142,France,Q3624078,Scientific_abstracts
-Q5089,Ganges,Q4022,Scientific_abstracts
-Q63159,Karl Rudolphi,human,Scientific_abstracts
-Q60429,Chandrasekhara Venkata Raman,human,Scientific_abstracts
-Q5590520,gp41,Q8054,Scientific_abstracts
-Q310911,Aedes,Q16521,Scientific_abstracts
-Q28867094,axial spondyloarthritis,Q112193867,Scientific_abstracts
-Q80294,cellulose,Q119896085,Scientific_abstracts
-Q1956621,mycovirus,,Scientific_abstracts
-Q38933,fever,Q130753312,Scientific_abstracts
-Q7879029,ulinastatin,Q113145171,Scientific_abstracts
-Q753,copper,Q11344,Scientific_abstracts
-Q411629,albendazol,Q113145171,Scientific_abstracts
-Q16983360,Human coronavirus HKU1,Q16521,Scientific_abstracts
-Q600521,Pisidium,Q16521,Scientific_abstracts
-Q370226,Nathan Rosen,human,Scientific_abstracts
-Q1152218,Acanthamoeba,Q16521,Scientific_abstracts
-Q797656,Babesia,Q16521,Scientific_abstracts
-Q1091,cadmium,Q11344,Scientific_abstracts
-Q7596828,Stage specific embryonic antigen 3,,Scientific_abstracts
-Q217129,European seabass,Q16521,Scientific_abstracts
-Q1365400,killer-cell immunoglobulin-like receptor,Q84467700,Scientific_abstracts
-Q41,Greece,Q3624078,Scientific_abstracts
-Q444161,Ogallala Aquifer,Q208791,Scientific_abstracts
-Q1950789,Leishmania infantum,Q16521,Scientific_abstracts
-Q183134,sepsis,Q65807521,Scientific_abstracts
-Q2698455,short-chain fatty acid,Q47154513,Scientific_abstracts
-Q326224,(S)-(−)-colchicine,Q113145171,Scientific_abstracts
-Q3129936,helminth,Q2612572,Scientific_abstracts
-Q188,German,Q1288568,Scientific_abstracts
-Q1153950,Hepatozoon,Q16521,Scientific_abstracts
-Q192305,Indo-Gangetic Plain,Q160091,Scientific_abstracts
-Q284129,Charles Fefferman,human,Scientific_abstracts
-Q211642,Lars Ahlfors,human,Scientific_abstracts
-Q5,human,Q55983715,Scientific_abstracts
-Q18027504,ID2,Q7187,Scientific_abstracts
-Q629,oxygen,Q11344,Scientific_abstracts
-Q29907539,Clinostomum,Q16521,Scientific_abstracts
-Q156606,rhesus macaque,Q16521,Scientific_abstracts
-Q310853,Ardea,Q16521,Scientific_abstracts
-Q171877,hydrogen peroxide,Q113145171,Scientific_abstracts
-Q2723634,Borrelia burgdorferi,Q16521,Scientific_abstracts
-Q410776,superoxide dismutase,Q67015883,Scientific_abstracts
-Q502961,astrocyte,Q189118,Scientific_abstracts
-Q108250944,Coronavirus spike protein,Q417841,Scientific_abstracts
-Q794982,Rhipicephalus sanguineus,Q16521,Scientific_abstracts
-Q5269551,Cucullanus,Q16521,Scientific_abstracts
-Q28425,Chiroptera,Q16521,Scientific_abstracts
-Q188245,polyester,Q47154513,Scientific_abstracts
-Q542146,South India,Q82794,Scientific_abstracts
-Q3391243,Saccharum officinarum,Q16521,Scientific_abstracts
-Q564426,Annals of Mathematics,Q2360559,Scientific_abstracts
-Q1024563,CVBD,Q53542448,Scientific_abstracts
-Q3347441,O-linked glycosylation,,Scientific_abstracts
-Q21173843,tumor necrosis factor,Q8054,Scientific_abstracts
-Q3400142,Potyvirus,Q16521,Scientific_abstracts
-Q519796,Enterovirus,Q16521,Scientific_abstracts
-Q52848,spondyloarthropathy,Q112193867,Scientific_abstracts
-Q758,zinc,Q11344,Scientific_abstracts
-Q192100,filarial elephantiasis,Q112193867,Scientific_abstracts
-Q25419,Escherichia coli,Q16521,Scientific_abstracts
-Q623090,aquaporin,Q67101749,Scientific_abstracts
-Q17860880,CDX2,Q7187,Scientific_abstracts
-Q77630,United Nations REDD Programme,Q43229,Scientific_abstracts
-Q14905238,AQP1,Q7187,Scientific_abstracts
-Q8351095,human Coronavirus NL63,Q16521,Scientific_abstracts
-Q1661388,Texas High Plains AVA,Q166247,Scientific_abstracts
-Q550061,endothelial dysfunction,Q12136,Scientific_abstracts
-Q869847,Physical Review,Q5633421,Scientific_abstracts
-Q186889,nausea,Q112965645,Scientific_abstracts
-Q355989,Adeno-associated virus,Q16521,Scientific_abstracts
-Q5271874,Cucullanidae,Q16521,Scientific_abstracts
-Q12824566,catalase,Q67015883,Scientific_abstracts
-Q133087,gout,Q112193867,Scientific_abstracts
-Q14905618,NLRP3,Q7187,Scientific_abstracts
-Q692166,Arne Beurling,human,Scientific_abstracts
-Q421804,lipopolysaccharide,Q47154513,Scientific_abstracts
-Q241696,Somalis,Q41710,Scientific_abstracts
-Q124900,Platyhelminthes,Q16521,Scientific_abstracts
-Q140067,sclerosis,Q2057971,Scientific_abstracts
-Q72499,Mediterranean Basin,Q2904233,Scientific_abstracts
-Q276595,Culex,Q16521,Scientific_abstracts
-Q412214,Dipeptidyl peptidase 4,Q8054,Scientific_abstracts
-Q58584,Baoding,Q748149,Scientific_abstracts
-Q653197,rash,Q169872,Scientific_abstracts
-Q68507,Oswald Teichmüller,human,Scientific_abstracts
-Q5339301,Cucurbita,Q16521,Scientific_abstracts
-Q422687,macrolides,Q47154513,Scientific_abstracts
-Q7204,Middle East,Q137186904,Scientific_abstracts
-Q12585,Latin America,Q137186904,Scientific_abstracts
-Q86495,cyclooctane,Q113145171,Scientific_abstracts
-Q164466,Ross Sea,Q165,Scientific_abstracts
-Q39,Switzerland,Q7275,Scientific_abstracts
-Q1071346,International Commission on Zoological Nomenclature,Q43229,Scientific_abstracts
-Q14882371,HAMP,Q7187,Scientific_abstracts
-Q48397,Mercury,Q4167410,Scientific_abstracts
-Q408476,"BCL2 associated X, apoptosis regulator",Q8054,Scientific_abstracts
-Q485150,Romanians,Q41710,Scientific_abstracts
-Q3435504,AIDS dementia complex,Q12136,Scientific_abstracts
-Q24238949,mast cell activation syndrome,,Scientific_abstracts
-Q411114,Q411114,Q78155096,Scientific_abstracts
-Q1757427,pancytopenia,Q112193867,Scientific_abstracts
-Q207941,Serranidae,Q16521,Scientific_abstracts
-Q925,mercury,Q11344,Scientific_abstracts
-Q21114866,SRY-box transcription factor 2,Q8054,Scientific_abstracts
-Q48,Asia,Q5107,Scientific_abstracts
-Q1263,Emilia-Romagna,Q16110,Scientific_abstracts
-Q46,Europe,Q2418896,Scientific_abstracts
-Q138670,Ehrlichia,Q16521,Scientific_abstracts
-Q7160794,pegloticase,Q113145171,Scientific_abstracts
-Q16991954,Human coronavirus OC43,Q16521,Scientific_abstracts
-Q3334151,N-linked glycosylation,,Scientific_abstracts
-Q420012,Myeloperoxidase,Q8054,Scientific_abstracts
-Q2751034,mouse,Q55983715,Scientific_abstracts
-Q107570110,Papain-like protease,,Scientific_abstracts
-Q11031,Vilfredo Pareto,human,Scientific_abstracts
-Q412323,rituximab,Q113145171,Scientific_abstracts
-Q16204670,quilombola,Q41710,Scientific_abstracts
-Q76410,Leopold Kronecker,human,Scientific_abstracts
-Q344873,acute respiratory distress syndrome,Q1931388,Scientific_abstracts
-Q5185,Nematoda,Q16521,Scientific_abstracts
-Q5340515,systemic scleroderma,Q42303753,Scientific_abstracts
-Q708,lead,Q11344,Scientific_abstracts
-Q937,Albert Einstein,human,Scientific_abstracts
-Q668,India,Q6256,Scientific_abstracts
-Q2119178,Nectriaceae,Q16521,Scientific_abstracts
-Q2696880,Morganella morganii,Q16521,Scientific_abstracts
-Q16908525,Alphacoronavirus,Q16521,Scientific_abstracts
-Q16965166,inflammatory arthritis,Q12136,Scientific_abstracts
-Q170990,arthritis,Q708176,Scientific_abstracts
-Q794,Iran,Q3624078,Scientific_abstracts
-Q178235,Acanthocephala,Q16521,Scientific_abstracts
-Q146174,polypropylene,Q81163,Scientific_abstracts
-Q408,Australia,Q202686,Scientific_abstracts
-Q600785,Trematomus bernacchii,Q16521,Scientific_abstracts
-Q89,apple,,Scientific_abstracts
-Q97154240,Pfizer–BioNTech COVID-19 vaccine,Q98734151,Scientific_abstracts
-Q1636618,Enterovirus 71,Q16521,Scientific_abstracts
-Q18031954,TFAP2C,Q7187,Scientific_abstracts
-Q1148337,hepatocellular carcinoma,Q112193867,Scientific_abstracts
-Q6964131,Nanos 3' UTR translation control element,,Scientific_abstracts
-Q214846,Common noctule,Q16521,Scientific_abstracts
-Q42299,Bernhard Riemann,human,Scientific_abstracts
-Q3703,Bamako,Q515,Scientific_abstracts
-Q17914048,DOCK1,Q7187,Scientific_abstracts
-Q650912,bacteremia,,Scientific_abstracts
-Q935,Isaac Newton,human,Scientific_abstracts
-Q134669,Dirofilaria immitis,Q16521,Scientific_abstracts
-Q199678,vitamin C,Q113145171,Scientific_abstracts
+Q424,Cambodia,Q3624078,Scientific_abstracts
+Q425402,metalloproteinase,Q67015883,Scientific_abstracts
 Q43041,hemoglobin,Q78155096,Scientific_abstracts
-Q18027689,IGFBP7,Q7187,Scientific_abstracts
-Q12962137,Pseudomonadota,Q16521,Scientific_abstracts
-Q1416438,Phlebotominae,Q310890,Scientific_abstracts
-Q27381,North Africa,Q82794,Scientific_abstracts
-Q17915405,ECM1,Q7187,Scientific_abstracts
-Q2249526,cerebral hypoxia,Q12136,Scientific_abstracts
-Q188151,ischemia,Q112193867,Scientific_abstracts
-Q27108380,taraxasterol,Q113145171,Scientific_abstracts
-Q7086819,oligodendrocyte progenitor,Q189118,Scientific_abstracts
-Q181395,magnetite,Q12089225,Scientific_abstracts
-Q131003,Toxoplasma gondii,Q16521,Scientific_abstracts
-Q7268955,Quantou Formation,Q736917,Scientific_abstracts
-Q524818,Leishmania,Q16521,Scientific_abstracts
-Q190161,Streptococcus,Q16521,Scientific_abstracts
-Q278567,SARSr-CoV,Q16521,Scientific_abstracts
-Q21208,Hebei,Q1615742,Scientific_abstracts
-Q18031469,SGK1,Q7187,Scientific_abstracts
-Q677,iron,Q11344,Scientific_abstracts
-Q69866048,Alphachrysovirus,Q16521,Scientific_abstracts
-Q188297,lupus erythematosus,Q112193867,Scientific_abstracts
-Q180217,Stefan Banach,human,Scientific_abstracts
-Q3025883,type 2 diabetes,Q12136,Scientific_abstracts
-Q1860,English,Q33742,Scientific_abstracts
-Q22005739,David A. Karnofsky,human,Scientific_abstracts
-Q652744,"hand, foot and mouth disease",Q18123741,Scientific_abstracts
-Q18033463,NRP1,Q7187,Scientific_abstracts
+Q19484,metformin,Q113145171,Scientific_abstracts
+Q1071346,International Commission on Zoological Nomenclature,Q43229,Scientific_abstracts
+Q153243,Josiah Willard Gibbs,human,Scientific_abstracts
+Q28867094,axial spondyloarthritis,Q112193867,Scientific_abstracts
 Q14906978,HLA-C,Q7187,Scientific_abstracts
-Q332062,Sorghum bicolor,Q16521,Scientific_abstracts
-Q22327449,ferritin complex,Q5058355,Scientific_abstracts
-Q38,Italy,Q6256,Scientific_abstracts
-Q60775452,Ada Health,Q4830453,Scientific_abstracts
-Q212272,hydroxycarbamide,Q113145171,Scientific_abstracts
-Q41861,arterial hypertension,Q112193867,Scientific_abstracts
+Q970208,liver failure,Q12136,Scientific_abstracts
+Q1365400,killer-cell immunoglobulin-like receptor,Q84467700,Scientific_abstracts
+Q181754,heart failure,Q1346149,Scientific_abstracts
+Q18033463,NRP1,Q7187,Scientific_abstracts
+Q188297,lupus erythematosus,Q112193867,Scientific_abstracts
+Q68507,Oswald Teichmüller,human,Scientific_abstracts
+Q653197,rash,Q169872,Scientific_abstracts
+Q47912,lung cancer,Q112193867,Scientific_abstracts
+Q26018,rat,Q55983715,Scientific_abstracts
+Q72499,Mediterranean Basin,Q2904233,Scientific_abstracts
+Q869847,Physical Review,Q5633421,Scientific_abstracts
+Q97154240,Pfizer–BioNTech COVID-19 vaccine,Q98734151,Scientific_abstracts
+Q986112,C-X-C motif chemokine ligand 10,Q8054,Scientific_abstracts
+Q652744,"hand, foot and mouth disease",Q18123741,Scientific_abstracts
+Q420012,Myeloperoxidase,Q8054,Scientific_abstracts
+Q217129,European seabass,Q16521,Scientific_abstracts
+Q138670,Ehrlichia,Q16521,Scientific_abstracts
+Q192100,filarial elephantiasis,Q112193867,Scientific_abstracts
+Q27108380,taraxasterol,Q113145171,Scientific_abstracts
+Q411114,Q411114,Q78155096,Scientific_abstracts
+Q7268955,Quantou Formation,Q736917,Scientific_abstracts
+Q5185,Nematoda,Q16521,Scientific_abstracts
+Q397,Latin,Q45762,Scientific_abstracts
+Q2943789,nitazoxanide,Q113145171,Scientific_abstracts
+Q41,Greece,Q3624078,Scientific_abstracts
+Q912,Mali,Q3624078,Scientific_abstracts
+Q180217,Stefan Banach,human,Scientific_abstracts
+Q412323,rituximab,Q113145171,Scientific_abstracts
+Q1024563,CVBD,Q53542448,Scientific_abstracts
+Q25419,Escherichia coli,Q16521,Scientific_abstracts
+Q3703,Bamako,Q515,Scientific_abstracts
+Q5271874,Cucullanidae,Q16521,Scientific_abstracts
+Q150,French,Q1288568,Scientific_abstracts
+Q77630,United Nations REDD Programme,Q43229,Scientific_abstracts
+Q2587862,C-C motif chemokine ligand 2,Q8054,Scientific_abstracts
+Q108250944,Coronavirus spike protein,Q417841,Scientific_abstracts
+Q118551,clarithromycin,Q113145171,Scientific_abstracts
+Q63159,Karl Rudolphi,human,Scientific_abstracts
+Q192305,Indo-Gangetic Plain,Q160091,Scientific_abstracts
+Q1035604,Carcharhinus coatesi,Q16521,Scientific_abstracts
+Q181395,magnetite,Q12089225,Scientific_abstracts
+Q344873,acute respiratory distress syndrome,Q1931388,Scientific_abstracts
+Q925,mercury,Q11344,Scientific_abstracts
+Q794,Iran,Q3624078,Scientific_abstracts
+Q131003,Toxoplasma gondii,Q16521,Scientific_abstracts
+Q17860880,CDX2,Q7187,Scientific_abstracts
+Q48397,Mercury,Q4167410,Scientific_abstracts
+Q41873,β-lactam,Q47154513,Scientific_abstracts
+Q917069,rhabdomyolysis,Q12136,Scientific_abstracts
+Q677,iron,Q11344,Scientific_abstracts
+Q17914048,DOCK1,Q7187,Scientific_abstracts
+Q4340209,depression,Q112193867,Scientific_abstracts
+Q171877,hydrogen peroxide,Q113145171,Scientific_abstracts
+Q84263196,COVID-19,Q609748,Scientific_abstracts
+Q107570110,Papain-like protease,,Scientific_abstracts
+Q1485,systemic lupus erythematosus,Q42303753,Scientific_abstracts
+Q17,Japan,Q3624078,Scientific_abstracts
+Q502961,astrocyte,Q189118,Scientific_abstracts
+Q52848,spondyloarthropathy,Q112193867,Scientific_abstracts
+Q310853,Ardea,Q16521,Scientific_abstracts
+Q1416438,Phlebotominae,Q310890,Scientific_abstracts
+Q186889,nausea,Q112965645,Scientific_abstracts
+Q1425304,viremia,,Scientific_abstracts
+Q29907539,Clinostomum,Q16521,Scientific_abstracts
+Q128581,breast cancer,Q112193867,Scientific_abstracts
+Q1950789,Leishmania infantum,Q16521,Scientific_abstracts
+Q15325735,RAC1,Q7187,Scientific_abstracts
+Q280027,uveitis,Q112193867,Scientific_abstracts
+Q1860,English,Q33742,Scientific_abstracts
+Q8351095,human Coronavirus NL63,Q16521,Scientific_abstracts
+Q948,Tunisia,Q6256,Scientific_abstracts
+Q552168,International Agency for Research on Cancer,Q43229,Scientific_abstracts
+Q2696880,Morganella morganii,Q16521,Scientific_abstracts
+Q623090,aquaporin,Q67101749,Scientific_abstracts
+Q22005739,David A. Karnofsky,human,Scientific_abstracts
+Q12824566,catalase,Q67015883,Scientific_abstracts
+Q11575,maize,Q16521,Scientific_abstracts
+Q144,dog,Q55983715,Scientific_abstracts
 Q36293,histone,Q84467700,Scientific_abstracts
+Q154878,toxoplasmosis,Q18123741,Scientific_abstracts
+Q36940,sugarcane,Q55983715,Scientific_abstracts
+Q412889,Interleukin 6,Q8054,Scientific_abstracts
+Q5089,Ganges,Q4022,Scientific_abstracts
+Q5269551,Cucullanus,Q16521,Scientific_abstracts
+Q11031,Vilfredo Pareto,human,Scientific_abstracts
+Q124292,cholangiocarcinoma,Q112193867,Scientific_abstracts
+Q40878,diarrhea,Q112193867,Scientific_abstracts
+Q797656,Babesia,Q16521,Scientific_abstracts
+Q47675660,Clinostomidae,Q16521,Scientific_abstracts
+Q1956621,mycovirus,,Scientific_abstracts
+Q542146,South India,Q82794,Scientific_abstracts
+Q57754679,Merbecovirus,Q16521,Scientific_abstracts
+Q7634971,Sugarcane mosaic virus,Q16521,Scientific_abstracts
+Q22327449,ferritin complex,Q5058355,Scientific_abstracts
+Q3235,Northern Territory,Q14192234,Scientific_abstracts
+Q4735279,Alphatorquevirus,Q16521,Scientific_abstracts
+Q140067,sclerosis,Q2057971,Scientific_abstracts
+Q27275,Central Asia,Q82794,Scientific_abstracts
+Q276595,Culex,Q16521,Scientific_abstracts
+Q124686,cellulose acetate,Q214609,Scientific_abstracts
+Q188151,ischemia,Q112193867,Scientific_abstracts
+Q21175,Ixodes ricinus,Q16521,Scientific_abstracts
+Q1043,Carl Linnaeus,human,Scientific_abstracts
+Q412214,Dipeptidyl peptidase 4,Q8054,Scientific_abstracts
+Q620639,dysautonomia,Q929833,Scientific_abstracts
+Q843,Pakistan,Q3624078,Scientific_abstracts
+Q564426,Annals of Mathematics,Q2360559,Scientific_abstracts
+Q14905238,AQP1,Q7187,Scientific_abstracts
+Q485150,Romanians,Q41710,Scientific_abstracts
+Q134669,Dirofilaria immitis,Q16521,Scientific_abstracts
+Q83163,Srinivasa Ramanujan,human,Scientific_abstracts
+Q600785,Trematomus bernacchii,Q16521,Scientific_abstracts
+Q60542,Eduard Rüppell,human,Scientific_abstracts
+Q1153950,Hepatozoon,Q16521,Scientific_abstracts
+Q1192530,acute liver failure,Q1931388,Scientific_abstracts

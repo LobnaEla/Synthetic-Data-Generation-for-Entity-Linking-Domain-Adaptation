@@ -1,114 +1,114 @@
 s,s_label,p,p_label,o,o_label
-Q7204,Middle East,P17,pays,Q794,Iran
-Q7204,Middle East,P361,partie de,Q48,Asia
-Q72499,Mediterranean Basin,P17,pays,Q142,France
-Q72499,Mediterranean Basin,P17,pays,Q38,Italy
-Q72499,Mediterranean Basin,P17,pays,Q41,Greece
-Q72499,Mediterranean Basin,P17,pays,Q948,Tunisia
-Q148,People's Republic of China,P17,pays,Q148,People's Republic of China
-Q148,People's Republic of China,P361,partie de,Q48,Asia
-Q68507,Oswald Teichmüller,P31,est un,Q5,human
-Q83163,Srinivasa Ramanujan,P31,est un,Q5,human
-Q180217,Stefan Banach,P31,est un,Q5,human
-Q692166,Arne Beurling,P31,est un,Q5,human
-Q424,Cambodia,P17,pays,Q424,Cambodia
-Q27275,Central Asia,P17,pays,Q148,People's Republic of China
-Q27275,Central Asia,P361,partie de,Q48,Asia
-Q81068910,COVID-19 pandemic,P495,pays d'origine,Q148,People's Republic of China
-Q81068910,COVID-19 pandemic,P17,pays,Q148,People's Republic of China
-Q81068910,COVID-19 pandemic,P17,pays,Q17,Japan
-Q81068910,COVID-19 pandemic,P17,pays,Q408,Australia
-Q81068910,COVID-19 pandemic,P17,pays,Q142,France
-Q81068910,COVID-19 pandemic,P17,pays,Q424,Cambodia
-Q81068910,COVID-19 pandemic,P17,pays,Q668,India
-Q81068910,COVID-19 pandemic,P17,pays,Q38,Italy
-Q81068910,COVID-19 pandemic,P17,pays,Q794,Iran
-Q81068910,COVID-19 pandemic,P17,pays,Q39,Switzerland
-Q81068910,COVID-19 pandemic,P17,pays,Q843,Pakistan
-Q81068910,COVID-19 pandemic,P17,pays,Q41,Greece
-Q81068910,COVID-19 pandemic,P17,pays,Q155,Brazil
-Q81068910,COVID-19 pandemic,P17,pays,Q218,Romania
-Q81068910,COVID-19 pandemic,P17,pays,Q948,Tunisia
-Q937,Albert Einstein,P31,est un,Q5,human
-Q937,Albert Einstein,P27,nationalité,Q39,Switzerland
-Q1485,systemic lupus erythematosus,P279,sous-classe de,Q188297,lupus erythematosus
-Q22005739,David A. Karnofsky,P31,est un,Q5,human
-Q76410,Leopold Kronecker,P31,est un,Q5,human
-Q5089,Ganges,P17,pays,Q668,India
-Q42299,Bernhard Riemann,P31,est un,Q5,human
-Q82069695,SARS-CoV-2,P279,sous-classe de,Q57751738,Coronavirus
-Q935,Isaac Newton,P31,est un,Q5,human
-Q17,Japan,P17,pays,Q17,Japan
-Q51,Antarctica,P361,partie de,Q1555938,Antarctic
-Q2046113,visceral leishmaniasis,P279,sous-classe de,Q331283,leishmaniasis
-Q218,Romania,P17,pays,Q218,Romania
-Q153243,Josiah Willard Gibbs,P31,est un,Q5,human
-Q21208,Hebei,P17,pays,Q148,People's Republic of China
-Q21208,Hebei,P131,situé dans,Q148,People's Republic of China
-Q668,India,P17,pays,Q668,India
-Q1192530,acute liver failure,P279,sous-classe de,Q970208,liver failure
-Q118551,clarithromycin,P279,sous-classe de,Q422687,macrolides
-Q3235,Northern Territory,P17,pays,Q408,Australia
-Q3235,Northern Territory,P361,partie de,Q408,Australia
-Q3235,Northern Territory,P131,situé dans,Q408,Australia
-Q485150,Romanians,P17,pays,Q218,Romania
-Q485150,Romanians,P17,pays,Q38,Italy
-Q408,Australia,P17,pays,Q408,Australia
-Q63159,Karl Rudolphi,P31,est un,Q5,human
-Q284129,Charles Fefferman,P31,est un,Q5,human
-Q39,Switzerland,P17,pays,Q39,Switzerland
-Q552168,International Agency for Research on Cancer,P17,pays,Q142,France
-Q912,Mali,P17,pays,Q912,Mali
-Q1263,Emilia-Romagna,P17,pays,Q38,Italy
-Q1263,Emilia-Romagna,P131,situé dans,Q38,Italy
-Q843,Pakistan,P17,pays,Q843,Pakistan
-Q948,Tunisia,P17,pays,Q948,Tunisia
-Q133087,gout,P279,sous-classe de,Q170990,arthritis
-Q187255,rheumatoid arthritis,P279,sous-classe de,Q170990,arthritis
-Q27381,North Africa,P17,pays,Q948,Tunisia
-Q2943789,nitazoxanide,P17,pays,Q155,Brazil
-Q3523113,European Alliance of Associations for Rheumatology,P17,pays,Q39,Switzerland
-Q188,German,P17,pays,Q38,Italy
-Q188,German,P17,pays,Q39,Switzerland
-Q188,German,P17,pays,Q142,France
-Q60542,Eduard Rüppell,P31,est un,Q5,human
-Q11031,Vilfredo Pareto,P31,est un,Q5,human
-Q11031,Vilfredo Pareto,P27,nationalité,Q142,France
-Q542146,South India,P17,pays,Q668,India
-Q542146,South India,P131,situé dans,Q668,India
-Q41,Greece,P17,pays,Q41,Greece
-Q142,France,P17,pays,Q142,France
-Q1860,English,P17,pays,Q408,Australia
-Q1860,English,P17,pays,Q424,Cambodia
-Q1860,English,P17,pays,Q668,India
-Q1860,English,P17,pays,Q843,Pakistan
-Q211642,Lars Ahlfors,P31,est un,Q5,human
-Q60429,Chandrasekhara Venkata Raman,P31,est un,Q5,human
-Q60429,Chandrasekhara Venkata Raman,P27,nationalité,Q668,India
-Q38,Italy,P17,pays,Q38,Italy
-Q7268955,Quantou Formation,P17,pays,Q148,People's Republic of China
-Q1043,Carl Linnaeus,P31,est un,Q5,human
-Q36074,Queensland,P17,pays,Q408,Australia
-Q36074,Queensland,P131,situé dans,Q408,Australia
-Q370226,Nathan Rosen,P31,est un,Q5,human
-Q28867094,axial spondyloarthritis,P279,sous-classe de,Q52848,spondyloarthropathy
-Q58584,Baoding,P17,pays,Q148,People's Republic of China
-Q58584,Baoding,P131,situé dans,Q21208,Hebei
-Q58584,Baoding,P131,situé dans,Q21208,Hebei
-Q58584,Baoding,P131,situé dans,Q21208,Hebei
-Q3703,Bamako,P17,pays,Q912,Mali
-Q155,Brazil,P17,pays,Q155,Brazil
-Q155,Brazil,P361,partie de,Q12585,Latin America
-Q192305,Indo-Gangetic Plain,P17,pays,Q668,India
-Q192305,Indo-Gangetic Plain,P361,partie de,Q668,India
-Q16965166,inflammatory arthritis,P279,sous-classe de,Q170990,arthritis
-Q16204670,quilombola,P17,pays,Q155,Brazil
-Q150,French,P17,pays,Q142,France
-Q150,French,P17,pays,Q39,Switzerland
-Q150,French,P17,pays,Q912,Mali
-Q150,French,P17,pays,Q424,Cambodia
-Q150,French,P17,pays,Q668,India
-Q150,French,P17,pays,Q38,Italy
-Q150,French,P17,pays,Q948,Tunisia
-Q794,Iran,P17,pays,Q794,Iran
-Q794,Iran,P361,partie de,Q7204,Middle East
+Q7204,Middle East,P361,part of,Q48,Asia
+Q7204,Middle East,P17,country,Q794,Iran
+Q72499,Mediterranean Basin,P17,country,Q142,France
+Q72499,Mediterranean Basin,P17,country,Q38,Italy
+Q72499,Mediterranean Basin,P17,country,Q41,Greece
+Q72499,Mediterranean Basin,P17,country,Q948,Tunisia
+Q148,People's Republic of China,P361,part of,Q48,Asia
+Q148,People's Republic of China,P17,country,Q148,People's Republic of China
+Q68507,Oswald Teichmüller,P31,instance of,Q5,human
+Q83163,Srinivasa Ramanujan,P31,instance of,Q5,human
+Q180217,Stefan Banach,P31,instance of,Q5,human
+Q692166,Arne Beurling,P31,instance of,Q5,human
+Q424,Cambodia,P17,country,Q424,Cambodia
+Q27275,Central Asia,P361,part of,Q48,Asia
+Q27275,Central Asia,P17,country,Q148,People's Republic of China
+Q81068910,COVID-19 pandemic,P495,country of origin,Q148,People's Republic of China
+Q81068910,COVID-19 pandemic,P17,country,Q148,People's Republic of China
+Q81068910,COVID-19 pandemic,P17,country,Q17,Japan
+Q81068910,COVID-19 pandemic,P17,country,Q408,Australia
+Q81068910,COVID-19 pandemic,P17,country,Q142,France
+Q81068910,COVID-19 pandemic,P17,country,Q424,Cambodia
+Q81068910,COVID-19 pandemic,P17,country,Q668,India
+Q81068910,COVID-19 pandemic,P17,country,Q38,Italy
+Q81068910,COVID-19 pandemic,P17,country,Q794,Iran
+Q81068910,COVID-19 pandemic,P17,country,Q39,Switzerland
+Q81068910,COVID-19 pandemic,P17,country,Q843,Pakistan
+Q81068910,COVID-19 pandemic,P17,country,Q41,Greece
+Q81068910,COVID-19 pandemic,P17,country,Q155,Brazil
+Q81068910,COVID-19 pandemic,P17,country,Q218,Romania
+Q81068910,COVID-19 pandemic,P17,country,Q948,Tunisia
+Q937,Albert Einstein,P31,instance of,Q5,human
+Q937,Albert Einstein,P27,nationality,Q39,Switzerland
+Q1485,systemic lupus erythematosus,P279,subclass of,Q188297,lupus erythematosus
+Q22005739,David A. Karnofsky,P31,instance of,Q5,human
+Q76410,Leopold Kronecker,P31,instance of,Q5,human
+Q5089,Ganges,P17,country,Q668,India
+Q42299,Bernhard Riemann,P31,instance of,Q5,human
+Q82069695,SARS-CoV-2,P279,subclass of,Q57751738,Coronavirus
+Q935,Isaac Newton,P31,instance of,Q5,human
+Q17,Japan,P17,country,Q17,Japan
+Q51,Antarctica,P361,part of,Q1555938,Antarctic
+Q2046113,visceral leishmaniasis,P279,subclass of,Q331283,leishmaniasis
+Q218,Romania,P17,country,Q218,Romania
+Q153243,Josiah Willard Gibbs,P31,instance of,Q5,human
+Q21208,Hebei,P131,located in,Q148,People's Republic of China
+Q21208,Hebei,P17,country,Q148,People's Republic of China
+Q668,India,P17,country,Q668,India
+Q1192530,acute liver failure,P279,subclass of,Q970208,liver failure
+Q118551,clarithromycin,P279,subclass of,Q422687,macrolides
+Q3235,Northern Territory,P361,part of,Q408,Australia
+Q3235,Northern Territory,P131,located in,Q408,Australia
+Q3235,Northern Territory,P17,country,Q408,Australia
+Q485150,Romanians,P17,country,Q218,Romania
+Q485150,Romanians,P17,country,Q38,Italy
+Q408,Australia,P17,country,Q408,Australia
+Q63159,Karl Rudolphi,P31,instance of,Q5,human
+Q284129,Charles Fefferman,P31,instance of,Q5,human
+Q39,Switzerland,P17,country,Q39,Switzerland
+Q552168,International Agency for Research on Cancer,P17,country,Q142,France
+Q912,Mali,P17,country,Q912,Mali
+Q1263,Emilia-Romagna,P131,located in,Q38,Italy
+Q1263,Emilia-Romagna,P17,country,Q38,Italy
+Q843,Pakistan,P17,country,Q843,Pakistan
+Q948,Tunisia,P17,country,Q948,Tunisia
+Q133087,gout,P279,subclass of,Q170990,arthritis
+Q187255,rheumatoid arthritis,P279,subclass of,Q170990,arthritis
+Q27381,North Africa,P17,country,Q948,Tunisia
+Q2943789,nitazoxanide,P17,country,Q155,Brazil
+Q3523113,European Alliance of Associations for Rheumatology,P17,country,Q39,Switzerland
+Q188,German,P17,country,Q38,Italy
+Q188,German,P17,country,Q39,Switzerland
+Q188,German,P17,country,Q142,France
+Q60542,Eduard Rüppell,P31,instance of,Q5,human
+Q11031,Vilfredo Pareto,P31,instance of,Q5,human
+Q11031,Vilfredo Pareto,P27,nationality,Q142,France
+Q542146,South India,P131,located in,Q668,India
+Q542146,South India,P17,country,Q668,India
+Q41,Greece,P17,country,Q41,Greece
+Q142,France,P17,country,Q142,France
+Q1860,English,P17,country,Q408,Australia
+Q1860,English,P17,country,Q424,Cambodia
+Q1860,English,P17,country,Q668,India
+Q1860,English,P17,country,Q843,Pakistan
+Q211642,Lars Ahlfors,P31,instance of,Q5,human
+Q60429,Chandrasekhara Venkata Raman,P31,instance of,Q5,human
+Q60429,Chandrasekhara Venkata Raman,P27,nationality,Q668,India
+Q38,Italy,P17,country,Q38,Italy
+Q7268955,Quantou Formation,P17,country,Q148,People's Republic of China
+Q1043,Carl Linnaeus,P31,instance of,Q5,human
+Q36074,Queensland,P131,located in,Q408,Australia
+Q36074,Queensland,P17,country,Q408,Australia
+Q370226,Nathan Rosen,P31,instance of,Q5,human
+Q28867094,axial spondyloarthritis,P279,subclass of,Q52848,spondyloarthropathy
+Q58584,Baoding,P131,located in,Q21208,Hebei
+Q58584,Baoding,P131,located in,Q21208,Hebei
+Q58584,Baoding,P131,located in,Q21208,Hebei
+Q58584,Baoding,P17,country,Q148,People's Republic of China
+Q3703,Bamako,P17,country,Q912,Mali
+Q155,Brazil,P361,part of,Q12585,Latin America
+Q155,Brazil,P17,country,Q155,Brazil
+Q192305,Indo-Gangetic Plain,P361,part of,Q668,India
+Q192305,Indo-Gangetic Plain,P17,country,Q668,India
+Q16965166,inflammatory arthritis,P279,subclass of,Q170990,arthritis
+Q16204670,quilombola,P17,country,Q155,Brazil
+Q150,French,P17,country,Q142,France
+Q150,French,P17,country,Q39,Switzerland
+Q150,French,P17,country,Q912,Mali
+Q150,French,P17,country,Q424,Cambodia
+Q150,French,P17,country,Q668,India
+Q150,French,P17,country,Q38,Italy
+Q150,French,P17,country,Q948,Tunisia
+Q794,Iran,P361,part of,Q7204,Middle East
+Q794,Iran,P17,country,Q794,Iran
