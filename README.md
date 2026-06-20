@@ -1,138 +1,59 @@
 # Synthetic Data for Entity Linking Domain Adaptation
 
-<<<<<<< HEAD
-**fetch_wikidata_titles.py**
-Fetch all English Wikipedia titles from Wikidata via paginated SPARQL.
-
-Strategy: iterate over QID ranges (Q1–Q1_000_000, Q1_000_001–Q2_000_000, ...) instead of OFFSET pagination — Wikidata times out on large OFFSETs.
-
-Output: data/kg/wikipedia_titles.txt  (one title per line, UTF-8)
-
-Resume-safe: already-fetched ranges are skipped.
-
-Usage:
-    python fetch_wikidata_titles.py
-    python fetch_wikidata_titles.py --max-qid 2000000   # partial fetch for testing
-    python fetch_wikidata_titles.py --out custom_path.txt
-
-
-**utils/**
-**prompt_builder.py**
-Prompt builder for entity linking.
-
-Two modes:
-  - zero_shot : no candidates, LLM directly predicts the Wikipedia title.
-  - mcq       : candidates list provided, LLM picks A/B/C/...
-
-**response_parser.py**
-Response parser for entity linking LLM outputs.
-
-Two modes:
-  - zero_shot : extract first non-empty line as the predicted title
-  - mcq       : extract a letter (A/B/C...) and map it to the candidate list
-
-**metrics.py**
-Evaluation metrics for entity linking.
-
-Functions:
-  - normalize_entity(s): lowercase + strip + underscores → spaces
-  - is_correct(pred, gold): normalized exact match
-  - recall_at_k(gold, candidates): is gold in top-k candidates?
-  - compute_metrics(df): aggregate accuracy + recall@k from a results DataFrame
-
-
-**candidates/**
-**bm25_retriever.py**
-BM25 sparse retriever for entity linking candidate generation.
-Builds the BM25 index from wikipedia_titles.txt and saves it to disk.
-
-Usage:
-    retriever = BM25Retriever.from_entity_list(entity_titles)
-    retriever.save("candidates/index/bm25.pkl")
-
-    retriever = BM25Retriever.load("candidates/index/bm25.pkl")
-    candidates = retriever.retrieve("Toronto Film School", k=10)
-    
-**dense_retriever.py**
-Dense retriever for entity linking candidate generation.
-Uses Qwen3-Embedding-4B + FAISS.
-
-Usage (as a module):
-    retriever = DenseRetriever.load("candidates/index/")
-    candidates = retriever.retrieve("Toronto Film School", k=10)
- 
-Usage (build index from CLI):
-    python dense_retriever.py --titles data/wikidata_qid_titles.csv --out candidates/index/
-    python dense_retriever.py --titles data/wikidata_qid_titles.csv --out candidates/index/ --max-entities 50000
-
-
-**evaluation/**
-**eval_accuracy.py**
-Script de benchmark ELGOLD.
-
-Usage:
-    python eval_accuracy.py --mode zero_shot --model Qwen/Qwen3-0.6B
-    python eval_accuracy.py --mode mcq_bm25  --model Qwen/Qwen3-4B --batch-size 16
-    python eval_accuracy.py --mode mcq_bm25  --model Qwen/Qwen3-4B --max-examples 200
-
-Sorties:
-    evaluation/results/{mode}_{model}.csv
-    evaluation/results/{mode}_{model}_metrics.json
-=======
 ## 1. Zero-Shot MCQ Benchmark on ELGOLD
 
-Guide pour reproduire le benchmark zero-shot avec génération de candidats sur ELGOLD.
+Guide to reproduce the zero-shot benchmark with candidate generation on ELGOLD.
 
-### Prérequis
+### Prerequisites
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Packages clés : `transformers`, `torch`, `rank-bm25`, `sentence-transformers`, `faiss-cpu`, `wikimapper`, `pandas`, `tqdm`
+Key packages: `transformers`, `torch`, `rank-bm25`, `sentence-transformers`, `faiss-cpu`, `wikimapper`, `pandas`, `tqdm`
 
 ---
 
-### Étape 1 : Construire la base d'entités Wikipedia
+### Step 1: Build the Wikipedia entity base
 
-Premier lancement (télécharge le dump, construit la DB, extrait les entités, ~35 min) :
+First run (downloads the dump, builds the DB, extracts entities, ~35 min):
 
 ```bash
 python utils/extract_all_entities.py --setup --wikimapper-dir data/wikimapper
 ```
 
-Relancer uniquement l'extraction du CSV (DB déjà construite) :
+Re-run only the CSV extraction (DB already built):
 
 ```bash
 python utils/extract_all_entities.py --db data/wikimapper/index_enwiki-latest.db
 ```
 
-Résultat : `data/wikidata_qid_titles.csv` — deux colonnes (`qid`, `title`), ~6-7M lignes, dédupliqué par QID.
+Result: `data/wikidata_qid_titles.csv` — two columns (`qid`, `title`), ~6-7M rows, deduplicated by QID.
 
 ---
 
-### Étape 2 : Construire les index de candidats
+### Step 2: Build the candidate indexes
 
-**BM25 (sparse retrieval)** — quelques secondes sur CPU :
+**BM25 (sparse retrieval)** — a few seconds on CPU:
 
 ```bash
 python candidates/bm25_retriever.py --titles data/wikidata_qid_titles.csv --out candidates/index/bm25.pkl
 ```
 
-**Dense retrieval** — nécessite GPU, environ 34 heures :
+**Dense retrieval** — requires a GPU, about 34 hours:
 
 ```bash
 python candidates/dense_retriever.py --titles data/wikidata_qid_titles.csv --out candidates/index/
 ```
 
-Les index sont sauvegardés sur disque et chargés instantanément par la suite.
+Indexes are saved to disk and loaded instantly afterwards.
 
 ---
 
-### Étape 3 : Pré-calculer les candidats
+### Step 3: Pre-compute candidates
 
-Pré-calculer les candidats pour toutes les mentions ELGOLD permet d'éviter de recharger le retriever à chaque évaluation.
-Le script d'évaluation détecte automatiquement les fichiers pré-calculés présents dans `candidates/precomputed/`.
+Pre-computing candidates for all ELGOLD mentions avoids reloading the retriever on every evaluation run.
+The evaluation script auto-detects pre-computed files present in `candidates/precomputed/`.
 
 ```bash
 # BM25 candidates
@@ -142,31 +63,33 @@ python candidates/precompute_candidates.py --retriever bm25 --k 100
 python candidates/precompute_candidates.py --retriever dense --k 64
 ```
 
-Résultats attendus :
+Expected output:
 
 ```text
 candidates/precomputed/bm25_k100.json
 candidates/precomputed/dense_k64.json
 ```
 
-Remarque :
+Notes:
 
-* `bm25_k100.json` contient les top-100 candidats BM25 par mention.
-* `dense_k64.json` contient les top-64 candidats Dense par mention.
-* Si ces fichiers existent, `evaluation/eval_accuracy.py` les charge automatiquement.
-* S'ils n'existent pas, le script lance le retrieval en direct à partir des index dans `candidates/index/`.
+* `bm25_k100.json` contains the top-100 BM25 candidates per mention.
+* `dense_k64.json` contains the top-64 Dense candidates per mention.
+* If these files exist, `evaluation/eval_accuracy.py` loads them automatically.
+* If they don't exist, the script falls back to live retrieval from the indexes in `candidates/index/`.
 
 ---
 
-### Étape 4 : Lancer l'évaluation
+### Step 4: Run the evaluation
 
-Le pipeline d'évaluation est :
+The evaluation pipeline is:
 
 ```text
 Retriever candidates → optional Reranker → MCQ Prompt → LLM → Parsing → Metrics
 ```
 
-Par défaut, le reranker est activé.
+By default, the reranker is enabled, and evaluation is run **separately for each ELGOLD domain**
+(News, Job_offers, Movie_reviews, Automotive_blogs, Amazon_product_reviews, Scientific_abstracts,
+Historic_blogs — see [Domain split](#domain-split) below).
 
 #### BM25 + Reranker + LLM
 
@@ -177,25 +100,25 @@ python evaluation/eval_accuracy.py \
     --batch-size 8
 ```
 
-Avec cette configuration :
+With this configuration:
 
 ```text
 BM25 top-100 → Qwen3-Reranker top-10 → Qwen3-4B LLM
 ```
 
-Le reranker utilise par défaut :
+The reranker defaults to:
 
 ```text
 Qwen/Qwen3-Reranker-4B
 ```
 
-Le nombre de candidats conservés après reranking est contrôlé par :
+The number of candidates kept after reranking is controlled by:
 
 ```bash
 --k 10
 ```
 
-Exemple :
+Example:
 
 ```bash
 python evaluation/eval_accuracy.py \
@@ -215,7 +138,7 @@ python evaluation/eval_accuracy.py \
     --batch-size 8
 ```
 
-Avec cette configuration :
+With this configuration:
 
 ```text
 Dense top-64 → Qwen3-Reranker top-10 → Qwen3-4B LLM
@@ -231,19 +154,20 @@ python evaluation/eval_accuracy.py \
     --batch-size 8
 ```
 
-Avec cette configuration :
+With this configuration:
 
 ```text
 BM25 top-100 + Dense top-64 → union candidates → Qwen3-Reranker top-10 → Qwen3-4B LLM
 ```
 
-La fusion fusionne les candidats BM25 et Dense en supprimant les doublons, en gardant l'ordre BM25 puis les ajouts Dense.
+Fusion merges BM25 and Dense candidates, removing duplicates and keeping BM25 order
+first, then Dense additions.
 
 ---
 
-### Évaluation sans reranker
+### Evaluation without a reranker
 
-Pour désactiver le reranker :
+To disable the reranker:
 
 ```bash
 python evaluation/eval_accuracy.py \
@@ -253,99 +177,177 @@ python evaluation/eval_accuracy.py \
     --batch-size 8
 ```
 
-Important :
+Important:
 
-* Avec reranker : `--k` limite le nombre de candidats après reranking.
-* Sans reranker : tous les candidats récupérés sont passés au LLM, sans tronquage au top-k.
-* Donc, en mode `--no-reranker`, `--k` est ignoré pour la sélection des candidats.
+* With reranker: `--k` limits the number of candidates kept after reranking.
+* Without reranker: all retrieved candidates are passed to the LLM, with no top-k truncation.
+* So in `--no-reranker` mode, `--k` is ignored for candidate selection.
 
-Exemple :
+Example:
 
 ```text
-BM25 avec --no-reranker:
+BM25 with --no-reranker:
 BM25 top-100 → Qwen3-4B LLM
 
-Dense avec --no-reranker:
+Dense with --no-reranker:
 Dense top-64 → Qwen3-4B LLM
 
-Fusion avec --no-reranker:
+Fusion with --no-reranker:
 BM25 top-100 + Dense top-64 → union candidates → Qwen3-4B LLM
 ```
 
 ---
 
-### Utilisation des candidats pré-calculés
+### Running stages separately: `--stage`
 
-Aucun flag spécifique n'est nécessaire.
+Reranking (CPU/GPU-light cross-encoder) and the final LLM call have very different
+resource profiles, and on a single GPU they must not be loaded at the same time
+(see `candidates/reranker.py`). `--stage` lets you split the pipeline into
+independent runs:
 
-Le script cherche automatiquement :
+| Stage           | What it does                                                                          |
+| --------------- | -------------------------------------------------------------------------------------- |
+| `full` (default)| Retrieval → reranking → LLM evaluation, in one run. Reranked candidates are also saved to `candidates/reranked/` for later reuse. |
+| `rerank`         | Retrieval → reranking only. Saves reranked candidates to `candidates/reranked/` and exits — **no LLM is loaded**. |
+| `llm`            | Skips retrieval/reranking entirely. Loads pre-computed reranked candidates from `candidates/reranked/` and runs only the LLM evaluation. |
+
+This lets you, for example, run reranking on one job/GPU slot and the LLM
+evaluation on another, without reloading both models together:
+
+```bash
+# 1. Rerank only, save reranked candidates to disk
+python evaluation/eval_accuracy.py \
+    --mode zero_shot_bm25 \
+    --stage rerank \
+    --k 10
+
+# 2. LLM evaluation only, using the reranked candidates saved above
+python evaluation/eval_accuracy.py \
+    --mode zero_shot_bm25 \
+    --stage llm \
+    --model Qwen/Qwen3-4B \
+    --k 10 \
+    --batch-size 8
+```
+
+Reranked candidates are saved as one JSON file per `(mode, domain, k)` combination:
+
+```text
+candidates/reranked/{mode}_{domain}_k{k}.json
+```
+
+`--stage llm` requires this file to already exist for every domain being evaluated
+(run `--stage rerank` or `--stage full` first). `--model` is required for
+`--stage full` and `--stage llm`, but not for `--stage rerank`.
+
+---
+
+### Domain split: `--domains`
+
+ELGOLD covers 7 domains: `News`, `Job_offers`, `Movie_reviews`, `Automotive_blogs`,
+`Amazon_product_reviews`, `Scientific_abstracts`, `Historic_blogs`. The domain of
+each file is derived directly from its filename (`utils/elgold_categories.py`,
+e.g. `1_3.txt` → `News`, `6b_2.txt` → `Scientific_abstracts`).
+
+By default (`--domains all`), the evaluation loop runs **separately for every
+domain**: each domain gets its own retrieval/recall numbers, its own reranked
+candidates file, its own results CSV, and its own metrics JSON. A combined
+`*_domains_summary.json` is saved at the end with per-domain accuracy.
+
+To restrict evaluation to a subset of domains:
+
+```bash
+python evaluation/eval_accuracy.py \
+    --mode zero_shot_bm25 \
+    --model Qwen/Qwen3-4B \
+    --domains News,Job_offers
+```
+
+> Note: this domain split only requires the filename-based mapping in
+> `utils/elgold_categories.py` — it does not depend on the
+> `scripts/extract_elgold_entities.py` analysis tool below.
+
+---
+
+### Using pre-computed retrieval candidates
+
+No specific flag is needed.
+
+The script automatically looks for:
 
 ```text
 candidates/precomputed/bm25_k*.json
 candidates/precomputed/dense_k*.json
 ```
 
-Selon le mode choisi :
+Depending on the selected mode:
 
-| Mode              | Fichier pré-calculé utilisé            |
-| ----------------- | -------------------------------------- |
+| Mode              | Pre-computed file used                 |
+| ----------------- | --------------------------------------- |
 | `zero_shot_bm25`  | `candidates/precomputed/bm25_k*.json`  |
 | `zero_shot_dense` | `candidates/precomputed/dense_k*.json` |
-| `fusion`          | Les deux fichiers BM25 et Dense        |
+| `fusion`          | Both the BM25 and Dense files           |
 
-Si plusieurs fichiers correspondent au même pattern, le dernier fichier trié est utilisé.
-
----
-
-### Options utiles
-
-| Flag                                | Description                                              |
-| ----------------------------------- | -------------------------------------------------------- |
-| `--mode zero_shot_bm25`             | Évaluation avec candidats BM25                           |
-| `--mode zero_shot_dense`            | Évaluation avec candidats Dense                          |
-| `--mode fusion`                     | Fusion des candidats BM25 et Dense                       |
-| `--model Qwen/Qwen3-4B`             | Modèle LLM utilisé pour choisir la réponse finale        |
-| `--reranker Qwen/Qwen3-Reranker-4B` | Modèle de reranking, utilisé sauf si `--no-reranker`     |
-| `--no-reranker`                     | Désactive le reranker et passe tous les candidats au LLM |
-| `--k 10`                            | Nombre de candidats conservés après reranking            |
-| `--batch-size 8`                    | Taille du batch LLM                                      |
-| `--max-new-tokens 2048`             | Nombre maximal de tokens générés                         |
-| `--max-examples 200`                | Limiter le benchmark pour tester rapidement              |
-| `--resume`                          | Reprendre depuis le checkpoint                           |
+If several files match the same pattern, the last one in sorted order is used.
 
 ---
 
-### Résultats
+### Useful options
 
-Les résultats sont sauvegardés dans :
+| Flag                                | Description                                                          |
+| ------------------------------------ | --------------------------------------------------------------------- |
+| `--mode zero_shot_bm25`             | Evaluation with BM25 candidates                                       |
+| `--mode zero_shot_dense`            | Evaluation with Dense candidates                                      |
+| `--mode fusion`                     | Fusion of BM25 and Dense candidates                                   |
+| `--stage full`                      | Retrieval + reranking + LLM in one run (default)                      |
+| `--stage rerank`                    | Retrieval + reranking only, saves reranked candidates, no LLM         |
+| `--stage llm`                       | LLM evaluation only, using pre-computed reranked candidates           |
+| `--domains all`                     | Evaluate every ELGOLD domain separately (default)                     |
+| `--domains News,Job_offers`         | Evaluate only the listed domains                                      |
+| `--model Qwen/Qwen3-4B`             | LLM used to pick the final answer (required unless `--stage rerank`)  |
+| `--reranker Qwen/Qwen3-Reranker-4B` | Reranker model, used unless `--no-reranker`                           |
+| `--no-reranker`                     | Disables the reranker and passes all candidates to the LLM            |
+| `--k 10`                            | Number of candidates kept after reranking                             |
+| `--batch-size 8`                    | LLM batch size                                                        |
+| `--max-new-tokens 2048`             | Maximum number of generated tokens                                    |
+| `--max-examples 200`                | Limit the benchmark size for quick testing                            |
+| `--reranked-dir PATH`               | Where reranked candidates are saved/read (default: `candidates/reranked/`) |
+| `--resume`                          | Resume from checkpoint                                                |
+
+---
+
+### Results
+
+Results are saved per domain in:
 
 ```text
-evaluation/results/{mode}_{model}_{timestamp}.csv
-evaluation/results/{mode}_{model}_{timestamp}_metrics.json
+evaluation/results/{mode}_{domain}_{model}_{timestamp}.csv
+evaluation/results/{mode}_{domain}_{model}_{timestamp}_metrics.json
+evaluation/results/{mode}_{model}_{timestamp}_domains_summary.json
 ```
 
-Le fichier CSV contient notamment :
+The CSV file notably contains:
 
-| Colonne                | Description                                                         |
-| ---------------------- | ------------------------------------------------------------------- |
-| `mention`              | Mention ELGOLD                                                      |
-| `gold`                 | Entité correcte                                                     |
-| `candidates_retrieval` | Candidats récupérés par BM25/Dense/Fusion                           |
-| `candidates_reranked`  | Candidats après reranking, ou tous les candidats si `--no-reranker` |
-| `gold_in_retrieval`    | Indique si le gold est dans les candidats récupérés                 |
-| `gold_in_reranked`     | Indique si le gold est dans les candidats passés au LLM             |
-| `predicted`            | Entité prédite par le LLM                                           |
-| `correct`              | Indique si la prédiction est correcte                               |
-| `raw_output`           | Sortie brute du LLM                                                 |
-| `error`                | Erreur éventuelle ou sortie non parsable                            |
+| Column                  | Description                                                          |
+| ------------------------ | ---------------------------------------------------------------------|
+| `mention`               | ELGOLD mention                                                        |
+| `domain`                | ELGOLD domain the mention's file belongs to                           |
+| `gold`                  | Correct entity                                                        |
+| `candidates_retrieval`  | Candidates retrieved by BM25/Dense/Fusion                             |
+| `candidates_reranked`   | Candidates after reranking, or all candidates if `--no-reranker`      |
+| `gold_in_retrieval`     | Whether the gold entity is in the retrieved candidates                |
+| `gold_in_reranked`      | Whether the gold entity is in the candidates passed to the LLM        |
+| `predicted`             | Entity predicted by the LLM                                           |
+| `correct`               | Whether the prediction is correct                                     |
+| `raw_output`            | Raw LLM output                                                        |
+| `error`                 | Any error or unparsable output                                        |
 
 ---
 
-### Reprise après interruption
+### Resuming after an interruption
 
-Si un job est interrompu, un checkpoint est sauvegardé automatiquement dans `evaluation/results/`.
-
-Relancer avec :
+If a job is interrupted, a checkpoint is automatically saved in `evaluation/results/`
+(one checkpoint per domain). Resume with:
 
 ```bash
 python evaluation/eval_accuracy.py \
@@ -354,119 +356,151 @@ python evaluation/eval_accuracy.py \
     --resume
 ```
 
-Le script reprend les exemples déjà traités depuis le checkpoint.
+The script resumes already-processed examples from the checkpoint.
 
-
-### Étape 5 : Analyser les résultats
+### Step 5: Analyze results
 
 ```bash
 jupyter notebook notebooks/zero_shot_benchmark.ipynb
 ```
 
-Le notebook permet de visualiser les résultats, inspecter les erreurs, et comparer les configurations (BM25 vs Dense vs Fusion).
+The notebook lets you visualize results, inspect errors, and compare
+configurations (BM25 vs Dense vs Fusion) and domains.
 
 ---
 
-## Structure du projet
+## 2. ELGOLD domain entity statistics (optional analysis tool)
+
+`scripts/extract_elgold_entities.py` is a standalone analysis tool that summarizes,
+for each ELGOLD domain, how many gold entities/mentions/NIL mentions appear, and
+maps each gold title to its Wikidata QID via `wikimapper`. It is **not** required
+to run the per-domain evaluation above — domain detection there only needs the
+filename-based mapping in `utils/elgold_categories.py`. Use this script when you
+need entity-level coverage statistics per domain (e.g. to scope a domain-specific
+candidate index, or to report dataset statistics).
+
+```bash
+python scripts/extract_elgold_entities.py data/benchmarks \
+    data/elgold_entities_per_domain.json \
+    --wikimapper_db data/wikimapper/index_enwiki-latest.db
+```
+
+Output: `data/elgold_entities_per_domain.json` (gitignored, like the rest of `data/`),
+with one entry per domain: `n_docs`, `n_mentions`, `n_nil`, `n_unique_titles`,
+`n_mapped_qids`, `n_unmapped_titles`, `entities_qids`, `title_to_qid`, `unmapped_titles`.
+
+---
+
+## Project structure
 
 ```
 ├── candidates/
 │   ├── __init__.py
-│   ├── bm25_retriever.py           # Retrieval sparse BM25
-│   ├── dense_retriever.py          # Retrieval dense Qwen3-Embedding + FAISS
-│   ├── reranker.py                 # Reranking des candidats avec Qwen3-Reranker
-│   ├── precompute_candidates.py    # Pré-calcul des candidats BM25/Dense
-│   ├── index/                      # Index sérialisés (.pkl, .faiss) — gitignored
-│   └── precomputed/                # Candidats pré-calculés JSON
+│   ├── bm25_retriever.py           # BM25 sparse retrieval
+│   ├── dense_retriever.py          # Dense retrieval with Qwen3-Embedding + FAISS
+│   ├── reranker.py                 # Candidate reranking with Qwen3-Reranker
+│   ├── precompute_candidates.py    # Pre-computes BM25/Dense candidates
+│   ├── index/                      # Serialized indexes (.pkl, .faiss) — gitignored
+│   ├── precomputed/                # Pre-computed retrieval candidates (JSON)
+│   └── reranked/                   # Pre-computed reranked candidates (JSON)
 │
 ├── data/
-│   ├── benchmarks/                 # Fichiers ELGOLD (.txt annotés)
-│   ├── wikimapper/                 # Dump Wikipedia + base SQLite — gitignored
-│   └── wikidata_qid_titles.csv     # Tous les titres Wikipedia + QIDs — gitignored
+│   ├── benchmarks/                 # ELGOLD files (annotated .txt) — gitignored
+│   ├── wikimapper/                 # Wikipedia dump + SQLite DB — gitignored
+│   ├── wikidata_qid_titles.csv     # All Wikipedia titles + QIDs — gitignored
+│   └── elgold_entities_per_domain.json  # Per-domain entity stats — gitignored
 │
 ├── evaluation/
 │   ├── __init__.py
-│   ├── eval_accuracy.py            # Script principal d'évaluation (cluster)
-│   └── results/                    # CSV + JSON des résultats — gitignored
+│   ├── eval_accuracy.py            # Main evaluation script (cluster)
+│   └── results/                    # Results CSV + JSON — gitignored
 │
 ├── notebooks/
 │   └── zero_shot_benchmark.ipynb
 │
-├── slurm/                          # Scripts SLURM pour le cluster
+├── scripts/
+│   └── extract_elgold_entities.py  # Per-domain entity stats (analysis tool)
+│
+├── slurm/                          # SLURM scripts for the cluster
 │   ├── run_eval_bm25.sh
 │   ├── run_eval_dense.sh
 │   └── run_precompute_bm25.sh
 │
 └── utils/
     ├── __init__.py
-    ├── elgold_parser.py            # Parsing du benchmark ELGOLD
-    ├── extract_all_entities.py     # Extraction des entités via wikimapper
-    ├── llm.py                      # Chargement LLM + génération batch
-    ├── metrics.py                  # Accuracy, Recall@K, normalisation
-    ├── prompt_builder.py           # Construction du prompt MCQ (indices numériques)
-    └── response_parser.py          # Parsing de la réponse LLM (index → titre)
+    ├── elgold_categories.py        # ELGOLD filename → domain mapping (shared)
+    ├── elgold_parser.py            # ELGOLD benchmark parsing
+    ├── extract_all_entities.py     # Entity extraction via wikimapper
+    ├── llm.py                      # LLM loading + batch generation
+    ├── metrics.py                  # Accuracy, Recall@K, normalization
+    ├── prompt_builder.py           # MCQ prompt construction (numbered choices)
+    └── response_parser.py          # LLM response parsing (index → title)
 ```
 
 ---
 
-## Référence des scripts
+## Script reference
 
 ### `utils/extract_all_entities.py`
 
-Extrait tous les titres Wikipedia + QIDs Wikidata depuis la base wikimapper. Déduplique par QID (garde le titre canonique).
+Extracts all Wikipedia titles + Wikidata QIDs from the wikimapper database. Deduplicates by QID (keeps the canonical title).
 
 ```
---setup                 Télécharge le dump + construit la base SQLite
---wikimapper-dir PATH   Dossier pour le dump + DB (défaut: data/wikimapper)
---db PATH               Chemin vers la base SQLite wikimapper
---out PATH              CSV de sortie (défaut: data/wikidata_qid_titles.csv)
+--setup                 Downloads the dump + builds the SQLite DB
+--wikimapper-dir PATH   Directory for the dump + DB (default: data/wikimapper)
+--db PATH               Path to the wikimapper SQLite DB
+--out PATH              Output CSV (default: data/wikidata_qid_titles.csv)
 ```
 
 ### `candidates/bm25_retriever.py`
 
-Index BM25 sparse sur les titres Wikipedia. Détecte automatiquement le format CSV (colonne `title`) ou texte brut.
+Sparse BM25 index over Wikipedia titles. Auto-detects CSV format (`title` column) or plain text.
 
 ```
---titles PATH           CSV d'entrée (colonnes qid, title)
---out PATH              Fichier .pkl de sortie (défaut: candidates/index/bm25.pkl)
---max-entities N        Limiter le nombre d'entités (pour tester)
+--titles PATH           Input CSV (qid, title columns)
+--out PATH              Output .pkl file (default: candidates/index/bm25.pkl)
+--max-entities N        Limit the number of entities (for testing)
 ```
 
 ### `candidates/dense_retriever.py`
 
-Index dense Qwen3-Embedding-4B + FAISS. Utilise `sentence-transformers` pour le pooling asymétrique (query vs document).
+Dense Qwen3-Embedding-4B + FAISS index. Uses `sentence-transformers` for asymmetric pooling (query vs document).
 
 ```
---titles PATH           CSV d'entrée (colonnes qid, title)
---out PATH              Dossier de sortie (défaut: candidates/index/)
---model NAME            Modèle d'embedding (défaut: Qwen/Qwen3-Embedding-4B)
---batch-size N          Taille du batch d'encodage (défaut: 256)
---max-entities N        Limiter le nombre d'entités (pour tester)
+--titles PATH           Input CSV (qid, title columns)
+--out PATH              Output directory (default: candidates/index/)
+--model NAME            Embedding model (default: Qwen/Qwen3-Embedding-4B)
+--batch-size N          Encoding batch size (default: 256)
+--max-entities N        Limit the number of entities (for testing)
 ```
 
 ### `candidates/precompute_candidates.py`
 
-Pré-calcule les candidats pour toutes les mentions du benchmark ELGOLD et sauvegarde en JSON.
+Pre-computes candidates for every mention in the ELGOLD benchmark and saves them to JSON.
 
 ```
 --retriever TYPE        bm25 | dense
---k N                   Nombre de candidats par mention (défaut: 100)
---bm25-index PATH       Chemin vers l'index BM25
---dense-index PATH      Chemin vers l'index dense
---out PATH              Fichier JSON de sortie (auto-nommé si omis)
+--k N                   Number of candidates per mention (default: 100)
+--bm25-index PATH       Path to the BM25 index
+--dense-index PATH      Path to the dense index
+--out PATH              Output JSON file (auto-named if omitted)
 ```
 
 ### `evaluation/eval_accuracy.py`
 
-Script principal d'évaluation zero-shot sur ELGOLD.
+Main zero-shot evaluation script on ELGOLD.
 
-Pipeline complet :
+Full pipeline:
 
 ```text
 candidate retrieval → optional reranking → MCQ prompt → LLM generation → parsing → metrics
 ```
 
-Modes disponibles :
+Run separately per ELGOLD domain (`--domains`), and splittable into independent
+stages (`--stage full|rerank|llm`) so the reranker and the final LLM never have
+to share GPU memory.
+
+Available modes:
 
 ```text
 zero_shot_bm25
@@ -474,52 +508,65 @@ zero_shot_dense
 fusion
 ```
 
-Arguments principaux :
+Main arguments:
 
 ```text
 --mode MODE             zero_shot_bm25 | zero_shot_dense | fusion
---model NAME            Modèle HuggingFace utilisé comme LLM final
---reranker NAME         Modèle HuggingFace utilisé comme reranker
---no-reranker           Désactive le reranker
---k N                   Nombre de candidats gardés après reranking
---batch-size N          Taille du batch LLM
---max-new-tokens N      Nombre maximal de tokens générés
---max-examples N        Limiter le benchmark pour tester
---index PATH            Chemin vers l'index BM25
---dense-index PATH      Chemin vers l'index Dense
---benchmarks PATH       Chemin vers les fichiers ELGOLD
---results-dir PATH      Dossier de sauvegarde des résultats
---resume                Reprendre depuis le checkpoint
+--stage STAGE           full | rerank | llm (default: full)
+--domains LIST          Comma-separated domain names, or 'all' (default: all)
+--model NAME            HuggingFace model used as the final LLM
+--reranker NAME         HuggingFace model used as the reranker
+--no-reranker           Disables the reranker
+--k N                   Number of candidates kept after reranking
+--batch-size N          LLM batch size
+--max-new-tokens N      Maximum number of generated tokens
+--max-examples N        Limit the benchmark size for testing
+--index PATH            Path to the BM25 index
+--dense-index PATH      Path to the Dense index
+--benchmarks PATH       Path to the ELGOLD files
+--results-dir PATH      Directory where results are saved
+--reranked-dir PATH     Directory where reranked candidates are saved/read
+--resume                Resume from checkpoint
 ```
 
-Fonctionnement des candidats pré-calculés :
+How pre-computed retrieval candidates work:
 
-* Le script cherche automatiquement les fichiers dans `candidates/precomputed/`.
-* En mode BM25, il cherche `bm25_k*.json`.
-* En mode Dense, il cherche `dense_k*.json`.
-* En mode Fusion, il cherche les deux.
-* Si aucun fichier pré-calculé n'est trouvé, le retriever est chargé et les candidats sont calculés en direct.
+* The script automatically looks for files in `candidates/precomputed/`.
+* In BM25 mode, it looks for `bm25_k*.json`.
+* In Dense mode, it looks for `dense_k*.json`.
+* In Fusion mode, it looks for both.
+* If no pre-computed file is found, the retriever is loaded and candidates are computed live.
 
-Fonctionnement du reranker :
+How the reranker works:
 
-* Le reranker est activé par défaut.
-* Il reçoit les candidats récupérés par BM25, Dense ou Fusion.
-* Il réordonne les candidats et garde le top-`k`.
-* Le LLM reçoit seulement les candidats rerankés.
-* Avec `--no-reranker`, le LLM reçoit tous les candidats récupérés, sans tronquage.
+* The reranker is enabled by default.
+* It receives the candidates retrieved by BM25, Dense, or Fusion.
+* It reorders the candidates and keeps the top-`k`.
+* The LLM only receives the reranked candidates.
+* With `--no-reranker`, the LLM receives all retrieved candidates, untruncated.
+* With `--stage full` or `--stage rerank`, reranked candidates are saved to `candidates/reranked/{mode}_{domain}_k{k}.json` for later reuse with `--stage llm`.
 
-Exemples :
+Examples:
 
 ```bash
-# BM25 + reranker
+# BM25 + reranker, full pipeline, all domains
 python evaluation/eval_accuracy.py \
     --mode zero_shot_bm25 \
     --model Qwen/Qwen3-4B \
     --k 10
 
-# Dense + reranker
+# Rerank only (no LLM), single domain
 python evaluation/eval_accuracy.py \
-    --mode zero_shot_dense \
+    --mode zero_shot_bm25 \
+    --stage rerank \
+    --domains News \
+    --k 10
+
+# LLM only, using the reranked candidates from the run above
+python evaluation/eval_accuracy.py \
+    --mode zero_shot_bm25 \
+    --stage llm \
+    --domains News \
     --model Qwen/Qwen3-4B \
     --k 10
 
@@ -529,36 +576,56 @@ python evaluation/eval_accuracy.py \
     --model Qwen/Qwen3-4B \
     --k 10
 
-# BM25 sans reranker
+# BM25 without reranker
 python evaluation/eval_accuracy.py \
     --mode zero_shot_bm25 \
     --model Qwen/Qwen3-4B \
     --no-reranker
 ```
 
+### `scripts/extract_elgold_entities.py`
+
+Standalone analysis tool: per-domain gold entity/mention/NIL statistics, with
+titles mapped to Wikidata QIDs via wikimapper. Not required for the per-domain
+evaluation split (see [ELGOLD domain entity statistics](#2-elgold-domain-entity-statistics-optional-analysis-tool) above).
+
+```
+data_root               Path to ELGOLD data (flat .txt files)
+output                  Output JSON summary file
+--wikimapper_db PATH    Path to the wikimapper SQLite DB
+--glob PATTERN          Glob for ELGOLD files (default: *.txt)
+```
+
 ### `utils/llm.py`
 
-Fonctions LLM partagées entre le notebook et le script d'évaluation.
+LLM functions shared between the notebook and the evaluation script.
 
-- `load_model(name)` — charge le modèle + tokenizer
-- `generate_batch(prompts, tokenizer, model, max_new_tokens)` — génère une réponse par prompt, en batch
+- `load_model(name)` — loads the model + tokenizer
+- `generate_batch(prompts, tokenizer, model, max_new_tokens)` — generates one response per prompt, in batch
+
+### `utils/elgold_categories.py`
+
+Single source of truth for the ELGOLD filename → domain mapping, shared by
+`elgold_parser.py`, `eval_accuracy.py`, and `extract_elgold_entities.py`.
+
+- `CATEGORY_NAMES` — category id → domain name
+- `category_from_filename(name)` — `"6b_2.txt"` → `"Scientific_abstracts"`
 
 ### `utils/elgold_parser.py`
 
-Parsing du benchmark ELGOLD.
+ELGOLD benchmark parsing.
 
-- `parse_elgold_file(path)` — extrait les mentions annotées d'un fichier `.txt`
-- `load_benchmark(dir, max_examples)` — charge tous les fichiers et retourne un DataFrame
+- `parse_elgold_file(path)` — extracts annotated mentions from a `.txt` file, tagged with their domain
+- `load_benchmark(dir, max_examples)` — loads all files and returns a DataFrame (with a `domain` column)
 
 ### `utils/prompt_builder.py`
 
-Construit le prompt MCQ : contexte (mention entre crochets) + type NER + candidats numérotés `0. Titre`. Le LLM répond `"answer: 3"`.
+Builds the MCQ prompt: context (mention in square brackets) + NER type + numbered candidates `0. Title`. The LLM answers `"answer: 3"`.
 
 ### `utils/response_parser.py`
 
-Parse la réponse du LLM : cherche le pattern `answer: N`, puis un index en début de ligne, puis un index isolé. Gère les blocs `<think>` et les guillemets.
+Parses the LLM response: looks for the `answer: N` pattern, then an index at the start of a line, then a standalone index. Handles `<think>` blocks and quotes.
 
 ### `utils/metrics.py`
 
-Métriques : `normalize_entity()`, `is_correct()`, `recall_at_k()`, `compute_metrics()`, `print_metrics()`.
->>>>>>> b7ca8ba3ef58080e4930f52e49f32e6ae3235a24
+Metrics: `normalize_entity()`, `is_correct()`, `recall_at_k()`, `compute_metrics()`, `print_metrics()`.

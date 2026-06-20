@@ -1,0 +1,58 @@
+{
+  "News": {
+    "n_docs": 37,
+    "n_mentions": 848,
+    "n_nil": 61,
+    "n_unique_titles": 342,
+    "n_mapped_qids": 342,
+    "n_unmapped_titles": 0
+  },
+  "Job_offers": {
+    "n_docs": 34,
+    "n_mentions": 350,
+    "n_nil": 102,
+    "n_unique_titles": 188,
+    "n_mapped_qids": 188,
+    "n_unmapped_titles": 0
+  },
+  "Movie_reviews": {
+    "n_docs": 37,
+    "n_mentions": 327,
+    "n_nil": 49,
+    "n_unique_titles": 243,
+    "n_mapped_qids": 243,
+    "n_unmapped_titles": 0
+  },
+  "Automotive_blogs": {
+    "n_docs": 34,
+    "n_mentions": 284,
+    "n_nil": 42,
+    "n_unique_titles": 160,
+    "n_mapped_qids": 160,
+    "n_unmapped_titles": 0
+  },
+  "Amazon_product_reviews": {
+    "n_docs": 34,
+    "n_mentions": 369,
+    "n_nil": 79,
+    "n_unique_titles": 245,
+    "n_mapped_qids": 245,
+    "n_unmapped_titles": 0
+  },
+  "Scientific_abstracts": {
+    "n_docs": 87,
+    "n_mentions": 764,
+    "n_nil": 94,
+    "n_unique_titles": 287,
+    "n_mapped_qids": 287,
+    "n_unmapped_titles": 0
+  },
+  "Historic_blogs": {
+    "n_docs": 13,
+    "n_mentions": 164,
+    "n_nil": 26,
+    "n_unique_titles": 102,
+    "n_mapped_qids": 102,
+    "n_unmapped_titles": 0
+  }
+}

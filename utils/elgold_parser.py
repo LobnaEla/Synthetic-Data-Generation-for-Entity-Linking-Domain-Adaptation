@@ -4,12 +4,15 @@ from pathlib import Path
 
 import pandas as pd
 
+from utils.elgold_categories import category_from_filename
+
 ANNOT_RE = re.compile(r"\{\{([^|{}]+)\|([^|{}]+)\|([^{}]+)\}\}")
 
 
 def parse_elgold_file(path: Path, context_window: int = 150) -> list[dict]:
     raw = path.read_text(encoding="utf-8")
     clean = ANNOT_RE.sub(lambda m: m.group(1).strip(), raw)
+    domain = category_from_filename(path.name)
     examples, cursor, last_end = [], 0, 0
     for match in ANNOT_RE.finditer(raw):
         mention = match.group(1).strip()
@@ -19,7 +22,7 @@ def parse_elgold_file(path: Path, context_window: int = 150) -> list[dict]:
         end = cursor + len(mention)
         snippet = clean[max(0, cursor - context_window) : min(len(clean), end + context_window)]
         examples.append({
-            "file": path.name, "mention": mention,
+            "file": path.name, "domain": domain, "mention": mention,
             "entity_type": ent_type, "gold": gold, "context": snippet,
         })
         cursor, last_end = end, match.end()

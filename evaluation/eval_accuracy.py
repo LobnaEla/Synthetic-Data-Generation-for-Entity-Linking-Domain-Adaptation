@@ -1,16 +1,4 @@
 import argparse
-<<<<<<< HEAD
-import glob
-import json
-import re
-import sys
-from pathlib import Path
-
-import pandas as pd
-import torch
-from tqdm import tqdm
-from transformers import AutoModelForCausalLM, AutoTokenizer
-=======
 import json
 import sys
 from pathlib import Path
@@ -18,17 +6,10 @@ from datetime import datetime
 
 import pandas as pd
 from tqdm import tqdm
->>>>>>> b7ca8ba3ef58080e4930f52e49f32e6ae3235a24
 
 # project root on path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-<<<<<<< HEAD
-from candidates.bm25_retriever import BM25Retriever
-from utils.prompt_builder import build_prompt_mcq, build_prompt_zero_shot
-from utils.response_parser import parse_response
-from utils.metrics import compute_metrics, is_correct, print_metrics, recall_at_k
-=======
 from candidates.dense_retriever import DenseRetriever
 from candidates.bm25_retriever import BM25Retriever
 from candidates.reranker import Reranker
@@ -37,182 +18,25 @@ from utils.llm import generate_batch, load_model
 from utils.metrics import compute_metrics, is_correct, print_metrics, recall_at_k
 from utils.prompt_builder import build_mcq_prompt
 from utils.response_parser import parse_mcq_response
->>>>>>> b7ca8ba3ef58080e4930f52e49f32e6ae3235a24
 
 TITLES_PATH = "data/wikidata_qid_titles.csv"
 INDEX_PATH = "candidates/index/bm25.pkl"
 BENCHMARKS = "data/benchmarks"
-<<<<<<< HEAD
-RESULTS_DIR = "evaluation/results"
-TITLE_COL = "title" 
-K = 10
-
-
-# ELGOLD parsing
-ANNOT_RE = re.compile(r"\{\{([^|{}]+)\|([^|{}]+)\|([^{}]+)\}\}")
-
-def parse_elgold_file(path: Path, context_window: int = 150) -> list[dict]:
-    raw = path.read_text(encoding="utf-8")
-    clean = ANNOT_RE.sub(lambda m: m.group(1).strip(), raw)
-    examples, cursor, last_end = [], 0, 0
-    for match in ANNOT_RE.finditer(raw):
-        mention = match.group(1).strip()
-        ent_type = match.group(2).strip()
-        gold = match.group(3).strip()
-        cursor += len(raw[last_end : match.start()])
-        end = cursor + len(mention)
-        snippet = clean[max(0, cursor - context_window) : min(len(clean), end + context_window)]
-        examples.append({
-            "file": path.name, "mention": mention,
-            "entity_type": ent_type, "gold": gold, "context": snippet,
-        })
-        cursor, last_end = end, match.end()
-    return examples
-
-
-def load_benchmark(benchmarks_dir: str, max_examples: int | None) -> pd.DataFrame:
-    rows = []
-    for f in glob.glob(f"{benchmarks_dir}/*.txt"):
-        rows.extend(parse_elgold_file(Path(f)))
-    df = pd.DataFrame(rows).drop_duplicates()
-    if max_examples:
-        df = df.head(max_examples)
-    return df
-
-
-# BM25 
-def load_or_build_index(index_path: str, titles_path: str) -> BM25Retriever:
-    if Path(index_path).exists():
-        print(f"[BM25] Loading index from {index_path}")
-        return BM25Retriever.load(index_path)
-
-    print(f"[BM25] Building index from {titles_path} ...")
-    titles_df = pd.read_csv(titles_path)
-    if TITLE_COL not in titles_df.columns:
-        raise ValueError(
-            f"Column '{TITLE_COL}' not found in {titles_path}. "
-            f"Available: {titles_df.columns.tolist()}"
-        )
-    titles = titles_df[TITLE_COL].dropna().tolist()
-    print(f"[BM25] {len(titles):,} titles loaded")
-    retriever = BM25Retriever.from_entity_list(titles)
-    retriever.save(index_path)
-    return retriever
-
-
-# LLM
-def load_model(model_name: str):
-    print(f"[LLM] Loading {model_name} ...")
-    tokenizer = AutoTokenizer.from_pretrained(model_name)
-    model = AutoModelForCausalLM.from_pretrained(
-        model_name,
-        torch_dtype=torch.bfloat16 if torch.cuda.is_available() else torch.float32,
-        device_map="auto",
-    ).eval()
-    device = next(model.parameters()).device
-    print(f"[LLM] Loaded on {device}")
-    return tokenizer, model
-
-
-def generate_batch(
-    prompts: list[str],
-    tokenizer,
-    model,
-    max_new_tokens: int = 20,
-) -> list[str]:
-    inputs = tokenizer(
-        prompts, return_tensors="pt", padding=True,
-        truncation=True, max_length=1024,
-    ).to(model.device)
-    with torch.no_grad():
-        outputs = model.generate(
-            **inputs, max_new_tokens=max_new_tokens,
-            do_sample=False, pad_token_id=tokenizer.eos_token_id,
-        )
-    input_len = inputs["input_ids"].shape[1]
-    return [
-        tokenizer.decode(out[input_len:], skip_special_tokens=True).strip()
-        for out in outputs
-    ]
-
-
-# evaluation loop
-def run_evaluation(
-    df: pd.DataFrame,
-    mode: str,
-    tokenizer,
-    model,
-    batch_size: int,
-) -> pd.DataFrame:
-    llm_mode = "zero_shot" if mode == "zero_shot" else "mcq"
-    results = []
-    records = df.to_dict("records")
-
-    for i in tqdm(range(0, len(records), batch_size), desc=f"{mode}"):
-        batch = records[i : i + batch_size]
-        prompts = [
-            build_prompt_zero_shot(r["context"], r["mention"], r["entity_type"])
-            if mode == "zero_shot"
-            else build_prompt_mcq(r["context"], r["mention"], r["entity_type"], r["candidates"])
-            for r in batch
-        ]
-
-        try:
-            raws = generate_batch(prompts, tokenizer, model)
-        except Exception as e:
-            for r in batch:
-                results.append({**r, "predicted": "", "correct": False,
-                                 "raw_output": "", "error": str(e)})
-            continue
-
-        for rec, raw in zip(batch, raws):
-            try:
-                parsed = parse_response(raw, mode=llm_mode, candidates=rec.get("candidates"))
-                pred, error = parsed["predicted"], ""
-            except Exception as e:
-                pred, error = "", str(e)
-
-            results.append({
-                "file": rec["file"],
-                "mention": rec["mention"],
-                "entity_type": rec["entity_type"],
-                "gold": rec["gold"],
-                "candidates": rec.get("candidates", []),
-                "gold_in_candidates": rec.get("gold_in_candidates", None),
-                "predicted": pred,
-                "correct": is_correct(pred, rec["gold"]) if not error else False,
-                "raw_output": raw,
-                "error": error,
-            })
-
-    return pd.DataFrame(results)
-
-
-# main
-def main():
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--mode", required=True, choices=["zero_shot", "mcq_bm25"])
-    parser.add_argument("--model", required=True, help="HuggingFace model id")
-    parser.add_argument("--batch-size", type=int, default=8)
-    parser.add_argument("--max-examples", type=int, default=None)
-    parser.add_argument("--titles", default=TITLES_PATH)
-    parser.add_argument("--index", default=INDEX_PATH)
-    parser.add_argument("--benchmarks", default=BENCHMARKS)
-    parser.add_argument("--results-dir", default=RESULTS_DIR)
-    args = parser.parse_args()
-
-    Path(args.results_dir).mkdir(parents=True, exist_ok=True)
-
-=======
 DENSE_INDEX_PATH = "candidates/index/"
 PRECOMPUTED_DIR = "candidates/precomputed"
+RERANKED_DIR = "candidates/reranked"
 RESULTS_DIR = "evaluation/results"
 TITLE_COL = "title"
 K = 10
 RERANKER_MODEL = "Qwen/Qwen3-Reranker-4B"
 
+
+def row_key(row) -> str:
+    return f"{row['file']}::{row['mention']}::{row['gold']}"
+
+
 # Candidate loading
- 
+
 def load_precomputed(pattern: str) -> dict | None:
     """Auto-detect precomputed candidates matching a glob pattern."""
     matches = sorted(Path(PRECOMPUTED_DIR).glob(pattern))
@@ -222,26 +46,26 @@ def load_precomputed(pattern: str) -> dict | None:
     print(f"[CAND] Found pre-computed: {path}")
     with open(path, encoding="utf-8") as f:
         return json.load(f)
- 
- 
+
+
 def get_candidates_for_row(row, precomputed: dict | None, retriever=None, k: int = 100):
     """Get candidates for a single row: precomputed or live retrieval."""
-    key = f"{row['file']}::{row['mention']}::{row['gold']}"
+    key = row_key(row)
     if precomputed and key in precomputed:
         return precomputed[key]
     if retriever:
         return retriever.retrieve(row["mention"], k=k)
     return []
- 
- 
+
+
 def load_candidates(df: pd.DataFrame, mode: str, args) -> tuple:
     """Load/compute candidates based on mode. Returns (df, k_retrieval, info_str)."""
- 
+
     if mode == "fusion":
         # Load both BM25 and Dense, merge
         bm25_pre = load_precomputed("bm25_k*.json")
         dense_pre = load_precomputed("dense_k*.json")
- 
+
         bm25_retriever = None
         dense_retriever = None
         if not bm25_pre:
@@ -250,7 +74,7 @@ def load_candidates(df: pd.DataFrame, mode: str, args) -> tuple:
         if not dense_pre:
             print("[CAND] No Dense precomputed, loading live retriever")
             dense_retriever = DenseRetriever.load(args.dense_index)
- 
+
         def fuse(row):
             bm25_cands = get_candidates_for_row(row, bm25_pre, bm25_retriever, k=100)
             dense_cands = get_candidates_for_row(row, dense_pre, dense_retriever, k=64)
@@ -262,12 +86,12 @@ def load_candidates(df: pd.DataFrame, mode: str, args) -> tuple:
                     seen.add(c)
                     merged.append(c)
             return merged
- 
+
         print("[CAND] Fusing BM25 + Dense candidates ...")
         df["candidates"] = df.apply(fuse, axis=1)
         k_max = max(len(c) for c in df["candidates"] if len(c) > 0)
         return df, k_max, "fusion (BM25 + Dense)"
- 
+
     elif mode == "zero_shot_bm25":
         pre = load_precomputed("bm25_k*.json")
         retriever = None if pre else BM25Retriever.load(args.index)
@@ -276,7 +100,7 @@ def load_candidates(df: pd.DataFrame, mode: str, args) -> tuple:
         )
         k_max = max(len(c) for c in df["candidates"] if len(c) > 0)
         return df, k_max, "BM25"
- 
+
     elif mode == "zero_shot_dense":
         pre = load_precomputed("dense_k*.json")
         retriever = None if pre else DenseRetriever.load(args.dense_index)
@@ -285,18 +109,41 @@ def load_candidates(df: pd.DataFrame, mode: str, args) -> tuple:
         )
         k_max = max(len(c) for c in df["candidates"] if len(c) > 0)
         return df, k_max, "Dense"
- 
+
     else:
         raise ValueError(f"Unknown mode: {mode}")
- 
- 
+
+
+# Reranked candidates persistence (stage="rerank" writes, stage="llm" reads)
+
+def reranked_path(reranked_dir: str, mode: str, domain: str, k: int) -> Path:
+    return Path(reranked_dir) / f"{mode}_{domain}_k{k}.json"
+
+
+def save_reranked(df: pd.DataFrame, path: Path) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    data = {row_key(row): row["candidates_reranked"] for _, row in df.iterrows()}
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(data, f, ensure_ascii=False)
+    print(f"[RERANK] Saved reranked candidates → {path} ({len(data)} mentions)")
+
+
+def load_reranked(path: Path) -> dict:
+    if not path.exists():
+        raise FileNotFoundError(
+            f"No pre-computed reranked candidates found at {path}. "
+            f"Run with --stage rerank (or --stage full) first."
+        )
+    with open(path, encoding="utf-8") as f:
+        return json.load(f)
+
+
 # Evaluation loop
- 
+
 def run_evaluation(
     df: pd.DataFrame,
     tokenizer,
     model,
-    reranker: Reranker | None = None,
     k: int = 10,
     batch_size: int = 8,
     max_new_tokens: int = 2048,
@@ -305,7 +152,7 @@ def run_evaluation(
 ) -> pd.DataFrame:
     results = []
     records = df.to_dict("records")
- 
+
     # Resume
     done_keys = set()
     if resume and checkpoint_path and checkpoint_path.exists():
@@ -315,23 +162,23 @@ def run_evaluation(
             f"{r['file']}::{r['mention']}::{r['gold']}" for r in results
         }
         print(f"[RESUME] {len(done_keys)} examples already processed")
- 
+
     remaining = [
         rec for rec in records
         if f"{rec['file']}::{rec['mention']}::{rec['gold']}" not in done_keys
     ]
     print(f"[EVAL] {len(remaining)} examples to process ({len(done_keys)} already done)")
- 
-    # candidates_reranked is prepared in main().
+
+    # candidates_reranked is prepared by the caller (rerank stage or precomputed load).
     # If a row does not have it, fall back to all retrieved candidates without top-k truncation.
     for rec in remaining:
         if "candidates_reranked" not in rec:
             rec["candidates_reranked"] = list(rec.get("candidates", []))
- 
+
     # LLM evaluation
     for i in tqdm(range(0, len(remaining), batch_size), desc="eval"):
         batch = remaining[i : i + batch_size]
- 
+
         prompts = [
             build_mcq_prompt(
                 rec["context"], rec["mention"], rec["entity_type"],
@@ -339,13 +186,13 @@ def run_evaluation(
             )
             for rec in batch
         ]
- 
+
         try:
             raw_outputs = generate_batch(prompts, tokenizer, model, max_new_tokens)
         except Exception as e:
             for rec in batch:
                 results.append({
-                    "file": rec["file"], "mention": rec["mention"],
+                    "file": rec["file"], "domain": rec.get("domain", ""), "mention": rec["mention"],
                     "entity_type": rec["entity_type"], "gold": rec["gold"],
                     "candidates_retrieval": rec.get("candidates", []),
                     "candidates_reranked": rec.get("candidates_reranked", []),
@@ -354,16 +201,17 @@ def run_evaluation(
                     "predicted": "", "correct": False, "raw_output": "", "error": str(e),
                 })
             continue
- 
+
         for rec, raw in zip(batch, raw_outputs):
             try:
                 parsed = parse_mcq_response(raw, candidates=rec["candidates_reranked"])
                 pred, error = parsed["predicted"], ""
             except Exception as e:
                 pred, error = "", str(e)
- 
+
             results.append({
                 "file":                rec["file"],
+                "domain":              rec.get("domain", ""),
                 "mention":             rec["mention"],
                 "entity_type":         rec["entity_type"],
                 "gold":                rec["gold"],
@@ -376,20 +224,73 @@ def run_evaluation(
                 "raw_output":          raw,
                 "error":               error,
             })
- 
+
         if checkpoint_path:
             pd.DataFrame(results).to_csv(checkpoint_path, index=False)
- 
+
     return pd.DataFrame(results)
- 
- 
-# Main 
- 
+
+
+# Per-domain stage helpers
+
+def run_retrieval_and_rerank(df_domain, domain, args, reranker: Reranker | None):
+    """Stage 'rerank' / first half of stage 'full': retrieval -> optional reranking.
+
+    Returns (df_domain, recall_retrieval, k_retrieval, retrieval_info).
+    """
+    df_domain, k_retrieval, retrieval_info = load_candidates(df_domain, args.mode, args)
+
+    df_domain["gold_in_candidates"] = df_domain.apply(
+        lambda row: recall_at_k(row["gold"], row["candidates"]), axis=1
+    )
+    recall_retrieval = df_domain["gold_in_candidates"].mean()
+    print(f"[{domain}] Retrieval: {retrieval_info}")
+    print(f"[{domain}] Recall@{k_retrieval} (retrieval) : {recall_retrieval:.2%}")
+
+    if reranker is not None:
+        df_domain = reranker.rerank_dataframe(df_domain, k=args.k, unload_after=False)
+    else:
+        print(f"[{domain}] Reranking skipped: passing all retrieved candidates through.")
+        df_domain["candidates_reranked"] = df_domain["candidates"].apply(lambda c: list(c))
+
+    return df_domain, recall_retrieval, k_retrieval, retrieval_info
+
+
+def attach_precomputed_reranked(df_domain, mode: str, domain: str, k: int, reranked_dir: str):
+    """Stage 'llm': load pre-computed reranked candidates for this domain from disk.
+
+    Retrieval candidates are not available in this stage, so 'candidates' is set
+    to the same reranked list (gold_in_retrieval == gold_in_reranked here).
+    """
+    path = reranked_path(reranked_dir, mode, domain, k)
+    reranked = load_reranked(path)
+    print(f"[{domain}] Loaded pre-computed reranked candidates ← {path}")
+
+    df_domain = df_domain.copy()
+    df_domain["candidates_reranked"] = df_domain.apply(
+        lambda row: reranked.get(row_key(row), []), axis=1
+    )
+    df_domain["candidates"] = df_domain["candidates_reranked"]
+    return df_domain
+
+
+# Main
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--mode", required=True,
                         choices=["zero_shot_bm25", "zero_shot_dense", "fusion"])
-    parser.add_argument("--model", required=True, help="HuggingFace LLM for selection")
+    parser.add_argument("--stage", default="full", choices=["full", "rerank", "llm"],
+                        help="full: retrieval+rerank+LLM. rerank: retrieval+rerank only, "
+                             "saves reranked candidates and exits (no LLM loaded). "
+                             "llm: skip retrieval/rerank, load pre-computed reranked "
+                             "candidates and run the LLM stage only.")
+    parser.add_argument("--domains", default="all",
+                        help="Comma-separated list of ELGOLD domains to evaluate "
+                             "(e.g. News,Job_offers), or 'all' (default). Evaluation "
+                             "is run, and results saved, separately per domain.")
+    parser.add_argument("--model", default=None,
+                        help="HuggingFace LLM for selection (required unless --stage rerank)")
     parser.add_argument("--reranker", default=RERANKER_MODEL,
                         help=f"Reranker model (default: {RERANKER_MODEL})")
     parser.add_argument("--no-reranker", action="store_true",
@@ -403,145 +304,157 @@ def main():
     parser.add_argument("--dense-index", default=DENSE_INDEX_PATH)
     parser.add_argument("--benchmarks", default=BENCHMARKS)
     parser.add_argument("--results-dir", default=RESULTS_DIR)
+    parser.add_argument("--reranked-dir", default=RERANKED_DIR,
+                        help="Where reranked candidates are saved (--stage rerank/full) "
+                             "or read from (--stage llm).")
     parser.add_argument("--resume", action="store_true")
     args = parser.parse_args()
- 
+
+    if args.stage != "rerank" and not args.model:
+        parser.error("--model is required unless --stage rerank")
+
     Path(args.results_dir).mkdir(parents=True, exist_ok=True)
- 
->>>>>>> b7ca8ba3ef58080e4930f52e49f32e6ae3235a24
-    # 1. Load benchmark
+
+    # 1. Load benchmark (each row already tagged with its ELGOLD 'domain')
     print("[DATA] Loading ELGOLD ...")
     df = load_benchmark(args.benchmarks, args.max_examples)
-    print(f"[DATA] {len(df)} examples  |  files: {df['file'].nunique()}")
-<<<<<<< HEAD
+    print(f"[DATA] {len(df)} examples  |  files: {df['file'].nunique()}  |  "
+          f"domains: {sorted(df['domain'].unique())}")
 
-    # 2. BM25 retrieval (skip for zero_shot)
-    recall = None
-    if args.mode == "mcq_bm25":
-        retriever = load_or_build_index(args.index, args.titles)
-
-        print(f"[BM25] Retrieving top-{K} candidates for each mention ...")
-        df["candidates"] = df["mention"].apply(lambda m: retriever.retrieve(m, k=K))
-        df["gold_in_candidates"] = df.apply(
-            lambda row: recall_at_k(row["gold"], row["candidates"]), axis=1
-        )
-        recall = df["gold_in_candidates"].mean()
-        print(f"[BM25] Recall@{K} : {recall:.2%}  ← accuracy ceiling for MCQ")
+    available_domains = sorted(df["domain"].unique())
+    if args.domains == "all":
+        domains = available_domains
     else:
-        df["candidates"]         = [[] for _ in range(len(df))]
-        df["gold_in_candidates"] = [None] * len(df)
+        domains = [d.strip() for d in args.domains.split(",") if d.strip()]
+        unknown = set(domains) - set(available_domains)
+        if unknown:
+            parser.error(f"Unknown domain(s): {sorted(unknown)}. Available: {available_domains}")
 
-    # 3. Load model
-    tokenizer, model = load_model(args.model)
+    used_reranker = not args.no_reranker
+    slug = args.model.replace("/", "_") if args.model else None
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
 
-    # 4. Run evaluation
-    print(f"\n[EVAL] Running {args.mode} with {args.model} ...")
-    df_results = run_evaluation(df, args.mode, tokenizer, model, args.batch_size)
+    domain_frames: dict[str, pd.DataFrame] = {}
+    domain_retrieval_stats: dict[str, dict] = {}
 
-    # 5. Save results
-    slug = args.model.replace("/", "_")
-    csv_path = Path(args.results_dir) / f"{args.mode}_{slug}.csv"
-    df_results.to_csv(csv_path, index=False)
-    print(f"\n[SAVE] Results → {csv_path}")
-
-    # 6. Metrics
-    metrics = compute_metrics(df_results)
-    print_metrics(metrics, model_name=f"{args.mode} / {args.model}")
-
-    if recall is not None:
-        metrics["recall_at_k_bm25"] = recall
-        metrics["llm_loss"] = round(recall - metrics["accuracy"], 4)
-        print(f"BM25 ceiling : {recall:.2%}")
-        print(f"LLM loss : -{(recall - metrics['accuracy']):.2%}")
-
-    json_path = Path(args.results_dir) / f"{args.mode}_{slug}_metrics.json"
-    with open(json_path, "w") as f:
-        json.dump(metrics, f, indent=2)
-    print(f"[SAVE] Metrics  → {json_path}")
-
-
-=======
- 
-    # 2. Load candidates (precomputed or live)
-    df, k_retrieval, retrieval_info = load_candidates(df, args.mode, args)
- 
-    df["gold_in_candidates"] = df.apply(
-        lambda row: recall_at_k(row["gold"], row["candidates"]), axis=1
-    )
-    recall_retrieval = df["gold_in_candidates"].mean()
-    print(f"[CAND] Retrieval: {retrieval_info}")
-    print(f"[CAND] Recall@{k_retrieval} (retrieval) : {recall_retrieval:.2%}")
- 
-    # 3. Rerank BEFORE loading the LLM.
+    # 2-3. Retrieval + reranking, run for every selected domain before touching the LLM.
     # Important on P100 16GB: do not keep Qwen3-4B LLM and Qwen3-Reranker-4B
     # loaded at the same time. The reranking loop stays inside candidates/reranker.py.
-    used_reranker = not args.no_reranker
-    if used_reranker:
-        reranker = Reranker(args.reranker)
-        df = reranker.rerank_dataframe(df, k=args.k, unload_after=True)
-    else:
-        print("[RERANK] Skipped: passing all retrieved candidates to LLM (no top-k truncation).")
-        df["candidates_reranked"] = df["candidates"].apply(lambda c: list(c))
- 
-    # 4. Load LLM AFTER reranker has been unloaded.
+    if args.stage in ("full", "rerank"):
+        reranker = Reranker(args.reranker) if used_reranker else None
+
+        for domain in domains:
+            df_domain = df[df["domain"] == domain].reset_index(drop=True)
+            df_domain, recall_retrieval, k_retrieval, retrieval_info = run_retrieval_and_rerank(
+                df_domain, domain, args, reranker
+            )
+
+            out_k = args.k if used_reranker else k_retrieval
+            save_reranked(df_domain, reranked_path(args.reranked_dir, args.mode, domain, out_k))
+
+            domain_frames[domain] = df_domain
+            domain_retrieval_stats[domain] = {
+                "recall_retrieval": recall_retrieval,
+                "k_retrieval": k_retrieval,
+                "retrieval_info": retrieval_info,
+            }
+
+        if reranker is not None:
+            reranker.unload()
+
+    if args.stage == "rerank":
+        print("\n[STAGE] rerank complete — reranked candidates saved, no LLM was loaded.")
+        for domain, stats in domain_retrieval_stats.items():
+            print(f"  [{domain}] Recall@{stats['k_retrieval']} (retrieval): "
+                  f"{stats['recall_retrieval']:.2%}")
+        return
+
+    # 4. Load LLM once, after the reranker has been unloaded (stage="full")
+    #    or directly (stage="llm", no reranker is ever loaded).
     tokenizer, model = load_model(args.model)
- 
-    # 5. Run evaluation
-    slug = args.model.replace("/", "_")
-    checkpoint_path = Path(args.results_dir) / f"{args.mode}_{slug}_checkpoint.csv"
- 
-    if used_reranker:
-        print(f"\n[EVAL] Pipeline: {retrieval_info} → Reranker → LLM ({args.model}) → top-{args.k}")
-    else:
-        print(f"\n[EVAL] Pipeline: {retrieval_info} → LLM ({args.model}) → all retrieved candidates")
- 
-    df_results = run_evaluation(
-        df, tokenizer, model,
-        reranker=None,
-        k=args.k,
-        batch_size=args.batch_size,
-        max_new_tokens=args.max_new_tokens,
-        checkpoint_path=checkpoint_path,
-        resume=args.resume,
-    )
- 
-    # 6. Save results
-    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    csv_path = Path(args.results_dir) / f"{args.mode}_{slug}_{timestamp}.csv"
-    df_results.to_csv(csv_path, index=False)
-    print(f"\n[SAVE] Results → {csv_path}")
- 
-    if checkpoint_path.exists():
-        checkpoint_path.unlink()
- 
-    # 7. Metrics
-    metrics = compute_metrics(df_results)
-    print_metrics(metrics, model_name=f"{args.mode} / {args.model}")
- 
-    # Retrieval recall vs reranked recall
-    metrics["recall_retrieval"] = recall_retrieval
-    metrics["k_retrieval"] = k_retrieval
-    if "gold_in_reranked" in df_results.columns:
-        recall_reranked = df_results["gold_in_reranked"].mean()
-        metrics["recall_reranked"] = recall_reranked
-        print(f"Recall@{k_retrieval} (retrieval) : {recall_retrieval:.2%}")
+
+    all_metrics = {}
+
+    for domain in domains:
+        if args.stage == "full":
+            df_domain = domain_frames[domain]
+            retrieval_info = domain_retrieval_stats[domain]["retrieval_info"]
+            recall_retrieval = domain_retrieval_stats[domain]["recall_retrieval"]
+            k_retrieval = domain_retrieval_stats[domain]["k_retrieval"]
+        else:  # stage == "llm"
+            df_domain = df[df["domain"] == domain].reset_index(drop=True)
+            df_domain = attach_precomputed_reranked(
+                df_domain, args.mode, domain, args.k, args.reranked_dir
+            )
+            retrieval_info = "pre-computed reranked candidates"
+            recall_retrieval = df_domain.apply(
+                lambda row: recall_at_k(row["gold"], row["candidates"]), axis=1
+            ).mean()
+            k_retrieval = args.k
+
+        checkpoint_path = Path(args.results_dir) / f"{args.mode}_{domain}_{slug}_checkpoint.csv"
+
         if used_reranker:
-            metrics["k_reranked"] = args.k
-            print(f"Recall@{args.k} (reranked)  : {recall_reranked:.2%}")
+            print(f"\n[EVAL][{domain}] Pipeline: {retrieval_info} → Reranker → LLM ({args.model}) → top-{args.k}")
         else:
-            metrics["k_reranked"] = k_retrieval
-            print(f"Recall@{k_retrieval} (LLM candidates, no reranker) : {recall_reranked:.2%}")
-    metrics["llm_loss"] = round(
-        (metrics.get("recall_reranked", recall_retrieval)) - metrics["accuracy"], 4
-    )
-    print(f"LLM loss : -{abs(metrics['llm_loss']):.2%}")
- 
-    json_path = Path(args.results_dir) / f"{args.mode}_{slug}_{timestamp}_metrics.json"
-    with open(json_path, "w") as f:
-        json.dump(metrics, f, indent=2)
-    print(f"[SAVE] Metrics → {json_path}")
- 
- 
->>>>>>> b7ca8ba3ef58080e4930f52e49f32e6ae3235a24
+            print(f"\n[EVAL][{domain}] Pipeline: {retrieval_info} → LLM ({args.model}) → all retrieved candidates")
+
+        df_results = run_evaluation(
+            df_domain, tokenizer, model,
+            k=args.k,
+            batch_size=args.batch_size,
+            max_new_tokens=args.max_new_tokens,
+            checkpoint_path=checkpoint_path,
+            resume=args.resume,
+        )
+
+        # 6. Save per-domain results
+        csv_path = Path(args.results_dir) / f"{args.mode}_{domain}_{slug}_{timestamp}.csv"
+        df_results.to_csv(csv_path, index=False)
+        print(f"[SAVE][{domain}] Results → {csv_path}")
+
+        if checkpoint_path.exists():
+            checkpoint_path.unlink()
+
+        # 7. Per-domain metrics
+        metrics = compute_metrics(df_results)
+        print_metrics(metrics, model_name=f"{args.mode} / {domain} / {args.model}")
+
+        metrics["recall_retrieval"] = recall_retrieval
+        metrics["k_retrieval"] = k_retrieval
+        if "gold_in_reranked" in df_results.columns:
+            recall_reranked = df_results["gold_in_reranked"].mean()
+            metrics["recall_reranked"] = recall_reranked
+            print(f"Recall@{k_retrieval} (retrieval) : {recall_retrieval:.2%}")
+            if used_reranker:
+                metrics["k_reranked"] = args.k
+                print(f"Recall@{args.k} (reranked)  : {recall_reranked:.2%}")
+            else:
+                metrics["k_reranked"] = k_retrieval
+                print(f"Recall@{k_retrieval} (LLM candidates, no reranker) : {recall_reranked:.2%}")
+        metrics["llm_loss"] = round(
+            (metrics.get("recall_reranked", recall_retrieval)) - metrics["accuracy"], 4
+        )
+        print(f"LLM loss : -{abs(metrics['llm_loss']):.2%}")
+
+        json_path = Path(args.results_dir) / f"{args.mode}_{domain}_{slug}_{timestamp}_metrics.json"
+        with open(json_path, "w") as f:
+            json.dump(metrics, f, indent=2)
+        print(f"[SAVE][{domain}] Metrics → {json_path}")
+
+        all_metrics[domain] = metrics
+
+    # Summary across all evaluated domains
+    summary_path = Path(args.results_dir) / f"{args.mode}_{slug}_{timestamp}_domains_summary.json"
+    with open(summary_path, "w") as f:
+        json.dump(all_metrics, f, indent=2)
+    print(f"\n[SAVE] Per-domain summary → {summary_path}")
+
+    print(f"\n{'='*60}\n Per-domain accuracy summary [{args.mode} / {args.model}]\n{'='*60}")
+    for domain, metrics in all_metrics.items():
+        print(f"  {domain:30s} accuracy={metrics['accuracy']:.2%}  "
+              f"(n={metrics['n_total']}, errors={metrics['n_errors']})")
+
+
 if __name__ == "__main__":
     main()
