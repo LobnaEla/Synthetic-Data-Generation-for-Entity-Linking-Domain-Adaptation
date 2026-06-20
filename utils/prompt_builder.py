@@ -1,5 +1,20 @@
 import string
 
+def _split_context_around_mention(context: str, mention: str) -> tuple[str, str]:
+    """Split context around the first occurrence of the mention.
+
+    The training/evaluation prompt from filter_zelda.py is built from character
+    offsets. In this benchmark pipeline we only receive the full context and the
+    mention string, so we mark the first occurrence of the mention.
+    """
+    if mention and mention in context:
+        before, after = context.split(mention, 1)
+        return before, after
+
+    # Fallback: keep the full context and still show the mention explicitly.
+    # This avoids crashing if the mention string has been normalized differently.
+    return context + "\n\nMention: ", ""
+
 
 def build_mcq_prompt(
     context: str,

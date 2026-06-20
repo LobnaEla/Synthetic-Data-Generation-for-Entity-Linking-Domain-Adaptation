@@ -3,8 +3,8 @@ import gc
 from pathlib import Path
 
 import torch
+from sentence_transformers import CrossEncoder
 from tqdm import tqdm
-from transformers import AutoModelForSequenceClassification, AutoTokenizer
 
 DEFAULT_MODEL = "Qwen/Qwen3-Reranker-4B"
 NONE_TOKEN = "NONE"
@@ -33,44 +33,37 @@ class Reranker:
         self.batch_size = batch_size
         self.max_length = max_length
         self._model = None
-        self._tokenizer = None
         self._title_to_qid: dict[str, str] | None = None
 
     def _load(self):
         if self._model is None:
-            print(f"[Reranker] Loading {self.model_name} ...")
-            self._tokenizer = AutoTokenizer.from_pretrained(self.model_name)
+            print(f"[Reranker] Loading {self.model_name} with CrossEncoder ...")
 
-            # Required for batched reranking with Qwen tokenizers.
-            if self._tokenizer.pad_token is None:
-                self._tokenizer.pad_token = self._tokenizer.eos_token
-
-            # P100 does not support bfloat16 well. float16 is safer and lighter.
+            # Qwen's model card recommends CrossEncoder for Qwen3-Reranker.
+            # On P100, float16 is safer/lighter than bfloat16.
             dtype = torch.float16 if torch.cuda.is_available() else torch.float32
-            self._model = AutoModelForSequenceClassification.from_pretrained(
-                self.model_name,
-                torch_dtype=dtype,
-                device_map="auto",
-            ).eval()
-            self._model.config.pad_token_id = self._tokenizer.pad_token_id
 
-            print(
-                f"[Reranker] pad_token={self._tokenizer.pad_token!r}, "
-                f"pad_token_id={self._tokenizer.pad_token_id}"
+            self._model = CrossEncoder(
+                self.model_name,
+                max_length=self.max_length,
+                model_kwargs={
+                    "torch_dtype": dtype,
+                    "device_map": "auto",
+                },
             )
-            print(f"[Reranker] Loaded on {next(self._model.parameters()).device}")
+
+            print(f"[Reranker] Loaded {self.model_name}")
 
     def unload(self):
         """Release reranker GPU memory before loading the final LLM."""
         if self._model is not None:
             del self._model
             self._model = None
-        if self._tokenizer is not None:
-            del self._tokenizer
-            self._tokenizer = None
+
         gc.collect()
         if torch.cuda.is_available():
             torch.cuda.empty_cache()
+
         print("[Reranker] Unloaded and CUDA cache cleared")
 
     def _load_title_to_qid(self) -> dict[str, str]:
@@ -84,6 +77,7 @@ class Reranker:
             return self._title_to_qid
 
         self._title_to_qid = {}
+
         if not self.qid_titles_path.exists():
             print(f"[Reranker] QID/title file not found: {self.qid_titles_path}")
             print("[Reranker] Candidates will be formatted with titles only.")
@@ -95,6 +89,7 @@ class Reranker:
                 return self._title_to_qid
 
             title_col = "title" if "title" in reader.fieldnames else None
+
             qid_col = None
             for col in ("qid", "QID", "id", "entity_id", "wikidata_id"):
                 if col in reader.fieldnames:
@@ -112,6 +107,7 @@ class Reranker:
             for row in reader:
                 title = (row.get(title_col) or "").strip()
                 qid = (row.get(qid_col) or "").strip()
+
                 if title and qid:
                     self._title_to_qid[title] = qid
                     self._title_to_qid[title.replace("_", " ")] = qid
@@ -124,8 +120,13 @@ class Reranker:
     def _split_context(context: str, mention: str) -> tuple[str, str, str]:
         """Create the same context_before / mention / context_after fields as teammate."""
         idx = context.find(mention)
+
         if idx >= 0:
-            return context[:idx], context[idx: idx + len(mention)], context[idx + len(mention):]
+            return (
+                context[:idx],
+                context[idx: idx + len(mention)],
+                context[idx + len(mention):],
+            )
 
         # Fallback: keep the prompt valid even if exact surface form is not found.
         return context + "\n\nMention: ", mention, ""
@@ -133,8 +134,10 @@ class Reranker:
     def _candidate_line(self, title: str) -> str:
         title_to_qid = self._load_title_to_qid()
         qid = title_to_qid.get(title) or title_to_qid.get(title.replace("_", " "))
+
         if qid:
             return f"{qid} — {title}"
+
         return title
 
     def _format_candidates(self, candidates: list[str]) -> str:
@@ -143,7 +146,11 @@ class Reranker:
         return "\n".join(lines)
 
     def build_prompt(self, context: str, mention: str, candidates: list[str]) -> str:
-        context_before, marked_mention, context_after = self._split_context(context, mention)
+        context_before, marked_mention, context_after = self._split_context(
+            context,
+            mention,
+        )
+
         return PROMPT_TEMPLATE.format(
             context_before=context_before,
             mention=marked_mention,
@@ -151,34 +158,46 @@ class Reranker:
             candidates=self._format_candidates(candidates),
         )
 
-    def rerank(self, context: str, mention: str, candidates: list[str], k: int = 10) -> list[str]:
-        """Rerank candidates for one mention using the teammate prompt as the query."""
+    def rerank(
+        self,
+        context: str,
+        mention: str,
+        candidates: list[str],
+        k: int = 10,
+    ) -> list[str]:
+        """Rerank candidates for one mention using CrossEncoder.
+
+        Query side:
+            teammate reranking prompt with all candidates.
+
+        Document side:
+            one candidate line, e.g. "Q30 — United States".
+
+        The model returns one relevance score per pair.
+        Higher score = more relevant.
+        """
         self._load()
+
         if not candidates:
             return []
 
-        # Query side = exactly the teammate reranking prompt.
-        # Document side = one candidate line to score against that prompt.
         prompt = self.build_prompt(context, mention, candidates)
         docs = [self._candidate_line(c) for c in candidates]
+        pairs = [(prompt, doc) for doc in docs]
 
-        scores = []
-        for i in range(0, len(docs), self.batch_size):
-            batch_docs = docs[i: i + self.batch_size]
-            inputs = self._tokenizer(
-                [prompt] * len(batch_docs),
-                batch_docs,
-                padding=True,
-                truncation=True,
-                max_length=self.max_length,
-                return_tensors="pt",
-            ).to(self._model.device)
+        scores = self._model.predict(
+            pairs,
+            batch_size=self.batch_size,
+            show_progress_bar=False,
+            convert_to_numpy=True,
+        )
 
-            with torch.no_grad():
-                logits = self._model(**inputs).logits.squeeze(-1)
-            scores.extend(logits.float().cpu().tolist())
+        scored = sorted(
+            zip(candidates, scores),
+            key=lambda x: float(x[1]),
+            reverse=True,
+        )
 
-        scored = sorted(zip(candidates, scores), key=lambda x: x[1], reverse=True)
         return [title for title, _ in scored[:k]]
 
     def rerank_dataframe(self, df, k: int = 10, unload_after: bool = True):
