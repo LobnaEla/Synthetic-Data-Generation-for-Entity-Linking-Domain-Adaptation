@@ -307,20 +307,42 @@ wikimapper create enwiki-latest --dumpdir wikimapper_data `
 ```
 
 
-## Résultats (en cours)
+## Résultats
 
-Spécialistes par domaine, 1 epoch, évalués sur leur propre domaine ELGOLD
-(accuracy@1, mentions NIL exclues) :
+### Spécialistes reranking — chacun sur son domaine ELGOLD
 
-| Domaine | Approche | acc@1 | acc vues | acc non-vues | recall@k |
+Accuracy@1, 1 epoch, mentions NIL exclues. `recall@k` = part des golds présents
+dans la liste de candidats (plafond du reranker).
+
+| Domaine | n | acc@1 | recall@k | acc vues | acc non-vues |
 |---|---|---|---|---|---|
-| Historic_blogs | génératif | 76,2 % | 85,0 % | 0,0 % | — |
-| Historic_blogs | reranking | **80,5 %** | 89,1 % | 5,9 % | 86,0 % |
+| Movie_reviews | 327 | 82,9 % | 86,5 % | 89,4 % | 0,0 % |
+| Historic_blogs | 164 | 80,5 % | 86,0 % | 89,1 % | 5,9 % |
+| Job_offers | 350 | 76,0 % | 78,0 % | 92,4 % | 0,0 % |
+| Automotive_blogs | 284 | 74,7 % | 76,8 % | 88,3 % | 0,0 % |
+| News | 848 | 74,1 % | 77,8 % | 86,4 % | 0,0 % |
+| Amazon_product_reviews | 369 | 68,6 % | 73,7 % | 82,4 % | 0,0 % |
+| Scientific_abstracts | 764 | 50,7 % | 53,4 % | 77,7 % | 0,0 % |
+| **Pondérée** | **3 106** | **69,2 %** | — | — | — |
 
-Lecture : le reranking dépasse le génératif (+4,3 pts) et récupère une partie
-des entités jamais vues (0 % → 5,9 %), que le génératif ne peut pas produire.
-Le `recall@k` de 86 % (vs 98,7 % sur ZELDA) est le **plafond du reranker** sur
-ELGOLD : améliorer la génération de candidats (retrieval dense) le relèverait.
+Enseignements :
+1. **Le goulot est la génération de candidats, pas le reranker.** `acc@1` suit
+   `recall@k` dans tous les domaines : quand le bon candidat est présent, le
+   modèle le choisit 93-97 % du temps.
+2. **Scientific_abstracts est le point faible (50,7 %)**, entièrement dû à un
+   recall@k de 53 % : l'alias table lexicale ne couvre pas les entités techniques.
+3. Levier n°1 : remonter le recall@k via un **retrieval dense** (type BLINK) —
+   chaque point de recall gagné ≈ un point d'accuracy.
+
+### Génératif vs reranking (Historic_blogs)
+
+| Approche | acc@1 | acc vues | acc non-vues |
+|---|---|---|---|
+| génératif | 76,2 % | 85,0 % | 0,0 % |
+| reranking | **80,5 %** | 89,1 % | 5,9 % |
+
+Le reranking dépasse le génératif (+4,3 pts) et récupère une partie des entités
+jamais vues (0 % → 5,9 %), que le génératif ne peut pas produire.
 
 ## État d'avancement
 
@@ -329,8 +351,7 @@ ELGOLD : améliorer la génération de candidats (retrieval dense) le relèverai
 - [x] Splits versionnés + manifests SHA-256 (multi-domaines **et** par domaine)
 - [x] Rapport de couverture (79,9 % global)
 - [x] Spécialiste Historic_blogs génératif — entraîné + évalué (76,2 %)
-- [x] Spécialiste Historic_blogs reranking — entraîné + évalué (80,5 %)
-- [~] Spécialistes reranking des 6 autres domaines (`train_all_rerank.ps1` en cours)
-- [ ] Évaluation ELGOLD des spécialistes reranking restants
-- [ ] Baseline branche (1) few-shot pour situer le plancher
+- [x] **7 spécialistes reranking** — entraînés + évalués (pondérée 69,2 %)
+- [ ] Baseline branche (1) few-shot/zero-shot pour situer le plancher
+- [ ] (option) retrieval dense pour relever le recall@k
 - [ ] `requirements.txt` figé + rapport final
