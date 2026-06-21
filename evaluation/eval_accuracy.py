@@ -344,6 +344,28 @@ def main():
         reranker = Reranker(args.reranker) if used_reranker else None
 
         for domain in domains:
+            # --resume: a domain whose reranked candidates were already saved in a
+            # previous run is loaded back instead of re-running retrieval + reranking.
+            # Only applies when k is known upfront (i.e. the reranker truncates to --k);
+            # without a reranker, k depends on live retrieval and is always recomputed.
+            if used_reranker and args.resume:
+                existing = reranked_path(args.reranked_dir, args.mode, domain, args.k)
+                if existing.exists():
+                    print(f"[RESUME][{domain}] Found existing {existing}, skipping retrieval+rerank.")
+                    df_domain = attach_precomputed_reranked(
+                        df[df["domain"] == domain].reset_index(drop=True),
+                        args.mode, domain, args.k, args.reranked_dir,
+                    )
+                    domain_frames[domain] = df_domain
+                    domain_retrieval_stats[domain] = {
+                        "recall_retrieval": df_domain.apply(
+                            lambda row: recall_at_k(row["gold"], row["candidates"]), axis=1
+                        ).mean(),
+                        "k_retrieval": args.k,
+                        "retrieval_info": "pre-computed reranked candidates (resumed)",
+                    }
+                    continue
+
             df_domain = df[df["domain"] == domain].reset_index(drop=True)
             df_domain, recall_retrieval, k_retrieval, retrieval_info = run_retrieval_and_rerank(
                 df_domain, domain, args, reranker

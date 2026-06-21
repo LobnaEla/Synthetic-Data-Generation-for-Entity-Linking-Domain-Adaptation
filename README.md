@@ -312,7 +312,7 @@ If several files match the same pattern, the last one in sorted order is used.
 | `--max-new-tokens 2048`             | Maximum number of generated tokens                                    |
 | `--max-examples 200`                | Limit the benchmark size for quick testing                            |
 | `--reranked-dir PATH`               | Where reranked candidates are saved/read (default: `candidates/reranked/`) |
-| `--resume`                          | Resume from checkpoint                                                |
+| `--resume`                          | Resume LLM eval from its per-domain checkpoint; skip domains already reranked |
 
 ---
 
@@ -347,7 +347,10 @@ The CSV file notably contains:
 ### Resuming after an interruption
 
 If a job is interrupted, a checkpoint is automatically saved in `evaluation/results/`
-(one checkpoint per domain). Resume with:
+(one checkpoint per domain) for the LLM stage. For the rerank stage, `--resume` skips
+any domain whose `candidates/reranked/{mode}_{domain}_k{k}.json` already exists from a
+previous run, instead of recomputing retrieval + reranking from scratch (this only
+applies when a reranker is used, since `k` must be known upfront). Resume with:
 
 ```bash
 python evaluation/eval_accuracy.py \
@@ -526,7 +529,8 @@ Main arguments:
 --benchmarks PATH       Path to the ELGOLD files
 --results-dir PATH      Directory where results are saved
 --reranked-dir PATH     Directory where reranked candidates are saved/read
---resume                Resume from checkpoint
+--resume                LLM stage: resume from per-domain checkpoint.
+                        Rerank stage: skip domains already saved to --reranked-dir.
 ```
 
 How pre-computed retrieval candidates work:
@@ -545,6 +549,7 @@ How the reranker works:
 * The LLM only receives the reranked candidates.
 * With `--no-reranker`, the LLM receives all retrieved candidates, untruncated.
 * With `--stage full` or `--stage rerank`, reranked candidates are saved to `candidates/reranked/{mode}_{domain}_k{k}.json` for later reuse with `--stage llm`.
+* With `--resume`, a domain whose reranked file already exists is loaded back instead of being recomputed (only when a reranker is used, since `k` must be known upfront).
 
 Examples:
 
