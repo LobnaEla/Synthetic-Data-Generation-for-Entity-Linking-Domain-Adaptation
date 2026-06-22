@@ -14,7 +14,7 @@ from candidates.dense_retriever import DenseRetriever
 from candidates.bm25_retriever import BM25Retriever
 from candidates.reranker import Reranker
 from utils.elgold_parser import load_benchmark
-from utils.llm import generate_batch, load_model
+from utils.llm import generate_batch_safe, load_model
 from utils.metrics import compute_metrics, is_correct, print_metrics, recall_at_k
 from utils.prompt_builder import build_mcq_prompt
 from utils.qid_lookup import load_title_to_qid
@@ -190,28 +190,24 @@ def run_evaluation(
         ]
 
         try:
-            raw_outputs = generate_batch(prompts, tokenizer, model, max_new_tokens)
+            # generate_batch_safe halves the batch on CUDA OOM instead of dropping
+            # every prompt in it; a single prompt that still OOMs alone is reported
+            # as an error only for that example.
+            gen_outputs = generate_batch_safe(prompts, tokenizer, model, max_new_tokens)
         except Exception as e:
-            for rec in batch:
-                results.append({
-                    "file": rec["file"], "domain": rec.get("domain", ""), "mention": rec["mention"],
-                    "entity_type": rec["entity_type"], "gold": rec["gold"],
-                    "candidates_retrieval": rec.get("candidates", []),
-                    "candidates_reranked": rec.get("candidates_reranked", []),
-                    "gold_in_retrieval": recall_at_k(rec["gold"], rec.get("candidates", [])),
-                    "gold_in_reranked": recall_at_k(rec["gold"], rec.get("candidates_reranked", [])),
-                    "predicted": "", "correct": False, "raw_output": "", "error": str(e),
-                })
-            continue
+            gen_outputs = [("", str(e))] * len(batch)
 
-        for rec, raw in zip(batch, raw_outputs):
-            try:
-                parsed = parse_mcq_response(
-                    raw, candidates=rec["candidates_reranked"], title_to_qid=title_to_qid
-                )
-                pred, error = parsed["predicted"], ""
-            except Exception as e:
-                pred, error = "", str(e)
+        for rec, (raw, gen_error) in zip(batch, gen_outputs):
+            if gen_error:
+                pred, error = "", gen_error
+            else:
+                try:
+                    parsed = parse_mcq_response(
+                        raw, candidates=rec["candidates_reranked"], title_to_qid=title_to_qid
+                    )
+                    pred, error = parsed["predicted"], ""
+                except Exception as e:
+                    pred, error = "", str(e)
 
             results.append({
                 "file":                rec["file"],

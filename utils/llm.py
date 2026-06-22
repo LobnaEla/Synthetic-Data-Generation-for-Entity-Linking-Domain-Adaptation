@@ -40,3 +40,34 @@ def generate_batch(
         tokenizer.decode(out[input_len:], skip_special_tokens=True).strip()
         for out in outputs
     ]
+
+
+def _is_oom_error(e: Exception) -> bool:
+    return "out of memory" in str(e).lower()
+
+
+def generate_batch_safe(
+    prompts: list[str],
+    tokenizer,
+    model,
+    max_new_tokens: int = 2048,
+) -> list[tuple[str, str]]:
+    """Like generate_batch, but recovers from CUDA OOM by halving the batch instead
+    of losing every prompt in it. A single prompt that still OOMs on its own is
+    reported as an error for that example only. Returns (raw_output, error) pairs
+    aligned 1:1 with prompts.
+    """
+    try:
+        outputs = generate_batch(prompts, tokenizer, model, max_new_tokens)
+        return [(o, "") for o in outputs]
+    except RuntimeError as e:
+        if not _is_oom_error(e):
+            raise
+        torch.cuda.empty_cache()
+        if len(prompts) == 1:
+            return [("", f"CUDA OOM: {e}")]
+        mid = len(prompts) // 2
+        return (
+            generate_batch_safe(prompts[:mid], tokenizer, model, max_new_tokens)
+            + generate_batch_safe(prompts[mid:], tokenizer, model, max_new_tokens)
+        )
