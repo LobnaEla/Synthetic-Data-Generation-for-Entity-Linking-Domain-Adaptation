@@ -1,15 +1,39 @@
+import json
+from pathlib import Path
+
 import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
 
 def load_model(model_name: str):
-    print(f"[LLM] Loading {model_name} ...")
-    tokenizer = AutoTokenizer.from_pretrained(model_name)
-    model = AutoModelForCausalLM.from_pretrained(
-        model_name,
-        torch_dtype=torch.bfloat16 if torch.cuda.is_available() else torch.float32,
-        device_map="auto",
-    ).eval()
+    """Load a full HF model, or a PEFT/LoRA adapter directory (detected via
+    adapter_config.json: the base model is loaded first, then the adapter is
+    applied on top)."""
+    adapter_config_path = Path(model_name) / "adapter_config.json"
+    if adapter_config_path.exists():
+        from peft import PeftModel
+
+        with open(adapter_config_path, encoding="utf-8") as f:
+            base_model_name = json.load(f)["base_model_name_or_path"]
+
+        print(f"[LLM] Loading base model {base_model_name} for adapter {model_name} ...")
+        tokenizer = AutoTokenizer.from_pretrained(model_name)
+        base_model = AutoModelForCausalLM.from_pretrained(
+            base_model_name,
+            torch_dtype=torch.bfloat16 if torch.cuda.is_available() else torch.float32,
+            device_map="auto",
+        )
+        print(f"[LLM] Applying adapter {model_name} ...")
+        model = PeftModel.from_pretrained(base_model, model_name).eval()
+    else:
+        print(f"[LLM] Loading {model_name} ...")
+        tokenizer = AutoTokenizer.from_pretrained(model_name)
+        model = AutoModelForCausalLM.from_pretrained(
+            model_name,
+            torch_dtype=torch.bfloat16 if torch.cuda.is_available() else torch.float32,
+            device_map="auto",
+        ).eval()
+
     device = next(model.parameters()).device
     print(f"[LLM] Loaded on {device}")
     return tokenizer, model
