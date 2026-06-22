@@ -17,6 +17,7 @@ from utils.elgold_parser import load_benchmark
 from utils.llm import generate_batch, load_model
 from utils.metrics import compute_metrics, is_correct, print_metrics, recall_at_k
 from utils.prompt_builder import build_mcq_prompt
+from utils.qid_lookup import load_title_to_qid
 from utils.response_parser import parse_mcq_response
 
 TITLES_PATH = "data/wikidata_qid_titles.csv"
@@ -144,6 +145,7 @@ def run_evaluation(
     df: pd.DataFrame,
     tokenizer,
     model,
+    title_to_qid: dict[str, str],
     k: int = 10,
     batch_size: int = 8,
     max_new_tokens: int = 2048,
@@ -182,7 +184,7 @@ def run_evaluation(
         prompts = [
             build_mcq_prompt(
                 rec["context"], rec["mention"], rec["entity_type"],
-                rec["candidates_reranked"]
+                rec["candidates_reranked"], title_to_qid
             )
             for rec in batch
         ]
@@ -204,7 +206,9 @@ def run_evaluation(
 
         for rec, raw in zip(batch, raw_outputs):
             try:
-                parsed = parse_mcq_response(raw, candidates=rec["candidates_reranked"])
+                parsed = parse_mcq_response(
+                    raw, candidates=rec["candidates_reranked"], title_to_qid=title_to_qid
+                )
                 pred, error = parsed["predicted"], ""
             except Exception as e:
                 pred, error = "", str(e)
@@ -302,6 +306,9 @@ def main():
     parser.add_argument("--max-examples", type=int, default=None)
     parser.add_argument("--index", default=INDEX_PATH)
     parser.add_argument("--dense-index", default=DENSE_INDEX_PATH)
+    parser.add_argument("--titles", default=TITLES_PATH,
+                        help="Title->QID lookup CSV, shown to the LLM as candidate ids "
+                             "instead of plain indices.")
     parser.add_argument("--benchmarks", default=BENCHMARKS)
     parser.add_argument("--results-dir", default=RESULTS_DIR)
     parser.add_argument("--reranked-dir", default=RERANKED_DIR,
@@ -395,6 +402,13 @@ def main():
     #    or directly (stage="llm", no reranker is ever loaded).
     tokenizer, model = load_model(args.model)
 
+    try:
+        title_to_qid = load_title_to_qid(args.titles)
+        print(f"[QID] Loaded {len(title_to_qid):,} title->QID mappings from {args.titles}")
+    except FileNotFoundError:
+        print(f"[QID] {args.titles} not found, candidates will use fallback ids (C0, C1, ...)")
+        title_to_qid = {}
+
     all_metrics = {}
 
     for domain in domains:
@@ -422,7 +436,7 @@ def main():
             print(f"\n[EVAL][{domain}] Pipeline: {retrieval_info} → LLM ({args.model}) → all retrieved candidates")
 
         df_results = run_evaluation(
-            df_domain, tokenizer, model,
+            df_domain, tokenizer, model, title_to_qid,
             k=args.k,
             batch_size=args.batch_size,
             max_new_tokens=args.max_new_tokens,
