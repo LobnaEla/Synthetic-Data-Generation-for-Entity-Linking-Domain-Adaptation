@@ -1,5 +1,21 @@
 # Synthetic Data for Entity Linking Domain Adaptation
 
+## Contribution Section
+
+**Soline Carle** Wrote the project plan, the project report and the project presentation slides. She led the Wikidata subgraph extraction.
+
+**Lobna Elabed** Made the zero shot, designed and implemented the candidate generation module.
+
+**Anas Elbarhdadi** Led the human-data fine-tuning branch (branch 2) in its entirety.
+
+**Luciano Nichelatti** and **Nour Ghamgui** jointly developed the synthetic data generation pipeline (branch 3).
+
+**Team organization:** the team used a shared GitLab repository on the Télécom Paris infrastructure, with one branch per team member. Weekly meetings were held with supervisor Samy Haffoudhi to review progress and adjust priorities. Between meetings, the team synchronized via a WhatsApp group. The project plan (`Project_plan.pdf`), written at the start of the project, defined task ownership, deadlines, and risk mitigation strategies.
+
+
+---------------------------------------------------------------------------------------
+
+
 **fetch_wikidata_titles.py**
 Fetch all English Wikipedia titles from Wikidata via paginated SPARQL.
 
