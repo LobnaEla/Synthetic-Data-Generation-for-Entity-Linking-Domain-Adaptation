@@ -155,15 +155,20 @@ def run_evaluation(
     results = []
     records = df.to_dict("records")
 
-    # Resume
+    # Resume: only rows that finished without error count as "done". Rows that
+    # failed (e.g. CUDA OOM, empty predicted) are dropped here so they get retried.
     done_keys = set()
     if resume and checkpoint_path and checkpoint_path.exists():
         df_done = pd.read_csv(checkpoint_path)
+        has_error = df_done["error"].fillna("").astype(str) != "" if "error" in df_done.columns else pd.Series(False, index=df_done.index)
+        n_failed = int(has_error.sum())
+        df_done = df_done[~has_error]
         results = df_done.to_dict("records")
         done_keys = {
             f"{r['file']}::{r['mention']}::{r['gold']}" for r in results
         }
-        print(f"[RESUME] {len(done_keys)} examples already processed")
+        print(f"[RESUME] {len(done_keys)} examples already processed, "
+              f"{n_failed} failed previously and will be retried")
 
     remaining = [
         rec for rec in records

@@ -16,6 +16,16 @@ def _split_context_around_mention(context: str, mention: str) -> tuple[str, str]
     return context + "\n\nMention: ", ""
 
 
+MCQ_PROMPT_TEMPLATE = (
+    "Identify the Wikidata Q-ID of the entity referred to by the mention "
+    "marked with **double asterisks** in the following text.\n\n"
+    "Text:\n{context_before}**{mention}**{context_after}\n\n"
+    "Entity type: {entity_type}\n\n"
+    "Candidates:\n{options_str}\n\n"
+    "Answer with only the candidate id, e.g. \"answer: Q42\"."
+)
+
+
 def get_candidate_ids(
     candidates: list[str],
     title_to_qid: dict[str, str] | None = None,
@@ -39,22 +49,15 @@ def build_mcq_prompt(
 
     ids = get_candidate_ids(candidates, title_to_qid)
     options_str = "\n".join(f"{cid}. {title}" for cid, title in zip(ids, candidates))
+    context_before, context_after = _split_context_around_mention(context, mention)
 
-    return f"""You are an expert designed to disambiguate entities in text, taking into account the overall context and a list of entity candidates.
-TEXT (the mention to disambiguate is enclosed in square brackets):
-{context.replace(mention, f"[{mention}]", 1)}
-MENTION: {mention}
-ENTITY TYPE: {entity_type}
-CANDIDATES:
-{options_str}
-Your task:
-1. Identify what real-world entity [{mention}] refers to in the TEXT above.
-2. Use the ENTITY TYPE to rule out candidates of the wrong type.
-3. Consider each candidate carefully : resolve abbreviations, acronyms, aliases, nicknames, and ambiguous surface forms using the surrounding context.
-4. Eliminate candidates that contradict information in the TEXT.
-5. Select the single best matching candidate.
-Please show your choice with only the candidate id, e.g., "answer: Q42".
-"""
+    return MCQ_PROMPT_TEMPLATE.format(
+        context_before=context_before,
+        mention=mention,
+        context_after=context_after,
+        entity_type=entity_type,
+        options_str=options_str,
+    )
 
 
 def extract_candidates_from_prompt(prompt: str) -> list[str]:
