@@ -1,0 +1,468 @@
+s,s_label,p,p_label,o,o_label
+Q7317792,Ocean Casino Resort,P131,located in,Q139564,Atlantic City
+Q7317792,Ocean Casino Resort,P17,country,Q30,United States
+Q184775,Ipswich,P17,country,Q145,United Kingdom
+Q15103254,Mortdecai,P495,country of origin,Q30,United States
+Q15103254,Mortdecai,P161,cast member,Q37175,Johnny Depp
+Q64436,Arc de Triomphe,P17,country,Q142,France
+Q569978,Caesars Palace,P17,country,Q30,United States
+Q1520,Astana,P131,located in,Q232,Kazakhstan
+Q1520,Astana,P17,country,Q232,Kazakhstan
+Q84072,Turks,P17,country,Q43,Turkey
+Q84072,Turks,P17,country,Q183,Germany
+Q84072,Turks,P17,country,Q30,United States
+Q84072,Turks,P17,country,Q142,France
+Q84072,Turks,P17,country,Q145,United Kingdom
+Q84072,Turks,P17,country,Q408,Australia
+Q84072,Turks,P17,country,Q31,Belgium
+Q84072,Turks,P17,country,Q16,Canada
+Q84072,Turks,P17,country,Q34,Sweden
+Q84072,Turks,P17,country,Q159,Russia
+Q84072,Turks,P17,country,Q232,Kazakhstan
+Q84072,Turks,P17,country,Q35,Denmark
+Q84072,Turks,P17,country,Q38,Italy
+Q84072,Turks,P17,country,Q212,Ukraine
+Q23685878,Shazam!,P495,country of origin,Q30,United States
+Q32141,Cathay Pacific,P17,country,Q148,People's Republic of China
+Q154008,Vogue,P495,country of origin,Q30,United States
+Q37175,Johnny Depp,P19,place of birth,Q30,United States
+Q37175,Johnny Depp,P27,nationality,Q30,United States
+Q18281265,DC Extended Universe,P495,country of origin,Q30,United States
+Q3304418,"Meghan, Duchess of Sussex",P19,place of birth,Q65,Los Angeles
+Q3304418,"Meghan, Duchess of Sussex",P27,nationality,Q30,United States
+Q168724,Emma Thompson,P19,place of birth,Q145,United Kingdom
+Q168724,Emma Thompson,P27,nationality,Q145,United Kingdom
+Q483118,Ben Affleck,P27,nationality,Q30,United States
+Q4400554,BBC News Russian,P361,part of,Q423289,BBC World Service
+Q4400554,BBC News Russian,P17,country,Q145,United Kingdom
+Q4400554,BBC News Russian,P17,country,Q159,Russia
+Q4723905,Alfresco,P495,country of origin,Q145,United Kingdom
+Q4723905,Alfresco,P161,cast member,Q296008,Robbie Coltrane
+Q4723905,Alfresco,P161,cast member,Q192912,Stephen Fry
+Q4723905,Alfresco,P161,cast member,Q49017,Hugh Laurie
+Q4723905,Alfresco,P161,cast member,Q168724,Emma Thompson
+Q208371,Lyndon B. Johnson Space Center,P131,located in,Q16555,Houston
+Q208371,Lyndon B. Johnson Space Center,P17,country,Q30,United States
+Q148,People's Republic of China,P361,part of,Q48,Asia
+Q148,People's Republic of China,P17,country,Q148,People's Republic of China
+Q96482598,FIFA 22,P495,country of origin,Q16,Canada
+Q1490,Tokyo,P131,located in,Q17,Japan
+Q1490,Tokyo,P17,country,Q17,Japan
+Q99,California,P131,located in,Q30,United States
+Q99,California,P17,country,Q30,United States
+Q35,Denmark,P361,part of,Q458,European Union
+Q4740856,Amazon Prime Video,P17,country,Q30,United States
+Q34660,Q34660,P27,nationality,Q145,United Kingdom
+Q4093,Glasgow,P17,country,Q145,United Kingdom
+Q4093,Glasgow,P17,country,Q145,United Kingdom
+Q492132,Don Juan DeMarco,P495,country of origin,Q30,United States
+Q492132,Don Juan DeMarco,P161,cast member,Q37175,Johnny Depp
+Q1160945,BBC News,P131,located in,Q84,London
+Q1160945,BBC News,P17,country,Q145,United Kingdom
+Q1160945,BBC News,P127,owned by,Q9531,British Broadcasting Corporation
+Q980,Bavaria,P131,located in,Q183,Germany
+Q980,Bavaria,P17,country,Q183,Germany
+Q842438,British,P27,nationality,Q145,United Kingdom
+Q229166,Amber Heard,P19,place of birth,Q30,United States
+Q229166,Amber Heard,P27,nationality,Q30,United States
+Q19675,Louvre Museum,P17,country,Q142,France
+Q1140115,Government of Russia,P17,country,Q159,Russia
+Q65043898,The Circle,P495,country of origin,Q30,United States
+Q483915,Nike,P17,country,Q30,United States
+Q19867977,Starlink,P495,country of origin,Q30,United States
+Q19867977,Starlink,P17,country,Q30,United States
+Q820035,NaTran,P17,country,Q142,France
+Q660894,What's Eating Gilbert Grape,P495,country of origin,Q30,United States
+Q660894,What's Eating Gilbert Grape,P161,cast member,Q37175,Johnny Depp
+Q660894,What's Eating Gilbert Grape,P161,cast member,Q38111,Leonardo DiCaprio
+Q76,Barack Obama,P27,nationality,Q30,United States
+Q6098459,Süleyman Soylu,P27,nationality,Q43,Turkey
+Q42759035,Joker,P495,country of origin,Q30,United States
+Q812,Florida,P131,located in,Q30,United States
+Q812,Florida,P17,country,Q30,United States
+Q186394,Fujitsu,P17,country,Q17,Japan
+Q380,Meta,P17,country,Q30,United States
+Q380,Meta,P127,owned by,Q36215,Mark Zuckerberg
+Q380,Meta,P127,owned by,Q36215,Mark Zuckerberg
+Q68580968,2021 United Nations Climate Change Conference,P17,country,Q145,United Kingdom
+Q7747,Vladimir Putin,P27,nationality,Q159,Russia
+Q232,Kazakhstan,P17,country,Q232,Kazakhstan
+Q49542,Russians,P17,country,Q159,Russia
+Q49542,Russians,P17,country,Q212,Ukraine
+Q49542,Russians,P17,country,Q232,Kazakhstan
+Q49542,Russians,P17,country,Q30,United States
+Q49542,Russians,P17,country,Q16,Canada
+Q7184,NATO,P17,country,Q31,Belgium
+Q192073,Little Miss Sunshine,P495,country of origin,Q30,United States
+Q192073,Little Miss Sunshine,P161,cast member,Q201418,Abigail Breslin
+Q313827,Government of the Federal Republic of Germany,P17,country,Q183,Germany
+Q1065,United Nations,P17,country,Q30,United States
+Q174097,Hogwarts,P17,country,Q145,United Kingdom
+Q21,England,P131,located in,Q145,United Kingdom
+Q21,England,P17,country,Q145,United Kingdom
+Q146833,West Norwood,P17,country,Q145,United Kingdom
+Q45068,Carl XVI Gustaf of Sweden,P27,nationality,Q34,Sweden
+Q28657013,Black Adam,P495,country of origin,Q30,United States
+Q28657013,Black Adam,P161,cast member,Q10738,Dwayne Johnson
+Q6035851,Turkish Hard Coal Institution,P17,country,Q43,Turkey
+Q62938826,Prince Archie of Sussex,P27,nationality,Q145,United Kingdom
+Q62938826,Prince Archie of Sussex,P27,nationality,Q30,United States
+Q2079,Leipzig,P17,country,Q183,Germany
+Q55456118,Fatih Dönmez,P27,nationality,Q43,Turkey
+Q177439,Rubeus Hagrid,P27,nationality,Q145,United Kingdom
+Q1141790,Crown Prosecution Service,P17,country,Q145,United Kingdom
+Q24639,Vancouver,P17,country,Q16,Canada
+Q97,Atlantic Ocean,P361,part of,Q2,Earth
+Q36215,Mark Zuckerberg,P27,nationality,Q30,United States
+Q30611798,Robert Hines,P27,nationality,Q30,United States
+Q29583237,Guangdong-Hong Kong-Macao Greater Bay Area,P131,located in,Q8646,Hong Kong
+Q29583237,Guangdong-Hong Kong-Macao Greater Bay Area,P17,country,Q148,People's Republic of China
+Q46227987,Eduard Heger,P19,place of birth,Q1780,Bratislava
+Q46227987,Eduard Heger,P27,nationality,Q214,Slovakia
+Q43274,Charles III,P27,nationality,Q145,United Kingdom
+Q2630118,TMZ,P131,located in,Q65,Los Angeles
+Q2630118,TMZ,P17,country,Q30,United States
+Q193701,SpaceX,P17,country,Q30,United States
+Q193701,SpaceX,P127,owned by,Q317521,Elon Musk
+Q42262,European Space Agency,P17,country,Q142,France
+Q22686,Donald Trump,P19,place of birth,Q60,New York City
+Q22686,Donald Trump,P27,nationality,Q30,United States
+Q110207138,Harry Potter 20th Anniversary: Return to Hogwarts,P495,country of origin,Q145,United Kingdom
+Q110207138,Harry Potter 20th Anniversary: Return to Hogwarts,P495,country of origin,Q30,United States
+Q110207138,Harry Potter 20th Anniversary: Return to Hogwarts,P161,cast member,Q34660,Q34660
+Q110207138,Harry Potter 20th Anniversary: Return to Hogwarts,P161,cast member,Q296008,Robbie Coltrane
+Q110207138,Harry Potter 20th Anniversary: Return to Hogwarts,P161,cast member,Q192912,Stephen Fry
+Q62604229,Marvel Cinematic Universe Phase Four,P361,part of,Q642878,Marvel Cinematic Universe
+Q62604229,Marvel Cinematic Universe Phase Four,P495,country of origin,Q30,United States
+Q8646,Hong Kong,P361,part of,Q148,People's Republic of China
+Q8646,Hong Kong,P131,located in,Q148,People's Republic of China
+Q8646,Hong Kong,P17,country,Q148,People's Republic of China
+Q3197699,Kjell Lindgren,P27,nationality,Q30,United States
+Q907311,Netflix,P495,country of origin,Q30,United States
+Q907311,Netflix,P17,country,Q30,United States
+Q237,Vatican City,P17,country,Q237,Vatican City
+Q237,Vatican City,P127,owned by,Q159583,Holy See
+Q936105,Armed Forces of Ukraine,P131,located in,Q1899,Kyiv
+Q936105,Armed Forces of Ukraine,P17,country,Q212,Ukraine
+Q23215,Adele,P27,nationality,Q145,United Kingdom
+Q23768,Las Vegas,P17,country,Q30,United States
+Q43,Turkey,P17,country,Q43,Turkey
+Q6519284,Leicestershire and Rutland Wildlife Trust,P17,country,Q145,United Kingdom
+Q107287943,British Post Office scandal,P17,country,Q145,United Kingdom
+Q98273204,Kate Nicholl,P27,nationality,Q145,United Kingdom
+Q217182,Edward Scissorhands,P495,country of origin,Q30,United States
+Q217182,Edward Scissorhands,P161,cast member,Q37175,Johnny Depp
+Q217182,Edward Scissorhands,P161,cast member,Q101797,Winona Ryder
+Q48821,Kennedy Space Center,P17,country,Q30,United States
+Q186304,Kim Kardashian,P19,place of birth,Q65,Los Angeles
+Q186304,Kim Kardashian,P27,nationality,Q30,United States
+Q1117001,Great Wall Motor,P17,country,Q148,People's Republic of China
+Q1137831,Parenthood,P495,country of origin,Q30,United States
+Q22998395,Aquaman,P495,country of origin,Q30,United States
+Q22998395,Aquaman,P161,cast member,Q229166,Amber Heard
+Q171336,Slovaks,P495,country of origin,Q214,Slovakia
+Q61117344,The Batman,P495,country of origin,Q30,United States
+Q17,Japan,P17,country,Q17,Japan
+Q20501835,Justice League,P495,country of origin,Q30,United States
+Q20501835,Justice League,P161,cast member,Q483118,Ben Affleck
+Q20501835,Justice League,P161,cast member,Q229166,Amber Heard
+Q4824416,Australian Medical Association,P17,country,Q408,Australia
+Q1546,Iowa,P131,located in,Q30,United States
+Q1546,Iowa,P17,country,Q30,United States
+Q3910,"Albert II, Prince of Monaco",P27,nationality,Q235,Monaco
+Q3910,"Albert II, Prince of Monaco",P27,nationality,Q30,United States
+Q152208,Gisele Bündchen,P19,place of birth,Q155,Brazil
+Q152208,Gisele Bündchen,P27,nationality,Q155,Brazil
+Q9531,British Broadcasting Corporation,P17,country,Q145,United Kingdom
+Q61053,Olaf Scholz,P27,nationality,Q183,Germany
+Q1227,Nevada,P131,located in,Q30,United States
+Q1227,Nevada,P17,country,Q30,United States
+Q31,Belgium,P17,country,Q31,Belgium
+Q153330,Andrew Mountbatten-Windsor,P27,nationality,Q145,United Kingdom
+Q608533,Jay Carney,P19,place of birth,Q61,"Washington, D.C."
+Q608533,Jay Carney,P27,nationality,Q30,United States
+Q1471,Seine,P131,located in,Q1173,Burgundy
+Q1471,Seine,P131,located in,Q90,Paris
+Q1471,Seine,P17,country,Q142,France
+Q47447,Ed Sheeran,P27,nationality,Q145,United Kingdom
+Q201418,Abigail Breslin,P19,place of birth,Q60,New York City
+Q201418,Abigail Breslin,P27,nationality,Q30,United States
+Q743162,Tucker Carlson,P27,nationality,Q30,United States
+Q567,Angela Merkel,P27,nationality,Q183,Germany
+Q622769,Man of Steel,P495,country of origin,Q30,United States
+Q622769,Man of Steel,P495,country of origin,Q145,United Kingdom
+Q6279,Joe Biden,P27,nationality,Q30,United States
+Q272201,Liz Truss,P19,place of birth,Q34217,Oxford
+Q272201,Liz Truss,P27,nationality,Q145,United Kingdom
+Q40715,Jennifer Lopez,P27,nationality,Q30,United States
+Q9960,Ronald Reagan,P27,nationality,Q30,United States
+Q10384115,Transcendence,P495,country of origin,Q30,United States
+Q10384115,Transcendence,P161,cast member,Q37175,Johnny Depp
+Q10384115,Transcendence,P161,cast member,Q317521,Elon Musk
+Q450675,Pope Francis,P27,nationality,Q237,Vatican City
+Q209330,Q209330,P17,country,Q30,United States
+Q209330,Q209330,P127,owned by,Q380,Meta
+Q641,Venice,P17,country,Q38,Italy
+Q641,Venice,P17,country,Q142,France
+Q152239,Queen Camilla,P19,place of birth,Q84,London
+Q152239,Queen Camilla,P27,nationality,Q145,United Kingdom
+Q11208,The Pentagon,P17,country,Q30,United States
+Q9592,Catholic Church,P17,country,Q237,Vatican City
+Q7201486,Plant Oxford,P17,country,Q145,United Kingdom
+Q145,United Kingdom,P361,part of,Q458,European Union
+Q145,United Kingdom,P361,part of,Q46,Europe
+Q145,United Kingdom,P17,country,Q145,United Kingdom
+Q216930,Harry Potter,P495,country of origin,Q145,United Kingdom
+Q216930,Harry Potter,P495,country of origin,Q30,United States
+Q10390,John McCain,P27,nationality,Q30,United States
+Q15935,Kanye West,P27,nationality,Q30,United States
+Q101089777,Peacemaker,P495,country of origin,Q30,United States
+Q30202712,Jessica Watkins,P27,nationality,Q30,United States
+Q822190,Rutland Water,P17,country,Q145,United Kingdom
+Q16568,Jacksonville,P17,country,Q30,United States
+Q23505,George H. W. Bush,P27,nationality,Q30,United States
+Q1507987,New York,P495,country of origin,Q30,United States
+Q1507987,New York,P17,country,Q30,United States
+Q166,Black Sea,P17,country,Q159,Russia
+Q166,Black Sea,P17,country,Q212,Ukraine
+Q166,Black Sea,P17,country,Q43,Turkey
+Q29,Spain,P17,country,Q29,Spain
+Q240,Brussels-Capital Region,P131,located in,Q31,Belgium
+Q240,Brussels-Capital Region,P17,country,Q31,Belgium
+Q7835,Crimea,P17,country,Q212,Ukraine
+Q7835,Crimea,P17,country,Q159,Russia
+Q102139,Margrethe II of Denmark,P19,place of birth,Q1748,Copenhagen
+Q556933,A Christmas Story,P495,country of origin,Q30,United States
+Q556933,A Christmas Story,P495,country of origin,Q16,Canada
+Q113857620,coronation of Charles III and Camilla,P17,country,Q145,United Kingdom
+Q866,Q866,P17,country,Q30,United States
+Q212531,Kate Moss,P19,place of birth,Q84,London
+Q212531,Kate Moss,P27,nationality,Q145,United Kingdom
+Q355,Q355,P495,country of origin,Q30,United States
+Q355,Q355,P127,owned by,Q380,Meta
+Q15164,Government of Hong Kong,P17,country,Q148,People's Republic of China
+Q9682,Elizabeth II,P27,nationality,Q145,United Kingdom
+Q2446003,Paris Fashion Week,P131,located in,Q90,Paris
+Q2446003,Paris Fashion Week,P17,country,Q142,France
+Q1515039,WME Group,P17,country,Q30,United States
+Q918,X,P17,country,Q30,United States
+Q918,X,P127,owned by,Q317521,Elon Musk
+Q22101752,Adidas Yeezy,P17,country,Q30,United States
+Q101797,Winona Ryder,P27,nationality,Q30,United States
+Q54958752,Disney+,P17,country,Q30,United States
+Q40469,Associated Press,P17,country,Q30,United States
+Q11299,Manhattan,P131,located in,Q60,New York City
+Q11299,Manhattan,P17,country,Q30,United States
+Q49214,Dan Quayle,P27,nationality,Q30,United States
+Q1783168,Post Office Limited,P17,country,Q145,United Kingdom
+Q26273268,Zuzana Čaputová,P19,place of birth,Q1780,Bratislava
+Q26273268,Zuzana Čaputová,P27,nationality,Q214,Slovakia
+Q16,Canada,P361,part of,Q49,North America
+Q16,Canada,P17,country,Q16,Canada
+Q25351425,Ben Thompson,P27,nationality,Q30,United States
+Q1482392,Cracker,P495,country of origin,Q145,United Kingdom
+Q1482392,Cracker,P161,cast member,Q296008,Robbie Coltrane
+Q478214,Tesla,P495,country of origin,Q30,United States
+Q478214,Tesla,P17,country,Q30,United States
+Q478214,Tesla,P127,owned by,Q317521,Elon Musk
+Q478214,Tesla,P127,owned by,Q317521,Elon Musk
+Q478214,Tesla,P127,owned by,Q317521,Elon Musk
+Q194318,Pirates of the Caribbean,P495,country of origin,Q30,United States
+Q194318,Pirates of the Caribbean,P161,cast member,Q37175,Johnny Depp
+Q3402475,Press Association,P17,country,Q145,United Kingdom
+Q865,Taiwan,P17,country,Q865,Taiwan
+Q20502242,Wonder Woman,P495,country of origin,Q30,United States
+Q88306935,"Tiger King: Murder, Mayhem and Madness",P495,country of origin,Q30,United States
+Q23781155,Avengers: Endgame,P495,country of origin,Q30,United States
+Q1334971,Office for National Statistics,P17,country,Q145,United Kingdom
+Q408,Australia,P17,country,Q408,Australia
+Q235,Monaco,P17,country,Q235,Monaco
+Q236448,Dragon,P495,country of origin,Q30,United States
+Q10738,Dwayne Johnson,P19,place of birth,Q99,California
+Q10738,Dwayne Johnson,P27,nationality,Q16,Canada
+Q10738,Dwayne Johnson,P27,nationality,Q30,United States
+Q3626950,Zayn Malik,P27,nationality,Q145,United Kingdom
+Q192912,Stephen Fry,P27,nationality,Q145,United Kingdom
+Q214,Slovakia,P17,country,Q214,Slovakia
+Q18656,Manchester United F.C.,P17,country,Q145,United Kingdom
+Q23548,National Aeronautics and Space Administration,P17,country,Q30,United States
+Q19089,GoldenEye,P495,country of origin,Q145,United Kingdom
+Q19089,GoldenEye,P495,country of origin,Q30,United States
+Q19089,GoldenEye,P161,cast member,Q296008,Robbie Coltrane
+Q249091,Falcon 9,P495,country of origin,Q30,United States
+Q249091,Falcon 9,P17,country,Q30,United States
+Q616587,Framlingham,P17,country,Q145,United Kingdom
+Q358437,Bill Nelson,P27,nationality,Q30,United States
+Q9626,Conservative Party,P17,country,Q145,United Kingdom
+Q65247257,Cornhill,P17,country,Q145,United Kingdom
+Q204226,Dijon mustard,P495,country of origin,Q142,France
+Q152316,"Prince Harry, Duke of Sussex",P27,nationality,Q145,United Kingdom
+Q16555,Houston,P17,country,Q30,United States
+Q61,"Washington, D.C.",P17,country,Q30,United States
+Q44578,Titanic,P495,country of origin,Q30,United States
+Q44578,Titanic,P161,cast member,Q38111,Leonardo DiCaprio
+Q106364794,White Lives Matter,P495,country of origin,Q30,United States
+Q750204,Kwasi Kwarteng,P27,nationality,Q145,United Kingdom
+Q16843706,Gigi Hadid,P19,place of birth,Q65,Los Angeles
+Q16843706,Gigi Hadid,P27,nationality,Q30,United States
+Q62408,Palace of Westminster,P17,country,Q145,United Kingdom
+Q155004,Philippe of Belgium,P27,nationality,Q31,Belgium
+Q334,Singapore,P17,country,Q334,Singapore
+Q27436,Cadillac,P495,country of origin,Q30,United States
+Q27436,Cadillac,P17,country,Q30,United States
+Q8337,Harry Potter,P495,country of origin,Q145,United Kingdom
+Q31197934,DC Studios,P17,country,Q30,United States
+Q161652,Japanese people,P17,country,Q17,Japan
+Q131478,Der Spiegel,P495,country of origin,Q183,Germany
+Q131478,Der Spiegel,P17,country,Q183,Germany
+Q16706784,Andrii Melnyk,P27,nationality,Q212,Ukraine
+Q7279976,Radar Online,P17,country,Q30,United States
+Q5600651,Greater Manchester Police,P17,country,Q145,United Kingdom
+Q37278,John Paul I,P19,place of birth,Q40219,Canale d'Agordo
+Q37278,John Paul I,P27,nationality,Q38,Italy
+Q37278,John Paul I,P27,nationality,Q237,Vatican City
+Q1393,Delaware,P131,located in,Q30,United States
+Q1393,Delaware,P17,country,Q30,United States
+Q5318615,Dyfi Osprey Project,P17,country,Q145,United Kingdom
+Q159,Russia,P17,country,Q159,Russia
+Q110778161,SKIMS,P17,country,Q30,United States
+Q110778161,SKIMS,P127,owned by,Q186304,Kim Kardashian
+Q380675,cinema of the United States,P17,country,Q30,United States
+Q243,Eiffel Tower,P17,country,Q142,France
+Q1610138,Herlinde Koelbl,P27,nationality,Q183,Germany
+Q83287,Selena Gomez,P27,nationality,Q30,United States
+Q38111,Leonardo DiCaprio,P19,place of birth,Q65,Los Angeles
+Q38111,Leonardo DiCaprio,P27,nationality,Q30,United States
+Q455458,Amasra,P131,located in,Q83342,Bartın Province
+Q455458,Amasra,P17,country,Q43,Turkey
+Q213,Czech Republic,P17,country,Q213,Czech Republic
+Q1630304,Hulu,P17,country,Q30,United States
+Q46,Europe,P361,part of,Q2,Earth
+Q96758292,Paul Kelly,P27,nationality,Q408,Australia
+Q61503,The Hollywood Reporter,P495,country of origin,Q30,United States
+Q61503,The Hollywood Reporter,P17,country,Q30,United States
+Q159661,British Academy of Film and Television Arts,P17,country,Q145,United Kingdom
+Q57665,Q57665,P27,nationality,Q20,Norway
+Q613729,Cabinet of Ministers of Ukraine,P17,country,Q212,Ukraine
+Q48938223,TikTok,P17,country,Q148,People's Republic of China
+Q170972,Socialist Party,P17,country,Q142,France
+Q102239380,SpaceX Crew-4,P17,country,Q30,United States
+Q1780,Bratislava,P131,located in,Q214,Slovakia
+Q1780,Bratislava,P17,country,Q214,Slovakia
+Q188856,Panthéon,P17,country,Q142,France
+Q23111,Suffolk,P131,located in,Q21,England
+Q23111,Suffolk,P17,country,Q145,United Kingdom
+Q25271,International Space Station,P131,located in,Q30,United States
+Q25271,International Space Station,P131,located in,Q159,Russia
+Q25271,International Space Station,P131,located in,Q17,Japan
+Q25271,International Space Station,P131,located in,Q16,Canada
+Q25271,International Space Station,P131,located in,Q46,Europe
+Q65,Los Angeles,P17,country,Q30,United States
+Q113846055,death of Elizabeth II,P17,country,Q145,United Kingdom
+Q142,France,P17,country,Q142,France
+Q7003,Dijon,P17,country,Q142,France
+Q41254,Grammy Awards,P131,located in,Q65,Los Angeles
+Q41254,Grammy Awards,P131,located in,Q65,Los Angeles
+Q41254,Grammy Awards,P131,located in,Q60,New York City
+Q41254,Grammy Awards,P131,located in,Q60,New York City
+Q41254,Grammy Awards,P17,country,Q30,United States
+Q42646,Windsor Castle,P17,country,Q145,United Kingdom
+Q83342,Bartın Province,P131,located in,Q43,Turkey
+Q83342,Bartın Province,P17,country,Q43,Turkey
+Q183,Germany,P17,country,Q183,Germany
+Q5944264,Hunter Biden,P27,nationality,Q30,United States
+Q209151,Folketing,P17,country,Q35,Denmark
+Q38,Italy,P17,country,Q38,Italy
+Q107675912,The Munsters,P495,country of origin,Q30,United States
+Q107675912,The Munsters,P57,director,Q298255,Rob Zombie
+Q79784,Q79784,P495,country of origin,Q30,United States
+Q121842,French,P17,country,Q142,France
+Q12418,Mona Lisa,P131,located in,Q90,Paris
+Q12418,Mona Lisa,P17,country,Q142,France
+Q48,Asia,P361,part of,Q2,Earth
+Q71719,Hollywood Walk of Fame,P131,located in,Q65,Los Angeles
+Q71719,Hollywood Walk of Fame,P17,country,Q30,United States
+Q359480,Fumio Kishida,P27,nationality,Q17,Japan
+Q26678,BMW,P17,country,Q183,Germany
+Q159583,Holy See,P17,country,Q237,Vatican City
+Q49017,Hugh Laurie,P19,place of birth,Q34217,Oxford
+Q49017,Hugh Laurie,P27,nationality,Q145,United Kingdom
+Q208615,Queen Mary of Denmark,P27,nationality,Q408,Australia
+Q208615,Queen Mary of Denmark,P27,nationality,Q145,United Kingdom
+Q90,Paris,P17,country,Q142,France
+Q90,Paris,P17,country,Q142,France
+Q57317060,The Suicide Squad,P495,country of origin,Q30,United States
+Q106188426,Dahmer – Monster: The Jeffrey Dahmer Story,P495,country of origin,Q30,United States
+Q22304,Obergailbach,P17,country,Q142,France
+Q193159,Russian Armed Forces,P17,country,Q159,Russia
+Q139564,Atlantic City,P17,country,Q30,United States
+Q40219,Canale d'Agordo,P17,country,Q38,Italy
+Q7115277,Oxford City Council,P17,country,Q145,United Kingdom
+Q18953,Peter DeLuise,P19,place of birth,Q60,New York City
+Q18953,Peter DeLuise,P27,nationality,Q30,United States
+Q13124930,Soma,P17,country,Q43,Turkey
+Q296008,Robbie Coltrane,P19,place of birth,Q145,United Kingdom
+Q296008,Robbie Coltrane,P27,nationality,Q145,United Kingdom
+Q212145,The World Is Not Enough,P495,country of origin,Q145,United Kingdom
+Q212145,The World Is Not Enough,P495,country of origin,Q30,United States
+Q212145,The World Is Not Enough,P161,cast member,Q296008,Robbie Coltrane
+Q34217,Oxford,P17,country,Q145,United Kingdom
+Q1412797,Fredensborg Palace,P17,country,Q35,Denmark
+Q298255,Rob Zombie,P27,nationality,Q30,United States
+Q30,United States,P361,part of,Q49,North America
+Q30,United States,P17,country,Q30,United States
+Q643049,family of Barack Obama,P17,country,Q30,United States
+Q84,London,P131,located in,Q21,England
+Q84,London,P17,country,Q145,United Kingdom
+Q60,New York City,P17,country,Q30,United States
+Q212,Ukraine,P17,country,Q212,Ukraine
+Q96,Mexico,P17,country,Q96,Mexico
+Q3330940,House of Cards,P495,country of origin,Q30,United States
+Q173941,Electronic Arts,P495,country of origin,Q30,United States
+Q173941,Electronic Arts,P17,country,Q30,United States
+Q208875,The Sun,P495,country of origin,Q145,United Kingdom
+Q208875,The Sun,P17,country,Q145,United Kingdom
+Q110999040,full-scale Russo-Ukrainian war,P17,country,Q212,Ukraine
+Q110999040,full-scale Russo-Ukrainian war,P17,country,Q159,Russia
+Q379039,Samantha Cristoforetti,P361,part of,Q42262,European Space Agency
+Q379039,Samantha Cristoforetti,P27,nationality,Q142,France
+Q379039,Samantha Cristoforetti,P27,nationality,Q38,Italy
+Q8889,European Parliament,P17,country,Q458,European Union
+Q3052772,Emmanuel Macron,P27,nationality,Q142,France
+Q2851133,Anne Hidalgo,P19,place of birth,Q90,Paris
+Q2851133,Anne Hidalgo,P27,nationality,Q142,France
+Q2851133,Anne Hidalgo,P27,nationality,Q29,Spain
+Q2851133,Anne Hidalgo,P27,nationality,Q29,Spain
+Q189960,Westminster,P17,country,Q145,United Kingdom
+Q1173,Burgundy,P17,country,Q142,France
+Q211374,New York Post,P495,country of origin,Q30,United States
+Q211374,New York Post,P131,located in,Q60,New York City
+Q211374,New York Post,P17,country,Q30,United States
+Q39259,Recep Tayyip Erdoğan,P27,nationality,Q43,Turkey
+Q155,Brazil,P17,country,Q155,Brazil
+Q971468,Serendipity,P495,country of origin,Q30,United States
+Q12512,St. Peter's Basilica,P131,located in,Q237,Vatican City
+Q12512,St. Peter's Basilica,P17,country,Q237,Vatican City
+Q824359,Harmony,P361,part of,Q25271,International Space Station
+Q824359,Harmony,P495,country of origin,Q38,Italy
+Q83425,Saint Peter's Square,P131,located in,Q237,Vatican City
+Q83425,Saint Peter's Square,P17,country,Q237,Vatican City
+Q104891260,The Gray Man,P495,country of origin,Q30,United States
+Q1748,Copenhagen,P17,country,Q35,Denmark
+Q317521,Elon Musk,P27,nationality,Q16,Canada
+Q317521,Elon Musk,P27,nationality,Q30,United States
+Q42369,Cannes Film Festival,P17,country,Q142,France
+Q5933,Westminster Abbey,P17,country,Q145,United Kingdom
+Q642878,Marvel Cinematic Universe,P495,country of origin,Q30,United States
+Q20,Norway,P17,country,Q20,Norway
+Q816295,Belvoir Castle,P17,country,Q145,United Kingdom
+Q35525,White House,P131,located in,Q61,"Washington, D.C."
+Q35525,White House,P17,country,Q30,United States
+Q61986758,Mason Greenwood,P27,nationality,Q145,United Kingdom
+Q423289,BBC World Service,P17,country,Q145,United Kingdom
+Q423289,BBC World Service,P127,owned by,Q9531,British Broadcasting Corporation
+Q1899,Kyiv,P131,located in,Q212,Ukraine
+Q1899,Kyiv,P17,country,Q212,Ukraine
+Q64159898,Michal Šimečka,P19,place of birth,Q1780,Bratislava
+Q64159898,Michal Šimečka,P27,nationality,Q214,Slovakia
+Q64495543,Michael Fedorov,P27,nationality,Q212,Ukraine

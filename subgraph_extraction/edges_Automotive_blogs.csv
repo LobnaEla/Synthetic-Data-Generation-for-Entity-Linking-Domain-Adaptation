@@ -1,0 +1,123 @@
+s,s_label,p,p_label,o,o_label
+Q741857,Alpine A110,P495,country of origin,Q142,France
+Q247150,Russell Brookes,P27,nationality,Q145,United Kingdom
+Q1655474,Ian Callum,P27,nationality,Q145,United Kingdom
+Q224,Croatia,P17,country,Q224,Croatia
+Q21534241,No Time to Die,P495,country of origin,Q145,United Kingdom
+Q1470929,YouGov,P17,country,Q145,United Kingdom
+Q584108,South Downs,P17,country,Q145,United Kingdom
+Q504644,Ford Escort,P495,country of origin,Q145,United Kingdom
+Q7552564,Society of Motor Manufacturers and Traders,P17,country,Q145,United Kingdom
+Q219135,Eon Productions,P17,country,Q145,United Kingdom
+Q15678788,Fiat Chrysler Automobiles,P17,country,Q55,Netherlands
+Q148,People's Republic of China,P17,country,Q148,People's Republic of China
+Q1752488,Torridge,P17,country,Q145,United Kingdom
+Q40,Austria,P17,country,Q40,Austria
+Q215293,Volvo Cars,P495,country of origin,Q34,Sweden
+Q215293,Volvo Cars,P17,country,Q34,Sweden
+Q3784767,British Rally Championship,P17,country,Q145,United Kingdom
+Q2213391,Croydon,P17,country,Q145,United Kingdom
+Q151048,London Borough of Barnet,P131,located in,Q23306,Greater London
+Q151048,London Borough of Barnet,P17,country,Q145,United Kingdom
+Q7993544,Which?,P495,country of origin,Q145,United Kingdom
+Q7993544,Which?,P17,country,Q145,United Kingdom
+Q985,Baden-Württemberg,P131,located in,Q183,Germany
+Q985,Baden-Württemberg,P17,country,Q183,Germany
+Q7275076,RAC Limited,P17,country,Q145,United Kingdom
+Q22,Scotland,P131,located in,Q145,United Kingdom
+Q22,Scotland,P17,country,Q145,United Kingdom
+Q213560,London Borough of Haringey,P131,located in,Q23306,Greater London
+Q213560,London Borough of Haringey,P17,country,Q145,United Kingdom
+Q731711,Eurotunnel Shuttle,P17,country,Q142,France
+Q731711,Eurotunnel Shuttle,P17,country,Q145,United Kingdom
+Q699709,Volkswagen Commercial Vehicles,P17,country,Q183,Germany
+Q23306,Greater London,P17,country,Q145,United Kingdom
+Q403,Serbia,P17,country,Q403,Serbia
+Q27586,Ferrari,P17,country,Q38,Italy
+Q26921,Alfa Romeo,P17,country,Q38,Italy
+Q75316708,Richard Ingrams,P27,nationality,Q145,United Kingdom
+Q6039831,Institute of Advanced Motorists,P17,country,Q145,United Kingdom
+Q542860,Fearne Cotton,P27,nationality,Q145,United Kingdom
+Q17,Japan,P17,country,Q17,Japan
+Q23156,Devon,P17,country,Q145,United Kingdom
+Q26944,Alpine,P495,country of origin,Q142,France
+Q26944,Alpine,P17,country,Q142,France
+Q31,Belgium,P17,country,Q31,Belgium
+Q23229,Buckinghamshire,P17,country,Q145,United Kingdom
+Q884,South Korea,P17,country,Q884,South Korea
+Q32,Luxembourg,P17,country,Q32,Luxembourg
+Q275623,Groupe PSA,P17,country,Q142,France
+Q272201,Liz Truss,P27,nationality,Q145,United Kingdom
+Q125163,Islington,P17,country,Q145,United Kingdom
+Q18011762,Bridgestone,P17,country,Q17,Japan
+Q145,United Kingdom,P361,part of,Q458,European Union
+Q145,United Kingdom,P361,part of,Q46,Europe
+Q145,United Kingdom,P17,country,Q145,United Kingdom
+Q83065,Leicester,P17,country,Q145,United Kingdom
+Q89575318,GRIDSERVE,P17,country,Q145,United Kingdom
+Q59187,Vauxhall,P17,country,Q145,United Kingdom
+Q42084,Namyangju,P17,country,Q884,South Korea
+Q9584,Honda,P17,country,Q17,Japan
+Q48038,West Midlands,P17,country,Q145,United Kingdom
+Q37718,Musselburgh,P17,country,Q145,United Kingdom
+Q503176,Christie's,P17,country,Q145,United Kingdom
+Q23346,Sussex,P17,country,Q145,United Kingdom
+Q727520,Dalkeith,P17,country,Q145,United Kingdom
+Q908027,Q908027,P495,country of origin,Q145,United Kingdom
+Q1018540,Leith,P17,country,Q145,United Kingdom
+Q40608,London Borough of Waltham Forest,P131,located in,Q23306,Greater London
+Q40608,London Borough of Waltham Forest,P17,country,Q145,United Kingdom
+Q39,Switzerland,P17,country,Q39,Switzerland
+Q1012054,North Berwick,P17,country,Q145,United Kingdom
+Q42717773,Ionity,P17,country,Q183,Germany
+Q5760006,National Highways,P17,country,Q145,United Kingdom
+Q5760006,National Highways,P127,owned by,Q6063,Government of the United Kingdom
+Q30002,Chengdu,P17,country,Q148,People's Republic of China
+Q23436,Edinburgh,P131,located in,Q22,Scotland
+Q23436,Edinburgh,P17,country,Q145,United Kingdom
+Q28,Hungary,P17,country,Q28,Hungary
+Q33881,Tour de France,P17,country,Q142,France
+Q4970966,British Red Cross,P17,country,Q145,United Kingdom
+Q5602560,Green Flag,P17,country,Q145,United Kingdom
+Q6063,Government of the United Kingdom,P17,country,Q145,United Kingdom
+Q3349672,Ofgem,P131,located in,Q84,London
+Q3349672,Ofgem,P17,country,Q145,United Kingdom
+Q6746,Citroën,P17,country,Q142,France
+Q6742,Peugeot,P17,country,Q142,France
+Q347,Liechtenstein,P17,country,Q347,Liechtenstein
+Q14948853,Piershill,P17,country,Q145,United Kingdom
+Q458051,M6 Toll,P17,country,Q145,United Kingdom
+Q35349,Kia,P17,country,Q884,South Korea
+Q215,Slovenia,P17,country,Q215,Slovenia
+Q1935482,Mille Miglia,P17,country,Q38,Italy
+Q35907,Land Rover,P17,country,Q145,United Kingdom
+Q1016925,Galashiels,P17,country,Q145,United Kingdom
+Q142,France,P17,country,Q142,France
+Q6988658,Neil Gregory,P27,nationality,Q145,United Kingdom
+Q30055,Jaguar Cars,P495,country of origin,Q145,United Kingdom
+Q30055,Jaguar Cars,P17,country,Q145,United Kingdom
+Q911323,Nissan Leaf,P495,country of origin,Q17,Japan
+Q397343,Solihull,P17,country,Q145,United Kingdom
+Q183,Germany,P17,country,Q183,Germany
+Q1410475,Fiat 2300,P17,country,Q38,Italy
+Q38,Italy,P17,country,Q38,Italy
+Q207201,London Borough of Brent,P131,located in,Q23306,Greater London
+Q207201,London Borough of Brent,P17,country,Q145,United Kingdom
+Q26678,BMW,P17,country,Q183,Germany
+Q4047174,Polestar,P17,country,Q34,Sweden
+Q4047174,Polestar,P127,owned by,Q215293,Volvo Cars
+Q201291,Q201291,P27,nationality,Q145,United Kingdom
+Q225,Bosnia and Herzegovina,P17,country,Q225,Bosnia and Herzegovina
+Q7991010,What Car?,P495,country of origin,Q145,United Kingdom
+Q45,Portugal,P17,country,Q45,Portugal
+Q84,London,P131,located in,Q23306,Greater London
+Q84,London,P17,country,Q145,United Kingdom
+Q27597,Fiat,P17,country,Q38,Italy
+Q20165,Nissan,P17,country,Q17,Japan
+Q7275074,RAC Foundation,P17,country,Q145,United Kingdom
+Q1011336,Tranent,P17,country,Q145,United Kingdom
+Q7856783,Tusk Trust,P17,country,Q145,United Kingdom
+Q1785352,The Automobile Association,P17,country,Q145,United Kingdom
+Q3302845,Maxus,P17,country,Q148,People's Republic of China
+Q22890,Ireland,P17,country,Q145,United Kingdom
+Q2009573,James Bond,P27,nationality,Q145,United Kingdom

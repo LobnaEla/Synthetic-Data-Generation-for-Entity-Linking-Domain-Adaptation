@@ -1,0 +1,217 @@
+s,s_label,p,p_label,o,o_label
+Q463165,Sault Ste. Marie,P17,country,Q16,Canada
+Q3392121,Playland,P131,located in,Q24639,Vancouver
+Q3392121,Playland,P17,country,Q16,Canada
+Q262457,Métis,P17,country,Q16,Canada
+Q262457,Métis,P17,country,Q30,United States
+Q1321,Spanish,P17,country,Q30,United States
+Q99,California,P131,located in,Q30,United States
+Q99,California,P17,country,Q30,United States
+Q1318423,Australians,P27,nationality,Q408,Australia
+Q1318423,Australians,P131,located in,Q408,Australia
+Q1318423,Australians,P17,country,Q408,Australia
+Q80689,Q80689,P361,part of,Q11255,Q11255
+Q1391,Maryland,P131,located in,Q30,United States
+Q1391,Maryland,P17,country,Q30,United States
+Q483915,Nike,P17,country,Q30,United States
+Q1261,Colorado,P131,located in,Q30,United States
+Q1261,Colorado,P17,country,Q30,United States
+Q1415,Indiana,P131,located in,Q30,United States
+Q1415,Indiana,P17,country,Q30,United States
+Q1815011,Pacific Gas and Electric Company,P17,country,Q30,United States
+Q1567534,Q1567534,P131,located in,Q172,Toronto
+Q1567534,Q1567534,P17,country,Q16,Canada
+Q1567534,Q1567534,P127,owned by,Q1141173,Marriott International
+Q779,Connecticut,P131,located in,Q30,United States
+Q779,Connecticut,P17,country,Q30,United States
+Q812,Florida,P131,located in,Q30,United States
+Q812,Florida,P17,country,Q30,United States
+Q319515,Converse,P17,country,Q30,United States
+Q319515,Converse,P127,owned by,Q483915,Nike
+Q1454,North Carolina,P131,located in,Q30,United States
+Q1454,North Carolina,P17,country,Q30,United States
+Q1480046,Northern Expressway,P17,country,Q408,Australia
+Q7880076,Ulta Beauty,P17,country,Q30,United States
+Q771,Massachusetts,P131,located in,Q30,United States
+Q771,Massachusetts,P17,country,Q30,United States
+Q108503,Stanislaus County,P131,located in,Q99,California
+Q108503,Stanislaus County,P17,country,Q30,United States
+Q24639,Vancouver,P131,located in,Q1973,British Columbia
+Q24639,Vancouver,P17,country,Q16,Canada
+Q1904,Ontario,P131,located in,Q16,Canada
+Q1904,Ontario,P17,country,Q16,Canada
+Q34116,Thunder Bay,P17,country,Q16,Canada
+Q593039,Seal Beach,P131,located in,Q5925,Orange County
+Q593039,Seal Beach,P17,country,Q30,United States
+Q4892578,Bermondsey,P131,located in,Q172,Toronto
+Q4892578,Bermondsey,P17,country,Q16,Canada
+Q1223,Washington,P131,located in,Q30,United States
+Q1223,Washington,P17,country,Q30,United States
+Q6413389,Kingsport,P17,country,Q16,Canada
+Q62446736,Apple TV,P17,country,Q30,United States
+Q62446736,Apple TV,P127,owned by,Q312,Apple Inc.
+Q213660,LinkedIn,P17,country,Q30,United States
+Q76034,Canadian Shield,P17,country,Q16,Canada
+Q76034,Canadian Shield,P17,country,Q30,United States
+Q109858,Fifth Avenue,P17,country,Q30,United States
+Q2887535,Minas Basin,P361,part of,Q181857,Bay of Fundy
+Q2887535,Minas Basin,P17,country,Q16,Canada
+Q1802491,St Lucia,P17,country,Q408,Australia
+Q12060728,Aboriginal Australians,P17,country,Q408,Australia
+Q43301,Fresno,P17,country,Q30,United States
+Q941127,Salesforce,P17,country,Q30,United States
+Q22907849,Discord,P495,country of origin,Q30,United States
+Q17130715,Slack,P127,owned by,Q941127,Salesforce
+Q1227,Nevada,P131,located in,Q30,United States
+Q1227,Nevada,P17,country,Q30,United States
+Q1400,Pennsylvania,P131,located in,Q30,United States
+Q1400,Pennsylvania,P17,country,Q30,United States
+Q5925,Orange County,P131,located in,Q99,California
+Q5925,Orange County,P17,country,Q30,United States
+Q16981411,Freedom of Information and Protection of Privacy Act,P17,country,Q16,Canada
+Q209330,Q209330,P17,country,Q30,United States
+Q664,New Zealand,P17,country,Q664,New Zealand
+Q6048868,International Brotherhood of Electrical Workers,P17,country,Q30,United States
+Q6048868,International Brotherhood of Electrical Workers,P17,country,Q16,Canada
+Q806085,Banana Republic,P17,country,Q30,United States
+Q22906556,Australian Unity,P17,country,Q408,Australia
+Q7568342,North-South Motorway,P17,country,Q408,Australia
+Q1973,British Columbia,P131,located in,Q16,Canada
+Q1973,British Columbia,P17,country,Q16,Canada
+Q424984,Oakville,P17,country,Q16,Canada
+Q128831,Federal Communications Commission,P17,country,Q30,United States
+Q866,Q866,P17,country,Q30,United States
+Q62,San Francisco,P131,located in,Q99,California
+Q62,San Francisco,P17,country,Q30,United States
+Q140075,Gold Coast,P17,country,Q408,Australia
+Q355,Q355,P495,country of origin,Q30,United States
+Q7059575,Northmead,P131,located in,Q3224,New South Wales
+Q7059575,Northmead,P17,country,Q408,Australia
+Q7544153,Smartsheet,P17,country,Q30,United States
+Q3286541,Mansfield,P17,country,Q408,Australia
+Q918,X,P17,country,Q30,United States
+Q5680753,South Brooklyn,P17,country,Q30,United States
+Q824,Oregon,P131,located in,Q30,United States
+Q824,Oregon,P17,country,Q30,United States
+Q172,Toronto,P131,located in,Q1904,Ontario
+Q172,Toronto,P17,country,Q16,Canada
+Q816,Arizona,P131,located in,Q30,United States
+Q816,Arizona,P17,country,Q30,United States
+Q11261,Microsoft Word,P361,part of,Q11255,Q11255
+Q3029104,Ontario Secondary School Diploma,P17,country,Q16,Canada
+Q16,Canada,P361,part of,Q49,North America
+Q16,Canada,P17,country,Q16,Canada
+Q100,Boston,P17,country,Q30,United States
+Q4179402,Pacific National Exhibition,P131,located in,Q24639,Vancouver
+Q4179402,Pacific National Exhibition,P17,country,Q16,Canada
+Q1253380,Human Rights Campaign,P131,located in,Q61,"Washington, D.C."
+Q1253380,Human Rights Campaign,P17,country,Q30,United States
+Q7974223,Waterloo Corner,P17,country,Q408,Australia
+Q379636,Torres Strait Islanders,P495,country of origin,Q408,Australia
+Q379636,Torres Strait Islanders,P27,nationality,Q408,Australia
+Q379636,Torres Strait Islanders,P17,country,Q408,Australia
+Q6988001,NeighborWorks America,P17,country,Q30,United States
+Q668687,United States Postal Service,P131,located in,Q30,United States
+Q668687,United States Postal Service,P17,country,Q30,United States
+Q3224,New South Wales,P131,located in,Q408,Australia
+Q3224,New South Wales,P17,country,Q408,Australia
+Q1408,New Jersey,P131,located in,Q30,United States
+Q1408,New Jersey,P17,country,Q30,United States
+Q408,Australia,P17,country,Q408,Australia
+Q1509,Tennessee,P131,located in,Q30,United States
+Q1509,Tennessee,P17,country,Q30,United States
+Q61,"Washington, D.C.",P17,country,Q30,United States
+Q1439,Texas,P131,located in,Q30,United States
+Q1439,Texas,P17,country,Q30,United States
+Q16920192,Peace Officer Standards and Training,P17,country,Q30,United States
+Q233929,NASCAR,P17,country,Q30,United States
+Q18013,Sacramento,P17,country,Q30,United States
+Q3078747,Boreal forest of Canada,P17,country,Q16,Canada
+Q104994,Los Angeles County,P131,located in,Q99,California
+Q104994,Los Angeles County,P17,country,Q30,United States
+Q392316,First Nations,P17,country,Q16,Canada
+Q155026,United Parcel Service,P17,country,Q30,United States
+Q312,Apple Inc.,P495,country of origin,Q30,United States
+Q312,Apple Inc.,P17,country,Q30,United States
+Q60747998,Notion,P17,country,Q30,United States
+Q1397,Ohio,P131,located in,Q30,United States
+Q1397,Ohio,P17,country,Q30,United States
+Q340,Montreal,P17,country,Q16,Canada
+Q1206798,401(k),P17,country,Q30,United States
+Q1045367,Indeed,P17,country,Q30,United States
+Q170479,Vancouver Island,P131,located in,Q1973,British Columbia
+Q170479,Vancouver Island,P17,country,Q16,Canada
+Q5200316,Cypress County,P17,country,Q16,Canada
+Q50001,Italians,P17,country,Q30,United States
+Q50001,Italians,P17,country,Q16,Canada
+Q50001,Italians,P17,country,Q408,Australia
+Q65,Los Angeles,P131,located in,Q104994,Los Angeles County
+Q65,Los Angeles,P17,country,Q30,United States
+Q1428,Georgia,P131,located in,Q30,United States
+Q1428,Georgia,P17,country,Q30,United States
+Q1370,Virginia,P131,located in,Q30,United States
+Q1370,Virginia,P17,country,Q30,United States
+Q1553,Nebraska,P131,located in,Q30,United States
+Q1553,Nebraska,P17,country,Q30,United States
+Q1860,English,P17,country,Q408,Australia
+Q1860,English,P17,country,Q16,Canada
+Q1860,English,P17,country,Q30,United States
+Q1860,English,P17,country,Q664,New Zealand
+Q1141173,Marriott International,P17,country,Q30,United States
+Q488134,Ontario,P17,country,Q30,United States
+Q15262098,Chase Center,P131,located in,Q62,San Francisco
+Q15262098,Chase Center,P17,country,Q30,United States
+Q948059,Los Alamitos,P131,located in,Q5925,Orange County
+Q948059,Los Alamitos,P17,country,Q30,United States
+Q5112,Adelaide,P17,country,Q408,Australia
+Q1639548,Tweed River,P131,located in,Q3224,New South Wales
+Q1639548,Tweed River,P17,country,Q408,Australia
+Q1614488,Manitouwadge,P17,country,Q16,Canada
+Q459477,FedEx,P17,country,Q30,United States
+Q459477,FedEx,P17,country,Q16,Canada
+Q46525,Pulitzer Prize,P17,country,Q30,United States
+Q2066392,Northern Ontario,P131,located in,Q1904,Ontario
+Q2066392,Northern Ontario,P17,country,Q16,Canada
+Q36687,Victoria,P361,part of,Q408,Australia
+Q36687,Victoria,P131,located in,Q408,Australia
+Q36687,Victoria,P17,country,Q408,Australia
+Q1166,Michigan,P131,located in,Q30,United States
+Q1166,Michigan,P17,country,Q30,United States
+Q164746,The Wall Street Journal,P495,country of origin,Q30,United States
+Q80911,Microsoft Outlook,P361,part of,Q11255,Q11255
+Q20647143,"Department of Environment, Land, Water and Planning",P17,country,Q408,Australia
+Q5020892,California Public Utilities Commission,P17,country,Q30,United States
+Q420822,Gap Inc.,P17,country,Q30,United States
+Q18419,Brooklyn,P131,located in,Q60,New York City
+Q18419,Brooklyn,P17,country,Q30,United States
+Q20540697,Gusto,P17,country,Q30,United States
+Q30,United States,P361,part of,Q49,North America
+Q30,United States,P17,country,Q30,United States
+Q11266,Q11266,P361,part of,Q11255,Q11255
+Q60,New York City,P17,country,Q30,United States
+Q829,Utah,P131,located in,Q30,United States
+Q829,Utah,P17,country,Q30,United States
+Q1204,Illinois,P131,located in,Q30,United States
+Q1204,Illinois,P17,country,Q30,United States
+Q2735242,Old Navy,P17,country,Q30,United States
+Q2735242,Old Navy,P127,owned by,Q420822,Gap Inc.
+Q2132,Victoria,P131,located in,Q1973,British Columbia
+Q2132,Victoria,P17,country,Q16,Canada
+Q1211,South Dakota,P131,located in,Q30,United States
+Q1211,South Dakota,P17,country,Q30,United States
+Q181857,Bay of Fundy,P17,country,Q16,Canada
+Q1387,Rhode Island,P131,located in,Q30,United States
+Q1387,Rhode Island,P17,country,Q30,United States
+Q1603,Kentucky,P131,located in,Q30,United States
+Q1603,Kentucky,P17,country,Q30,United States
+Q1260606,Estée Lauder Companies,P17,country,Q30,United States
+Q150,French,P17,country,Q16,Canada
+Q150,French,P17,country,Q30,United States
+Q189975,Inuit,P17,country,Q16,Canada
+Q189975,Inuit,P17,country,Q30,United States
+Q24190212,Toronto Film School,P131,located in,Q172,Toronto
+Q24190212,Toronto Film School,P17,country,Q16,Canada
+Q1612,Arkansas,P131,located in,Q30,United States
+Q1612,Arkansas,P17,country,Q30,United States
+Q5680423,Hastings Park,P131,located in,Q24639,Vancouver
+Q5680423,Hastings Park,P17,country,Q16,Canada

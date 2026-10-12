@@ -1,0 +1,34 @@
+# Environments and secrets
+.venv/
+venv/
+env/
+.env
+
+# Python caches
+__pycache__/
+*.py[cod]
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Generated data and logs
+data/
+logs/
+slurm/
+evaluation/results/
+
+# Generated indexes and model artifacts
+candidates/index/
+models/
+*.faiss
+*.pkl
+*.pickle
+*.pt
+*.bin
+*.safetensors
+*.npy
+*.npz
+
+# Project-specific generated data
+data/wikimapper/
+data/benchmarks/

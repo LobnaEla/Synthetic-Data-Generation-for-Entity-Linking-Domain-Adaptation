@@ -1,0 +1,97 @@
+s,s_label,p,p_label,o,o_label
+Q990103,Haverfordwest,P131,located in,Q213361,Pembrokeshire
+Q990103,Haverfordwest,P17,country,Q145,United Kingdom
+Q131479,Dominican Order,P17,country,Q38,Italy
+Q4948,Republic of Venice,P17,country,Q4948,Republic of Venice
+Q419,Peru,P17,country,Q419,Peru
+Q6343,Carthage,P17,country,Q2277,Roman Empire
+Q1340801,Jean Joseph Mounier,P27,nationality,Q142,France
+Q38060,Gaul,P17,country,Q142,France
+Q38060,Gaul,P17,country,Q38,Italy
+Q148,People's Republic of China,P17,country,Q148,People's Republic of China
+Q160894,Spaniards,P495,country of origin,Q29,Spain
+Q160894,Spaniards,P131,located in,Q29,Spain
+Q160894,Spaniards,P17,country,Q29,Spain
+Q6534,French Revolution,P17,country,Q142,France
+Q60022,Tennis Court Oath,P361,part of,Q6534,French Revolution
+Q3398729,Portable Antiquities Scheme,P17,country,Q145,United Kingdom
+Q7507716,Sicán National Museum,P17,country,Q419,Peru
+Q43684,Henan,P131,located in,Q148,People's Republic of China
+Q43684,Henan,P17,country,Q148,People's Republic of China
+Q43,Turkey,P17,country,Q43,Turkey
+Q172771,Royal Navy,P17,country,Q145,United Kingdom
+Q7325,Jewish people,P17,country,Q142,France
+Q7325,Jewish people,P17,country,Q145,United Kingdom
+Q23079,Northumberland,P17,country,Q145,United Kingdom
+Q213361,Pembrokeshire,P131,located in,Q25,Wales
+Q213361,Pembrokeshire,P17,country,Q145,United Kingdom
+Q1233131,Vindolanda,P17,country,Q145,United Kingdom
+Q208471,Kaifeng,P131,located in,Q43684,Henan
+Q208471,Kaifeng,P131,located in,Q43684,Henan
+Q208471,Kaifeng,P17,country,Q148,People's Republic of China
+Q23666,Great Britain,P17,country,Q145,United Kingdom
+Q31347,Grand Canal,P17,country,Q148,People's Republic of China
+Q641,Venice,P17,country,Q38,Italy
+Q641,Venice,P17,country,Q142,France
+Q641,Venice,P17,country,Q4948,Republic of Venice
+Q145,United Kingdom,P361,part of,Q46,Europe
+Q145,United Kingdom,P17,country,Q145,United Kingdom
+Q6271,Second Punic War,P17,country,Q29,Spain
+Q53437,Augustus II the Strong,P19,place of birth,Q1731,Dresden
+Q1731,Dresden,P131,located in,Q153015,Kingdom of Saxony
+Q1731,Dresden,P17,country,Q153015,Kingdom of Saxony
+Q29,Spain,P17,country,Q29,Spain
+Q539051,Greeks,P17,country,Q43,Turkey
+Q539051,Greeks,P17,country,Q145,United Kingdom
+Q13372,Carrara,P17,country,Q38,Italy
+Q35392414,La Leche River,P17,country,Q419,Peru
+Q42462,York,P17,country,Q145,United Kingdom
+Q768086,Lambayeque,P17,country,Q419,Peru
+Q206900,Çorum,P131,located in,Q272947,Çorum Province
+Q206900,Çorum,P17,country,Q43,Turkey
+Q37,Lithuania,P17,country,Q37,Lithuania
+Q725404,Pyramid of Cestius,P17,country,Q38,Italy
+Q6373,British Museum,P17,country,Q145,United Kingdom
+Q41642,Phoenicia,P17,country,Q43,Turkey
+Q53438,Augustus III of Poland,P19,place of birth,Q1731,Dresden
+Q25,Wales,P131,located in,Q145,United Kingdom
+Q25,Wales,P17,country,Q145,United Kingdom
+Q25,Wales,P17,country,Q25,Wales
+Q7732,Louis XVI of France,P27,nationality,Q142,France
+Q1277768,East Cambridgeshire,P17,country,Q145,United Kingdom
+Q6473283,Çitliköy,P17,country,Q43,Turkey
+Q462239,Pillnitz Castle,P131,located in,Q1731,Dresden
+Q36,Poland,P17,country,Q36,Poland
+Q637119,Çorum Archaeological Museum,P131,located in,Q272947,Çorum Province
+Q637119,Çorum Archaeological Museum,P131,located in,Q206900,Çorum
+Q637119,Çorum Archaeological Museum,P17,country,Q43,Turkey
+Q160538,Gian Lorenzo Bernini,P27,nationality,Q38,Italy
+Q193582,National Assembly,P17,country,Q142,France
+Q233,Malta,P17,country,Q233,Malta
+Q220,Rome,P131,located in,Q17167,Roman Republic
+Q220,Rome,P131,located in,Q2277,Roman Empire
+Q220,Rome,P17,country,Q38,Italy
+Q220,Rome,P17,country,Q17167,Roman Republic
+Q220,Rome,P17,country,Q2277,Roman Empire
+Q142,France,P17,country,Q142,France
+Q1463941,Estates-General of 1789,P361,part of,Q6534,French Revolution
+Q182664,Canaletto,P19,place of birth,Q641,Venice
+Q182664,Canaletto,P27,nationality,Q4948,Republic of Venice
+Q38,Italy,P17,country,Q38,Italy
+Q580631,East Anglia,P17,country,Q145,United Kingdom
+Q22047654,Must Farm Bronze Age settlement,P17,country,Q145,United Kingdom
+Q653002,Staatliche Kunstsammlungen Dresden,P131,located in,Q1731,Dresden
+Q4918,Mediterranean Sea,P17,country,Q29,Spain
+Q4918,Mediterranean Sea,P17,country,Q142,France
+Q4918,Mediterranean Sea,P17,country,Q38,Italy
+Q4918,Mediterranean Sea,P17,country,Q233,Malta
+Q4918,Mediterranean Sea,P17,country,Q43,Turkey
+Q2408803,Exchequer,P17,country,Q145,United Kingdom
+Q39518,Żabbar,P17,country,Q233,Malta
+Q270532,University of Aberdeen,P17,country,Q145,United Kingdom
+Q172438,Peterborough,P17,country,Q145,United Kingdom
+Q272947,Çorum Province,P131,located in,Q43,Turkey
+Q272947,Çorum Province,P17,country,Q43,Turkey
+Q22890,Ireland,P17,country,Q145,United Kingdom
+Q80637,York Castle,P131,located in,Q42462,York
+Q80637,York Castle,P17,country,Q145,United Kingdom

@@ -1,0 +1,244 @@
+qid,label,type,categories
+Q235065,Broadway theatre,Q1797194,Movie_reviews
+Q7380291,Rupert Goold,human,Movie_reviews
+Q183178,Clive Owen,human,Movie_reviews
+Q21,England,Q3336843,Movie_reviews
+Q38,Italy,Q6256,Movie_reviews
+Q949879,Elf,Q11424,Movie_reviews
+Q1524560,Lost Boys,Q14514600,Movie_reviews
+Q39829,Stephen King,human,Movie_reviews
+Q866,Q866,Q59152282,Movie_reviews
+Q7191,Nobel Prize,Q107655869,Movie_reviews
+Q524278,Jay Roach,human,Movie_reviews
+Q201633,Iwo Jima,Q1161185,Movie_reviews
+Q2011694,P. J. Hogan,human,Movie_reviews
+Q182,English,Q4167410,Movie_reviews
+Q64,Berlin,Q1901835,Movie_reviews
+Q1646867,Neverland,Q6619693,Movie_reviews
+Q36195,Molly Quinn,human,Movie_reviews
+Q132863,Finding Nemo,Q202866,Movie_reviews
+Q408,Australia,Q202686,Movie_reviews
+Q203535,Medal of Honor,Q18328097,Movie_reviews
+Q465811,National Mall,Q46169,Movie_reviews
+Q58814589,Bombshell,Q11424,Movie_reviews
+Q259129,Hayley McFarland,human,Movie_reviews
+Q58701890,Cats,Q11424,Movie_reviews
+Q9684,The New York Times,Q1110794,Movie_reviews
+Q1567862,Iraqis,Q33829,Movie_reviews
+Q62766,Jay-Z,human,Movie_reviews
+Q21578,Princeton University,Q902104,Movie_reviews
+Q160060,The King's Speech,Q11424,Movie_reviews
+Q978202,Bent,Q7725634,Movie_reviews
+Q1335528,Luca Guadagnino,human,Movie_reviews
+Q180975,Andrew Lloyd Webber,human,Movie_reviews
+Q60029,Oskar Schindler,human,Movie_reviews
+Q2001,Stanley Kubrick,human,Movie_reviews
+Q907311,Netflix,Q620615,Movie_reviews
+Q190214,The Lord of the Rings,Q13593818,Movie_reviews
+Q1079391,Arkham Asylum,Q59537080,Movie_reviews
+Q266535,François Ozon,human,Movie_reviews
+Q39792,Jack Nicholson,human,Movie_reviews
+Q131864,Dr. Seuss' How the Grinch Stole Christmas,Q11424,Movie_reviews
+Q293260,Megyn Kelly,human,Movie_reviews
+Q13959,Thanksgiving,Q5440532,Movie_reviews
+Q1469426,The Santa Clause 2,Q11424,Movie_reviews
+Q2763,The Holocaust,Q41397,Movie_reviews
+Q500242,The Creation of Adam,Q22669139,Movie_reviews
+Q48774068,Tom Edge,human,Movie_reviews
+Q296647,Ralph Lauren,human,Movie_reviews
+Q128736,John Forbes Nash,human,Movie_reviews
+Q160409,Central Park,Q22746,Movie_reviews
+Q1767499,A Beautiful Mind,Q47461344,Movie_reviews
+Q183308,New Age,Q477544,Movie_reviews
+Q19668417,Mike Flanagan,human,Movie_reviews
+Q7176487,Peter Quilter,human,Movie_reviews
+Q323283,The Royal Ballet,Q805233,Movie_reviews
+Q154421,Ed Asner,human,Movie_reviews
+Q105549749,House of Gucci,Q11424,Movie_reviews
+Q190618,New York Giants,Q17156793,Movie_reviews
+Q13909,Angelina Jolie,human,Movie_reviews
+Q502067,Galaxy Quest,Q11424,Movie_reviews
+Q299217,Rufus Sewell,human,Movie_reviews
+Q531599,Harvey Weinstein,human,Movie_reviews
+Q60169300,By the Grace of God,Q11424,Movie_reviews
+Q43932,Angus Young,human,Movie_reviews
+Q9212,United States Army,Q37726,Movie_reviews
+Q8016,Winston Churchill,human,Movie_reviews
+Q337097,Cats,Q58483083,Movie_reviews
+Q36153,Beyoncé,human,Movie_reviews
+Q3435337,Peter Pan,Q7725634,Movie_reviews
+Q6691659,Love and Money,Q11424,Movie_reviews
+Q243,Eiffel Tower,Q1440476,Movie_reviews
+Q99292759,Brian Ivie,human,Movie_reviews
+Q2695156,Batman,Q1114461,Movie_reviews
+Q18154496,Spotlight,Q11424,Movie_reviews
+Q42759035,Joker,Q11424,Movie_reviews
+Q882,Charlie Chaplin,human,Movie_reviews
+Q207,George W. Bush,human,Movie_reviews
+Q36479,The Lion King,Q202866,Movie_reviews
+Q841233,RoboCop 3,Q11424,Movie_reviews
+Q842438,British,Q33829,Movie_reviews
+Q5686,Charles Dickens,human,Movie_reviews
+Q2924461,DC Comics,Q1114515,Movie_reviews
+Q65,Los Angeles,Q13218391,Movie_reviews
+Q16,Canada,Q223832,Movie_reviews
+Q172271,Maleficent,Q11424,Movie_reviews
+Q178516,Gucci,Q4830453,Movie_reviews
+Q30,United States,Q3624078,Movie_reviews
+Q55400,Hayao Miyazaki,human,Movie_reviews
+Q215617,Sleeping Beauty,Q202866,Movie_reviews
+Q142,France,Q3624078,Movie_reviews
+Q15375186,Drunk in Love,Q7366,Movie_reviews
+Q192156,Q192156,Q7058673,Movie_reviews
+Q5476534,Fox & Friends,Q15416,Movie_reviews
+Q81796,J. M. Barrie,human,Movie_reviews
+Q1035128,Captain Hook,Q15632617,Movie_reviews
+Q3966844,Ghost of Christmas Present,Q30061294,Movie_reviews
+Q769447,Victoria the White Cat,Q27303706,Movie_reviews
+Q18432,Staten Island,Q408804,Movie_reviews
+Q19020,Academy Awards,Q107655869,Movie_reviews
+Q98,Pacific Ocean,Q9430,Movie_reviews
+Q12439,Detroit,Q1093829,Movie_reviews
+Q483941,Schindler's List,Q11424,Movie_reviews
+Q56881169,Doctor Sleep,Q11424,Movie_reviews
+Q2236136,Schindler,Q101352,Movie_reviews
+Q35525,White House,Q1802963,Movie_reviews
+Q834021,RoboCop 2,Q11424,Movie_reviews
+Q60100,Roland Emmerich,human,Movie_reviews
+Q598980,Ghost of Christmas Past,Q30061294,Movie_reviews
+Q189526,Brian De Palma,human,Movie_reviews
+Q46,Europe,Q2418896,Movie_reviews
+Q192410,Jennifer Hudson,human,Movie_reviews
+Q42884,Germans,Q6266,Movie_reviews
+Q232757,Gabrielle Anwar,human,Movie_reviews
+Q44440,Golden Gate Bridge,Q12570,Movie_reviews
+Q892,J. R. R. Tolkien,human,Movie_reviews
+Q979828,Samuel Maoz,human,Movie_reviews
+Q186068,Fox News,Q7892363,Movie_reviews
+Q2898716,Bernard Verley,human,Movie_reviews
+Q626756,Ebenezer Scrooge,Q15632617,Movie_reviews
+Q1508213,Highway to Hell,Q3302947,Movie_reviews
+Q33935,Tel Aviv,Q1549591,Movie_reviews
+Q41112,schizophrenia,Q12135,Movie_reviews
+Q137691184,Warner Bros.,Q431289,Movie_reviews
+Q40523,Julia Roberts,human,Movie_reviews
+Q86791,A Christmas Carol,Q202866,Movie_reviews
+Q315796,Santa Claus,Q113371917,Movie_reviews
+Q215616,PBS,Q1254874,Movie_reviews
+Q11299,Manhattan,Q408804,Movie_reviews
+Q19848,Lady Gaga,human,Movie_reviews
+Q148,People's Republic of China,Q3624078,Movie_reviews
+Q226468,Peter Pan,Q4167410,Movie_reviews
+Q23760,Rowan Atkinson,human,Movie_reviews
+Q573343,Anthony Higgins,human,Movie_reviews
+Q9592,Catholic Church,Q879146,Movie_reviews
+Q983981,Roger Ailes,human,Movie_reviews
+Q127367,The Lord of the Rings: The Fellowship of the Ring,Q11424,Movie_reviews
+Q2634,Naples,Q515,Movie_reviews
+Q49542,Russians,Q41710,Movie_reviews
+Q1649,Oklahoma,Q35657,Movie_reviews
+Q242605,Natalie Maines,human,Movie_reviews
+Q215365,Brother Bear,Q202866,Movie_reviews
+Q17515,Diego Maradona,human,Movie_reviews
+Q2,Earth,Q3504248,Movie_reviews
+Q96,Mexico,Q3624078,Movie_reviews
+Q1297,Chicago,Q110071194,Movie_reviews
+Q11211,United States Armed Forces,Q772547,Movie_reviews
+Q2943,Sistine Chapel,Q108325,Movie_reviews
+Q108647,Jason Raize,human,Movie_reviews
+Q837,Nepal,Q123480,Movie_reviews
+Q25136757,Call Me by Your Name,Q11424,Movie_reviews
+Q3316780,Mission Accomplished speech,Q861911,Movie_reviews
+Q2057368,Ghost of Christmas Yet to Come,Q30061294,Movie_reviews
+Q12512,St. Peter's Basilica,Q124936,Movie_reviews
+Q484523,Jared Leto,human,Movie_reviews
+Q187364,Robert Zemeckis,human,Movie_reviews
+Q127552,Pixar,Q1107679,Movie_reviews
+Q40475,Joan Crawford,human,Movie_reviews
+Q762,Leonardo da Vinci,human,Movie_reviews
+Q1660555,Maleficent,Q15711870,Movie_reviews
+Q2997267,Colombians,Q33829,Movie_reviews
+Q237,Vatican City,Q3624078,Movie_reviews
+Q84,London,Q200250,Movie_reviews
+Q27593,AC/DC,Q215380,Movie_reviews
+Q84152,Amon Göth,human,Movie_reviews
+Q42574,James Cameron,human,Movie_reviews
+Q752103,Bean,Q11424,Movie_reviews
+Q83495,The Matrix,Q11424,Movie_reviews
+Q2009573,James Bond,Q15632617,Movie_reviews
+Q7325,Jewish people,Q11197007,Movie_reviews
+Q64027141,Nirmal Purja,human,Movie_reviews
+Q463101,"Girl, Interrupted",Q11424,Movie_reviews
+Q42133786,MeToo movement,Q278485,Movie_reviews
+Q1898583,marine force,,Movie_reviews
+Q142636,The Chicks,Q215380,Movie_reviews
+Q473845,Columbine High School massacre,Q473853,Movie_reviews
+Q7414,The Walt Disney Company,Q1762059,Movie_reviews
+Q102090,Apache,Q103817,Movie_reviews
+Q186277,Carmelites,Q3355498,Movie_reviews
+Q60,New York City,Q208511,Movie_reviews
+Q1033152,RoboCop,Q22074477,Movie_reviews
+Q161652,Japanese people,Q41710,Movie_reviews
+Q218503,Will Ferrell,human,Movie_reviews
+Q41225,Big Ben,Q3139104,Movie_reviews
+Q55615419,Judy,Q11424,Movie_reviews
+Q103372692,Encanto,Q202866,Movie_reviews
+Q9188,Empire State Building,Q1021645,Movie_reviews
+Q17,Japan,Q3624078,Movie_reviews
+Q362,World War II,Q103495,Movie_reviews
+Q49297,Native Americans in the United States,Q41710,Movie_reviews
+Q5991759,convento de Santa Teresa,Q109670141,Movie_reviews
+Q470937,The Shining,Q7725634,Movie_reviews
+Q2791,Gerónimo,human,Movie_reviews
+Q796,Iraq,Q3624078,Movie_reviews
+Q186341,The Shining,Q11424,Movie_reviews
+Q65086065,Emanuel,Q11424,Movie_reviews
+Q185140,Joaquin Phoenix,human,Movie_reviews
+Q3990062,The Wizard of Oz,Q58483083,Movie_reviews
+Q12603,Pacific Northwest,Q82794,Movie_reviews
+Q1152150,DC Universe,Q559618,Movie_reviews
+Q170241,Tarzan,Q3658341,Movie_reviews
+Q1860,English,Q33742,Movie_reviews
+Q380675,cinema of the United States,Q67515288,Movie_reviews
+Q668925,D. B. Sweeney,human,Movie_reviews
+Q1439,Texas,Q35657,Movie_reviews
+Q302,Jesus Christ,Q178885,Movie_reviews
+Q2749247,Wendy Darling,Q15632617,Movie_reviews
+Q79734,Middle-earth,Q17199338,Movie_reviews
+Q918380,My Best Friend's Wedding,Q11424,Movie_reviews
+Q23633,HBO,Q1762059,Movie_reviews
+Q38856,Xoloitzcuintle,Q39367,Movie_reviews
+Q732858,Gotham City,Q1964689,Movie_reviews
+Q17252,Tibet,Q82794,Movie_reviews
+Q159583,Holy See,Q1896989,Movie_reviews
+Q652,Italian,Q33742,Movie_reviews
+Q26876,Taylor Swift,human,Movie_reviews
+Q352,Adolf Hitler,human,Movie_reviews
+Q79015,Superman,Q6439708,Movie_reviews
+Q9215,Sigmund Freud,human,Movie_reviews
+Q41254,Grammy Awards,Q1364556,Movie_reviews
+Q484020,Mr Bean,Q5398426,Movie_reviews
+Q7318,Nazi Germany,Q11514315,Movie_reviews
+Q1753795,Redacted,Q11424,Movie_reviews
+Q20154675,"2015 Charleston, South Carolina shooting",Q459409,Movie_reviews
+Q3819311,The Haunting of Hill House,Q7725634,Movie_reviews
+Q295912,Tom Hooper,human,Movie_reviews
+Q19809,Christmas,Q60075825,Movie_reviews
+Q1364921,Roman Catholic Archdiocese of Lyon,Q105390172,Movie_reviews
+Q145,United Kingdom,Q3624078,Movie_reviews
+Q696376,Versace,Q1589009,Movie_reviews
+Q28234,Les Misérables,Q11424,Movie_reviews
+Q8877,Steven Spielberg,human,Movie_reviews
+Q429557,Gia,Q506240,Movie_reviews
+Q219714,Philadelphia Eagles,Q17156793,Movie_reviews
+Q843,Pakistan,Q3624078,Movie_reviews
+Q189307,Reinhold Messner,human,Movie_reviews
+Q26704283,Francesca Hayward,human,Movie_reviews
+Q465597,Gretchen Carlson,human,Movie_reviews
+Q178114,Washington Monument,Q170980,Movie_reviews
+Q47716,Charleston,Q1093829,Movie_reviews
+Q1092,Star Trek,Q196600,Movie_reviews
+Q7836015,Travelin' Soldier,Q134556,Movie_reviews
+Q128518,Gladiator,Q11424,Movie_reviews
+Q9696,John F. Kennedy,human,Movie_reviews
+Q372514,RoboCop,Q11424,Movie_reviews
